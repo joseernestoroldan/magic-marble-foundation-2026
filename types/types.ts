@@ -55,7 +55,7 @@ export type ProjectsProps = {
 
 export type ScrollPosition = {
   x: number;
-}
+};
 
 export type menuProps = {
   disposition: string;
@@ -74,15 +74,6 @@ export type CardDairiesProps = {
   src: string;
   title: string;
   body: string | null;
-};
-
-export type PhotoProps = {
-  width: string;
-  height: string;
-  src: string;
-  alt: string;
-  borderRadius: string;
-  objectFit: string;
 };
 
 export type CardTeamProps = {
@@ -129,18 +120,6 @@ export type LayoutYProps = {
   children: React.ReactNode;
 };
 
-export type ParrafosProps = {
-  data: any;
-};
-
-export type IconsProps = {
-  color: string;
-  show?: boolean;
-  setShow?: any;
-  name: string | null;
-  chimpData?: QueryType[]
-};
-
 export type BannerDonationProps = {
   url: string;
   title: string;
@@ -148,11 +127,11 @@ export type BannerDonationProps = {
 };
 
 export type AdoptionsProps = {
-  adoptions: QueryType[]
+  adoptions: QueryType[];
 };
 
 export type SponsorProps = {
-  sponsors: QueryType[]
+  sponsors: QueryType[];
 };
 
 export type TopPicksProps = {
@@ -190,7 +169,7 @@ export type QueryType = {
 };
 
 export type Block = {
-    _key: string;
+  _key: string;
   _type: string;
   children: Children;
   markDefs: MarkDef[];

@@ -1,11 +1,11 @@
 import Link from "next/link";
 
-type InfoText = {
+type InfoTextProps = {
   href: string
   children: React.ReactNode;
 };
 
-const InfoText = ({href, children }: InfoText) => {
+const InfoText = ({href, children }: InfoTextProps) => {
   return (
     <div className="text-lg w-fit text-center hidden md:flex font-semibold items-center">
       <Link href={href} target="_blank" rel="noopener noreferrer">
