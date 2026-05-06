@@ -1,3 +1,7 @@
+export type profilePopoverProps = {
+  name: string | null;
+};
+
 export type headingProps = {
   title: string;
   color: string;

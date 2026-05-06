@@ -5,20 +5,20 @@ import { useRouter, usePathname } from "next/navigation";
 import { IoMdContact as ContactIcon } from "react-icons/io";
 import Link from "next/link";
 import { logout } from "@/actions/logout";
-
-type profilePopoverProps = {
-  name: string | null;
-};
+import { profilePopoverProps } from "@/types/types";
 
 const ProfilePopover = ({ name }: profilePopoverProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const ref = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const { push, refresh } = useRouter();
   const pathname = usePathname();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (ref.current && !ref.current.contains(event.target as Node)) {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
@@ -50,8 +50,8 @@ const ProfilePopover = ({ name }: profilePopoverProps) => {
 
   return (
     <div
-      ref={ref}
-      className={`lg:w-full w-[40px] overflow-visible flex flex-col justify-center items-center cursor-pointer h-[40px] relative bg-gray-700 hover:bg-opacity-60 text-gray-200 ${isOpen ? "rounded-t-[5px]" : "rounded-[5px]"}`}
+      ref={containerRef}
+      className={`lg:w-full w-[40px] flex flex-col justify-center items-center cursor-pointer h-[40px] relative bg-gray-700 hover:bg-opacity-60 text-gray-200 ${isOpen ? "rounded-t-[5px]" : "rounded-[5px]"}`}
       onClick={() => {
         setIsOpen(!isOpen);
       }}

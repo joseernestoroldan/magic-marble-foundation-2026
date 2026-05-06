@@ -16,6 +16,7 @@ const ChimpPopover = ({ chimpData }: { chimpData: QueryType[] }) => {
       setIsOpen(false);
     }
   };
+  
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
@@ -75,7 +76,7 @@ const ChimpPopover = ({ chimpData }: { chimpData: QueryType[] }) => {
           This Are The Newest Chimps
         </div>
         <div className="text-white text-sm lg:text-base px-4 py-4">
-          {chimpData.map((item: any, index: number) => {
+          {chimpData.map((item: QueryType, index: number) => {
             const date = stringToDate(item._createdAt);
             return (
               <div className="py-1" key={index}>

@@ -1,11 +1,18 @@
+import Link from "next/link";
+
 type InfoText = {
+  href: string
   children: React.ReactNode;
-}
+};
 
-const InfoText = ({ children }: InfoText) => {
+const InfoText = ({href, children }: InfoText) => {
   return (
-    <div className='text-lg w-fit text-center hidden md:flex font-semibold items-center'>{children}</div>
-  )
-}
+    <div className="text-lg w-fit text-center hidden md:flex font-semibold items-center">
+      <Link href={href} target="_blank" rel="noopener noreferrer">
+        {children}
+      </Link>
+    </div>
+  );
+};
 
-export default InfoText
+export default InfoText;
