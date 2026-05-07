@@ -1,20 +1,19 @@
 import { auth } from "@/auth";
 import { db } from "@/db";
 
-   export const getNameSession = async (userId: string | null) => {
+   export const getNameSession = async (userId: string) => {
     let name: string | null;
     try {
-      if (userId) {
         const data = await db.user.findFirst({ where: { id: userId } });
         if (data && data.firstName) {
           name = data.firstName;
           return name;
         }
         return null;
-      }
-      return null;
+  
     } catch (error) {
-      throw new Error("Something went wrong");
+      // throw new Error("Something went wrong");
+      return null
     }
   };
 
