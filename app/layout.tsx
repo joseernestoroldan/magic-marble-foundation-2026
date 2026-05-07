@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Open_Sans } from "next/font/google";
-import NavbarBeta from "@/components/navbar/navbarBeta";
+import Navbar from "@/components/navbar/Navbar";
 
 const openSansFont = Open_Sans({
   subsets: ["latin"],
@@ -17,7 +17,7 @@ export default async function RootLayout({
       <body className={openSansFont.className}>
         <main className="relative">
           {/* <Badge mode="layout"/> */}
-          <NavbarBeta />
+          <Navbar />
           <div className="w-full">{children}</div>
           {/* <Footer name={name} /> */}
         </main>

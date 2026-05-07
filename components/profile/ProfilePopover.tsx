@@ -57,7 +57,7 @@ const ProfilePopover = ({ name }: profilePopoverProps) => {
       </div>
 
       <div
-        className={`absolute top-0 right-0 lg:left-0  bg-gray-700 bg-opacity-85 lg:w-full w-[120px] text-gray-200 rounded-b-[5px] px-2 py-2 flex flex-col justify-start items-center gap-2 transition-all duration-500 ease-in-out ${isOpen ? "opacity-100 translate-y-[40px] pointer-events-auto" : "opacity-0 translate-y-[20px] pointer-events-none"}`}>
+        className={`absolute top-0 right-0 lg:left-0  bg-gray-700 bg-opacity-85 lg:w-full w-[140px] text-gray-200 rounded-b-[5px] px-2 py-2 flex flex-col justify-start items-center gap-2 transition-all duration-500 ease-in-out ${isOpen ? "opacity-100 translate-y-[40px] pointer-events-auto" : "opacity-0 translate-y-[20px] pointer-events-none"}`}>
         <hr className="border border-gray-400 w-full" />
         {pathname !== "/profile" && (
           <Link

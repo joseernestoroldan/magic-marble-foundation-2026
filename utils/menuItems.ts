@@ -13,3 +13,25 @@ export const menuItems = [
   { title: "Join Us", link: "/getinvolved" },
   { title: "Our Grantees", link: "/grantees" },
 ];
+
+export const menuAbout = {
+  title: "About Us",
+   menu:[
+    { title: "About Us", href: "/about" },
+    { title: "Projects", href: "/projectscarousel" },
+    { title: "Magic Diaries", href: "/diaries" },
+    { title: "Financials", href: "/financials" },
+    { title: "Newsletter", href: "/newsletter" },
+    { title: "Privacy Policy", href: "/privacy-policy" },
+  ]
+};
+
+export const menuBeTheChange = {
+    title: "Be The Change",
+    menu:[
+        {title: "Adopt", href: "/underconstruction"},
+        {title: "Sponsor", href: "/underconstruction"},
+        {title: "Join Us", href: "/getinvolved"}
+    ]
+}
+

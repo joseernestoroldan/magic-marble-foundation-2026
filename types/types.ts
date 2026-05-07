@@ -1,3 +1,13 @@
+export type navLinkProps = {
+  title: string;
+  href: string
+}
+
+export type navDropdownProps = {
+  title: string;
+  menu: navLinkProps[];
+}
+
 export type profilePopoverProps = {
   name: string | null;
 };

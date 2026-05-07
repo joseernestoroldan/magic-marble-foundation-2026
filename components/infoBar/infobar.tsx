@@ -20,7 +20,7 @@ const Infobar = () => {
               <Icons />
               <Chimp />
             </div>
-            <div className="flex justify-center min-w-[50px] lg:min-w-[120px] items-center overflow-visible">
+            <div className="flex justify-center min-w-[50px] lg:min-w-[140px] items-center overflow-visible">
               <Profile />
             </div>
           </div>
