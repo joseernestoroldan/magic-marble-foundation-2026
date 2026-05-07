@@ -4,9 +4,9 @@ import Link from "next/link";
 
 const Logo = () => {
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-start gap-2 items-center py-2">
       <Link href={"/"}>
-        <div className="min-[426px]:w-[100px] min-[426px]:h-[100px] w-[70px] h-[70px] relative">
+        <div className="w-[70px] h-[70px] relative">
           <Image
             fill
             src="/navlogo.png"
