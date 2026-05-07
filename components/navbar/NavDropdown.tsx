@@ -32,7 +32,7 @@ const NavDropdown = ({ title, menu }: navDropdownProps) => {
       onPointerLeave={handlePointerLeave}>
       {title}
       {open && (
-        <div className="absolute z-20 top-full pt-[42px] bg-red-transparent left-1/2 -translate-x-1/2 w-[300px] p-1 flex justify-center items-center">
+        <div className="absolute z-20 top-full pt-[38px] bg-red-transparent left-1/2 -translate-x-1/2 w-[300px] p-1 flex justify-center items-center">
           <div className="w-full h-full bg-white/90 backdrop-blur-md rounded-[5px] shadow-lg min-w-48 p-2 z-20 flex flex-col gap-1">
             {menu.map((item) => (
               <NavLink key={item.title} title={item.title} href={item.href} />
