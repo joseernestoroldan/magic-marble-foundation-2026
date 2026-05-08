@@ -5,10 +5,9 @@ import Projects from "@/components/ourprojects/projects/Projects";
 import Heading from "@/components/headings/heading";
 import React from "react";
 import HeadingCenterAnimation from "@/components/headingsAnimations/HeadingCenterAnimation";
-import Donations from "@/components/home/donations/Donations";
+import Donations from "@/components/Home/donations/Donations";
 
 const ProjectsPage = async () => {
-
   const projects = await getAllData("projects");
 
   return (

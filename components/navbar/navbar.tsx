@@ -1,9 +1,8 @@
-import Infobar from "@/components/infoBar/Infobar";
+import Infobar from "@/components/InfoBar/Infobar";
 import Container from "@/components/layouts/container/Container";
-import Logo from "@/components/logo/Logo";
-import MenuNavbar from "@/components/navbar/MenuNavbar";
+import Logo from "@/components/Logo/Logo";
+import MenuNavbar from "@/components/Navbar/MenuNavbar";
 import DonationButton from "@/components/donationButton/DonationButton";
-
 
 const Navbar = () => {
   return (

@@ -1,8 +1,8 @@
-import Chimp from "../chimpPopover/Chimp";
-import Container from "../layouts/container/Container";
-import Profile from "../profile/Profile";
-import Icons from "../socialMedia/Icons";
-import Infotext from "./Infotext";
+import Chimp from "@/components/Chimp/Chimp";
+import Container from "@/components/layouts/container/Container";
+import Profile from "@/components/Profile/Profile";
+import Icons from "@/components/socialMedia/Icons";
+import Infotext from "@/components/InfoBar/Infotext";
 
 const Infobar = () => {
   return (

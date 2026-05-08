@@ -1,7 +1,7 @@
 import AboutUs from "@/components/about/AboutUs";
 import OurTeam from "@/components/about/OurTeam";
-import Donations from "@/components/home/donations/Donations";
-import FocusAreas from "@/components/home/focusareas/FocusAreas";
+import Donations from "@/components/Home/donations/Donations";
+import FocusAreas from "@/components/Home/focusareas/FocusAreas";
 import Container from "@/components/layouts/container/Container";
 import LayoutY from "@/components/layouts/layoutY/LayoutY";
 import BannerParallax from "@/components/parallax/bannerParallax/bannerParallax";
@@ -19,7 +19,7 @@ const AboutPage = () => {
         <Container>
           <FocusAreas />
         </Container>
-        
+
         <ParallaxContainer bgImage="bg-map.png" opacity="0.1">
           <BannerParallax
             title="Our Mission"
@@ -33,7 +33,6 @@ const AboutPage = () => {
           src="https://www.youtube.com/embed/ipNTJWiKR5Q?autoplay=1&mute=1"
           bg={"bg-white"}
         />
-        
 
         <ParallaxContainer bgImage="bg-map.png" opacity="0.1">
           <BannerParallax

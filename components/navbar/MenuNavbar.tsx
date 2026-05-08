@@ -1,5 +1,5 @@
-import NavDropdown from "@/components/navbar/NavDropdown";
-import NavLink from "@/components/navbar/NavLink";
+import NavDropdown from "@/components/Navbar/NavDropdown";
+import NavLink from "@/components/Navbar/NavLink";
 import { menuAbout, menuBeTheChange } from "@/utils/menuItems";
 
 const MenuNavbar = () => {

@@ -1,13 +1,13 @@
-import Menu from "../navbar/menu";
+import Menu from "../Navbar/menu";
 import Icons from "../socialMedia/IconsOld";
 import Container from "../layouts/container/Container";
-import Logo from "../logo/Logo";
+import Logo from "../Logo/Logo";
 
 type FooterProps = {
   name: string | null;
 };
 
-const Footer = ({name}:FooterProps) => {
+const Footer = ({ name }: FooterProps) => {
   return (
     <div className="flex flex-col space-y-10 items-stretch w-full max-w-[300px] min-[425px]:max-w-[423px] sm:max-w-[638px] md:max-w-[766px] lg:max-w-[1022px] mx-auto">
       <Container>
@@ -15,9 +15,9 @@ const Footer = ({name}:FooterProps) => {
           <div className="flex flex-col justify-between items-center space-y-6 bg-white">
             <Logo />
             <p className="w-[250px] text-gray-500 text-base indent-4 text-justify">
-              USA based tax-exempt charitable organization (tax-id
-              number 86-1626792) under Section 501(c)(3) of the Internal Revenue
-              Code. Donations are tax-deductible as allowed by law.
+              USA based tax-exempt charitable organization (tax-id number
+              86-1626792) under Section 501(c)(3) of the Internal Revenue Code.
+              Donations are tax-deductible as allowed by law.
             </p>
           </div>
           <div className="bg-white  space-y-4">
