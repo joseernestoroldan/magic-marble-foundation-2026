@@ -1,12 +1,11 @@
 import Projects from "./projects/Projects";
 import { OurProjectsProps } from "@/types/types";
 import Container from "../layouts/container/Container";
-import SubHeading from "../headings/subheading";
+import SubHeading from "../Heading/subheading";
 import EnterSection from "../animations/enterSection/EnterSection";
 import LayoutY from "../layouts/layoutY/LayoutY";
 
 const OurProjects = async ({ bg, color, projects }: OurProjectsProps) => {
-
   return (
     <EnterSection>
       <Container>

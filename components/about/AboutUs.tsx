@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Heading from "../headings/heading";
+import Heading from "../Heading/heading";
 import HeadingAboutAnimation from "../headingsAnimations/HeadingAboutAnimation";
 import Image from "next/image";
 
@@ -29,7 +29,6 @@ const AboutUs = () => {
           </div>
         </div>
         <div className="w-full md:w-[50%] flex flex-col justify-center items-center">
-
           <div className="w-[220px] md:w-[330px] h-[220px] md:h-[330px] relative">
             {/* photo container */}
             <Image
@@ -40,7 +39,6 @@ const AboutUs = () => {
               priority={true}
             />
           </div>
-
         </div>
       </div>
     </HeadingAboutAnimation>

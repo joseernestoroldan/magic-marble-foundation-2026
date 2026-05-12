@@ -1,5 +1,5 @@
 import { TabsTeam } from "./Tabs";
-import SubHeading from "../headings/subheading";
+import SubHeading from "../Heading/subheading";
 import EnterSection from "../animations/enterSection/EnterSection";
 import LayoutY from "../layouts/layoutY/LayoutY";
 
@@ -8,7 +8,7 @@ const OurTeam = () => {
     <EnterSection>
       <LayoutY>
         <SubHeading title="Our Team" />
-          <TabsTeam />
+        <TabsTeam />
       </LayoutY>
     </EnterSection>
   );

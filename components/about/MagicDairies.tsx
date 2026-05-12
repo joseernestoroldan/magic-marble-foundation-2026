@@ -1,4 +1,4 @@
-import SubHeading from "../headings/subheading";
+import SubHeading from "../Heading/subheading";
 import Button from "../button/Button";
 import { getAllData } from "@/client";
 import CardDairies from "../card/Card";
@@ -27,7 +27,7 @@ const MagicDairies = async () => {
                   // body={diaries[0].body.substring(0, 160)}
                   body={body ?? "Magic Marble Foundation"}
                 />
-              )
+              ),
             )}
           </div>
           <div className="flex justify-center">

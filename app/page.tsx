@@ -1,4 +1,7 @@
 import HeroSection from "@/components/Home/HeroSection/HeroSection";
+import OurMIssion from "@/components/Home/OurMission/OurMIssion";
+import MagicDiaries from "@/components/Home/MagicDiaries/MagicDiaries";
+import MagicFrame from "@/components/Home/MagicFrame/MagicFrame";
 
 
 const HomePage = async () => {
@@ -6,8 +9,37 @@ const HomePage = async () => {
   // const diaries: QueryType[] | null = await getOrderedData("dairies", "2");
 
   return (
-    <div className="w-full flex-col justify-center items-center space-y-24 overflow-hidden">
+    <div className="w-full flex-col justify-center items-center space-y-24 overflow-x-hidden">
       <HeroSection/>
+      <OurMIssion/>
+      <MagicDiaries/>
+      <MagicFrame/>
+
+
+
+    </div>
+  );
+};
+
+export default HomePage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       {/* <ParallaxContainer bgImage="bg-map.png" opacity="0.1">
         <BannerParallax
@@ -41,8 +73,3 @@ const HomePage = async () => {
       <Donations />
 
       <OurPartners /> */}
-    </div>
-  );
-};
-
-export default HomePage;

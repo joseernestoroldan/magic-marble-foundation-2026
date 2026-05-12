@@ -1,5 +1,5 @@
 import React from "react";
-import SubHeading from "../headings/subheading";
+import SubHeading from "../Heading/subheading";
 import Image from "next/image";
 import LayoutY from "../layouts/layoutY/LayoutY";
 
