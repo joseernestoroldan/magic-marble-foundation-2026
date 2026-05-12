@@ -62,16 +62,16 @@ const HeroCarousel = () => {
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
 
-            <div className="absolute bottom-[100px] right-[100px] p-10 rounded-[5px]  text-white group bg-black/20 hover:bg-black/40 transition-all delay-200 duration-500">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-bold mb-4 drop-shadow-lg">
+            <div className="absolute bottom-14 left-4 right-4 p-4 md:left-8 md:right-8 md:bottom-16 md:p-6 lg:left-auto lg:bottom-[100px] lg:right-[100px] lg:p-10 rounded-[5px] text-white group bg-black/20 hover:bg-black/40 transition-all delay-200 duration-500">
+              <h2 className="text-lg md:text-xl lg:text-2xl font-bold mb-2 md:mb-4 drop-shadow-lg">
                 {slide.title}
               </h2>
-              <p className="text-sm sm:text-base md:text-lg max-w-3xl leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all duration-500 ease-in-out drop-shadow-md">
+              <p className="text-xs md:text-sm lg:text-lg max-w-3xl leading-relaxed line-clamp-2 md:line-clamp-3 group-hover:line-clamp-none transition-all duration-500 ease-in-out drop-shadow-md">
                 {slide.description}
               </p>
               <Link
                 href={`/projects/project/${slide.url}`}
-                className="inline-block mt-4 py-3 text-xl sm:text-2xl text-cyan-500 font-semibold transition-all underline duration-500">
+                className="inline-block mt-2 md:mt-4 py-2 md:py-3 text-base md:text-xl lg:text-2xl text-cyan-500 font-semibold transition-all underline duration-500">
                 Learn More
               </Link>
             </div>
