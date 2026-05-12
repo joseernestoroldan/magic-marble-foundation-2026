@@ -10,6 +10,20 @@ export const chimpQuery = () => groq`*[_type == 'chimp'] | order(_createdAt desc
     _createdAt,
 }`;
 
+export const diariesQuery = () => groq`*[_type == 'dairies'] | order(_createdAt desc){
+    _id,
+    publishedAt,
+    title,
+    description,
+    _createdAt,
+    "mainImage": mainImage.asset->url,
+    "authorImage": authorImage.asset->url,
+    "crop": crop,
+    "hotSpot": hotSpot,
+    "author": author,
+    "contenido": contenido,
+}`
+
 // export const allByTopQuery = () => {
 //   const query = groq`*[_type == 'portalPaddyField' && topPick == true] | order(_publishedAt desc){
 //   _id,
