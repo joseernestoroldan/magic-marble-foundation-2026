@@ -1,6 +1,6 @@
 import { createClient, groq } from "next-sanity";
-import { chimpType } from "./clientTypes";
-import { chimpQuery } from "./utils/groqQueries";
+import { chimpType, diariesType } from "./clientTypes";
+import { chimpQuery, diariesQuery } from "./utils/groqQueries";
 
 const projectId = process.env.API_ID;
 const dataset = "production"; // "production"
@@ -30,6 +30,12 @@ export const getAllChimp = async () => {
   const data: chimpType[] | null = await getData(query);
   return data;
 };
+
+export const getAllDiaries = async() => {
+  const query = diariesQuery()
+  const data: diariesType[] | null = await getData(query)
+  return data
+}
 
 // export const getAllByTop = async () => {
 //   const query = allByTopQuery()
