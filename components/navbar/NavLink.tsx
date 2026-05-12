@@ -8,7 +8,7 @@ const NavLink = ({ title, href }: navLinkProps) => {
   return (
     <Link
       href={href}
-      className={`${pathname === href ? "hidden" : "inline-block"} ${title === "Paddy Field" ? "text-green-400" : "text-cyan-500"} text-nowrap cursor-pointer hover:drop-shadow-lg rounded-lg hover:text-gray-500 text-lg font-medium`}>
+      className={`${pathname === href ? "hidden" : "inline-block"} ${title === "Paddy Field" ? "text-green-600" : ""} text-nowrap cursor-pointer hover:drop-shadow-lg rounded-lg hover:text-gray-400 text-lg font-bold`}>
       {title}
     </Link>
   );

@@ -4,7 +4,7 @@ import { menuAbout, menuBeTheChange } from "@/utils/menuItems";
 
 const MenuNavbar = () => {
   return (
-    <div className="hidden lg:flex gap-3 font-medium items-center">
+    <div className="hidden lg:flex gap-3 font-medium items-center text-cyan-600">
       <NavLink title="Home" href="/" />
       <NavDropdown title={menuAbout.title} menu={menuAbout.menu} />
       <NavLink title="Gallery" href="/gallery" />
