@@ -44,7 +44,6 @@ export type BannerProps = {
 
 export type VideoFrameProps = {
   src: string;
-  bg: string;
 };
 
 export type MagicFrameProps = {

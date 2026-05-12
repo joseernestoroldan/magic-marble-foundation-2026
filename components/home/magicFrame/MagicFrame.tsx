@@ -1,22 +1,14 @@
-import React from "react";
-import VideoFrame from "../../videoFrame/videoframe";
-import { MagicFrameProps } from "@/types/types";
-import SubHeading from "../../headings/subheading";
-import EnterSection from "@/components/animations/enterSection/EnterSection";
+import VideoFrame from "@/components/videoFrame/videoframe";
 
-import LayoutY from "@/components/layouts/layoutY/LayoutY";
-
-const MagicFrame = ({ bg }: MagicFrameProps) => {
+const MagicFrame = () => {
   return (
-    <EnterSection>
-      <LayoutY>
-        <SubHeading title="A Bit Of Magic" />
-        <VideoFrame
-          src="https://www.youtube.com/embed/Y8e-XFkNoAk?autoplay=1&mute=1"
-          bg={bg}
-        />
-      </LayoutY>
-    </EnterSection>
+    <section className="flex flex-col items-center gap-24">
+      <div className="flex flex-col items-center gap-24">
+        <h2 className="text-cyan-600 font-bold text-3xl">A Bit Of Magic</h2>
+      </div>
+
+      <VideoFrame src="https://www.youtube.com/embed/Y8e-XFkNoAk?autoplay=1&mute=1" />
+    </section>
   );
 };
 
