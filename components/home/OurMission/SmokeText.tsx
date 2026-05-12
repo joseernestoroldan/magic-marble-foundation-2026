@@ -15,6 +15,9 @@ interface SmokeTextProps {
  * Renders a text string where each character fades in sequentially
  * with a smoke-like opacity transition, triggered when the container
  * enters the viewport.
+ *
+ * Words are grouped in `whitespace-nowrap` wrappers so the browser
+ * never breaks a line in the middle of a word.
  */
 const SmokeText = ({
   text,
@@ -26,8 +29,9 @@ const SmokeText = ({
     threshold: 0.3,
   });
 
-  // Split preserving spaces as visible characters
-  const characters = text.split("");
+  // Split into words, tracking the global character index for stagger timing
+  const words = text.split(" ");
+  let globalCharIndex = 0;
 
   return (
     <p
@@ -35,26 +39,43 @@ const SmokeText = ({
       aria-label={text}
       className={`flex flex-wrap justify-center leading-snug ${className}`}
     >
-      {characters.map((char, index) => (
-        <span
-          key={index}
-          aria-hidden="true"
-          style={{
-            display: "inline-block",
-            whiteSpace: char === " " ? "pre" : "normal",
-            opacity: isVisible ? 1 : 0,
-            filter: isVisible ? "blur(0px)" : "blur(6px)",
-            transform: isVisible ? "translateY(0)" : "translateY(6px)",
-            transition: isVisible
-              ? `opacity 0.9s ease ${initialDelayMs + index * staggerMs}ms,
-                 filter 0.9s ease ${initialDelayMs + index * staggerMs}ms,
-                 transform 0.7s ease ${initialDelayMs + index * staggerMs}ms`
-              : "none",
-          }}
-        >
-          {char}
-        </span>
-      ))}
+      {words.map((word, wordIndex) => {
+        const wordStartIndex = globalCharIndex;
+        globalCharIndex += word.length + 1; // +1 accounts for the space
+
+        return (
+          // whitespace-nowrap prevents the browser from breaking mid-word
+          <span
+            key={wordIndex}
+            className="inline-block whitespace-nowrap"
+            // Small right margin replaces the space character between words
+            style={{ marginRight: wordIndex < words.length - 1 ? "0.3em" : 0 }}
+          >
+            {word.split("").map((char, charIndex) => {
+              const delay = initialDelayMs + (wordStartIndex + charIndex) * staggerMs;
+              return (
+                <span
+                  key={charIndex}
+                  aria-hidden="true"
+                  style={{
+                    display: "inline-block",
+                    opacity: isVisible ? 1 : 0,
+                    filter: isVisible ? "blur(0px)" : "blur(6px)",
+                    transform: isVisible ? "translateY(0)" : "translateY(6px)",
+                    transition: isVisible
+                      ? `opacity 0.9s ease ${delay}ms,
+                         filter 0.9s ease ${delay}ms,
+                         transform 0.7s ease ${delay}ms`
+                      : "none",
+                  }}
+                >
+                  {char}
+                </span>
+              );
+            })}
+          </span>
+        );
+      })}
     </p>
   );
 };

@@ -6,7 +6,7 @@ import MagicFrame from "@/components/Home/MagicFrame/MagicFrame";
 
 const HomePage = async () => {
   // const projects: QueryType[] | null = await getOrderedData("projects", "5");
-  // const diaries: QueryType[] | null = await getOrderedData("dairies", "2");
+
 
   return (
     <div className="w-full flex-col justify-center items-center space-y-24 overflow-x-hidden">
