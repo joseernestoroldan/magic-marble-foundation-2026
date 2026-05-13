@@ -3,12 +3,12 @@ import OurMIssion from "@/components/Home/OurMission/OurMIssion";
 import MagicDiaries from "@/components/Home/MagicDiaries/MagicDiaries";
 import MagicFrame from "@/components/Home/MagicFrame/MagicFrame";
 import Banner from "@/components/Home/Banner/Banner";
-import OurProjects from "@/components/ourprojects/OurProjects";
+import OurProjects from "@/components/Home/OurProjects/OurProjects";
 
 
 
 const HomePage = async () => {
-  // const projects: QueryType[] | null = await getOrderedData("projects", "5");
+  
 
 
   return (
