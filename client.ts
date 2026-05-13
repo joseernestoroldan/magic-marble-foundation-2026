@@ -1,6 +1,6 @@
-import { createClient, groq } from "next-sanity";
-import { chimpType, diariesType } from "./clientTypes";
-import { chimpQuery, diariesQuery } from "./utils/groqQueries";
+import { createClient } from "next-sanity";
+import { chimpType, diariesType, projectsType } from "./clientTypes";
+import { chimpQuery, diariesQuery, projectsQuery } from "./utils/groqQueries";
 
 const projectId = process.env.API_ID;
 const dataset = "production"; // "production"
@@ -15,27 +15,33 @@ export const client = createClient({
   token,
 });
 
-const getData: <T>(query: string) => Promise<T[]> = async  (query: string) => {
+const getData: <T>(query: string) => Promise<T[]> = async (query: string) => {
   try {
     const data = await client.fetch(query);
     if (data.length === 0) return null;
     return data;
   } catch (error: unknown) {
-    return null
+    return null;
   }
 };
 
 export const getAllChimp = async () => {
-  const query = chimpQuery()
+  const query = chimpQuery();
   const data: chimpType[] | null = await getData(query);
   return data;
 };
 
-export const getAllDiaries = async() => {
-  const query = diariesQuery()
-  const data: diariesType[] | null = await getData(query)
-  return data
-}
+export const getAllDiaries = async () => {
+  const query = diariesQuery();
+  const data: diariesType[] | null = await getData(query);
+  return data;
+};
+
+export const getAllProjects = async () => {
+  const query = projectsQuery();
+  const data: projectsType[] | null = await getData(query);
+  return data;
+};
 
 // export const getAllByTop = async () => {
 //   const query = allByTopQuery()

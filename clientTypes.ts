@@ -21,6 +21,18 @@ export type diariesType = {
   crop: Crop | null;
 };
 
+export type projectsType = {
+  _id: string;
+  _createdAt: string;
+  contenido: Block[] | null;
+  description: string | null;
+  hotSpot: HotSpot | null;
+  mainImage: string | null;
+  publishedAt: string | null;
+  title: string;
+  crop: Crop | null;
+};
+
 type Block = {
   _key: string;
   _type: string;
