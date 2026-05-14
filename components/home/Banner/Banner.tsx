@@ -1,5 +1,5 @@
 import Container from "@/components/layouts/container/Container";
-import SmokeText from "../OurMission/SmokeText";
+import SmokeText from "../../SmokeText/SmokeText";
 
 const Banner = () => {
   return (

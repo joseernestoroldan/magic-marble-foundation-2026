@@ -5,7 +5,7 @@ import DiaryMosaicGallery from "./DiaryMosaicGallery";
 const MagicDiaries = async () => {
   const diaries = await getAllDiaries();
   return (
-    <div className="flex flex-col items-center gap-24">
+    <div className="flex flex-col items-center gap-24 w-full">
       <h2 className="text-cyan-600 font-bold text-4xl text-center">
         Magic Diaries
       </h2>

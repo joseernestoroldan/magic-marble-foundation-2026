@@ -1,5 +1,5 @@
 import Container from "@/components/layouts/container/Container";
-import SmokeText from "@/components/Home/OurMission/SmokeText";
+import SmokeText from "@/components/SmokeText/SmokeText";
 
 const OurMIssion = () => {
   return (

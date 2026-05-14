@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const OurPartners = () => {
   return (
-    <section className="flex flex-col items-center gap-24">
+    <section className="flex flex-col items-center gap-24 w-full">
       <h2 className="text-cyan-600 font-bold text-4xl text-center">
         Our Partners
       </h2>
