@@ -1,5 +1,5 @@
-import Container from "../layouts/container/Container";
-import SmokeText from "../SmokeText/SmokeText";
+import Container from "@/components/Layouts/Container/Container";
+import SmokeText from "@/components/SmokeText/SmokeText";
 import Image from "next/image";
 
 const AboutUs = () => {

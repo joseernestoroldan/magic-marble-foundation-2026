@@ -1,7 +1,3 @@
-type DateProps = {
-  dateString: string;
-};
-
 export const Date = (data: string) => {
   const year = data.slice(0, 4);
   const month = data.slice(6, 7);

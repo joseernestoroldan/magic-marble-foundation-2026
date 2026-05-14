@@ -1,5 +1,5 @@
 import { getAllProjects } from "@/client";
-import Container from "@/components/layouts/container/Container";
+import Container from "@/components/Layouts/Container/Container";
 import Image from "next/image";
 import Link from "next/link";
 

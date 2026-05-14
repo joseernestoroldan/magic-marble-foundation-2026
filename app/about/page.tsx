@@ -1,9 +1,12 @@
-import AboutUs from "@/components/about/AboutUs"
+import AboutUs from "@/components/About/AboutUs/AboutUs"
+import FocusAreas from "@/components/About/FocusAreas/FocusAreas"
+
 
 const AboutUsPage = () => {
   return (
     <div className='w-full flex flex-col items-center gap-24'>
       <AboutUs/>
+      <FocusAreas/>
     </div>
   )
 }

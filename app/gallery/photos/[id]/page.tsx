@@ -1,5 +1,5 @@
 import { getOne } from "@/client";
-import Container from "@/components/layouts/container/Container";
+import Container from "@/components/Layouts/Container/Container";
 import Description from "@/components/gallery/description/Description";
 import Image from "next/image";
 import { QueryType } from "@/types/types";

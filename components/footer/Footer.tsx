@@ -1,4 +1,4 @@
-import Container from "../layouts/container/Container";
+import Container from "../Layouts/Container/Container";
 import Logo from "../Logo/Logo";
 import MenuFooter from "./MenuFooter";
 import IconsFooter from "./IconsFooter";
@@ -12,7 +12,6 @@ const Footer = () => {
       {/* Cuerpo principal del footer */}
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 py-16">
-
           {/* Columna 1 — Logo + descripción legal */}
           <div className="flex flex-col items-center gap-5">
             {/* Logo sobre fondo oscuro */}

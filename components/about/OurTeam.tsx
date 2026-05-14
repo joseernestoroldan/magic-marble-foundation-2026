@@ -1,7 +1,7 @@
 import { TabsTeam } from "./Tabs";
 import SubHeading from "../Heading/subheading";
 import EnterSection from "../animations/enterSection/EnterSection";
-import LayoutY from "../layouts/layoutY/LayoutY";
+import LayoutY from "../Layouts/layoutY/LayoutY";
 
 const OurTeam = () => {
   return (

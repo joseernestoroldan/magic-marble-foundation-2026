@@ -3,8 +3,8 @@ import Button from "../button/Button";
 import { getAllData } from "@/client";
 import CardDairies from "../card/Card";
 import EnterSection from "../animations/enterSection/EnterSection";
-import LayoutY from "../layouts/layoutY/LayoutY";
-import Container from "../layouts/container/Container";
+import LayoutY from "../Layouts/layoutY/LayoutY";
+import Container from "../Layouts/Container/Container";
 import Link from "next/link";
 import { QueryType } from "@/types/types";
 

@@ -1,5 +1,5 @@
 import { getOne } from "@/client";
-import Container from "@/components/layouts/container/Container";
+import Container from "@/components/Layouts/Container/Container";
 import Heading from "@/components/headings/heading";
 import HeadingCenterAnimation from "@/components/headingsAnimations/HeadingCenterAnimation";
 import Author from "@/components/diaries/author/Author";

@@ -8,6 +8,9 @@ export const chimpQuery =
     chimpLink,
     description,
     _createdAt,
+    "mainImage": mainImage.asset->url,
+    "hotSpot": mainImage.hotspot,
+    "crop": mainImage.crop
 }`;
 
 export const diariesQuery =
@@ -19,10 +22,12 @@ export const diariesQuery =
     _createdAt,
     "mainImage": mainImage.asset->url,
     "authorImage": authorImage.asset->url,
-    "crop": crop,
-    "hotSpot": hotSpot,
+    "crop": mainImage.crop,
+    "hotSpotMain": mainImage.hotspot,
     "author": author,
     "contenido": contenido,
+    notificationSent,
+    notificationsSent
 }`;
 
 export const projectsQuery =
@@ -33,118 +38,145 @@ export const projectsQuery =
     description,
     _createdAt,
     "mainImage": mainImage.asset->url,
-    "crop": crop,
-    "hotSpot": hotSpot,
+    "crop": mainImage.crop,
+    "hotSpot": mainImage.hotspot,
     "contenido": contenido,
 }`;
 
-// export const allByTopQuery = () => {
-//   const query = groq`*[_type == 'portalPaddyField' && topPick == true] | order(_publishedAt desc){
-//   _id,
-//   publishedAt,
-//   title,
-//   description,
-//   "mainImage": mainImage.asset->url,
-//   "crop": mainImage.crop,
-//   "hotSpot": mainImage.hotspot,
-//   }`;
-//   return query;
-// };
+export const focusAreasQuery =
+  () => groq`*[_type == 'focusAreas'] | order(_createdAt desc){
+    _id,
+    title,
+    alt,
+    body,
+    _createdAt,
+    "mainImage": mainImage.asset->url,
+    "crop": mainImage.crop,
+    "hotSpot": mainImage.hotspot,
+    "contenido": contenido,
+}`;
 
-// export const allDataQuery = (myquery: string) => {
-//   let query = groq`*[_type == '${myquery}'] | order(_createdAt desc){
-//         _id,
-//         publishedAt,
-//         title,
-//         chimpLink,
-//         description,
-//         characteristics,
-//         youtubeLink,
-//         "mainImage": mainImage.asset->url,
-//         "secondImage": secondImage.asset->url,
-//         "thirdImage": thirdImage.asset->url,
-//         "fourthImage": fourthImage.asset->url,
-//         "authorImage": authorImage.asset->url,
-//         "crop": mainImage.crop,
-//         "hotSpot": mainImage.hotspot,
-//         author,
-//         body,
-//         contenido,
-//         alt,
-//         _createdAt,
-//         name,
-//         notificationSent,
-//         notificationsSent
-//   }`;
+export const boardQuery =
+  () => groq`*[_type == 'board'] | order(_createdAt desc){
+    _id,
+    name,
+    post,
+    email,
+    body,
+    category,
+    _createdAt,
+    "mainImage": mainImage.asset->url,
+    "crop": mainImage.crop,
+    "hotSpot": mainImage.hotspot
+}`;
 
-//   if (myquery === "chimp") {
-//     query = groq`*[_type == '${myquery}'] | order(_createdAt desc){
-//       _id,
-//       publishedAt,
-//       title,
-//       chimpLink,
-//       description,
-//       "mainImage": mainImage.asset->url,
-//       "crop": mainImage.crop,
-//       "hotSpot": mainImage.hotSpot,
-//       _createdAt,
-//     }`;
-//   }
+export const adoptionsQuery =
+  () => groq`*[_type == 'adoptions'] | order(_createdAt desc){
+    _id,
+    title,
+    description,
+    characteristics,
+    youtubeLink,
+    _createdAt,
+    "mainImage": mainImage.asset->url,
+    "crop": mainImage.crop,
+    "hotSpot": mainImage.hotspot,
+    "secondImage": secondImage.asset->url,
+    "cropSecond": secondImage.crop,
+    "hotSpotSecond": secondImage.hotspot,
+    "thirdImage": thirdImage.asset->url,
+    "cropThird": thirdImage.crop,
+    "hotSpotThird": thirdImage.hotspot,
+    "contenido": contenido,
+    "sponsors": sponsors,
+    "historyDonations": historyDonations
+}`;
 
-//   return query;
-// };
+export const galleryQuery =
+  () => groq`*[_type == 'gallery'] | order(_createdAt desc){
+    _id,
+    publishedAt,
+    title,
+    description,
+    _createdAt,
+    "mainImage": mainImage.asset->url,
+    "crop": mainImage.crop,
+    "hotSpot": mainImage.hotspot
+}`;
 
-// export const oneQuery = (myquery: string) => {
-//   const query = groq`*[_id == '${myquery}']{
-//     _id,
-//     publishedAt,
-//     title,
-//     description,
-//     "mainImage": mainImage.asset->url,
-//     "secondImage": secondImage.asset->url,
-//     "thirdImage": thirdImage.asset->url,
-//     "fourthImage": fourthImage.asset->url,
-//     youtubeLink,
-//     characteristics,
-//     "authorImage": authorImage.asset->url,
-//     "crop": mainImage.crop,
-//     "hotSpotMain": mainImage.hotspot,
-//     "hotSpotSecond": secondImage.hotspot,
-//     "hotSpotThird": thirdImage.hotspot,
-//     "hotSpotFourth": fourthImage.hotspot,
-//     author,
-//     contenido,
-//     _createdAt,
-// }`;
-//   return query;
-// };
+export const granteesQuery =
+  () => groq`*[_type == 'grantees'] | order(_createdAt desc){
+    _id,
+    name,
+    _createdAt,
+    "mainImage": mainImage.asset->url,
+    "crop": mainImage.crop,
+    "hotSpot": mainImage.hotspot
+}`;
 
-// export const orderedDataQuery = (myquery: string, number: string) => {
-//   const query = groq`*[_type == '${myquery}'] | order(publishedAt desc)[0..${number}]{
-//     _id,
-//     publishedAt,
-//     title,
-//     description,
-//     "mainImage": mainImage.asset->url,
-//     "authorImage": authorImage.asset->url,
-//     author,
-//     contenido,
-//     _createdAt,
-//     "hotSpotMain": mainImage.hotspot,
-// }`;
-//   return query;
-// };
+export const portalPaddyFieldQuery =
+  () => groq`*[_type == 'portalPaddyField'] | order(_createdAt desc){
+    _id,
+    title,
+    description,
+    youtubeLink,
+    _createdAt,
+    "mainImage": mainImage.asset->url,
+    "crop": mainImage.crop,
+    "hotSpot": mainImage.hotspot,
+    "secondImage": secondImage.asset->url,
+    "cropSecond": secondImage.crop,
+    "hotSpotSecond": secondImage.hotspot,
+    "thirdImage": thirdImage.asset->url,
+    "cropThird": thirdImage.crop,
+    "hotSpotThird": thirdImage.hotspot,
+    "fourthImage": fourthImage.asset->url,
+    "cropFourth": fourthImage.crop,
+    "hotSpotFourth": fourthImage.hotspot,
+    "contenido": contenido,
+    topPick
+}`;
 
-// export const allFiltterQuery = (myquery: string, parametro: string) => {
-//   const query = groq`*[_type == '${myquery}' && category == '${parametro}'] | order(_createdAt asc){
-//     _id,
-//     name,
-//     post,
-//     body,
-//     "mainImage": mainImage.asset->url,
-//     email,
-//     _createdAt,
-//     category,
-// }`;
-//   return query;
-// };
+export const recipesQuery =
+  () => groq`*[_type == 'recipes'] | order(_createdAt desc){
+    _id,
+    title,
+    description,
+    youtubeLink,
+    _createdAt,
+    "mainImage": mainImage.asset->url,
+    "crop": mainImage.crop,
+    "hotSpot": mainImage.hotspot,
+    "secondImage": secondImage.asset->url,
+    "cropSecond": secondImage.crop,
+    "hotSpotSecond": secondImage.hotspot,
+    "thirdImage": thirdImage.asset->url,
+    "cropThird": thirdImage.crop,
+    "hotSpotThird": thirdImage.hotspot,
+    "fourthImage": fourthImage.asset->url,
+    "cropFourth": fourthImage.crop,
+    "hotSpotFourth": fourthImage.hotspot,
+    "contenido": contenido
+}`;
+
+export const sponsoredQuery =
+  () => groq`*[_type == 'sponsored'] | order(_createdAt desc){
+    _id,
+    title,
+    description,
+    characteristics,
+    youtubeLink,
+    _createdAt,
+    "mainImage": mainImage.asset->url,
+    "crop": mainImage.crop,
+    "hotSpot": mainImage.hotspot,
+    "secondImage": secondImage.asset->url,
+    "cropSecond": secondImage.crop,
+    "hotSpotSecond": secondImage.hotspot,
+    "thirdImage": thirdImage.asset->url,
+    "cropThird": thirdImage.crop,
+    "hotSpotThird": thirdImage.hotspot,
+    "contenido": contenido,
+    "sponsors": sponsors,
+    "historyDonations": historyDonations
+}`;

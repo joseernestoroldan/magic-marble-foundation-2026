@@ -3,6 +3,9 @@ export type chimpType = {
   title: string | null;
   description: string | null;
   chimpLink: string;
+  mainImage: string | null;
+  hotSpot: HotSpot | null;
+  crop: Crop | null;
   _createdAt: string;
   publishedAt: string;
 };
@@ -19,6 +22,8 @@ export type diariesType = {
   contenido: Block[] | null;
   hotSpotMain: HotSpot | null;
   crop: Crop | null;
+  notificationSent: boolean | null;
+  notificationsSent: number | null;
 };
 
 export type projectsType = {
@@ -31,6 +36,151 @@ export type projectsType = {
   publishedAt: string | null;
   title: string;
   crop: Crop | null;
+};
+
+export type focusAreasType = {
+  _id: string;
+  _createdAt: string;
+  title: string;
+  alt: string | null;
+  body: string | null;
+  mainImage: string | null;
+  hotSpot: HotSpot | null;
+  crop: Crop | null;
+  contenido: Block[] | null;
+};
+
+export type boardType = {
+  _id: string;
+  _createdAt: string;
+  name: string;
+  post: string | null;
+  email: string | null;
+  body: string | null;
+  category: string | null;
+  mainImage: string | null;
+  hotSpot: HotSpot | null;
+  crop: Crop | null;
+};
+
+export type Sponsor = {
+  _key: string;
+  userId: string;
+  frecuency: string;
+  payment: number;
+  lastPaymentDate: string;
+};
+
+export type Donation = {
+  _key: string;
+  donatorId: string;
+  payment: number;
+  PaymentDate: string;
+};
+
+export type adoptionsType = {
+  _id: string;
+  _createdAt: string;
+  title: string;
+  description: string;
+  characteristics: string;
+  youtubeLink: string;
+  mainImage: string | null;
+  hotSpot: HotSpot | null;
+  crop: Crop | null;
+  secondImage: string | null;
+  hotSpotSecond: HotSpot | null;
+  cropSecond: Crop | null;
+  thirdImage: string | null;
+  hotSpotThird: HotSpot | null;
+  cropThird: Crop | null;
+  contenido: Block[] | null;
+  sponsors: Sponsor[] | null;
+  historyDonations: Donation[] | null;
+};
+
+export type galleryType = {
+  _id: string;
+  _createdAt: string;
+  title: string | null;
+  description: string | null;
+  mainImage: string | null;
+  hotSpot: HotSpot | null;
+  crop: Crop | null;
+  publishedAt: string | null;
+};
+
+export type granteesType = {
+  _id: string;
+  _createdAt: string;
+  name: string;
+  mainImage: string | null;
+  hotSpot: HotSpot | null;
+  crop: Crop | null;
+};
+
+export type portalPaddyFieldType = {
+  _id: string;
+  _createdAt: string;
+  title: string;
+  description: string | null;
+  youtubeLink: string | null;
+  mainImage: string | null;
+  hotSpot: HotSpot | null;
+  crop: Crop | null;
+  secondImage: string | null;
+  hotSpotSecond: HotSpot | null;
+  cropSecond: Crop | null;
+  thirdImage: string | null;
+  hotSpotThird: HotSpot | null;
+  cropThird: Crop | null;
+  fourthImage: string | null;
+  hotSpotFourth: HotSpot | null;
+  cropFourth: Crop | null;
+  contenido: Block[] | null;
+  topPick: boolean | null;
+};
+
+export type recipesType = {
+  _id: string;
+  _createdAt: string;
+  title: string;
+  description: string | null;
+  youtubeLink: string | null;
+  mainImage: string | null;
+  hotSpot: HotSpot | null;
+  crop: Crop | null;
+  secondImage: string | null;
+  hotSpotSecond: HotSpot | null;
+  cropSecond: Crop | null;
+  thirdImage: string | null;
+  hotSpotThird: HotSpot | null;
+  cropThird: Crop | null;
+  fourthImage: string | null;
+  hotSpotFourth: HotSpot | null;
+  cropFourth: Crop | null;
+  contenido: Block[] | null;
+};
+
+export type sponsoredType = {
+  _id: string;
+  _createdAt: string;
+  title: string;
+  description: string;
+  characteristics: string;
+  youtubeLink: string;
+  mainImage: string | null;
+  hotSpot: HotSpot | null;
+  crop: Crop | null;
+  secondImage: string | null;
+  hotSpotSecond: HotSpot | null;
+  cropSecond: Crop | null;
+  thirdImage: string | null;
+  hotSpotThird: HotSpot | null;
+  cropThird: Crop | null;
+  contenido: Block[] | null;
+  sponsors: Sponsor[] | null;
+  historyDonations: Donation[] | null;
 };
 
 type Block = {

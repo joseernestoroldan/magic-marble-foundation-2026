@@ -51,21 +51,19 @@ export const FadeInCarouselImages = [
   {
     id: 1,
     imageUrl: "/trainning.webp",
-    title:"Advanced Veterinary Skills Training",
-    message: "Help Homeless Animals Receive Better Care"
+    title: "Advanced Veterinary Skills Training",
+    message: "Help Homeless Animals Receive Better Care",
   },
   {
     id: 2,
     imageUrl: "/sterilization.webp",
-    title:"Support Our Sterilization Programs",
-    message:"Every spay and neuter prevents generations of suffering",
+    title: "Support Our Sterilization Programs",
+    message: "Every spay and neuter prevents generations of suffering",
   },
   {
     id: 3,
     imageUrl: "/sanctuary.webp",
-    title:"Support The Farm Sanctuary",
-    message:"Planet Costa Rica! Creating a safe haven for rescued animals",
+    title: "Support The Farm Sanctuary",
+    message: "Planet Costa Rica! Creating a safe haven for rescued animals",
   },
- 
-
 ];

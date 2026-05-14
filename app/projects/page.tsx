@@ -1,6 +1,6 @@
 import { getAllData } from "@/client";
 import EnterSection from "@/components/animations/enterSection/EnterSection";
-import Container from "@/components/layouts/container/Container";
+import Container from "@/components/Layouts/Container/Container";
 import Projects from "@/components/ourprojects/projects/Projects";
 import Heading from "@/components/headings/heading";
 import React from "react";

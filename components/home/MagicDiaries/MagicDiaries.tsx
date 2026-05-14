@@ -1,5 +1,5 @@
 import { getAllDiaries } from "@/client";
-import Container from "@/components/layouts/container/Container";
+import Container from "@/components/Layouts/Container/Container";
 import DiaryMosaicGallery from "./DiaryMosaicGallery";
 
 const MagicDiaries = async () => {
@@ -10,13 +10,12 @@ const MagicDiaries = async () => {
         Magic Diaries
       </h2>
       <Container>
-        {diaries && diaries.length > 0 ? (
+        {diaries && diaries.length > 0 ?
           <DiaryMosaicGallery diaries={diaries} />
-        ) : (
-          <p className="text-slate-400 text-center py-12">
+        : <p className="text-slate-400 text-center py-12">
             No diaries available yet.
           </p>
-        )}
+        }
       </Container>
     </div>
   );
