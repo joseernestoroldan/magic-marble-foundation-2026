@@ -3,7 +3,7 @@ import Heading from "@/components/headings/heading";
 import HeadingCenterAnimation from "@/components/headingsAnimations/HeadingCenterAnimation";
 import Paypal from "@/components/payments/paypal";
 import Venmo from "@/components/payments/venmo";
-import VideoFrame from "@/components/videoFrame/videoframe";
+import VideoFrame from "@/components/VideoFrame/VideoFrame";
 import { Clock, Home } from "lucide-react";
 import Link from "next/link";
 

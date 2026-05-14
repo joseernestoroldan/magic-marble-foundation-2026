@@ -1,12 +1,11 @@
-import React from "react";
-import SubHeading from "../Heading/subheading";
 import Image from "next/image";
-import LayoutY from "../layouts/layoutY/LayoutY";
 
 const OurPartners = () => {
   return (
-    <LayoutY>
-      <SubHeading title="Our Partners" />
+    <section className="flex flex-col items-center gap-24">
+      <h2 className="text-cyan-600 font-bold text-4xl text-center">
+        Our Partners
+      </h2>
       <div className="flex flex-col justify-around items-center md:flex-row w-full">
         <div className="relative w-[200px] h-[200px]">
           <Image
@@ -41,7 +40,7 @@ const OurPartners = () => {
           />
         </div>
       </div>
-    </LayoutY>
+    </section>
   );
 };
 

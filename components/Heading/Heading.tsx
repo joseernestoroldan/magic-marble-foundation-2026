@@ -29,15 +29,13 @@ const Heading = ({
     return () => clearTimeout(timeout);
   }, [initialDelay]);
 
-  // Split text into individual characters, preserving spaces
   const letters = text.split("");
 
   return (
     <h2
       className={`flex flex-wrap font-bold leading-tight ${size} ${className}`}
       style={{ color, textShadow: "0 2px 8px rgba(0, 0, 0, 0.6)" }}
-      aria-label={text}
-    >
+      aria-label={text}>
       {letters.map((letter, index) => {
         const isSpace = letter === " ";
 
@@ -50,8 +48,7 @@ const Heading = ({
               transform: isVisible ? "translateY(0)" : "translateY(100%)",
               opacity: isVisible ? 1 : 0,
             }}
-            aria-hidden="true"
-          >
+            aria-hidden="true">
             {isSpace ? "\u00A0" : letter}
           </span>
         );

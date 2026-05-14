@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const MenuFooter = () => {
   return (
-    <ul className="flex flex-col items-center md:items-start gap-2">
+    <ul className="flex flex-col items-center gap-2">
       {menuItems.map((item) => (
         <li key={item.title}>
           <Link

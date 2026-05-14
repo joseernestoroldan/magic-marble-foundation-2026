@@ -1,4 +1,4 @@
-import VideoFrame from "@/components/videoFrame/videoframe";
+import VideoFrame from "@/components/VideoFrame/VideoFrame";
 
 const MagicFrame = () => {
   return (

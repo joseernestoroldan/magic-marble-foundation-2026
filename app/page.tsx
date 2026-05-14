@@ -4,59 +4,43 @@ import MagicDiaries from "@/components/Home/MagicDiaries/MagicDiaries";
 import MagicFrame from "@/components/Home/MagicFrame/MagicFrame";
 import Banner from "@/components/Home/Banner/Banner";
 import OurProjects from "@/components/Home/OurProjects/OurProjects";
-
-
+import FadeInOutCarausel from "@/components/Home/FadeInOutCarousel/FadeInOutCarausel";
+import OurPartners from "@/components/ourpartners/OurPartners";
 
 const HomePage = async () => {
-  
-
-
   return (
     <div className="w-full flex-col justify-center items-center space-y-24 overflow-hidden">
-      <HeroSection/>
-      <OurMIssion/>
-      <MagicDiaries/>
-      <MagicFrame/>
-      <Banner/>
-      <OurProjects/>
-
-
+      <HeroSection />
+      <OurMIssion />
+      <MagicDiaries />
+      <MagicFrame />
+      <Banner />
+      <OurProjects />
+      <FadeInOutCarausel />
+      <OurPartners />
     </div>
   );
 };
 
 export default HomePage;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      {/* <ParallaxContainer bgImage="bg-map.png" opacity="0.1">
+{
+  /* <ParallaxContainer bgImage="bg-map.png" opacity="0.1">
         <BannerParallax
           title="Our Mission"
           message="To Mobilize Empathy for all species and the world we share"
           bg="bg-cyan-200"
           justify="text-center"
         />
-      </ParallaxContainer> */}
+      </ParallaxContainer> */
+}
 
-      {/* {diaries && <GridDIaries diaries={diaries} />} */}
+{
+  /* {diaries && <GridDIaries diaries={diaries} />} */
+}
 
-      {/* <MagicFrame bg="bg-white" />
+{
+  /* <MagicFrame bg="bg-white" />
       <ParallaxContainer bgImage="bg-map.png" opacity="0.1">
         <BannerParallax
           title=""
@@ -76,4 +60,5 @@ export default HomePage;
 
       <Donations />
 
-      <OurPartners /> */}
+      <OurPartners /> */
+}

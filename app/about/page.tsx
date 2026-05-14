@@ -6,7 +6,7 @@ import Container from "@/components/layouts/container/Container";
 import LayoutY from "@/components/layouts/layoutY/LayoutY";
 import BannerParallax from "@/components/parallax/bannerParallax/bannerParallax";
 import ParallaxContainer from "@/components/parallax/parallax";
-import VideoFrame from "@/components/videoFrame/videoframe";
+import VideoFrame from "@/components/VideoFrame/VideoFrame";
 
 const AboutPage = () => {
   return (
