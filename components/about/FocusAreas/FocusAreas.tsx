@@ -15,7 +15,7 @@ const FocusAreas = () => {
           {focusAreas.map((area) => (
             <div 
               key={area.id} 
-              className="group flex flex-col rounded-[5px] overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
+              className="group flex flex-col rounded-[5px] overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-500 hover:-translate-y-2"
             >
               <div className="relative h-64 w-full overflow-hidden">
                 <Image 
@@ -33,7 +33,7 @@ const FocusAreas = () => {
                 </div>
               </div>
               <div className="p-6 flex flex-col flex-grow bg-card">
-                <p className="text-muted-foreground leading-relaxed text-base text-gray-500">
+                <p className="leading-relaxed font-semibold text-base text-gray-500">
                   {area.description}
                 </p>
               </div>

@@ -57,7 +57,7 @@ export const focusAreasQuery =
 }`;
 
 export const boardQuery =
-  () => groq`*[_type == 'board'] | order(_createdAt desc){
+  () => groq`*[_type == 'board'] | order(_createdAt asc){
     _id,
     name,
     post,
