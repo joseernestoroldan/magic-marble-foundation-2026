@@ -1,12 +1,11 @@
-import { getAllData } from "@/client";
-import Gallery from "./Gallery";
-import { QueryType } from "@/types/types";
+import { getAllGallery } from "@/client"
 
-const GalleryPage = async () => {
-  const gallery: QueryType[]  = await getAllData("gallery");
- 
+const GalleryPage = () => {
+    const data = getAllGallery();
+    
+  return (
+    <div>GalleryPage</div>
+  )
+}
 
-  return <Gallery gallery={gallery} />;
-};
-
-export default GalleryPage;
+export default GalleryPage
