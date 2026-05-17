@@ -1,6 +1,6 @@
 import { createClient } from "next-sanity";
-import { boardType, chimpType, diariesType, focusAreasType, projectsType } from "./clientTypes";
-import { boardQuery, chimpQuery, diariesQuery, focusAreasQuery, projectsQuery } from "./utils/groqQueries";
+import { boardType, chimpType, diariesType, focusAreasType, projectType } from "./clientTypes";
+import { boardQuery, chimpQuery, diariesQuery, diaryByIdQuery, focusAreasQuery, projectByIdQuery, projectsQuery } from "./utils/groqQueries";
 
 const projectId = process.env.API_ID;
 const dataset = "production"; // "production"
@@ -40,7 +40,7 @@ export const getAllDiaries = async () => {
 
 export const getAllProjects = async () => {
   const query = projectsQuery();
-  const data: projectsType[] | null = await getData(query);
+  const data: projectType[] | null = await getData(query);
   return data;
 };
 
@@ -55,3 +55,15 @@ export const getBoard = async () => {
   const data: boardType[] | null = await getData(query);
   return data;
 } 
+
+export const getProjectById = async (id: string) => {
+  const query = projectByIdQuery(id);
+  const data: projectType[] | null = await getData(query);
+  return data;
+}
+
+export const getDiaryById = async (id: string) => {
+  const query = diaryByIdQuery(id);
+  const data: diariesType[] | null = await getData(query);
+  return data;
+}

@@ -1,20 +1,32 @@
-import { getAllData } from "@/client";
-import GridDIaries from "@/components/diaries/author/gridDiaries/GridDIaries";
-import Donations from "@/components/Home/donations/Donations";
-import LayoutY from "@/components/Layouts/layoutY/LayoutY";
-import { QueryType } from "@/types/types";
+import { getAllDiaries } from "@/client";
+import Container from "@/components/Layouts/Container/Container";
+import DiariesFullMosaic from "@/components/Diaries/DiariesFullMosaic";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Magic Diaries | Magic Marble Foundation",
+  description:
+    "Browse all the Magic Diaries from the Magic Marble Foundation — stories, experiences, and updates from our community.",
+};
 
 const DiariesPage = async () => {
-  const diaries: QueryType[] = await getAllData("dairies");
+  const diaries = await getAllDiaries();
 
   return (
-    <LayoutY>
-      <div className="w-full max-w-5xl mx-auto min-h-[75vh] flex flex-col items-center justify-start">
-        <GridDIaries diaries={diaries} />
-      </div>
-
-      <Donations />
-    </LayoutY>
+    <div className="flex flex-col items-center gap-24 w-full pt-24">
+      <h2 className="text-cyan-600 font-bold text-4xl text-center">
+        Magic Diaries
+      </h2>
+      <Container>
+        {diaries && diaries.length > 0 ? (
+          <DiariesFullMosaic diaries={diaries} />
+        ) : (
+          <p className="text-slate-400 text-center py-12">
+            No diaries available yet.
+          </p>
+        )}
+      </Container>
+    </div>
   );
 };
 

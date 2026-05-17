@@ -1,35 +1,24 @@
-import { getAllData } from "@/client";
-import EnterSection from "@/components/animations/enterSection/EnterSection";
-import Container from "@/components/Layouts/Container/Container";
-import Projects from "@/components/ourprojects/projects/Projects";
-import Heading from "@/components/headings/heading";
-import React from "react";
-import HeadingCenterAnimation from "@/components/headingsAnimations/HeadingCenterAnimation";
-import Donations from "@/components/Home/donations/Donations";
+import { Suspense } from "react";
+import { Metadata } from "next";
+import Projects from "@/components/Projects/Projects";
 
-const ProjectsPage = async () => {
-  const projects = await getAllData("projects");
+export const metadata: Metadata = {
+  title: "Our Projects | Magic Marble Foundation",
+  description:
+    "Explore the projects and initiatives led by the Magic Marble Foundation to advance the lives of women, girls, and communities worldwide.",
+};
 
+const ProjectsPage = () => {
   return (
-    <HeadingCenterAnimation>
-      <EnterSection>
-        <div className="pt-20">
-          <Heading
-            title="Our Projects"
-            color="text-cyan-500"
-            shadow=""
-            textSize="text-5xl"
-            center="flex justify-center "
-          />
-        </div>
-
-        <Container>
-          <Projects projects={projects} bg="bg-white" color="text-gray-500" />
-        </Container>
-
-        <Donations />
-      </EnterSection>
-    </HeadingCenterAnimation>
+    <div className="w-full flex items-center gap-24">
+      <Suspense
+        fallback={
+          <div className="w-full h-[600px] md:h-[700px] lg:h-[800px] bg-black animate-pulse" />
+        }
+      >
+        <Projects />
+      </Suspense>
+    </div>
   );
 };
 

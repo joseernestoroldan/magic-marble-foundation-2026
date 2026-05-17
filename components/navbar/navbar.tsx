@@ -7,7 +7,7 @@ import ToggleSidebar from "../Sidebar/ToggleSidebar";
 
 const Navbar = () => {
   return (
-    <div className="w-full sticky top-0 left-0 right-0 z-20 bg-white">
+    <div className="w-full sticky top-0 left-0 right-0 z-30 bg-white">
       <Infobar />
       <Container>
         <div className="w-full flex justify-between items-center">

@@ -26,7 +26,7 @@ export type diariesType = {
   notificationsSent: number | null;
 };
 
-export type projectsType = {
+export type projectType = {
   _id: string;
   _createdAt: string;
   contenido: Block[] | null;
@@ -199,7 +199,7 @@ type MarkDef = {
   href: string;
 };
 
-type Crop = {
+export type Crop = {
   top: number;
   left: number;
   bottom: number;

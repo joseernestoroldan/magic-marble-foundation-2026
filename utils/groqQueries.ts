@@ -180,3 +180,32 @@ export const sponsoredQuery =
     "sponsors": sponsors,
     "historyDonations": historyDonations
 }`;
+
+
+export const projectByIdQuery = (id: string) => groq`*[_type == 'projects' && _id == "${id}"] | order(_createdAt desc){
+  _id,
+  title,
+  description,
+  _createdAt,
+  "mainImage": mainImage.asset->url,
+  "crop": mainImage.crop,
+  "hotSpot": mainImage.hotspot,
+  "contenido": contenido,
+}`;
+
+export const diaryByIdQuery = (id: string) => groq`*[_type == 'dairies' && _id == "${id}"] | order(_createdAt desc){
+  _id,
+  title,
+  description,
+  _createdAt,
+  "mainImage": mainImage.asset->url,
+  "crop": mainImage.crop,
+  "hotSpot": mainImage.hotspot,
+  "contenido": contenido,
+  "author": author,
+  "authorImage": authorImage.asset->url,
+  "authorImageCrop": authorImage.crop,
+  "authorImageHotSpot": authorImage.hotspot,
+  "notificationSent": notificationSent,
+  "notificationsSent": notificationsSent
+}`;

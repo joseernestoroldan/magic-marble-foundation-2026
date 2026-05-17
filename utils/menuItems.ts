@@ -1,6 +1,6 @@
 export const menuItems = [
   { title: "Home", link: "/" },
-  { title: "Projects", link: "/projectscarousel" },
+  { title: "Projects", link: "/projects" },
   { title: "About Us", link: "/about" },
   { title: "Financials", link: "/financials" },
   { title: "Newsletter", link: "/newsletter" },
@@ -18,7 +18,7 @@ export const menuAbout = {
   title: "About Us",
    menu:[
     { title: "About Us", href: "/about" },
-    { title: "Projects", href: "/projectscarousel" },
+    { title: "Projects", href: "/projects" },
     { title: "Magic Diaries", href: "/diaries" },
     { title: "Financials", href: "/financials" },
     { title: "Newsletter", href: "/newsletter" },
