@@ -1,12 +1,10 @@
-export const dynamic = "force-dynamic";
-import ChartsComponent from "@/components/chartsComponent/ChartsComponent";
-
-import Documents from "@/components/financialsComponents/documents/Documents";
+import Charts from "@/components/Financials/Charts";
+import Documents from "@/components/Financials/Documents";
 
 const FinancialsPage = async () => {
   return (
-    <div className="w-full flex flex-col items-center">
-      <ChartsComponent/>
+    <div className="w-full flex flex-col items-center gap-24">
+      <Charts />
       <Documents />
     </div>
   );
