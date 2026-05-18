@@ -1,6 +1,5 @@
-import React from "react";
-import Separator from "../separator/Separator";
 import Link from "next/link";
+import Separator from "../separator/Separator";
 import LoginForm from "./LoginForm";
 import LoginGoogle from "./LoginGoogle";
 

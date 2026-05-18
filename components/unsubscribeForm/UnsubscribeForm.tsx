@@ -1,13 +1,13 @@
 "use client";
 
-import Image from "next/image";
-import { FormSuccess } from "../auth/formSuccess/FormSuccess";
-import { FormError } from "../auth/formError/FormError";
-import { useCallback, useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
 import { subscribeAgain, unsubscribe } from "@/actions/unsubscribe";
-import { BeatLoader } from "react-spinners";
+import Image from "next/image";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { useCallback, useEffect, useState } from "react";
+import { BeatLoader } from "react-spinners";
+import { FormError } from "../auth/formError/FormError";
+import { FormSuccess } from "../auth/formSuccess/FormSuccess";
 
 const UnsubscribeForm = () => {
     const [error, setError] = useState<string | undefined>();

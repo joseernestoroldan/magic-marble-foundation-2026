@@ -1,9 +1,8 @@
-import { LiaFacebook as FbIcon } from "react-icons/lia";
-import { LiaInstagram as IgIcon } from "react-icons/lia";
-import { TiSocialYoutubeCircular as YouTubeIcon } from "react-icons/ti";
-import { AiFillTikTok as TikTokIcon } from "react-icons/ai";
 import Link from "next/link";
+import { AiFillTikTok as TikTokIcon } from "react-icons/ai";
+import { LiaFacebook as FbIcon, LiaInstagram as IgIcon } from "react-icons/lia";
 import { IconType } from "react-icons/lib";
+import { TiSocialYoutubeCircular as YouTubeIcon } from "react-icons/ti";
 
 const socialLinks = [
   {

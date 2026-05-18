@@ -1,8 +1,8 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
 import { Loader2 } from "lucide-react"
+import Link from "next/link"
+import { useEffect, useState } from "react"
 
 export default function UnderConstruction() {
   const [progress, setProgress] = useState(0)

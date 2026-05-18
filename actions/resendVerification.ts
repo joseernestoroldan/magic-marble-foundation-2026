@@ -1,7 +1,7 @@
 "use server";
-import { db } from "@/db";
 import { sendVerificationEmail } from "@/app/lib/mail";
 import { GenerateVerificationToken } from "@/app/lib/tokens";
+import { db } from "@/db";
 export const resendVerification = async (token: string | null) => {
   if (token) {
     const userByVerificationToken = await db.verificationToken.findUnique({

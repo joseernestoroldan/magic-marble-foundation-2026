@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import { FadeInCarouselImages } from "@/utils/carrouselImages";
 import DonationButton from "@/components/DonationButton/DonationButton";
+import { FadeInCarouselImages } from "@/utils/carrouselImages";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const SLIDE_DURATION = 8000; // ms each slide is visible
 const FADE_DURATION = 300;  // ms for the fade transition

@@ -3,10 +3,7 @@ import * as z from "zod";
 
 import { newPasswordSchema } from "@/schemas";
 
-import { useForm } from "react-hook-form";
-import { useState, useTransition } from "react";
-import { redirect, useSearchParams } from "next/navigation";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { newPassword } from "@/actions/new-password";
 import {
   Form,
   FormControl,
@@ -16,11 +13,14 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { zodResolver } from "@hookform/resolvers/zod";
+import Link from "next/link";
+import { redirect, useSearchParams } from "next/navigation";
+import { useState, useTransition } from "react";
+import { useForm } from "react-hook-form";
+import { ImSpinner9 } from "react-icons/im";
 import { FormError } from "../formError/FormError";
 import { FormSuccess } from "../formSuccess/FormSuccess";
-import { ImSpinner9 } from "react-icons/im";
-import Link from "next/link";
-import { newPassword } from "@/actions/new-password";
 
 
 const NewPasswordForm = () => {

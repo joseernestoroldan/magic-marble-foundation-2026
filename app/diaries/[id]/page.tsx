@@ -1,10 +1,10 @@
 import { getAllDiaries, getDiaryById } from "@/client";
+import Container from "@/components/Layouts/Container/Container";
+import { PortableText } from "@portabletext/react";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { PortableText } from "@portabletext/react";
 import { notFound } from "next/navigation";
-import Container from "@/components/Layouts/Container/Container";
-import { Metadata } from "next";
 
 // Pre-generate all diary detail pages at build time
 export async function generateStaticParams() {

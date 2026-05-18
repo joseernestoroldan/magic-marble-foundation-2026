@@ -1,8 +1,7 @@
 "use client";
 import { sigInGoogle } from "@/actions/signInGoogle";
-import React, { useState } from "react";
-import { FcGoogle } from "react-icons/fc";
 import { useSearchParams } from "next/navigation";
+import { FcGoogle } from "react-icons/fc";
 
 
 const LoginGoogle = () => {

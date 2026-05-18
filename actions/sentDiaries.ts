@@ -1,7 +1,7 @@
 "use server";
+import { sendSubscriptionEmail } from "@/app/lib/mail";
 import { UpdateSuscriptionStatus } from "@/client";
 import { db } from "@/db";
-import { sendSubscriptionEmail } from "@/app/lib/mail";
 import { revalidatePath } from "next/cache";
 
 export const notifyDiary = async (dairyId: string, title: string, image: string, description:string, numberNotifications: number) => {

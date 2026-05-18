@@ -1,8 +1,8 @@
+import DonationButton from "@/components/DonationButton/DonationButton";
 import Infobar from "@/components/InfoBar/Infobar";
 import Container from "@/components/Layouts/Container/Container";
 import Logo from "@/components/Logo/Logo";
 import MenuNavbar from "@/components/Navbar/MenuNavbar";
-import DonationButton from "@/components/DonationButton/DonationButton";
 import ToggleSidebar from "../Sidebar/ToggleSidebar";
 
 const Navbar = () => {

@@ -1,5 +1,5 @@
-import { AlertCircle } from "lucide-react";
 import { resendVerification } from "@/actions/resendVerification";
+import { AlertCircle } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { FormError } from "../formError/FormError";

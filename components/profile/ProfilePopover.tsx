@@ -1,12 +1,12 @@
 "use client";
 
-import { useState, useCallback } from "react";
-import { useRouter, usePathname } from "next/navigation";
-import { IoMdContact as ContactIcon } from "react-icons/io";
-import Link from "next/link";
 import { logout } from "@/actions/logout";
-import { profilePopoverProps } from "@/types/types";
 import { useClickOutside } from "@/hooks/useClickOutside";
+import { profilePopoverProps } from "@/types/types";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { useCallback, useState } from "react";
+import { IoMdContact as ContactIcon } from "react-icons/io";
 
 const ProfilePopover = ({ name }: profilePopoverProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);

@@ -1,11 +1,10 @@
 "use client";
-import React, { use, useState } from "react";
-import Search from "../search/Search";
-import { useSearchParams } from "next/navigation";
-import { useEffect, useCallback } from "react";
-import PaginationUtil from "../paginationUtil/PaginationUtil";
-import { BeatLoader } from "react-spinners";
 import { countDonators, searchDonators } from "@/actions/searchQueryDonators";
+import { useSearchParams } from "next/navigation";
+import { useCallback, useEffect, useState } from "react";
+import { BeatLoader } from "react-spinners";
+import PaginationUtil from "../paginationUtil/PaginationUtil";
+import Search from "../search/Search";
 
 const ShowUsersList = () => {
   const searchParams = useSearchParams();

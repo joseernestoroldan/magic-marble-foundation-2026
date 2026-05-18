@@ -3,9 +3,7 @@ import * as z from "zod";
 
 import { loginSchema } from "@/schemas";
 
-import { useForm } from "react-hook-form";
-import { useState, useTransition } from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { login } from "@/actions/login";
 import {
   Form,
   FormControl,
@@ -15,12 +13,14 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { FormError } from "../formError/FormError";
-import { login } from "@/actions/login";
-import { ImSpinner9 } from "react-icons/im";
-import { FormConfirmation } from "../formConfirmation/FormConfirmation";
+import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useState, useTransition } from "react";
+import { useForm } from "react-hook-form";
+import { ImSpinner9 } from "react-icons/im";
+import { FormConfirmation } from "../formConfirmation/FormConfirmation";
+import { FormError } from "../formError/FormError";
 
 const LoginForm = () => {
   const [error, setError] = useState<string | undefined>("");

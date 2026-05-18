@@ -1,7 +1,7 @@
 import Container from "../Layouts/Container/Container";
 import Logo from "../Logo/Logo";
-import MenuFooter from "./MenuFooter";
 import IconsFooter from "./IconsFooter";
+import MenuFooter from "./MenuFooter";
 
 const Footer = () => {
   return (

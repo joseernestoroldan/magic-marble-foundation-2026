@@ -1,7 +1,7 @@
 export const dynamic = "force-dynamic";
 import { sponsorCompleted } from "@/actions/sponsor";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { getPlan } from "@/app/lib/apiCalls";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { PlanType } from "@/types/types";
 import Image from "next/image";
 import Link from "next/link";

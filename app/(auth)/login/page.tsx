@@ -2,7 +2,6 @@ import LoginCard from "@/components/auth/loginForm/LoginCard";
 import Button from "@/components/button/Button";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 const LoginPage = () => {
   return (

@@ -1,10 +1,9 @@
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
+  DialogTrigger
 } from "@/components/ui/dialog";
 import { FaUser } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";

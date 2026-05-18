@@ -1,7 +1,7 @@
 "use server";
-import * as z from "zod";
-import { updateSchema } from "@/schemas";
 import { db } from "@/db";
+import { updateSchema } from "@/schemas";
+import * as z from "zod";
 
 export const update = async (
   values: z.infer<typeof updateSchema>,

@@ -3,9 +3,9 @@ import * as z from "zod";
 
 import { registerSchema } from "@/schemas";
 import { codes, countries } from "@/utils/countries";
-import { useForm } from "react-hook-form";
-import { useState, useTransition } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useState, useTransition } from "react";
+import { useForm } from "react-hook-form";
 
 import {
   Form,
@@ -33,16 +33,16 @@ import {
 
 import { Checkbox } from "@/components/ui/checkbox";
 
+import { register } from "@/actions/register";
 import { Input } from "@/components/ui/input";
 import { FormError } from "../formError/FormError";
 import { FormSuccess } from "../formSuccess/FormSuccess";
-import { register } from "@/actions/register";
 
-import { ImSpinner9 } from "react-icons/im";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/app/lib/utils";
+import { Button } from "@/components/ui/button";
 import { CheckIcon } from "lucide-react";
 import { FaSearch } from "react-icons/fa";
+import { ImSpinner9 } from "react-icons/im";
 
 const RegisterForm = () => {
   const [open, setOpen] = useState<boolean>(false);

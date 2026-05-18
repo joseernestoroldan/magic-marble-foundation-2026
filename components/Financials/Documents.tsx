@@ -1,6 +1,6 @@
 import { fetchFiles } from "@/app/lib/apiCalls";
 import { GoogleDriveFile, GroupedFiles } from "@/types/types";
-import { FileText, ExternalLink } from "lucide-react";
+import { ExternalLink, FileText } from "lucide-react";
 import Link from "next/link";
 
 /* -------------------------------------------------------------------------- */

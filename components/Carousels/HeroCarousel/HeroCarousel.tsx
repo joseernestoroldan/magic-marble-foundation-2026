@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import CarouselDots from "@/components/Carousels/CarouselDots/CarouselDots";
 import { HeroCarouselImages } from "@/utils/carrouselImages";
 import Image from "next/image";
-import CarouselDots from "@/components/Carousels/CarouselDots/CarouselDots";
 import Link from "next/link";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

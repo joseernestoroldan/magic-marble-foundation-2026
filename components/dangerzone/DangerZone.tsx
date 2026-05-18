@@ -3,9 +3,9 @@ import { DeleteAccount } from "@/actions/delete";
 import { logout } from "@/actions/logout";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
-  DialogClose,
   DialogHeader,
   DialogTitle,
   DialogTrigger,

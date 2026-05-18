@@ -2,7 +2,6 @@ import RegisterCard from "@/components/auth/registerForm/RegisterCard";
 import Button from "@/components/button/Button";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 const RegisterPage = async () => {
   return (

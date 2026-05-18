@@ -1,8 +1,8 @@
 
-import { getVerificationTokenByEmail } from "@/data/verificationToken";
 import { getPasswordResetTokenByEmail } from "@/data/password-reset-token";
-import { v4 as uuid } from "uuid";
+import { getVerificationTokenByEmail } from "@/data/verificationToken";
 import { db } from "@/db";
+import { v4 as uuid } from "uuid";
 
 export const GeneratePasswordResetToken = async (email: string) => {
   const token = uuid();

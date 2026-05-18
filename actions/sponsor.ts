@@ -1,7 +1,6 @@
 "use server";
 
 import { db } from "@/db";
-import { sendAdminSponsorEmail, sendSponsorEmail } from "@/app/lib/mail";
 
 const findSubscribed = async (id: string) => {
   const idSubcription = await db.sponsor.findFirst({ where: { idSub: id } });

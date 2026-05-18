@@ -1,5 +1,4 @@
 import ResetForm from '@/components/auth/resetForm/resetForm'
-import React from 'react'
 
 
 

@@ -1,7 +1,7 @@
 "use client";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import UpdateForm from "../auth/updateForm/UpdateForm";
 import Link from "next/link";
+import UpdateForm from "../auth/updateForm/UpdateForm";
 import DangerZone from "../dangerzone/DangerZone";
 
 const SettingsTabs = (data: any) => {

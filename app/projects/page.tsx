@@ -1,6 +1,6 @@
-import { Suspense } from "react";
-import { Metadata } from "next";
 import Projects from "@/components/Projects/Projects";
+import { Metadata } from "next";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Our Projects | Magic Marble Foundation",

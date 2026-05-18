@@ -1,8 +1,7 @@
 "use client";
-import Image from "next/image";
-import React from "react";
-import { MdMarkEmailRead } from "react-icons/md";
 import { notifyDiary } from "@/actions/sentDiaries";
+import Image from "next/image";
+import { MdMarkEmailRead } from "react-icons/md";
 
 const NotifyDiaries = ({ diaries }: any) => {
   console.log(diaries);

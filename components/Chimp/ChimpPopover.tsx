@@ -1,10 +1,10 @@
 "use client";
-import { FaMailchimp as ChimpIcon } from "react-icons/fa";
-import { useState, useCallback, useMemo } from "react";
-import Link from "next/link";
+import { chimpType } from "@/clientTypes";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import { formatDate } from "@/utils/formatDate";
-import { chimpType } from "@/clientTypes";
+import Link from "next/link";
+import { useCallback, useMemo, useState } from "react";
+import { FaMailchimp as ChimpIcon } from "react-icons/fa";
 
 const ChimpPopover = ({ chimpData }: { chimpData: chimpType[] }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);

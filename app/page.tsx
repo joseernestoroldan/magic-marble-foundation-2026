@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import dynamic from "next/dynamic";
+import { Suspense } from "react";
 
 import HeroSection from "@/components/Home/HeroSection/HeroSection";
-import OurMIssion from "@/components/Home/OurMission/OurMIssion";
 import MagicDiaries from "@/components/Home/MagicDiaries/MagicDiaries";
 import MagicFrame from "@/components/Home/MagicFrame/MagicFrame";
+import OurMIssion from "@/components/Home/OurMission/OurMIssion";
 import OurProjects from "@/components/Home/OurProjects/OurProjects";
 
 const Banner = dynamic(() => import("@/components/Home/Banner/Banner"));

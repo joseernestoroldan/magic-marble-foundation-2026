@@ -3,9 +3,7 @@ import * as z from "zod";
 
 import { resetSchema } from "@/schemas";
 
-import { useForm } from "react-hook-form";
-import { useState, useTransition } from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { reset } from "@/actions/reset";
 import {
   Form,
   FormControl,
@@ -15,10 +13,12 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useState, useTransition } from "react";
+import { useForm } from "react-hook-form";
+import { ImSpinner9 } from "react-icons/im";
 import { FormError } from "../formError/FormError";
 import { FormSuccess } from "../formSuccess/FormSuccess";
-import { reset } from "@/actions/reset";
-import { ImSpinner9 } from "react-icons/im";
 
 
 const ResetForm = () => {

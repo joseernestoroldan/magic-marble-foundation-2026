@@ -1,5 +1,5 @@
+import { getNameSession, getSessionId } from "@/app/lib/sessions";
 import ProfilePopover from "./ProfilePopover";
-import { getSessionId, getNameSession } from "@/app/lib/sessions";
 
 const Profile = async () => {
   let name: string | null = null;

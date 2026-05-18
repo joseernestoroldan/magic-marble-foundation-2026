@@ -1,4 +1,4 @@
-import { getAllPaddyField, getAllRecipes } from "@/client"
+import { getAllPaddyField, getAllRecipes } from "@/client";
 
 const PortalPaddyFieldPage = async () => {
   const paddyfields = await getAllPaddyField();

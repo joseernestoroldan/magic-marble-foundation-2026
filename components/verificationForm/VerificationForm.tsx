@@ -1,14 +1,14 @@
 "use client";
 
+import { NewVerification } from "@/actions/new-verification";
 import Image from "next/image";
-import { BeatLoader } from "react-spinners";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
-import { NewVerification } from "@/actions/new-verification";
+import { BeatLoader } from "react-spinners";
 import { FormError } from "../auth/formError/FormError";
-import { FormSuccess } from "../auth/formSuccess/FormSuccess";
 import { FormExpired } from "../auth/formExpired/FormExpired";
-import Link from "next/link";
+import { FormSuccess } from "../auth/formSuccess/FormSuccess";
 
 const VerificationForm = () => {
   const [error, setError] = useState<string | undefined>();

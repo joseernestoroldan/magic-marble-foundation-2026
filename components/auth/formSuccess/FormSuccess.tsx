@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { FaCheckCircle } from "react-icons/fa";
 
 type SuccessProps = {

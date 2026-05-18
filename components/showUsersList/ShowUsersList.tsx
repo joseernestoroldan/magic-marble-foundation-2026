@@ -1,13 +1,12 @@
 "use client";
-import React, { use, useState } from "react";
-import Search from "../search/Search";
-import { FaCheck } from "react-icons/fa";
-import { useSearchParams } from "next/navigation";
-import { useEffect, useCallback } from "react";
 import { countUsers, searchUser } from "@/actions/searchQuery";
-import PaginationUtil from "../paginationUtil/PaginationUtil";
-import FormUserAdmin from "../formUserAdmin/FormUserAdmin";
+import { useSearchParams } from "next/navigation";
+import { useCallback, useEffect, useState } from "react";
+import { FaCheck } from "react-icons/fa";
 import { BeatLoader } from "react-spinners";
+import FormUserAdmin from "../formUserAdmin/FormUserAdmin";
+import PaginationUtil from "../paginationUtil/PaginationUtil";
+import Search from "../search/Search";
 import UserDetails from "../userDetails/UserDetails";
 
 const ShowUsersList = () => {

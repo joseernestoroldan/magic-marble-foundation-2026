@@ -1,4 +1,4 @@
-import { getAllProjects } from "@/client"
+import { getAllProjects } from "@/client";
 import { projectType } from "@/clientTypes";
 import ProjectsCarousel from "./ProjectsCarousel";
 

@@ -1,9 +1,9 @@
 import { getAllProjects, getProjectById } from "@/client";
-import Image from "next/image";
-import { PortableText } from "@portabletext/react";
-import { notFound } from "next/navigation";
 import Container from "@/components/Layouts/Container/Container";
+import { PortableText } from "@portabletext/react";
 import { Metadata } from "next";
+import Image from "next/image";
+import { notFound } from "next/navigation";
 
 // Pre-generate all project detail pages at build time
 export async function generateStaticParams() {

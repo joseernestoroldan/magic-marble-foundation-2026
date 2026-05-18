@@ -1,11 +1,11 @@
-import NextAuth, { type DefaultSession } from "next-auth";
 import { PrismaAdapter } from "@auth/prisma-adapter";
-import { db } from "./db";
-import authConfig from "./auth.config";
-import { getUserById } from "./data/user";
 import { UserRole } from "@prisma/client";
+import NextAuth, { type DefaultSession } from "next-auth";
 import "next-auth/jwt";
 import { cache } from "react";
+import authConfig from "./auth.config";
+import { getUserById } from "./data/user";
+import { db } from "./db";
 
 declare module "next-auth/jwt" {
   interface JWT {

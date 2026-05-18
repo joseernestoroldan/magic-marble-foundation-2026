@@ -1,8 +1,8 @@
 "use client";
-import { navDropdownProps } from "@/types/types";
-import { useCallback, useState, PointerEvent } from "react";
-import NavLink from '@/components/Navbar/NavLink'
+import NavLink from '@/components/Navbar/NavLink';
 import { useClickOutside } from "@/hooks/useClickOutside";
+import { navDropdownProps } from "@/types/types";
+import { PointerEvent, useCallback, useState } from "react";
 
 const NavDropdown = ({ title, menu }: navDropdownProps) => {
   const [open, setOpen] = useState(false);

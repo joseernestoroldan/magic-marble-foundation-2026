@@ -1,8 +1,8 @@
-import Google from "next-auth/providers/google";
-import Facebook from "next-auth/providers/facebook";
-import Credentials from "next-auth/providers/credentials";
-import { loginSchema } from "./schemas";
 import bcrypt from "bcryptjs";
+import Credentials from "next-auth/providers/credentials";
+import Facebook from "next-auth/providers/facebook";
+import Google from "next-auth/providers/google";
+import { loginSchema } from "./schemas";
 
 import type { NextAuthConfig } from "next-auth";
 import { getUserByEmail } from "./data/user";

@@ -1,6 +1,6 @@
 import { getAllDiaries } from "@/client";
-import Container from "@/components/Layouts/Container/Container";
 import DiariesFullMosaic from "@/components/Diaries/DiariesFullMosaic";
+import Container from "@/components/Layouts/Container/Container";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { projectType } from "@/clientTypes";
 import Image from "next/image";
 import Link from "next/link";
-import { projectType } from "@/clientTypes";
-import DonationButton from "../DonationButton/DonationButton";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import DonationButton from "../DonationButton/DonationButton";
 
 interface ProjectsCarouselProps {
   projects: projectType[];

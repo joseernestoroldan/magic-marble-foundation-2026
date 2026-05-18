@@ -1,8 +1,8 @@
 "use server"
-import * as z from "zod";
-import { adoptionSchema } from "@/schemas";
-import { db } from "@/db";
 import { sendAdminAdoptingEmail, sendUserAdoptingEmail } from "@/app/lib/mail";
+import { db } from "@/db";
+import { adoptionSchema } from "@/schemas";
+import * as z from "zod";
 
 
 export const adopt = async (values: z.infer<typeof adoptionSchema>, animalId:string, animalName:string, animalImage: string) => {

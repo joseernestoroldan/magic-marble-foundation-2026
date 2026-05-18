@@ -1,10 +1,10 @@
 "use client";
 
+import Container from "@/components/Layouts/Container/Container";
 import Paypal from "@/components/payments/paypal";
 import Venmo from "@/components/payments/venmo";
-import VideoFrame from "@/components/VideoFrame/VideoFrame";
 import SmokeText from "@/components/SmokeText/SmokeText";
-import Container from "@/components/Layouts/Container/Container";
+import VideoFrame from "@/components/VideoFrame/VideoFrame";
 
 const DonationsPage = () => {
   return (

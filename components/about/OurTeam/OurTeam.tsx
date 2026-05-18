@@ -1,6 +1,6 @@
+import { getBoard } from "@/client";
 import Container from "@/components/Layouts/Container/Container";
 import Tabs from "./Tabs";
-import { getBoard } from "@/client";
 
 const OurTeam = async () => {
   const board = await getBoard();

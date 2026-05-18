@@ -1,8 +1,7 @@
-import React from "react";
-import Separator from "../separator/Separator";
 import Link from "next/link";
-import RegisterForm from "./RegisterForm";
 import LoginGoogle from "../loginForm/LoginGoogle";
+import Separator from "../separator/Separator";
+import RegisterForm from "./RegisterForm";
 
 const RegisterCard = () => {
   return (

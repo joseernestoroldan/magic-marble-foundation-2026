@@ -1,6 +1,6 @@
 import Container from "@/components/Layouts/Container/Container";
-import { focusAreas } from "./focusAreasData";
 import Image from "next/image";
+import { focusAreas } from "./focusAreasData";
 
 const FocusAreas = () => {
   return (

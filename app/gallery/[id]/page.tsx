@@ -1,8 +1,8 @@
 import { getAllGallery, getGalleryById } from "@/client";
 import GalleryDetail from "@/components/Gallery/GalleryDetail";
 import Container from "@/components/Layouts/Container/Container";
-import Link from "next/link";
 import { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {

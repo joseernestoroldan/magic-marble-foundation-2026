@@ -1,16 +1,15 @@
-import React from "react";
 import { auth, signOut } from "@/auth";
+import { getAllData } from "@/client";
+import Donators from "@/components/donators/Donators";
+import NotifyDiaries from "@/components/notifyDiaries/NotifyDiaries";
+import ShowUsersList from "@/components/showUsersList/ShowUsersList";
 import { db } from "@/db";
-import { MdVerifiedUser } from "react-icons/md";
+import Link from "next/link";
 import { FaUser } from "react-icons/fa";
-import { RiAdminFill } from "react-icons/ri";
 import { FcGoogle } from "react-icons/fc";
 import { IoMdSettings } from "react-icons/io";
-import ShowUsersList from "@/components/showUsersList/ShowUsersList";
-import Link from "next/link";
-import { getAllData } from "@/client";
-import NotifyDiaries from "@/components/notifyDiaries/NotifyDiaries";
-import Donators from "@/components/donators/Donators";
+import { MdVerifiedUser } from "react-icons/md";
+import { RiAdminFill } from "react-icons/ri";
 
 
 const ProfilePage = async () => {
