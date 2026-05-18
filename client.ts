@@ -1,6 +1,6 @@
 import { createClient } from "next-sanity";
-import { boardType, chimpType, diariesType, focusAreasType, galleryType, granteesType, projectType } from "./clientTypes";
-import { boardQuery, chimpQuery, diariesQuery, diaryByIdQuery, focusAreasQuery, galleryByIdQuery, galleryQuery, granteesQuery, projectByIdQuery, projectsQuery } from "./utils/groqQueries";
+import { boardType, chimpType, diariesType, focusAreasType, galleryType, granteesType, portalPaddyFieldType, projectType, recipesType } from "./clientTypes";
+import { boardQuery, chimpQuery, diariesQuery, diaryByIdQuery, focusAreasQuery, galleryByIdQuery, galleryQuery, granteesQuery, portalPaddyFieldByIdQuery, portalPaddyFieldQuery, projectByIdQuery, projectsQuery, recipeByIdQuery, recipesQuery } from "./utils/groqQueries";
 
 const projectId = process.env.API_ID;
 const dataset = "production"; // "production"
@@ -68,6 +68,19 @@ export const getAllGrantees = async () => {
   return data;
 }
 
+export const getAllPaddyField = async () => {
+  const query = portalPaddyFieldQuery();
+  const data: portalPaddyFieldType[] | null = await getData(query);
+  return data;
+}
+
+export const getAllRecipes = async () => {
+  const query = recipesQuery();
+  const data: recipesType[] | null = await getData(query);
+  return data;
+}
+
+
 export const getGalleryById = async (id: string) => {
   const query = galleryByIdQuery(id);
   const data: galleryType[] | null = await getData(query);
@@ -83,5 +96,17 @@ export const getProjectById = async (id: string) => {
 export const getDiaryById = async (id: string) => {
   const query = diaryByIdQuery(id);
   const data: diariesType[] | null = await getData(query);
+  return data;
+}
+
+export const getPortalPaddyFieldById = async (id: string) => {
+  const query = portalPaddyFieldByIdQuery(id);
+  const data: portalPaddyFieldType[] | null = await getData(query);
+  return data;
+}
+
+export const getRecipeById = async (id: string) => {
+  const query = recipeByIdQuery(id);
+  const data: recipesType[] | null = await getData(query);
   return data;
 }

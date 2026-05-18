@@ -221,3 +221,46 @@ export const diaryByIdQuery = (id: string) => groq`*[_type == 'dairies' && _id =
   "notificationSent": notificationSent,
   "notificationsSent": notificationsSent
 }`;
+
+export const portalPaddyFieldByIdQuery = (id: string) => groq`*[_type == 'portalPaddyField' && _id == "${id}"] | order(_createdAt desc){
+  _id,
+  title,
+  description,
+  youtubeLink,
+  _createdAt,
+  "mainImage": mainImage.asset->url,
+  "crop": mainImage.crop,
+  "hotSpot": mainImage.hotspot,
+  "secondImage": secondImage.asset->url,
+  "cropSecond": secondImage.crop,
+  "hotSpotSecond": secondImage.hotspot,
+  "thirdImage": thirdImage.asset->url,
+  "cropThird": thirdImage.crop,
+  "hotSpotThird": thirdImage.hotspot,
+  "fourthImage": fourthImage.asset->url,
+  "cropFourth": fourthImage.crop,
+  "hotSpotFourth": fourthImage.hotspot,
+  "contenido": contenido,
+  topPick
+}`;
+
+export const recipeByIdQuery = (id: string) => groq`*[_type == 'recipes' && _id == "${id}"] | order(_createdAt desc){
+  _id,
+  title,
+  description,
+  youtubeLink,
+  _createdAt,
+  "mainImage": mainImage.asset->url,
+  "crop": mainImage.crop,
+  "hotSpot": mainImage.hotspot,
+  "secondImage": secondImage.asset->url,
+  "cropSecond": secondImage.crop,
+  "hotSpotSecond": secondImage.hotspot,
+  "thirdImage": thirdImage.asset->url,
+  "cropThird": thirdImage.crop,
+  "hotSpotThird": thirdImage.hotspot,
+  "fourthImage": fourthImage.asset->url,
+  "cropFourth": fourthImage.crop,
+  "hotSpotFourth": fourthImage.hotspot,
+  "contenido": contenido
+}`;
