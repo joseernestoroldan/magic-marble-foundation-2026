@@ -97,7 +97,7 @@ const ToggleSidebar = () => {
         className={`fixed top-0 left-0 z-50 h-full w-[300px] max-w-[85vw]
                     bg-gradient-to-b from-white via-white to-cyan-50
                     shadow-2xl flex flex-col
-                    transition-all duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] lg:hidden
+                    transition-all duration-400 [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] lg:hidden
                     ${isOpen ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"}`}
       >
         {/* Header: logo + close button */}
