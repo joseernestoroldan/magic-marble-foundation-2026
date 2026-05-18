@@ -1,5 +1,5 @@
 import { getAllGallery, getGalleryById } from "@/client";
-import GalleryDetail from "@/components/gallery/GalleryDetail";
+import GalleryDetail from "@/components/Gallery/GalleryDetail";
 import Container from "@/components/Layouts/Container/Container";
 import Link from "next/link";
 import { Metadata } from "next";
@@ -26,7 +26,9 @@ export async function generateMetadata({
   const item = data[0];
   return {
     title: `${item.title ?? "Gallery"} | Magic Marble Foundation`,
-    description: item.description ?? "View this gallery item from the Magic Marble Foundation.",
+    description:
+      item.description ??
+      "View this gallery item from the Magic Marble Foundation.",
     openGraph: {
       title: item.title ?? undefined,
       description: item.description ?? undefined,
@@ -56,8 +58,7 @@ export default async function GalleryItemPage({
         <GalleryDetail item={item} variant="page" />
         <Link
           href="/gallery"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 transition-colors hover:text-cyan-800"
-        >
+          className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 transition-colors hover:text-cyan-800">
           <svg
             width="16"
             height="16"
@@ -67,8 +68,7 @@ export default async function GalleryItemPage({
             strokeWidth="2.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-            aria-hidden
-          >
+            aria-hidden>
             <path d="M19 12H5M12 19l-7-7 7-7" />
           </svg>
           Back to Gallery

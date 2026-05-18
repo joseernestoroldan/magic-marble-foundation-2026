@@ -1,6 +1,6 @@
 import { getGalleryById } from "@/client";
-import GalleryDetail from "@/components/gallery/GalleryDetail";
-import GalleryModal from "@/components/gallery/GalleryModal";
+import GalleryDetail from "@/components/Gallery/GalleryDetail";
+import GalleryModal from "@/components/Gallery/GalleryModal";
 import { notFound } from "next/navigation";
 
 export default async function GalleryPhotoModal({
