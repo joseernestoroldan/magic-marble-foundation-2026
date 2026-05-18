@@ -1,40 +1,25 @@
-import { getAllData } from "@/client";
-import EnterSection from "@/components/animations/enterSection/EnterSection";
-import Heading from "@/components/headings/heading";
-import HeadingCenterAnimation from "@/components/headingsAnimations/HeadingCenterAnimation";
-import Container from "@/components/Layouts/Container/Container";
-import Image from "next/image";
+import { getAllGrantees } from "@/client";
+import GranteesGrid from "@/components/Grantees/GranteesGrid";
+import { Metadata } from "next";
 
-import React from "react";
+export const metadata: Metadata = {
+  title: "Our Grantees | Magic Marble Foundation",
+  description:
+    "Meet the organizations and partners supported by the Magic Marble Foundation.",
+};
 
 const GranteesPage = async () => {
-  const grantees = await getAllData("grantees");
+  const grantees = await getAllGrantees();
 
   return (
-    <HeadingCenterAnimation>
-      <EnterSection>
-        <div className="pt-10">
-          <Heading
-            title="Our Grantees"
-            color="text-cyan-500"
-            shadow=""
-            textSize="text-5xl"
-            center="flex justify-center"
-          />
-        </div>
-        <Container>
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center">
-            {grantees.map((grant: any) => (
-              <div
-                key={grant._id}
-                className="w-[150px] h-[150px] relative mx-4">
-                <Image src={grant.mainImage} alt={grant.name} fill />
-              </div>
-            ))}
-          </div>
-        </Container>
-      </EnterSection>
-    </HeadingCenterAnimation>
+    <div className="flex w-full flex-col items-center gap-12 pb-20 pt-12">
+      <h2 className="text-center text-4xl font-bold text-cyan-600">Our Grantees</h2>
+      {grantees && grantees.length > 0 ? (
+        <GranteesGrid grantees={grantees} />
+      ) : (
+        <p className="px-4 py-12 text-center text-slate-400">No grantees available yet.</p>
+      )}
+    </div>
   );
 };
 

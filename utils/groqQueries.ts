@@ -104,6 +104,18 @@ export const galleryQuery =
     "hotSpot": mainImage.hotspot
 }`;
 
+export const galleryByIdQuery = (id: string) =>
+  groq`*[_type == 'gallery' && _id == "${id}"]{
+    _id,
+    publishedAt,
+    title,
+    description,
+    _createdAt,
+    "mainImage": mainImage.asset->url,
+    "crop": mainImage.crop,
+    "hotSpot": mainImage.hotspot
+}`;
+
 export const granteesQuery =
   () => groq`*[_type == 'grantees'] | order(_createdAt desc){
     _id,
