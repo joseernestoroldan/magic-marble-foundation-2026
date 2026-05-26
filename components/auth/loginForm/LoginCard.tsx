@@ -6,7 +6,7 @@ import LoginGoogle from "./LoginGoogle";
 const LoginCard = () => {
   return (
     <div className="w-full flex flex-col items-center space-y-6">
-      <h2 className="text-lg sm:text-xl lg:text-2xl text-gray-500 text-center font-bold">
+      <h2 className="text-xl text-gray-500 text-center font-bold">
         Welcome back to Magic Marble Foundation
       </h2>
 

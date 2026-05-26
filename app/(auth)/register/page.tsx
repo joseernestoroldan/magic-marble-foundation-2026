@@ -17,9 +17,9 @@ const heroContent = (
 
 const RegisterPage = async () => {
   return (
-    <div className="w-full h-auto sm:h-[90vh] flex flex-col justify-center items-center max-w-5xl mx-auto">
-      <div className="w-full h-auto sm:h-[90vh] flex justify-center">
-        <div className="hidden lg:w-1/2 md:h-[70%] lg:h-[90%] relative rounded-[5px] overflow-hidden lg:block shadow-xl shadow-cyan-900/20">
+    <div className="w-full h-auto sm:h-[calc(100vh-148px)] flex flex-col justify-center items-center max-w-5xl mx-auto">
+      <div className="w-full h-auto sm:h-[calc(100vh-200px)] flex justify-center ">
+        <div className="hidden lg:w-1/2 relative rounded-[5px] overflow-hidden lg:block shadow-xl shadow-cyan-900/20">
           <Image
             className="object-cover object-center"
             src={"/sanctuary.webp"}

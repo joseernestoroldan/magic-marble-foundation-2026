@@ -5,8 +5,8 @@ import RegisterForm from "./RegisterForm";
 
 const RegisterCard = () => {
   return (
-    <div className="w-full flex flex-col items-center space-y-6">
-      <h2 className="text-2xl font-medium text-gray-500 text-center">
+    <div className="w-full flex flex-col items-center space-y-4 bg-red-300">
+      <h2 className="text-xl text-cyan-600 text-center font-bold">
         Welcome to Magic Marble Foundation
       </h2>
 
