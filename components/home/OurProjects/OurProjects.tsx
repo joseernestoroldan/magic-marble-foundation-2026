@@ -85,7 +85,7 @@ const OurProjects = async () => {
                   </div>
 
                   {/* Content area */}
-                  <div className="flex flex-col flex-1 gap-3 p-5">
+                  <div className="flex flex-col flex-1 gap-3 p-5 bg-gray-800">
                     {/* Title */}
                     <h3 className="text-white font-bold text-lg leading-snug group-hover:text-cyan-400 transition-colors duration-300">
                       {project.title}
