@@ -12,6 +12,7 @@ import { useForm } from "react-hook-form";
 import { ImSpinner9 } from "react-icons/im";
 import { FormConfirmation } from "../formConfirmation/FormConfirmation";
 import { FormError } from "../formError/FormError";
+import { FormInput } from "@/components/ui/FormInput";
 
 const LoginForm = () => {
   const [error, setError] = useState<string | undefined>("");
@@ -53,44 +54,26 @@ const LoginForm = () => {
       className=" space-y-4 w-[80%]"
     >
       <div className="space-y-4 w-full">
-        <div>
-          <label
-            htmlFor="email"
-            className="text-sm font-medium text-gray-700"
-          >
-            Email
-          </label>
-          <input
-            id="email"
-            className="flex h-10 w-full rounded-full border border-gray-200 bg-white px-3 py-2 text-sm text-gray-500 placeholder:text-gray-400 focus:border-cyan-500 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
-            {...register("email")}
-            placeholder="magicmarble@example.com"
-            type="email"
-            disabled={isPending}
-          />
-          {errors.email && (
-            <p className="text-sm text-red-500 mt-1">{errors.email.message}</p>
-          )}
-        </div>
+        <FormInput
+          id="email"
+          label="Email"
+          type="email"
+          placeholder="magicmarble@example.com"
+          error={errors.email?.message}
+          disabled={isPending}
+          registration={register("email")}
+        />
 
         <div>
-          <label
-            htmlFor="password"
-            className="text-sm font-medium text-gray-700"
-          >
-            Password
-          </label>
-          <input
+          <FormInput
             id="password"
-            className="flex h-10 w-full rounded-full border border-gray-200 bg-white px-3 py-2 text-sm text-gray-500 placeholder:text-gray-400 focus:border-cyan-500 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
-            {...register("password")}
-            placeholder="******"
+            label="Password"
             type="password"
+            placeholder="******"
+            error={errors.password?.message}
             disabled={isPending}
+            registration={register("password")}
           />
-          {errors.password && (
-            <p className="text-sm text-red-500 mt-1">{errors.password.message}</p>
-          )}
           <Link
             className="text-cyan-500 underline text-sm inline-block mt-1"
             href={"/reset"}
@@ -102,21 +85,17 @@ const LoginForm = () => {
       <FormError message={error} />
       <FormConfirmation message={confirmation} />
       <button
-        className="bg-cyan-500 hover:bg-opacity-80 text-white w-full py-3 rounded-full"
+        className="bg-cyan-500 hover:bg-cyan-600 text-white w-full py-3 rounded-[5px] font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
         type="submit"
         disabled={isPending}
       >
-        {isPending && (
+        {isPending ? (
           <div className="w-full flex justify-center items-center">
-            <svg
-              className="animate-spin h-5 w-5 mr-3 text-white"
-              viewBox="0 0 24 24"
-            >
-              <ImSpinner9 className="text-2xl" />
-            </svg>
+            <ImSpinner9 className="animate-spin h-5 w-5 mr-3 text-white" />
           </div>
+        ) : (
+          "Login"
         )}
-        {!isPending && "Login"}
       </button>
     </form>
   );

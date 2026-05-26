@@ -1,29 +1,36 @@
 import RegisterCard from "@/components/auth/registerForm/RegisterCard";
 import DonationButton from "@/components/DonationButton/DonationButton";
 import Image from "next/image";
-import Link from "next/link";
+
+const imageOverlay = (
+  <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/70 via-black/30 to-transparent" />
+);
+
+const heroContent = (
+  <div className="absolute inset-0 flex flex-col justify-center items-center gap-10">
+    <DonationButton />
+    <h2 className="text-white text-4xl font-bold text-center px-4">
+      Your Choices Can Change The World
+    </h2>
+  </div>
+);
 
 const RegisterPage = async () => {
   return (
     <div className="w-full h-auto sm:h-[90vh] flex flex-col justify-center items-center max-w-5xl mx-auto">
       <div className="w-full h-auto sm:h-[90vh] flex justify-center">
-        <div className="hidden lg:w-1/2 md:h-[70%] lg:h-[90%] relative rounded-[10px] overflow-hidden lg:block">
+        <div className="hidden lg:w-1/2 md:h-[70%] lg:h-[90%] relative rounded-[5px] overflow-hidden lg:block shadow-xl shadow-cyan-900/20">
           <Image
             className="object-cover object-center"
             src={"/sanctuary.webp"}
             alt="Magic Marble Foundation"
             fill
+            priority
           />
-          <div className="absolute top-0 bottom-0 left-0 right-0 flex flex-col justify-center items-center gap-10 backdrop-brightness-90">
-            <Link href={"/donations"}>
-              <DonationButton />
-            </Link>
-            <h2 className="text-white text-4xl font-bold text-center">
-              Your Choices Can Change The World
-            </h2>
-          </div>
+          {imageOverlay}
+          {heroContent}
         </div>
-        <div className="w-[90%] sm:w-[70%] lg:w-1/2">
+        <div className="w-[90%] sm:w-[70%] lg:w-1/2 animate-fade-in-pro">
           <RegisterCard />
         </div>
       </div>

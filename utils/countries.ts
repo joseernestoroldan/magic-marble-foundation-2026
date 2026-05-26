@@ -2,7 +2,7 @@
     export const countries = [
       {
         value: "Afghanistan",
-        label: "Afganistán"
+        label: "Afghanistan"
       },
       {
         value: "Albania",
@@ -14,7 +14,7 @@
       },
       {
         value: "American Samoa",
-        label: "Samoa Americana"
+        label: "American Samoa"
       },
       {
         value: "Andorra",
@@ -30,11 +30,11 @@
       },
       {
         value: "Antarctica",
-        label: "Antártida"
+        label: "Antarctica"
       },
       {
         value: "Antigua and Barbuda",
-        label: "Antigua y Barbuda"
+        label: "Antigua and Barbuda"
       },
       {
         value: "Argentina",
@@ -58,7 +58,7 @@
       },
       {
         value: "Azerbaijan",
-        label: "Azerbaiyán"
+        label: "Azerbaijan"
       },
       {
         value: "Bahamas",
@@ -66,7 +66,7 @@
       },
       {
         value: "Bahrain",
-        label: "Bahrein"
+        label: "Bahrain"
       },
       {
         value: "Bangladesh",
@@ -78,19 +78,19 @@
       },
       {
         value: "Belarus",
-        label: "Bielorrusia"
+        label: "Belarus"
       },
       {
         value: "Belgium",
-        label: "Bélgica"
+        label: "Belgium"
       },
       {
         value: "Belize",
-        label: "Belice"
+        label: "Belize"
       },
       {
         value: "Benin",
-        label: "Benín"
+        label: "Benin"
       },
       {
         value: "Bermuda",
@@ -98,7 +98,7 @@
       },
       {
         value: "Bhutan",
-        label: "Bután"
+        label: "Bhutan"
       },
       {
         value: "Bolivia",
@@ -106,7 +106,7 @@
       },
       {
         value: "Bosnia and Herzegovina",
-        label: "Bosnia-Herzegovina"
+        label: "Bosnia and Herzegovina"
       },
       {
         value: "Botswana",
@@ -114,11 +114,11 @@
       },
       {
         value: "Brazil",
-        label: "Brasil"
+        label: "Brazil"
       },
       {
         value: "Brunei Darussalam",
-        label: "Brunei"
+        label: "Brunei Darussalam"
       },
       {
         value: "Bulgaria",
@@ -134,27 +134,27 @@
       },
       {
         value: "Cambodia",
-        label: "Camboya"
+        label: "Cambodia"
       },
       {
         value: "Cameroon",
-        label: "Camerún"
+        label: "Cameroon"
       },
       {
         value: "Canada",
-        label: "Canadá"
+        label: "Canada"
       },
       {
         value: "Cape Verde",
-        label: "Cabo Verde"
+        label: "Cape Verde"
       },
       {
         value: "Cayman Islands",
-        label: "Islas Caimán"
+        label: "Cayman Islands"
       },
       {
         value: "Central African Republic",
-        label: "República Centroafricana"
+        label: "Central African Republic"
       },
       {
         value: "Chad",
@@ -170,11 +170,11 @@
       },
       {
         value: "Christmas Island",
-        label: "Isla de Navidad"
+        label: "Christmas Island"
       },
       {
         value: "Cocos (Keeling) Islands",
-        label: "Islas Cocos"
+        label: "Cocos (Keeling) Islands"
       },
       {
         value: "Colombia",
@@ -182,19 +182,19 @@
       },
       {
         value: "Comoros",
-        label: "Comores"
+        label: "Comoros"
       },
       {
         value: "Congo",
-        label: "República del Congo"
+        label: "Congo"
       },
       {
         value: "Congo, The Democratic Republic of the",
-        label: "República Democrática del Congo"
+        label: "Congo, The Democratic Republic of the"
       },
       {
         value: "Cook Islands",
-        label: "Islas Cook"
+        label: "Cook Islands"
       },
       {
         value: "Costa Rica",
@@ -202,11 +202,11 @@
       },
       {
         value: "Cote D'Ivoire",
-        label: "Costa de Marfíl"
+        label: "Cote D'Ivoire"
       },
       {
         value: "Croatia",
-        label: "Croacia"
+        label: "Croatia"
       },
       {
         value: "Cuba",
@@ -214,15 +214,15 @@
       },
       {
         value: "Cyprus",
-        label: "Chipre"
+        label: "Cyprus"
       },
       {
         value: "Czech Republic",
-        label: "República Checa"
+        label: "Czech Republic"
       },
       {
         value: "Denmark",
-        label: "Dinamarca"
+        label: "Denmark"
       },
       {
         value: "Djibouti",
@@ -234,7 +234,7 @@
       },
       {
         value: "Dominican Republic",
-        label: "República Dominicana"
+        label: "Dominican Republic"
       },
       {
         value: "Ecuador",
@@ -242,7 +242,7 @@
       },
       {
         value: "Egypt",
-        label: "Egipto"
+        label: "Egypt"
       },
       {
         value: "El Salvador",
@@ -250,7 +250,7 @@
       },
       {
         value: "Equatorial Guinea",
-        label: "Guinea Ecuatorial"
+        label: "Equatorial Guinea"
       },
       {
         value: "Eritrea",
@@ -262,15 +262,15 @@
       },
       {
         value: "Ethiopia",
-        label: "Etiopía"
+        label: "Ethiopia"
       },
       {
         value: "Falkland Islands (Malvinas)",
-        label: "Islas Malvinas"
+        label: "Falkland Islands (Malvinas)"
       },
       {
         value: "Faroe Islands",
-        label: "Islas Feroe"
+        label: "Faroe Islands"
       },
       {
         value: "Fiji",
@@ -278,27 +278,27 @@
       },
       {
         value: "Finland",
-        label: "Finlandia"
+        label: "Finland"
       },
       {
         value: "France",
-        label: "Francia"
+        label: "France"
       },
       {
         value: "French Guiana",
-        label: "Guyana Francesa"
+        label: "French Guiana"
       },
       {
         value: "French Polynesia",
-        label: "Polinesia Francesa"
+        label: "French Polynesia"
       },
       {
         value: "French Southern Territories",
-        label: "Tierras Australes y Antárticas Francesas"
+        label: "French Southern Territories"
       },
       {
         value: "Gabon",
-        label: "Gabón"
+        label: "Gabon"
       },
       {
         value: "Gambia",
@@ -310,7 +310,7 @@
       },
       {
         value: "Germany",
-        label: "Alemania"
+        label: "Germany"
       },
       {
         value: "Ghana",
@@ -322,19 +322,19 @@
       },
       {
         value: "Greece",
-        label: "Grecia"
+        label: "Greece"
       },
       {
         value: "Greenland",
-        label: "Groenlandia"
+        label: "Greenland"
       },
       {
         value: "Grenada",
-        label: "Granada"
+        label: "Grenada"
       },
       {
         value: "Guadeloupe",
-        label: "Guadalupe"
+        label: "Guadeloupe"
       },
       {
         value: "Guam",
@@ -358,11 +358,11 @@
       },
       {
         value: "Haiti",
-        label: "Haití"
+        label: "Haiti"
       },
       {
         value: "Holy See (Vatican City State)",
-        label: "Vaticano"
+        label: "Holy See (Vatican City State)"
       },
       {
         value: "Honduras",
@@ -374,11 +374,11 @@
       },
       {
         value: "Hungary",
-        label: "Hungría"
+        label: "Hungary"
       },
       {
         value: "Iceland",
-        label: "Islandia"
+        label: "Iceland"
       },
       {
         value: "India",
@@ -390,7 +390,7 @@
       },
       {
         value: "Iran, Islamic Republic Of",
-        label: "Irán"
+        label: "Iran, Islamic Republic Of"
       },
       {
         value: "Iraq",
@@ -398,7 +398,7 @@
       },
       {
         value: "Ireland",
-        label: "Irlanda"
+        label: "Ireland"
       },
       {
         value: "Israel",
@@ -406,7 +406,7 @@
       },
       {
         value: "Italy",
-        label: "Italia"
+        label: "Italy"
       },
       {
         value: "Jamaica",
@@ -414,19 +414,19 @@
       },
       {
         value: "Japan",
-        label: "Japón"
+        label: "Japan"
       },
       {
         value: "Jordan",
-        label: "Jordania"
+        label: "Jordan"
       },
       {
         value: "Kazakhstan",
-        label: "Kazajstán"
+        label: "Kazakhstan"
       },
       {
         value: "Kenya",
-        label: "Kenia"
+        label: "Kenya"
       },
       {
         value: "Kiribati",
@@ -434,11 +434,11 @@
       },
       {
         value: "Korea, Democratic People'S Republic of",
-        label: "Corea del Norte"
+        label: "Korea, Democratic People'S Republic of"
       },
       {
         value: "Korea, Republic of",
-        label: "Corea del Sur"
+        label: "Korea, Republic of"
       },
       {
         value: "Kuwait",
@@ -446,19 +446,19 @@
       },
       {
         value: "Kyrgyzstan",
-        label: "Kirguistán"
+        label: "Kyrgyzstan"
       },
       {
         value: "Lao People's Democratic Republic",
-        label: "Laos"
+        label: "Lao People's Democratic Republic"
       },
       {
         value: "Latvia",
-        label: "Letonia"
+        label: "Latvia"
       },
       {
         value: "Lebanon",
-        label: "Líbano"
+        label: "Lebanon"
       },
       {
         value: "Lesotho",
@@ -470,7 +470,7 @@
       },
       {
         value: "Libyan Arab Jamahiriya",
-        label: "Libia"
+        label: "Libyan Arab Jamahiriya"
       },
       {
         value: "Liechtenstein",
@@ -478,11 +478,11 @@
       },
       {
         value: "Lithuania",
-        label: "Lituania"
+        label: "Lithuania"
       },
       {
         value: "Luxembourg",
-        label: "Luxemburgo"
+        label: "Luxembourg"
       },
       {
         value: "Macao",
@@ -490,7 +490,7 @@
       },
       {
         value: "Macedonia, The Former Yugoslav Republic of",
-        label: "Macedonia"
+        label: "Macedonia, The Former Yugoslav Republic of"
       },
       {
         value: "Madagascar",
@@ -502,11 +502,11 @@
       },
       {
         value: "Malaysia",
-        label: "Malasia"
+        label: "Malaysia"
       },
       {
         value: "Maldives",
-        label: "Maldivas"
+        label: "Maldives"
       },
       {
         value: "Mali",
@@ -518,11 +518,11 @@
       },
       {
         value: "Marshall Islands",
-        label: "Islas Marshall"
+        label: "Marshall Islands"
       },
       {
         value: "Martinique",
-        label: "Martinica"
+        label: "Martinique"
       },
       {
         value: "Mauritania",
@@ -530,7 +530,7 @@
       },
       {
         value: "Mauritius",
-        label: "Mauricio"
+        label: "Mauritius"
       },
       {
         value: "Mayotte",
@@ -538,19 +538,19 @@
       },
       {
         value: "Mexico",
-        label: "México"
+        label: "Mexico"
       },
       {
         value: "Micronesia, Federated States of",
-        label: "Estados Federados de Micronesia"
+        label: "Micronesia, Federated States of"
       },
       {
         value: "Moldova, Republic of",
-        label: "Moldavia"
+        label: "Moldova, Republic of"
       },
       {
         value: "Monaco",
-        label: "Mónaco"
+        label: "Monaco"
       },
       {
         value: "Mongolia",
@@ -562,7 +562,7 @@
       },
       {
         value: "Morocco",
-        label: "Marruecos"
+        label: "Morocco"
       },
       {
         value: "Mozambique",
@@ -586,19 +586,19 @@
       },
       {
         value: "Netherlands",
-        label: "Holanda"
+        label: "Netherlands"
       },
       {
         value: "Netherlands Antilles",
-        label: "Antillas Holandesas"
+        label: "Netherlands Antilles"
       },
       {
         value: "New Caledonia",
-        label: "Nueva Caledonia"
+        label: "New Caledonia"
       },
       {
         value: "New Zealand",
-        label: "Nueva Zelanda"
+        label: "New Zealand"
       },
       {
         value: "Nicaragua",
@@ -618,23 +618,23 @@
       },
       {
         value: "Norfolk Island",
-        label: "Islas Norfolk"
+        label: "Norfolk Island"
       },
       {
         value: "Northern Mariana Islands",
-        label: "Islas Marianas del Norte"
+        label: "Northern Mariana Islands"
       },
       {
         value: "Norway",
-        label: "Noruega"
+        label: "Norway"
       },
       {
         value: "Oman",
-        label: "Omán"
+        label: "Oman"
       },
       {
         value: "Pakistan",
-        label: "Pakistán"
+        label: "Pakistan"
       },
       {
         value: "Palau",
@@ -642,15 +642,15 @@
       },
       {
         value: "Palestinian Territory, Occupied",
-        label: "Palestina"
+        label: "Palestinian Territory, Occupied"
       },
       {
         value: "Panama",
-        label: "Panamá"
+        label: "Panama"
       },
       {
         value: "Papua New Guinea",
-        label: "Papua Nueva Guinea"
+        label: "Papua New Guinea"
       },
       {
         value: "Paraguay",
@@ -658,11 +658,11 @@
       },
       {
         value: "Peru",
-        label: "Perú"
+        label: "Peru"
       },
       {
         value: "Philippines",
-        label: "Filipinas"
+        label: "Philippines"
       },
       {
         value: "Pitcairn",
@@ -670,7 +670,7 @@
       },
       {
         value: "Poland",
-        label: "Polonia"
+        label: "Poland"
       },
       {
         value: "Portugal",
@@ -686,35 +686,35 @@
       },
       {
         value: "Reunion",
-        label: "Reunión"
+        label: "Reunion"
       },
       {
         value: "Romania",
-        label: "Rumanía"
+        label: "Romania"
       },
       {
         value: "Russian Federation",
-        label: "Rusia"
+        label: "Russian Federation"
       },
       {
         value: "Rwanda",
-        label: "Ruanda"
+        label: "Rwanda"
       },
       {
         value: "Saint Helena",
-        label: "Santa Helena"
+        label: "Saint Helena"
       },
       {
         value: "Saint Kitts and Nevis",
-        label: "San Kitts y Nevis"
+        label: "Saint Kitts and Nevis"
       },
       {
         value: "Saint Lucia",
-        label: "Santa Lucía"
+        label: "Saint Lucia"
       },
       {
         value: "Saint Vincent and the Grenadines",
-        label: "San Vicente y Granadinas"
+        label: "Saint Vincent and the Grenadines"
       },
       {
         value: "Samoa",
@@ -726,11 +726,11 @@
       },
       {
         value: "Sao Tome and Principe",
-        label: "Santo Tomé y Príncipe"
+        label: "Sao Tome and Principe"
       },
       {
         value: "Saudi Arabia",
-        label: "Arabia Saudita"
+        label: "Saudi Arabia"
       },
       {
         value: "Senegal",
@@ -738,7 +738,7 @@
       },
       {
         value: "Serbia and Montenegro",
-        label: "Serbia"
+        label: "Serbia and Montenegro"
       },
       {
         value: "Seychelles",
@@ -746,23 +746,23 @@
       },
       {
         value: "Sierra Leone",
-        label: "Sierra Leona"
+        label: "Sierra Leone"
       },
       {
         value: "Singapore",
-        label: "Singapur"
+        label: "Singapore"
       },
       {
         value: "Slovakia",
-        label: "Eslovaquía"
+        label: "Slovakia"
       },
       {
         value: "Slovenia",
-        label: "Eslovenia"
+        label: "Slovenia"
       },
       {
         value: "Solomon Islands",
-        label: "Islas Salomón"
+        label: "Solomon Islands"
       },
       {
         value: "Somalia",
@@ -770,11 +770,11 @@
       },
       {
         value: "South Africa",
-        label: "Sudáfrica"
+        label: "South Africa"
       },
       {
         value: "Spain",
-        label: "España"
+        label: "Spain"
       },
       {
         value: "Sri Lanka",
@@ -782,47 +782,47 @@
       },
       {
         value: "Sudan",
-        label: "Sudán"
+        label: "Sudan"
       },
       {
         value: "Suriname",
-        label: "Surinam"
+        label: "Suriname"
       },
       {
         value: "Swaziland",
-        label: "Swazilandia"
+        label: "Swaziland"
       },
       {
         value: "Sweden",
-        label: "Suecia"
+        label: "Sweden"
       },
       {
         value: "Switzerland",
-        label: "Suiza"
+        label: "Switzerland"
       },
       {
         value: "Syrian Arab Republic",
-        label: "Siria"
+        label: "Syrian Arab Republic"
       },
       {
         value: "Taiwan, Province of China",
-        label: "Taiwán"
+        label: "Taiwan, Province of China"
       },
       {
         value: "Tajikistan",
-        label: "Tadjikistan"
+        label: "Tajikistan"
       },
       {
         value: "Tanzania, United Republic of",
-        label: "Tanzania"
+        label: "Tanzania, United Republic of"
       },
       {
         value: "Thailand",
-        label: "Tailandia"
+        label: "Thailand"
       },
       {
         value: "Timor-Leste",
-        label: "Timor Oriental"
+        label: "Timor-Leste"
       },
       {
         value: "Togo",
@@ -838,15 +838,15 @@
       },
       {
         value: "Trinidad and Tobago",
-        label: "Trinidad y Tobago"
+        label: "Trinidad and Tobago"
       },
       {
         value: "Tunisia",
-        label: "Túnez"
+        label: "Tunisia"
       },
       {
         value: "Turkey",
-        label: "Turquía"
+        label: "Turkey"
       },
       {
         value: "Turkmenistan",
@@ -854,7 +854,7 @@
       },
       {
         value: "Turks and Caicos Islands",
-        label: "Islas Turcas y Caicos"
+        label: "Turks and Caicos Islands"
       },
       {
         value: "Tuvalu",
@@ -866,19 +866,19 @@
       },
       {
         value: "Ukraine",
-        label: "Ucrania"
+        label: "Ukraine"
       },
       {
         value: "United Arab Emirates",
-        label: "Emiratos Árabes Unidos"
+        label: "United Arab Emirates"
       },
       {
         value: "United Kingdom",
-        label: "Reino Unido"
+        label: "United Kingdom"
       },
       {
         value: "United States",
-        label: "Estados Unidos"
+        label: "United States"
       },
       {
         value: "Uruguay",
@@ -886,7 +886,7 @@
       },
       {
         value: "Uzbekistan",
-        label: "Uzbekistán"
+        label: "Uzbekistan"
       },
       {
         value: "Vanuatu",
@@ -898,23 +898,23 @@
       },
       {
         value: "Viet Nam",
-        label: "Vietnam"
+        label: "Viet Nam"
       },
       {
         value: "Virgin Islands, British",
-        label: "Islas Vírgenes Británicas"
+        label: "Virgin Islands, British"
       },
       {
         value: "Virgin Islands, U.S.",
-        label: "Islas Vírgenes Americanas"
+        label: "Virgin Islands, U.S."
       },
       {
         value: "Wallis and Futuna",
-        label: "Wallis y Futuna"
+        label: "Wallis and Futuna"
       },
       {
         value: "Western Sahara",
-        label: "Sáhara Occidental"
+        label: "Western Sahara"
       },
       {
         value: "Yemen",
@@ -932,7 +932,7 @@
   
 export const codes = [
     {
-      "name": "Afganistán",
+      "name": "Afghanistan",
       "code": "AF",
       "phoneCode": "+93",
       "flagEmoji": "🇦🇫"
@@ -944,7 +944,7 @@ export const codes = [
       "flagEmoji": "🇦🇱"
     },
     {
-      "name": "Alemania",
+      "name": "Germany",
       "code": "DE",
       "phoneCode": "+49",
       "flagEmoji": "🇩🇪"
@@ -962,37 +962,37 @@ export const codes = [
       "flagEmoji": "🇦🇴"
     },
     {
-      "name": "Anguila",
+      "name": "Anguilla",
       "code": "AI",
       "phoneCode": "+1264",
       "flagEmoji": "🇦🇮"
     },
     {
-      "name": "Antártida",
+      "name": "Antarctica",
       "code": "AQ",
       "phoneCode": "+672",
       "flagEmoji": "🇦🇶"
     },
     {
-      "name": "Antigua y Barbuda",
+      "name": "Antigua and Barbuda",
       "code": "AG",
       "phoneCode": "+1268",
       "flagEmoji": "🇦🇬"
     },
     {
-      "name": "Antillas Holandesas",
+      "name": "Netherlands Antilles",
       "code": "AN",
       "phoneCode": "+599",
       "flagEmoji": "🇧🇶"
     },
     {
-      "name": "Arabia Saudita",
+      "name": "Saudi Arabia",
       "code": "SA",
       "phoneCode": "+966",
       "flagEmoji": "🇸🇦"
     },
     {
-      "name": "Argelia",
+      "name": "Algeria",
       "code": "DZ",
       "phoneCode": "+213",
       "flagEmoji": "🇩🇿"
@@ -1028,7 +1028,7 @@ export const codes = [
       "flagEmoji": "🇦🇹"
     },
     {
-      "name": "Azerbaiyán",
+      "name": "Azerbaijan",
       "code": "AZ",
       "phoneCode": "+994",
       "flagEmoji": "🇦🇿"
@@ -1040,7 +1040,7 @@ export const codes = [
       "flagEmoji": "🇧🇸"
     },
     {
-      "name": "Bahrein",
+      "name": "Bahrain",
       "code": "BH",
       "phoneCode": "+973",
       "flagEmoji": "🇧🇭"
@@ -1058,37 +1058,37 @@ export const codes = [
       "flagEmoji": "🇧🇧"
     },
     {
-      "name": "Bélgica",
+      "name": "Belgium",
       "code": "BE",
       "phoneCode": "+32",
       "flagEmoji": "🇧🇪"
     },
     {
-      "name": "Belice",
+      "name": "Belize",
       "code": "BZ",
       "phoneCode": "+501",
       "flagEmoji": "🇧🇿"
     },
     {
-      "name": "Benín",
+      "name": "Benin",
       "code": "BJ",
       "phoneCode": "+229",
       "flagEmoji": "🇧🇯"
     },
     {
-      "name": "Bhután",
+      "name": "Bhutan",
       "code": "BT",
       "phoneCode": "+975",
       "flagEmoji": "🇧🇹"
     },
     {
-      "name": "Bielorrusia",
+      "name": "Belarus",
       "code": "BY",
       "phoneCode": "+375",
       "flagEmoji": "🇧🇾"
     },
     {
-      "name": "Birmania",
+      "name": "Myanmar",
       "code": "MM",
       "phoneCode": "+95",
       "flagEmoji": "🇲🇲"
@@ -1100,25 +1100,25 @@ export const codes = [
       "flagEmoji": "🇧🇴"
     },
     {
-      "name": "Bosnia y Herzegovina",
+      "name": "Bosnia and Herzegovina",
       "code": "BA",
       "phoneCode": "+387",
       "flagEmoji": "🇧🇦"
     },
     {
-      "name": "Botsuana",
+      "name": "Botswana",
       "code": "BW",
       "phoneCode": "+267",
       "flagEmoji": "🇧🇼"
     },
     {
-      "name": "Brasil",
+      "name": "Brazil",
       "code": "BR",
       "phoneCode": "+55",
       "flagEmoji": "🇧🇷"
     },
     {
-      "name": "Brunéi",
+      "name": "Brunei",
       "code": "BN",
       "phoneCode": "+673",
       "flagEmoji": "🇧🇳"
@@ -1142,25 +1142,25 @@ export const codes = [
       "flagEmoji": "🇧🇮"
     },
     {
-      "name": "Cabo Verde",
+      "name": "Cape Verde",
       "code": "CV",
       "phoneCode": "+238",
       "flagEmoji": "🇨🇻"
     },
     {
-      "name": "Camboya",
+      "name": "Cambodia",
       "code": "KH",
       "phoneCode": "+855",
       "flagEmoji": "🇰🇭"
     },
     {
-      "name": "Camerún",
+      "name": "Cameroon",
       "code": "CM",
       "phoneCode": "+237",
       "flagEmoji": "🇨🇲"
     },
     {
-      "name": "Canadá",
+      "name": "Canada",
       "code": "CA",
       "phoneCode": "+1",
       "flagEmoji": "🇨🇦"
@@ -1184,13 +1184,13 @@ export const codes = [
       "flagEmoji": "🇨🇳"
     },
     {
-      "name": "Chipre",
+      "name": "Cyprus",
       "code": "CY",
       "phoneCode": "+357",
       "flagEmoji": "🇨🇾"
     },
     {
-      "name": "Ciudad del Vaticano",
+      "name": "Vatican City",
       "code": "VA",
       "phoneCode": "+379",
       "flagEmoji": "🇻🇦"
@@ -1202,25 +1202,25 @@ export const codes = [
       "flagEmoji": "🇨🇴"
     },
     {
-      "name": "Comoras",
+      "name": "Comoros",
       "code": "KM",
       "phoneCode": "+269",
       "flagEmoji": "🇰🇲"
     },
     {
-      "name": "Corea del Norte",
+      "name": "Korea, Democratic People'S Republic of",
       "code": "KP",
       "phoneCode": "+850",
       "flagEmoji": "🇰🇵"
     },
     {
-      "name": "Corea del Sur",
+      "name": "Korea, Republic of",
       "code": "KR",
       "phoneCode": "+82",
       "flagEmoji": "🇰🇷"
     },
     {
-      "name": "Costa de Marfil",
+      "name": "Ivory Coast",
       "code": "CI",
       "phoneCode": "+225",
       "flagEmoji": "🇨🇮"
@@ -1232,7 +1232,7 @@ export const codes = [
       "flagEmoji": "🇨🇷"
     },
     {
-      "name": "Croacia",
+      "name": "Croatia",
       "code": "HR",
       "phoneCode": "+385",
       "flagEmoji": "🇭🇷"
@@ -1244,7 +1244,7 @@ export const codes = [
       "flagEmoji": "🇨🇺"
     },
     {
-      "name": "Dinamarca",
+      "name": "Denmark",
       "code": "DK",
       "phoneCode": "+45",
       "flagEmoji": "🇩🇰"
@@ -1262,7 +1262,7 @@ export const codes = [
       "flagEmoji": "🇪🇨"
     },
     {
-      "name": "Egipto",
+      "name": "Egypt",
       "code": "EG",
       "phoneCode": "+20",
       "flagEmoji": "🇪🇬"
@@ -1274,7 +1274,7 @@ export const codes = [
       "flagEmoji": "🇸🇻"
     },
     {
-      "name": "Emiratos Árabes Unidos",
+      "name": "United Arab Emirates",
       "code": "AE",
       "phoneCode": "+971",
       "flagEmoji": "🇦🇪"
@@ -1286,25 +1286,25 @@ export const codes = [
       "flagEmoji": "🇪🇷"
     },
     {
-      "name": "Eslovaquia",
+      "name": "Slovakia",
       "code": "SK",
       "phoneCode": "+421",
       "flagEmoji": "🇸🇰"
     },
     {
-      "name": "Eslovenia",
+      "name": "Slovenia",
       "code": "SI",
       "phoneCode": "+386",
       "flagEmoji": "🇸🇮"
     },
     {
-      "name": "España",
+      "name": "Spain",
       "code": "ES",
       "phoneCode": "+34",
       "flagEmoji": "🇪🇸"
     },
     {
-      "name": "Estados Unidos de América",
+      "name": "United States",
       "code": "US",
       "phoneCode": "+1",
       "flagEmoji": "🇺🇸"
@@ -1316,37 +1316,37 @@ export const codes = [
       "flagEmoji": "🇪🇪"
     },
     {
-      "name": "Etiopía",
+      "name": "Ethiopia",
       "code": "ET",
       "phoneCode": "+251",
       "flagEmoji": "🇪🇹"
     },
     {
-      "name": "Filipinas",
+      "name": "Philippines",
       "code": "PH",
       "phoneCode": "+63",
       "flagEmoji": "🇵🇭"
     },
     {
-      "name": "Finlandia",
+      "name": "Finland",
       "code": "FI",
       "phoneCode": "+358",
       "flagEmoji": "🇫🇮"
     },
     {
-      "name": "Fiyi",
+      "name": "Fiji",
       "code": "FJ",
       "phoneCode": "+679",
       "flagEmoji": "🇫🇯"
     },
     {
-      "name": "Francia",
+      "name": "France",
       "code": "FR",
       "phoneCode": "+33",
       "flagEmoji": "🇫🇷"
     },
     {
-      "name": "Gabón",
+      "name": "Gabon",
       "code": "GA",
       "phoneCode": "+241",
       "flagEmoji": "🇬🇦"
@@ -1376,25 +1376,25 @@ export const codes = [
       "flagEmoji": "🇬🇮"
     },
     {
-      "name": "Granada",
+      "name": "Grenada",
       "code": "GD",
       "phoneCode": "+1473",
       "flagEmoji": "🇬🇩"
     },
     {
-      "name": "Grecia",
+      "name": "Greece",
       "code": "GR",
       "phoneCode": "+30",
       "flagEmoji": "🇬🇷"
     },
     {
-      "name": "Groenlandia",
+      "name": "Greenland",
       "code": "GL",
       "phoneCode": "+299",
       "flagEmoji": "🇬🇱"
     },
     {
-      "name": "Guadalupe",
+      "name": "Guadeloupe",
       "code": "GP",
       "phoneCode": "+590",
       "flagEmoji": "🇬🇵"
@@ -1412,7 +1412,7 @@ export const codes = [
       "flagEmoji": "🇬🇹"
     },
     {
-      "name": "Guayana Francesa",
+      "name": "French Guiana",
       "code": "GF",
       "phoneCode": "+594",
       "flagEmoji": "🇬🇫"
@@ -1430,7 +1430,7 @@ export const codes = [
       "flagEmoji": "🇬🇳"
     },
     {
-      "name": "Guinea Ecuatorial",
+      "name": "Equatorial Guinea",
       "code": "GQ",
       "phoneCode": "+240",
       "flagEmoji": "🇬🇶"
@@ -1448,7 +1448,7 @@ export const codes = [
       "flagEmoji": "🇬🇾"
     },
     {
-      "name": "Haití",
+      "name": "Haiti",
       "code": "HT",
       "phoneCode": "+509",
       "flagEmoji": "🇭🇹"
@@ -1460,13 +1460,13 @@ export const codes = [
       "flagEmoji": "🇭🇳"
     },
     {
-      "name": "Hong kong",
+      "name": "Hong Kong",
       "code": "HK",
       "phoneCode": "+852",
       "flagEmoji": "🇭🇰"
     },
     {
-      "name": "Hungría",
+      "name": "Hungary",
       "code": "HU",
       "phoneCode": "+36",
       "flagEmoji": "🇭🇺"
@@ -1484,139 +1484,139 @@ export const codes = [
       "flagEmoji": "🇮🇩"
     },
     {
-      "name": "Irak",
+      "name": "Iraq",
       "code": "IQ",
       "phoneCode": "+964",
       "flagEmoji": "🇮🇷"
     },
     {
-      "name": "Irán",
+      "name": "Iran, Islamic Republic Of",
       "code": "IR",
       "phoneCode": "+98",
       "flagEmoji": "🇮🇷"
     },
     {
-      "name": "Irlanda",
+      "name": "Ireland",
       "code": "IE",
       "phoneCode": "+353",
       "flagEmoji": "🇮🇪"
     },
     {
-      "name": "Isla de Man",
+      "name": "Isle of Man",
       "code": "IM",
       "phoneCode": "+44",
       "flagEmoji": "🇮🇲"
     },
     {
-      "name": "Isla de Navidad",
+      "name": "Christmas Island",
       "code": "CX",
       "phoneCode": "+61",
       "flagEmoji": "🇨🇽"
     },
     {
-      "name": "Isla Norfolk",
+      "name": "Norfolk Island",
       "code": "NF",
       "phoneCode": "+672",
       "flagEmoji": "🇳🇫"
     },
     {
-      "name": "Islandia",
+      "name": "Iceland",
       "code": "IS",
       "phoneCode": "+354",
       "flagEmoji": "🇮🇸"
     },
     {
-      "name": "Islas Bermudas",
+      "name": "Bermuda",
       "code": "BM",
       "phoneCode": "+1441",
       "flagEmoji": "🇧🇲"
     },
     {
-      "name": "Islas Caimán",
+      "name": "Cayman Islands",
       "code": "KY",
       "phoneCode": "+345",
       "flagEmoji": "🇰🇾"
     },
     {
-      "name": "Islas Cocos (Keeling)",
+      "name": "Cocos (Keeling) Islands",
       "code": "CC",
       "phoneCode": "+61",
       "flagEmoji": "🇨🇨"
     },
     {
-      "name": "Islas Cook",
+      "name": "Cook Islands",
       "code": "CK",
       "phoneCode": "+682",
       "flagEmoji": "🇨🇰"
     },
     {
-      "name": "Islas de Åland",
+      "name": "Åland Islands",
       "code": "AX",
       "phoneCode": "+358",
       "flagEmoji": "🇦🇽"
     },
     {
-      "name": "Islas Feroe",
+      "name": "Faroe Islands",
       "code": "FO",
       "phoneCode": "+298",
       "flagEmoji": "🇫🇴"
     },
     {
-      "name": "Islas Georgias del Sur y Sandwich del Sur",
+      "name": "South Georgia and the South Sandwich Islands",
       "code": "GS",
       "phoneCode": "+500",
       "flagEmoji": "🇬🇸"
     },
     {
-      "name": "Islas Maldivas",
+      "name": "Maldives",
       "code": "MV",
       "phoneCode": "+960",
       "flagEmoji": "🇲🇻"
     },
     {
-      "name": "Islas Malvinas",
+      "name": "Falkland Islands (Malvinas)",
       "code": "FK",
       "phoneCode": "+500",
       "flagEmoji": "🇫🇰"
     },
     {
-      "name": "Islas Marianas del Norte",
+      "name": "Northern Mariana Islands",
       "code": "MP",
       "phoneCode": "+1670",
       "flagEmoji": "🇲🇵"
     },
     {
-      "name": "Islas Marshall",
+      "name": "Marshall Islands",
       "code": "MH",
       "phoneCode": "+692",
       "flagEmoji": "🇲🇭"
     },
     {
-      "name": "Islas Pitcairn",
+      "name": "Pitcairn Islands",
       "code": "PN",
       "phoneCode": "+872",
       "flagEmoji": "🇵🇳"
     },
     {
-      "name": "Islas Salomón",
+      "name": "Solomon Islands",
       "code": "SB",
       "phoneCode": "+677",
       "flagEmoji": "🇸🇧"
     },
     {
-      "name": "Islas Turcas y Caicos",
+      "name": "Turks and Caicos Islands",
       "code": "TC",
       "phoneCode": "+1649",
       "flagEmoji": "🇹🇨"
     },
     {
-      "name": "Islas Vírgenes Británicas",
+      "name": "Virgin Islands, British",
       "code": "VG",
       "phoneCode": "+1284",
       "flagEmoji": "🇻🇬"
     },
     {
-      "name": "Islas Vírgenes de los Estados Unidos",
+      "name": "Virgin Islands, U.S.",
       "code": "VI",
       "phoneCode": "+1340",
       "flagEmoji": "🇻🇮"
@@ -1628,7 +1628,7 @@ export const codes = [
       "flagEmoji": "🇮🇱"
     },
     {
-      "name": "Italia",
+      "name": "Italy",
       "code": "IT",
       "phoneCode": "+39",
       "flagEmoji": "🇮🇹"
@@ -1640,7 +1640,7 @@ export const codes = [
       "flagEmoji": "🇯🇲"
     },
     {
-      "name": "Japón",
+      "name": "Japan",
       "code": "JP",
       "phoneCode": "+81",
       "flagEmoji": "🇯🇵"
@@ -1652,25 +1652,25 @@ export const codes = [
       "flagEmoji": "🇯🇪"
     },
     {
-      "name": "Jordania",
+      "name": "Jordan",
       "code": "JO",
       "phoneCode": "+962",
       "flagEmoji": "🇯🇴"
     },
     {
-      "name": "Kazajistán",
+      "name": "Kazakhstan",
       "code": "KZ",
       "phoneCode": "+77",
       "flagEmoji": "🇰🇿"
     },
     {
-      "name": "Kenia",
+      "name": "Kenya",
       "code": "KE",
       "phoneCode": "+254",
       "flagEmoji": "🇰🇪"
     },
     {
-      "name": "Kirguistán",
+      "name": "Kyrgyzstan",
       "code": "KG",
       "phoneCode": "+996",
       "flagEmoji": "🇰🇬"
@@ -1688,25 +1688,25 @@ export const codes = [
       "flagEmoji": "🇰🇼"
     },
     {
-      "name": "Laos",
+      "name": "Lao People's Democratic Republic",
       "code": "LA",
       "phoneCode": "+856",
       "flagEmoji": "🇱🇦"
     },
     {
-      "name": "Lesoto",
+      "name": "Lesotho",
       "code": "LS",
       "phoneCode": "+266",
       "flagEmoji": "🇱🇸"
     },
     {
-      "name": "Letonia",
+      "name": "Latvia",
       "code": "LV",
       "phoneCode": "+371",
       "flagEmoji": "🇱🇻"
     },
     {
-      "name": "Líbano",
+      "name": "Lebanon",
       "code": "LB",
       "phoneCode": "+961",
       "flagEmoji": "🇱🇧"
@@ -1718,7 +1718,7 @@ export const codes = [
       "flagEmoji": "🇱🇷"
     },
     {
-      "name": "Libia",
+      "name": "Libyan Arab Jamahiriya",
       "code": "LY",
       "phoneCode": "+218",
       "flagEmoji": "🇱🇾"
@@ -1730,13 +1730,13 @@ export const codes = [
       "flagEmoji": "🇱🇮"
     },
     {
-      "name": "Lituania",
+      "name": "Lithuania",
       "code": "LT",
       "phoneCode": "+370",
       "flagEmoji": "🇱🇹"
     },
     {
-      "name": "Luxemburgo",
+      "name": "Luxembourg",
       "code": "LU",
       "phoneCode": "+352",
       "flagEmoji": "🇱🇺"
@@ -1748,7 +1748,7 @@ export const codes = [
       "flagEmoji": "🇲🇴"
     },
     {
-      "name": "Macedonia del Norte",
+      "name": "North Macedonia",
       "code": "MK",
       "phoneCode": "+389",
       "flagEmoji": "🇲🇰"
@@ -1760,7 +1760,7 @@ export const codes = [
       "flagEmoji": "🇲🇬"
     },
     {
-      "name": "Malasia",
+      "name": "Malaysia",
       "code": "MY",
       "phoneCode": "+60",
       "flagEmoji": "🇲🇾"
@@ -1784,19 +1784,19 @@ export const codes = [
       "flagEmoji": "🇲🇹"
     },
     {
-      "name": "Marruecos",
+      "name": "Morocco",
       "code": "MA",
       "phoneCode": "+212",
       "flagEmoji": "🇲🇦"
     },
     {
-      "name": "Martinica",
+      "name": "Martinique",
       "code": "MQ",
       "phoneCode": "+596",
       "flagEmoji": "🇲🇶"
     },
     {
-      "name": "Mauricio",
+      "name": "Mauritius",
       "code": "MU",
       "phoneCode": "+230",
       "flagEmoji": "🇲🇺"
@@ -1814,7 +1814,7 @@ export const codes = [
       "flagEmoji": "🇾🇹"
     },
     {
-      "name": "México",
+      "name": "Mexico",
       "code": "MX",
       "phoneCode": "+52",
       "flagEmoji": "🇲🇽"
@@ -1826,13 +1826,13 @@ export const codes = [
       "flagEmoji": "🇫🇲"
     },
     {
-      "name": "Moldavia",
+      "name": "Moldova, Republic of",
       "code": "MD",
       "phoneCode": "+373",
       "flagEmoji": "🇲🇩"
     },
     {
-      "name": "Mónaco",
+      "name": "Monaco",
       "code": "MC",
       "phoneCode": "+377",
       "flagEmoji": "🇲🇨"
@@ -1904,37 +1904,37 @@ export const codes = [
       "flagEmoji": "🇳🇺"
     },
     {
-      "name": "Noruega",
+      "name": "Norway",
       "code": "NO",
       "phoneCode": "+47",
       "flagEmoji": "🇳🇴"
     },
     {
-      "name": "Nueva Caledonia",
+      "name": "New Caledonia",
       "code": "NC",
       "phoneCode": "+687",
       "flagEmoji": "🇳🇨"
     },
     {
-      "name": "Nueva Zelanda",
+      "name": "New Zealand",
       "code": "NZ",
       "phoneCode": "+64",
       "flagEmoji": "🇳🇿"
     },
     {
-      "name": "Omán",
+      "name": "Oman",
       "code": "OM",
       "phoneCode": "+968",
       "flagEmoji": "🇴🇲"
     },
     {
-      "name": "Países Bajos",
+      "name": "Netherlands",
       "code": "NL",
       "phoneCode": "+31",
       "flagEmoji": "🇳🇱"
     },
     {
-      "name": "Pakistán",
+      "name": "Pakistan",
       "code": "PK",
       "phoneCode": "+92",
       "flagEmoji": "🇵🇰"
@@ -1946,19 +1946,19 @@ export const codes = [
       "flagEmoji": "🇵🇼"
     },
     {
-      "name": "Palestina",
+      "name": "Palestinian Territory, Occupied",
       "code": "PS",
       "phoneCode": "+970",
       "flagEmoji": "🇵🇸"
     },
     {
-      "name": "Panamá",
+      "name": "Panama",
       "code": "PA",
       "phoneCode": "+507",
       "flagEmoji": "🇵🇦"
     },
     {
-      "name": "Papúa Nueva Guinea",
+      "name": "Papua New Guinea",
       "code": "PG",
       "phoneCode": "+675",
       "flagEmoji": "🇵🇬"
@@ -1970,19 +1970,19 @@ export const codes = [
       "flagEmoji": "🇵🇾"
     },
     {
-      "name": "Perú",
+      "name": "Peru",
       "code": "PE",
       "phoneCode": "+51",
       "flagEmoji": "🇵🇪"
     },
     {
-      "name": "Polinesia Francesa",
+      "name": "French Polynesia",
       "code": "PF",
       "phoneCode": "+689",
       "flagEmoji": "🇵🇫"
     },
     {
-      "name": "Polonia",
+      "name": "Poland",
       "code": "PL",
       "phoneCode": "+48",
       "flagEmoji": "🇵🇱"
@@ -2006,67 +2006,67 @@ export const codes = [
       "flagEmoji": "🇶🇦"
     },
     {
-      "name": "Reino Unido",
+      "name": "United Kingdom",
       "code": "GB",
       "phoneCode": "+44",
       "flagEmoji": "🇬🇧"
     },
     {
-      "name": "República Centroafricana",
+      "name": "Central African Republic",
       "code": "CF",
       "phoneCode": "+236",
       "flagEmoji": "🇨🇫"
     },
     {
-      "name": "República Checa",
+      "name": "Czech Republic",
       "code": "CZ",
       "phoneCode": "+420",
       "flagEmoji": "🇨🇿"
     },
     {
-      "name": "República de Sudán del Sur",
+      "name": "South Sudan",
       "code": "SS",
       "phoneCode": "+211",
       "flagEmoji": "🇸🇸"
     },
     {
-      "name": "República del Congo",
+      "name": "Congo",
       "code": "CG",
       "phoneCode": "+242",
       "flagEmoji": "🇨🇬"
     },
     {
-      "name": "República Democrática del Congo",
+      "name": "Congo, The Democratic Republic of the",
       "code": "CD",
       "phoneCode": "+243",
       "flagEmoji": "🇨🇩"
     },
     {
-      "name": "República Dominicana",
+      "name": "Dominican Republic",
       "code": "DO",
       "phoneCode": "+1849",
       "flagEmoji": "🇩🇴"
     },
     {
-      "name": "Reunión",
+      "name": "Reunion",
       "code": "RE",
       "phoneCode": "+262",
       "flagEmoji": "🇷🇪"
     },
     {
-      "name": "Ruanda",
+      "name": "Rwanda",
       "code": "RW",
       "phoneCode": "+250",
       "flagEmoji": "🇷🇼"
     },
     {
-      "name": "Rumanía",
+      "name": "Romania",
       "code": "RO",
       "phoneCode": "+40",
       "flagEmoji": "🇷🇴"
     },
     {
-      "name": "Rusia",
+      "name": "Russian Federation",
       "code": "RU",
       "phoneCode": "+7",
       "flagEmoji": "🇷🇺"
@@ -2078,19 +2078,19 @@ export const codes = [
       "flagEmoji": "🇼🇸"
     },
     {
-      "name": "Samoa Americana",
+      "name": "American Samoa",
       "code": "AS",
       "phoneCode": "+1684",
       "flagEmoji": "🇦🇸"
     },
     {
-      "name": "San Bartolomé",
+      "name": "Saint Barthélemy",
       "code": "BL",
       "phoneCode": "+590",
       "flagEmoji": "🇧🇱"
     },
     {
-      "name": "San Cristóbal y Nieves",
+      "name": "Saint Kitts and Nevis",
       "code": "KN",
       "phoneCode": "+1869",
       "flagEmoji": "🇰🇳"
@@ -2102,37 +2102,37 @@ export const codes = [
       "flagEmoji": "🇸🇲"
     },
     {
-      "name": "San Martín (Francia)",
+      "name": "Saint Martin",
       "code": "MF",
       "phoneCode": "+590",
       "flagEmoji": "🇲🇫"
     },
     {
-      "name": "San Pedro y Miquelón",
+      "name": "Saint Pierre and Miquelon",
       "code": "PM",
       "phoneCode": "+508",
       "flagEmoji": "🇵🇲"
     },
     {
-      "name": "San Vicente y las Granadinas",
+      "name": "Saint Vincent and the Grenadines",
       "code": "VC",
       "phoneCode": "+1784",
       "flagEmoji": "🇻🇨"
     },
     {
-      "name": "Santa Elena",
+      "name": "Saint Helena",
       "code": "SH",
       "phoneCode": "+290",
       "flagEmoji": "🇸🇭"
     },
     {
-      "name": "Santa Lucía",
+      "name": "Saint Lucia",
       "code": "LC",
       "phoneCode": "+1758",
       "flagEmoji": "🇱🇨"
     },
     {
-      "name": "Santo Tomé y Príncipe",
+      "name": "Sao Tome and Principe",
       "code": "ST",
       "phoneCode": "+239",
       "flagEmoji": "🇸🇹"
@@ -2144,7 +2144,7 @@ export const codes = [
       "flagEmoji": "🇸🇳"
     },
     {
-      "name": "Serbia",
+      "name": "Serbia and Montenegro",
       "code": "RS",
       "phoneCode": "+381",
       "flagEmoji": "🇷🇸"
@@ -2156,19 +2156,19 @@ export const codes = [
       "flagEmoji": "🇸🇨"
     },
     {
-      "name": "Sierra Leona",
+      "name": "Sierra Leone",
       "code": "SL",
       "phoneCode": "+232",
       "flagEmoji": "🇸🇱"
     },
     {
-      "name": "Singapur",
+      "name": "Singapore",
       "code": "SG",
       "phoneCode": "+65",
       "flagEmoji": "🇸🇬"
     },
     {
-      "name": "Siria",
+      "name": "Syrian Arab Republic",
       "code": "SY",
       "phoneCode": "+963",
       "flagEmoji": "🇸🇾"
@@ -2180,85 +2180,85 @@ export const codes = [
       "flagEmoji": "🇸🇴"
     },
     {
-      "name": "Sri lanka",
+      "name": "Sri Lanka",
       "code": "LK",
       "phoneCode": "+94",
       "flagEmoji": "🇱🇰"
     },
     {
-      "name": "Sudáfrica",
+      "name": "South Africa",
       "code": "ZA",
       "phoneCode": "+27",
       "flagEmoji": "🇿🇦"
     },
     {
-      "name": "Sudán",
+      "name": "Sudan",
       "code": "SD",
       "phoneCode": "+249",
       "flagEmoji": "🇸🇩"
     },
     {
-      "name": "Suecia",
+      "name": "Sweden",
       "code": "SE",
       "phoneCode": "+46",
       "flagEmoji": "🇸🇪"
     },
     {
-      "name": "Suiza",
+      "name": "Switzerland",
       "code": "CH",
       "phoneCode": "+41",
       "flagEmoji": "🇨🇭"
     },
     {
-      "name": "Surinám",
+      "name": "Suriname",
       "code": "SR",
       "phoneCode": "+597",
       "flagEmoji": "🇸🇷"
     },
     {
-      "name": "Svalbard y Jan Mayen",
+      "name": "Svalbard and Jan Mayen",
       "code": "SJ",
       "phoneCode": "+47",
       "flagEmoji": "🇸🇯"
     },
     {
-      "name": "Swazilandia",
+      "name": "Swaziland",
       "code": "SZ",
       "phoneCode": "+268",
       "flagEmoji": "🇸🇿"
     },
     {
-      "name": "Tailandia",
+      "name": "Thailand",
       "code": "TH",
       "phoneCode": "+66",
       "flagEmoji": "🇹🇭"
     },
     {
-      "name": "Taiwán",
+      "name": "Taiwan, Province of China",
       "code": "TW",
       "phoneCode": "+886",
       "flagEmoji": "🇹🇼"
     },
     {
-      "name": "Tanzania",
+      "name": "Tanzania, United Republic of",
       "code": "TZ",
       "phoneCode": "+255",
       "flagEmoji": "🇹🇿"
     },
     {
-      "name": "Tayikistán",
+      "name": "Tajikistan",
       "code": "TJ",
       "phoneCode": "+992",
       "flagEmoji": "🇹🇯"
     },
     {
-      "name": "Territorio Británico del Océano Índico",
+      "name": "British Indian Ocean Territory",
       "code": "IO",
       "phoneCode": "+246",
       "flagEmoji": "🇮🇴"
     },
     {
-      "name": "Timor Oriental",
+      "name": "Timor-Leste",
       "code": "TL",
       "phoneCode": "+670",
       "flagEmoji": "🇹🇱"
@@ -2282,7 +2282,7 @@ export const codes = [
       "flagEmoji": "🇹🇴"
     },
     {
-      "name": "Trinidad y Tobago",
+      "name": "Trinidad and Tobago",
       "code": "TT",
       "phoneCode": "+1868",
       "flagEmoji": "🇹🇹"
@@ -2294,13 +2294,13 @@ export const codes = [
       "flagEmoji": "🇹🇳"
     },
     {
-      "name": "Turkmenistán",
+      "name": "Turkmenistan",
       "code": "TM",
       "phoneCode": "+993",
       "flagEmoji": "🇹🇲"
     },
     {
-      "name": "Turquía",
+      "name": "Turkey",
       "code": "TR",
       "phoneCode": "+90",
       "flagEmoji": "🇹🇷"
@@ -2312,7 +2312,7 @@ export const codes = [
       "flagEmoji": "🇹🇻"
     },
     {
-      "name": "Ucrania",
+      "name": "Ukraine",
       "code": "UA",
       "phoneCode": "+380",
       "flagEmoji": "🇺🇦"
@@ -2330,7 +2330,7 @@ export const codes = [
       "flagEmoji": "🇺🇾"
     },
     {
-      "name": "Uzbekistán",
+      "name": "Uzbekistan",
       "code": "UZ",
       "phoneCode": "+998",
       "flagEmoji": "🇺🇿"
@@ -2348,13 +2348,13 @@ export const codes = [
       "flagEmoji": "🇻🇪"
     },
     {
-      "name": "Vietnam",
+      "name": "Viet Nam",
       "code": "VN",
       "phoneCode": "+84",
       "flagEmoji": "🇻🇳"
     },
     {
-      "name": "Wallis y Futuna",
+      "name": "Wallis and Futuna",
       "code": "WF",
       "phoneCode": "+681",
       "flagEmoji": "🇼🇫"
@@ -2366,7 +2366,7 @@ export const codes = [
       "flagEmoji": "🇾🇪"
     },
     {
-      "name": "Yibuti",
+      "name": "Djibouti",
       "code": "DJ",
       "phoneCode": "+253",
       "flagEmoji": "🇩🇯"
@@ -2378,7 +2378,7 @@ export const codes = [
       "flagEmoji": "🇿🇲"
     },
     {
-      "name": "Zimbabue",
+      "name": "Zimbabwe",
       "code": "ZW",
       "phoneCode": "+263",
       "flagEmoji": "🇿🇼"
