@@ -20,9 +20,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }): Promise<Metadata> {
-  const data = await getPortalPaddyFieldById(params.id);
+  const { id } = await params;
+  const data = await getPortalPaddyFieldById(id);
   if (!data || data.length === 0) {
     return { title: "Paddy Field Not Found" };
   }
@@ -43,9 +44,10 @@ export async function generateMetadata({
 export default async function PaddyFieldDetailPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const data = await getPortalPaddyFieldById(params.id);
+  const { id } = await params;
+  const data = await getPortalPaddyFieldById(id);
 
   if (!data || data.length === 0) {
     return notFound();

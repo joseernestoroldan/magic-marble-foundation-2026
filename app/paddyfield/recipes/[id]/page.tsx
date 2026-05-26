@@ -20,9 +20,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }): Promise<Metadata> {
-  const data = await getRecipeById(params.id);
+  const { id } = await params;
+  const data = await getRecipeById(id);
   if (!data || data.length === 0) {
     return { title: "Recipe Not Found" };
   }
@@ -43,9 +44,10 @@ export async function generateMetadata({
 export default async function RecipeDetailPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const data = await getRecipeById(params.id);
+  const { id } = await params;
+  const data = await getRecipeById(id);
 
   if (!data || data.length === 0) {
     return notFound();

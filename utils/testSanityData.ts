@@ -8,6 +8,9 @@ const testChimpData: chimpType[] = [
     description: "Something went wrong",
     chimpLink: "https://chimp.ink/stores/mmf/",
     publishedAt: new Date().toISOString(),
+    mainImage: null,
+    hotSpot: null,
+    crop: null,
   },
 ];
 

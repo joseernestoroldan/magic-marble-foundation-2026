@@ -110,3 +110,32 @@ export const getRecipeById = async (id: string) => {
   const data: recipesType[] | null = await getData(query);
   return data;
 }
+
+export const getAllData = async (type: string) => {
+  switch (type) {
+    case "dairies":
+      return getAllDiaries();
+    case "projects":
+      return getAllProjects();
+    case "gallery":
+      return getAllGallery();
+    case "grantees":
+      return getAllGrantees();
+    case "paddyfield":
+      return getAllPaddyField();
+    case "recipes":
+      return getAllRecipes();
+    case "chimp":
+      return getAllChimp();
+    default:
+      return null;
+  }
+}
+
+export const UpdateSuscriptionStatus = async (dairyId: string, count: number) => {
+  try {
+    await client.patch(dairyId).set({ notificationsSent: count }).commit({ token: process.env.API_TOKEN });
+  } catch (error) {
+    console.error("Error updating subscription status:", error);
+  }
+}

@@ -9,7 +9,7 @@ import { NextRequest } from "next/server";
 import authConfig from "./auth.config";
 const { auth } = NextAuth(authConfig);
 
-export default auth(
+const proxy = auth(
   (req: NextRequest & { auth: Session | null }): Response | void => {
     const { nextUrl } = req;
     const isLoggedIn = !!req.auth;
@@ -34,6 +34,8 @@ export default auth(
     return;
   }
 );
+
+export { proxy };
 
 // Optionally, don't invoke Middleware on some paths
 export const config = {

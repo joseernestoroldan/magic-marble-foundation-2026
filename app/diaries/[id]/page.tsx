@@ -19,9 +19,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }): Promise<Metadata> {
-  const diaryData = await getDiaryById(params.id);
+  const { id } = await params;
+  const diaryData = await getDiaryById(id);
   if (!diaryData || diaryData.length === 0) {
     return { title: "Diary Not Found" };
   }
@@ -42,9 +43,10 @@ export async function generateMetadata({
 export default async function DiaryDetailPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const diaryData = await getDiaryById(params.id);
+  const { id } = await params;
+  const diaryData = await getDiaryById(id);
 
   if (!diaryData || diaryData.length === 0) {
     return notFound();

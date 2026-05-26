@@ -18,9 +18,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { _id: string };
+  params: Promise<{ _id: string }>;
 }): Promise<Metadata> {
-  const projectData = await getProjectById(params._id);
+  const { _id } = await params;
+  const projectData = await getProjectById(_id);
   if (!projectData || projectData.length === 0) {
     return { title: "Project Not Found" };
   }
@@ -34,9 +35,10 @@ export async function generateMetadata({
 export default async function ProjectDetailsPage({
   params,
 }: {
-  params: { _id: string };
+  params: Promise<{ _id: string }>;
 }) {
-  const projectData = await getProjectById(params._id);
+  const { _id } = await params;
+  const projectData = await getProjectById(_id);
 
   if (!projectData || projectData.length === 0) {
     return notFound();
