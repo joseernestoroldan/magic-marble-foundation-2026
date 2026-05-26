@@ -1,4 +1,4 @@
-import { granteesType } from "@/clientTypes";
+﻿import { granteesType } from "@/clientTypes";
 import { getSanityObjectPosition } from "@/components/Gallery/sanityImageFrame";
 import Image from "next/image";
 
@@ -19,7 +19,7 @@ export default function GranteeCard({
   return (
     <article className="group flex w-[150px] flex-col items-center gap-3">
       <div
-        className="relative h-[150px] w-[150px] shrink-0 overflow-hidden rounded-lg bg-slate-100 shadow-md ring-1 ring-slate-200/80 transition-shadow duration-300 group-hover:shadow-lg group-hover:ring-cyan-500/40"
+        className="relative h-[150px] w-[150px] shrink-0 overflow-hidden rounded-[5px] bg-slate-100 shadow-md ring-1 ring-slate-200/80 transition-shadow duration-300 group-hover:shadow-lg group-hover:ring-cyan-600/40"
         aria-label={name}>
         {grantee.mainImage ?
           <Image

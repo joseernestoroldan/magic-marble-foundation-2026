@@ -1,4 +1,4 @@
-import Container from "../Layouts/Container/Container";
+﻿import Container from "../Layouts/Container/Container";
 import Logo from "../Logo/Logo";
 import IconsFooter from "./IconsFooter";
 import MenuFooter from "./MenuFooter";
@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="w-full bg-slate-900 mt-24">
       {/* Línea decorativa superior */}
-      <div className="w-full h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
+      <div className="w-full h-1 bg-gradient-to-r from-transparent via-cyan-600 to-transparent" />
 
       {/* Cuerpo principal del footer */}
       <Container>

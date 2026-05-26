@@ -1,4 +1,4 @@
-import { UseFormRegisterReturn } from "react-hook-form";
+﻿import { UseFormRegisterReturn } from "react-hook-form";
 
 type FormCheckboxProps = {
   id: string;
@@ -12,7 +12,7 @@ export const FormCheckbox = ({ id, label, registration }: FormCheckboxProps) => 
       <input
         id={id}
         type="checkbox"
-        className="h-4 w-4 rounded-[3px] border-gray-300 text-cyan-500 focus:ring-cyan-500"
+        className="h-4 w-4 rounded-[5px] border-gray-300 text-cyan-600 focus:ring-cyan-600"
         {...registration}
       />
       <label htmlFor={id} className="text-sm font-medium text-gray-700">

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useClickOutside } from "@/hooks/useClickOutside";
 import { menuItems } from "@/utils/menuItems";
@@ -77,7 +77,7 @@ const ToggleSidebar = () => {
       <button
         onClick={toggle}
         aria-label="Open navigation menu"
-        className="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg
+        className="lg:hidden flex items-center justify-center w-10 h-10 rounded-[5px]
                    text-cyan-600 hover:bg-cyan-50 active:scale-95
                    transition-all duration-200 cursor-pointer"
       >
@@ -117,7 +117,7 @@ const ToggleSidebar = () => {
               <span className="text-sm font-semibold uppercase text-gray-800 tracking-wide">
                 Magic
               </span>
-              <span className="text-sm font-semibold uppercase text-cyan-500 tracking-wide">
+              <span className="text-sm font-semibold uppercase text-cyan-600 tracking-wide">
                 Marble
               </span>
               <span className="text-sm font-semibold uppercase text-gray-800 tracking-wide">
@@ -130,7 +130,7 @@ const ToggleSidebar = () => {
             onClick={close}
             aria-label="Close navigation menu"
             className="flex items-center justify-center w-9 h-9 rounded-full
-                       text-gray-500 hover:text-white hover:bg-cyan-500
+                       text-gray-500 hover:text-white hover:bg-cyan-600
                        transition-all duration-200 active:scale-90 cursor-pointer"
           >
             <IoClose size={24} />
@@ -152,11 +152,11 @@ const ToggleSidebar = () => {
                 <Link
                   href={item.link}
                   onClick={close}
-                  className="flex items-center gap-3 px-3 py-2.5 rounded-xl
+                  className="flex items-center gap-3 px-3 py-2.5 rounded-[5px]
                              text-gray-700 hover:text-cyan-600 hover:bg-cyan-50
                              transition-all duration-200 group"
                 >
-                  <span className="text-cyan-500 group-hover:text-cyan-600 transition-colors duration-200">
+                  <span className="text-cyan-600 group-hover:text-cyan-600 transition-colors duration-200">
                     {iconMap[item.title] ?? <IoMdHome size={18} />}
                   </span>
                   <span className="text-[15px] font-medium">{item.title}</span>
@@ -193,7 +193,7 @@ const ToggleSidebar = () => {
           >
             <IoMdMail
               size={20}
-              className="text-cyan-500 group-hover:text-cyan-600 transition-colors duration-200"
+              className="text-cyan-600 group-hover:text-cyan-600 transition-colors duration-200"
             />
             <span className="text-sm">info@magicmarblefoundation.org</span>
           </a>

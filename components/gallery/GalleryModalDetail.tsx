@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { Crop, HotSpot } from "@/clientTypes";
 import Image from "next/image";
@@ -48,7 +48,7 @@ export default function GalleryModalDetail({
   }, [infoOpen, closeInfo]);
 
   return (
-    <div className="relative flex h-full min-h-0 w-full items-center justify-center overflow-hidden rounded-xl bg-gray-900 shadow-2xl">
+    <div className="relative flex h-full min-h-0 w-full items-center justify-center overflow-hidden rounded-[5px] bg-gray-900 shadow-2xl">
       {mainImage ? (
         <div
           className="relative max-h-[94vh] max-w-[96vw]"
@@ -94,7 +94,7 @@ export default function GalleryModalDetail({
             role="region"
             aria-label="Description"
             aria-hidden={!infoOpen}
-            className={`absolute left-0 top-12 w-[min(20rem,calc(96vw-2rem))] rounded-lg border border-white/10 bg-gray-800/95 p-4 text-sm leading-relaxed text-white shadow-xl backdrop-blur-md transition-opacity duration-300 ease-in-out ${
+            className={`absolute left-0 top-12 w-[min(20rem,calc(96vw-2rem))] rounded-[5px] border border-white/10 bg-gray-800/95 p-4 text-sm leading-relaxed text-white shadow-xl backdrop-blur-md transition-opacity duration-300 ease-in-out ${
               infoOpen
                 ? "pointer-events-auto opacity-100"
                 : "pointer-events-none opacity-0"

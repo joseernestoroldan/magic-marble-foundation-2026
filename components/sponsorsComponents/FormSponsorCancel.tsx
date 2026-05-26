@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { emailSchema } from "@/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -71,7 +71,7 @@ export default function FormSponsorCancel({
             type="email"
             id="email"
             {...register("email")}
-            className="rounded-full mt-1 block w-full px-3 py-2 border border-gray-300 shadow-sm focus:outline-none focus:ring-cyan-500 focus:border-cyan-500 sm:text-sm"
+            className="rounded-full mt-1 block w-full px-3 py-2 border border-gray-300 shadow-sm focus:outline-none focus:ring-cyan-600 focus:border-cyan-600 sm:text-sm"
           />
           {errors.username && (
             <p className="text-red-500 text-sm">
@@ -82,7 +82,7 @@ export default function FormSponsorCancel({
 
         <button
           type="submit"
-          className="w-full rounded-full flex justify-center py-2 px-4 border border-transparent shadow-sm text-base font-medium text-white bg-cyan-500 hover:bg-cyan-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500">
+          className="w-full rounded-full flex justify-center py-2 px-4 border border-transparent shadow-sm text-base font-medium text-white bg-cyan-600 hover:bg-cyan-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-600">
           Find my subscriptions
         </button>
       </form>
@@ -94,13 +94,13 @@ export default function FormSponsorCancel({
           {subscriptions.map((sub) => (
             <div
               key={sub.id}
-              className="flex justify-between items-center border border-gray-200 text-gray-500 p-4 rounded-lg mt-4">
+              className="flex justify-between items-center border border-gray-200 text-gray-500 p-4 rounded-[5px] mt-4">
               <p className="text-lg">ID: {sub.idSub}</p>
               <p className="text-lg">Amount: {sub.amount}</p>
 
               {sub.idSub && (
                 <button
-                  className="bg-cyan-500 rounded-full hover:bg-cyan-400 text-white px-4 py-2"
+                  className="bg-cyan-600 rounded-full hover:bg-cyan-400 text-white px-4 py-2"
                   onClick={async () => {
                     if (sub.idSub) {
                       const response = await cancelSubscription(sub.idSub);
@@ -113,7 +113,7 @@ export default function FormSponsorCancel({
                         toast("Subscription Cancelled", {
                           classNames: {
                             toast:
-                              "bg-cyan-100 text-cyan-500 border border-cyan-500",
+                              "bg-cyan-100 text-cyan-600 border border-cyan-600",
                           },
                         });
                       }

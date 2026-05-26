@@ -48,7 +48,7 @@ export default function NewsletterList({ newsletters }: NewsletterListProps) {
           align-items: stretch;
           background: linear-gradient(135deg, #f8fafc 0%, #f0fdfa 100%);
           border: 1px solid rgba(8, 145, 178, 0.1);
-          border-radius: 14px;
+          border-radius: 5px;
           overflow: hidden;
           text-decoration: none;
           color: inherit;

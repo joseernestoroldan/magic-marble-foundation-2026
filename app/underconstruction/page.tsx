@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { Loader2 } from "lucide-react"
 import Link from "next/link"
@@ -24,8 +24,8 @@ export default function UnderConstruction() {
     <div className="flex min-h-screen flex-col items-center justify-center bg-white p-4 text-center">
       <div className="max-w-md space-y-6">
         <div className="flex items-center justify-center space-x-2">
-          <Loader2 className="h-10 w-10 animate-spin text-cyan-500" />
-          <h1 className="text-3xl font-bold text-cyan-500">Under Construction</h1>
+          <Loader2 className="h-10 w-10 animate-spin text-cyan-600" />
+          <h1 className="text-3xl font-bold text-cyan-600">Under Construction</h1>
         </div>
 
         <p className="text-gray-500">
@@ -35,7 +35,7 @@ export default function UnderConstruction() {
 
         <div className="h-2 w-full overflow-hidden rounded-full bg-gray-100">
           <div
-            className="h-full bg-cyan-500 transition-all duration-300 ease-in-out"
+            className="h-full bg-cyan-600 transition-all duration-300 ease-in-out"
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -44,7 +44,7 @@ export default function UnderConstruction() {
         <div className="flex justify-center pt-4">
           <Link
             href="/"
-            className="rounded-full bg-cyan-500 px-6 py-2 font-medium text-white transition-colors hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
+            className="rounded-full bg-cyan-600 px-6 py-2 font-medium text-white transition-colors hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-600 focus:ring-offset-2"
           >
             Return Home
           </Link>
@@ -52,9 +52,9 @@ export default function UnderConstruction() {
 
         <div className="mt-8 flex justify-center">
           <div className="relative h-24 w-24">
-            <div className="absolute inset-0 animate-ping rounded-full bg-cyan-500 opacity-20"></div>
-            <div className="absolute inset-2 animate-pulse rounded-full bg-cyan-500 opacity-30"></div>
-            <div className="absolute inset-4 animate-spin rounded-full border-4 border-gray-500 border-t-cyan-500"></div>
+            <div className="absolute inset-0 animate-ping rounded-full bg-cyan-600 opacity-20"></div>
+            <div className="absolute inset-2 animate-pulse rounded-full bg-cyan-600 opacity-30"></div>
+            <div className="absolute inset-4 animate-spin rounded-full border-4 border-gray-500 border-t-cyan-600"></div>
             <div className="absolute inset-8 rounded-full bg-white"></div>
             <div className="absolute inset-0 flex items-center justify-center">
               <span className="text-xs font-medium text-gray-500">COMING SOON</span>

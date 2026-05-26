@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import {
   chartData,
@@ -28,7 +28,7 @@ const CustomTooltip = ({ active, payload }: TooltipProps) => {
   const { category, amount, percentage } = payload[0].payload;
 
   return (
-    <div className="rounded-xl border border-cyan-700/30 bg-gray-900/95 px-4 py-3 shadow-xl backdrop-blur-sm">
+    <div className="rounded-[5px] border border-cyan-700/30 bg-gray-900/95 px-4 py-3 shadow-xl backdrop-blur-sm">
       <p className="mb-1 text-sm font-semibold text-cyan-300">{category}</p>
       <p className="text-sm text-gray-200">
         <span className="font-medium text-white">
@@ -229,7 +229,7 @@ const Charts = () => {
         {entries.map((entry) => (
           <div
             key={entry.category}
-            className="flex items-center justify-between rounded-xl border border-gray-200 bg-white px-5 py-3 shadow-sm transition-shadow hover:shadow-md"
+            className="flex items-center justify-between rounded-[5px] border border-gray-200 bg-white px-5 py-3 shadow-sm transition-shadow hover:shadow-md"
           >
             <div className="flex items-center gap-3">
               <span

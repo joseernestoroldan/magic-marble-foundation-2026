@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useState, useMemo } from "react";
 import { FaSearch } from "react-icons/fa";
 
@@ -56,7 +56,7 @@ export const FormSearchableSelect = <T,>({
           type="button"
           onClick={() => { if (!disabled) setOpen(!open); }}
           disabled={disabled}
-          className="flex w-[200px] items-center justify-between rounded-[5px] border border-gray-200 bg-white px-3 py-2 text-sm text-gray-500 disabled:cursor-not-allowed disabled:opacity-50 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 transition-colors duration-200"
+          className="flex w-[200px] items-center justify-between rounded-[5px] border border-gray-200 bg-white px-3 py-2 text-sm text-gray-500 disabled:cursor-not-allowed disabled:opacity-50 focus:border-cyan-600 focus:outline-none focus:ring-1 focus:ring-cyan-600 transition-colors duration-200"
         >
           <span className="truncate">
             {selectedOption ? getOptionLabel(selectedOption) : placeholder}
@@ -66,7 +66,7 @@ export const FormSearchableSelect = <T,>({
         {open && (
           <div className="absolute z-10 mt-1 w-[200px] rounded-[5px] border border-gray-200 bg-white shadow-lg">
             <input
-              className="w-full rounded-[5px] border-b border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-cyan-500"
+              className="w-full rounded-[5px] border-b border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-cyan-600"
               placeholder={searchPlaceholder}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
@@ -81,7 +81,7 @@ export const FormSearchableSelect = <T,>({
                   return (
                     <li
                       key={`${optValue}-${index}`}
-                      className="flex cursor-pointer items-center justify-between px-3 py-2 text-sm hover:bg-cyan-500 hover:text-white transition-colors duration-150"
+                      className="flex cursor-pointer items-center justify-between px-3 py-2 text-sm hover:bg-cyan-600 hover:text-white transition-colors duration-150"
                       onClick={() => {
                         onChange(optValue);
                         setOpen(false);

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import CarouselDots from "@/components/Carousels/CarouselDots/CarouselDots";
 import { HeroCarouselImages } from "@/utils/carrouselImages";
@@ -72,7 +72,7 @@ const HeroCarousel = () => {
               </p>
               <Link
                 href={`/projects/project/${slide.url}`}
-                className="inline-block mt-2 md:mt-4 py-2 md:py-3 text-base md:text-xl lg:text-2xl text-cyan-500 font-semibold transition-all underline duration-500">
+                className="inline-block mt-2 md:mt-4 py-2 md:py-3 text-base md:text-xl lg:text-2xl text-cyan-600 font-semibold transition-all underline duration-500">
                 Learn More
               </Link>
             </div>

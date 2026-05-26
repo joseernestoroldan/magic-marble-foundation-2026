@@ -1,8 +1,8 @@
-
+﻿
 const PaddyFieldMaintenancePage = () => {
   return (
     <div className="w-full bg-gradient-to-b from-white via-cyan-300 to-white flex flex-col items-center justify-center min-h-screen">
-      <div className="bg-transparent p-10 rounded-lg text-center">
+      <div className="bg-transparent p-10 rounded-[5px] text-center">
         <h1 className="text-4xl font-bold text-cyan-800 mb-4">
           This page is under maintenance
         </h1>

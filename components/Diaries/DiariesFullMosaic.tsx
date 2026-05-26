@@ -128,7 +128,7 @@ export default function DiariesFullMosaic({ diaries }: DiariesFullMosaicProps) {
         .dfm-card {
           position: relative;
           overflow: hidden;
-          border-radius: 16px;
+          border-radius: 5px;
           cursor: pointer;
           background: #0f172a;
           box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);

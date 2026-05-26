@@ -1,4 +1,4 @@
-import { galleryType } from "@/clientTypes";
+﻿import { galleryType } from "@/clientTypes";
 import Image from "next/image";
 import { getGalleryDisplayDate } from "./formatGalleryDate";
 import GalleryModalDetail from "./GalleryModalDetail";
@@ -32,7 +32,7 @@ export default function GalleryDetail({ item, variant = "modal" }: GalleryDetail
     <div className="flex w-full flex-col gap-8 md:flex-row md:gap-12">
       {item.mainImage && (
         <div
-          className="relative w-full overflow-hidden rounded-xl md:w-1/2 md:max-w-xl"
+          className="relative w-full overflow-hidden rounded-[5px] md:w-1/2 md:max-w-xl"
           style={{ aspectRatio }}
         >
           <Image

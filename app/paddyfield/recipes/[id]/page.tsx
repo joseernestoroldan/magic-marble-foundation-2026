@@ -1,4 +1,4 @@
-import { getAllRecipes, getRecipeById } from "@/client";
+﻿import { getAllRecipes, getRecipeById } from "@/client";
 import Container from "@/components/Layouts/Container/Container";
 import ImageGallery from "@/components/PaddyField/ImageGallery";
 import { PortableText } from "@portabletext/react";
@@ -95,7 +95,7 @@ export default async function RecipeDetailPage({
           
           {/* Image Gallery */}
           {images.length > 0 && (
-            <div className="w-full mb-16 shadow-[0_20px_50px_rgba(4,47,26,0.2)] rounded-sm overflow-hidden">
+            <div className="w-full mb-16 shadow-[0_20px_50px_rgba(4,47,26,0.2)] rounded-[5px] overflow-hidden">
               <ImageGallery images={images} />
             </div>
           )}
@@ -128,7 +128,7 @@ export default async function RecipeDetailPage({
 
           {/* Video */}
           {recipe.youtubeLink && (
-            <div className="w-full aspect-video rounded-sm overflow-hidden shadow-2xl mt-16 bg-[#042f1a]">
+            <div className="w-full aspect-video rounded-[5px] overflow-hidden shadow-2xl mt-16 bg-[#042f1a]">
               <iframe
                 src={recipe.youtubeLink.replace("watch?v=", "embed/")}
                 title={recipe.title}

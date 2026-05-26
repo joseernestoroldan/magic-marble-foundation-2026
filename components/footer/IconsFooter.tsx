@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { AiFillTikTok as TikTokIcon } from "react-icons/ai";
 import { LiaFacebook as FbIcon, LiaInstagram as IgIcon } from "react-icons/lia";
 import { IconType } from "react-icons/lib";
@@ -45,7 +45,7 @@ const FooterIconLink = ({ href, Icon, name }: FooterIconLinkProps) => (
       bg-slate-700 hover:bg-cyan-600
       text-slate-300 hover:text-white
       transition-all duration-300 ease-in-out
-      hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/30
+      hover:scale-110 hover:shadow-lg hover:shadow-cyan-600/30
     "
   >
     <Icon className="text-xl" />

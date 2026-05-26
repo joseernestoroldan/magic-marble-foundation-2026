@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import * as z from "zod";
 
 import { loginSchema } from "@/schemas";
@@ -75,7 +75,7 @@ const LoginForm = () => {
             registration={register("password")}
           />
           <Link
-            className="text-cyan-500 underline text-sm inline-block mt-1"
+            className="text-cyan-600 underline text-sm inline-block mt-1"
             href={"/reset"}
           >
             Forgot password?
@@ -85,7 +85,7 @@ const LoginForm = () => {
       <FormError message={error} />
       <FormConfirmation message={confirmation} />
       <button
-        className="bg-cyan-500 hover:bg-cyan-600 text-white w-full py-3 rounded-[5px] font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="bg-cyan-600 hover:bg-cyan-600 text-white w-full py-3 rounded-[5px] font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
         type="submit"
         disabled={isPending}
       >

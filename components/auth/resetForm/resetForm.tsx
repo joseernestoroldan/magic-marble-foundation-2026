@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import * as z from "zod";
 
 import { resetSchema } from "@/schemas";
@@ -60,7 +60,7 @@ const ResetForm = () => {
             </label>
             <input
               id="email"
-              className="flex h-10 w-full rounded-full border border-gray-200 bg-white px-3 py-2 text-sm text-gray-500 placeholder:text-gray-400 focus:border-cyan-500 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+              className="flex h-10 w-full rounded-full border border-gray-200 bg-white px-3 py-2 text-sm text-gray-500 placeholder:text-gray-400 focus:border-cyan-600 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
               {...register("email")}
               placeholder="magicmarble@example.com"
               type="email"
@@ -74,7 +74,7 @@ const ResetForm = () => {
         <FormError message={error} />
 
         <button
-          className="bg-cyan-500 hover:bg-opacity-80 text-white w-full py-2 rounded-full text-lg"
+          className="bg-cyan-600 hover:bg-opacity-80 text-white w-full py-2 rounded-full text-lg"
           type="submit"
           disabled={isPending}
         >

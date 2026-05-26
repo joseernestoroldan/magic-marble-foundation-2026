@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import * as z from "zod";
 
 import { registerSchema } from "@/schemas";
@@ -183,7 +183,7 @@ const RegisterForm = () => {
       <FormError message={error} />
 
       <button
-        className="bg-cyan-500 hover:bg-cyan-600 text-white w-full py-3 rounded-[5px] font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="bg-cyan-600 hover:bg-cyan-600 text-white w-full py-3 rounded-[5px] font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
         type="submit"
         disabled={isPending}
       >

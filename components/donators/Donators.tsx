@@ -6,101 +6,132 @@ import Loader from "../Loader/Loader";
 import PaginationUtil from "../paginationUtil/PaginationUtil";
 import Search from "../search/Search";
 
-const ShowUsersList = () => {
+interface Donator {
+  id: string;
+  firstName: string | null;
+  secondName: string | null;
+  amount: string | null;
+  email: string | null;
+  country: string | null;
+  address: string | null;
+  telephone: string | null;
+  name?: string | null;
+}
+
+const Donators = () => {
   const searchParams = useSearchParams();
   const q = searchParams.get("query") || "";
   const page = searchParams.get("page") || "1";
   const pageNumber = parseInt(page);
-  const [users, setUsers] = useState<Array<any> | undefined>([]);
+  const [donators, setDonators] = useState<Donator[]>([]);
   const [count, setCount] = useState<number>(1);
+  const [error, setError] = useState<string | null>(null);
 
-  const onSearch = useCallback(() => {
-    searchDonators(q, pageNumber)
-      .then((data) => {
-        setUsers(data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    countDonators(q)
-      .then((count) => {
-        setCount(count);
-      })
-      .catch((err) => console.log(err));
+  const onSearch = useCallback(async () => {
+    setError(null);
+    try {
+      const [data, total] = await Promise.all([
+        searchDonators(q, pageNumber),
+        countDonators(q),
+      ]);
+      setDonators(data ?? []);
+      setCount(total);
+    } catch {
+      setError("Failed to load donators");
+    }
   }, [q, pageNumber]);
 
   useEffect(() => {
     onSearch();
   }, [onSearch]);
 
-  if (!users) return null;
-
   return (
-    <div className="w-full max-w-5xl mx-auto border border-gray-200 p-4 rounded-[5px]">
-      <div>
-        <Search />
-      </div>
+    <div className="w-full max-w-5xl mx-auto">
+      <h3 className="text-lg font-semibold text-gray-600 mb-4">Donators</h3>
 
-      {users.length === 0 && count !== 0 && (
-        <p className="text-gray-500 text-lg w-full text-center">
+      <Search />
+
+      {error ? (
+        <div className="bg-red-50 text-red-600 p-3 rounded-[5px] text-sm mt-4">
+          {error}
+        </div>
+      ) : null}
+
+      {donators.length === 0 && count !== 0 ? (
+        <p className="text-gray-500 text-lg w-full text-center py-8">
           <Loader variant="inline" />
         </p>
-      )}
-      {users.length === 0 && count === 0 && (
-        <p className="text-center text-gray-500 text-lg">
+      ) : donators.length === 0 && count === 0 ? (
+        <p className="text-center text-gray-500 text-lg py-8">
           No register matches the query
         </p>
-      )}
-      {users.length !== 0 && (
-        <div className="flex w-full overflow-x-scroll md:overflow-auto">
-          <table className="w-full border border-gray-200 my-4 text-gray-500">
-            <thead className="font-semibold text-center">
-              <tr>
-                <td className="p-3 text-center">First Name</td>
-                <td className="p-3 text-center">Second Name</td>
-                <td className="p-3 text-center">Amount</td>
-                <td className="p-3 text-center">Email</td>
-                <td className="p-3 text-center">Country</td>
-                <td className="p-3 text-center">Address</td>
-                <td className="p-3 text-center">Telephone</td>
-              </tr>
-            </thead>
-            <tbody>
-              {users.map((user) => {
-                return (
-                  <tr key={user.id}>
-                    <td className="p-3 text-center capitalize">
-                      {user.firstName}
+      ) : (
+        <div className="rounded-[5px] border border-gray-200 overflow-hidden mt-4">
+          <div className="w-full overflow-x-auto">
+            <table className="w-full text-sm" style={{ borderCollapse: "collapse" }}>
+              <thead className="bg-gray-50 border-b border-gray-200">
+                <tr>
+                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    First Name
+                  </th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    Second Name
+                  </th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    Amount
+                  </th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    Email
+                  </th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    Country
+                  </th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    Address
+                  </th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    Telephone
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {donators.map((donator) => (
+                  <tr
+                    key={donator.id}
+                    className="border-b border-gray-100 hover:bg-gray-50 transition-colors"
+                  >
+                    <td className="px-4 py-3 text-gray-600 capitalize">
+                      {donator.firstName}
                     </td>
-                    <td className="p-3 text-center lowercase">
-                      {user.secondName}
+                    <td className="px-4 py-3 text-gray-600 capitalize">
+                      {donator.secondName}
                     </td>
-                    <td className="p-3 text-center capitalize">
-                      {user.amount}
+                    <td className="px-4 py-3 text-gray-600">
+                      {donator.amount}
                     </td>
-                    <td className="p-3 text-center">
-                      {user.email}
+                    <td className="px-4 py-3 text-gray-600 lowercase">
+                      {donator.email}
                     </td>
-                    <td className="p-3 text-center">
-                      {user.country}
+                    <td className="px-4 py-3 text-gray-600 capitalize">
+                      {donator.country}
                     </td>
-                    <td className="p-3 text-center">
-                      {user.address}
+                    <td className="px-4 py-3 text-gray-600">
+                      {donator.address}
                     </td>
-                    <td className="p-3 text-center">
-                      {user.telephone}
+                    <td className="px-4 py-3 text-gray-600">
+                      {donator.telephone}
                     </td>
-                    
                   </tr>
-                );
-              })}
-            </tbody>
-          </table>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       )}
+
       <PaginationUtil count={count} />
     </div>
   );
 };
 
-export default ShowUsersList;
+export default Donators;

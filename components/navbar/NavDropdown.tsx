@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import NavLink from '@/components/Navbar/NavLink';
 import { useClickOutside } from "@/hooks/useClickOutside";
 import { navDropdownProps } from "@/types/types";
@@ -26,7 +26,7 @@ const NavDropdown = ({ title, menu }: navDropdownProps) => {
   return (
     <div
       ref={containerRef}
-      className="text-nowrap cursor-pointer hover:drop-shadow-md rounded-lg text-cyan-600 hover:text-gray-500 text-lg font-bold relative"
+      className="text-nowrap cursor-pointer hover:drop-shadow-md rounded-[5px] text-cyan-600 hover:text-gray-500 text-lg font-bold relative"
       onClick={toggleOpen}
       onPointerEnter={handlePointerEnter}
       onPointerLeave={handlePointerLeave}>

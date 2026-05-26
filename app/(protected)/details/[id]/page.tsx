@@ -1,4 +1,4 @@
-import { db } from "@/db";
+﻿import { db } from "@/db";
 import { FaCheck } from "react-icons/fa";
 
 const DetailsPage = async ({ params }: { params: Promise<{ id: string }> }) => {
@@ -7,7 +7,7 @@ const DetailsPage = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   return (
     <div className="w-full max-w-5xl mx-auto h-[80vh] flex flex-col justify-center items-center">
-      <div className="w-full max-w-5xl mx-auto h-[50vh] border border-gray-200 p-16 rounded-[10px] flex flex-col justify-center space-y-4">
+      <div className="w-full max-w-5xl mx-auto h-[50vh] border border-gray-200 p-16 rounded-[5px] flex flex-col justify-center space-y-4">
         <div className="flex flex-col items-start">
           <div className="flex justify-start items-center">
             {user?.name && (

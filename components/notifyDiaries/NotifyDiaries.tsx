@@ -1,47 +1,80 @@
-"use client";
+﻿"use client";
 import { notifyDiary } from "@/actions/sentDiaries";
 import Image from "next/image";
+import { useState } from "react";
 import { MdMarkEmailRead } from "react-icons/md";
 
 const NotifyDiaries = ({ diaries }: any) => {
-  console.log(diaries);
- 
+  const [notifyingId, setNotifyingId] = useState<string | null>(null);
 
-  const handleNotify = (
+  const handleNotify = async (
     id: string,
     image: string,
     title: string,
     description: string,
     numberNotifications: number
   ) => {
-    notifyDiary(id, image, title, description, numberNotifications);
+    try {
+      setNotifyingId(id);
+      await notifyDiary(id, image, title, description, numberNotifications);
+    } finally {
+      setNotifyingId(null);
+    }
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto border border-gray-200 p-4 rounded-[5px] space-y-8">
-      <h2 className="text-2xl text-gray-400 font-semibold">
-        Diaries Notifications
-      </h2>
-      <div className="w-full flex justify-center overflow-x-scroll md:overflow-auto">
-      <div className="w-full flex flex-col space-y-4 ">
-        {diaries.map((item: any) => { 
+    <div className="w-full border border-gray-200 rounded-[5px] p-5 space-y-4">
+      <h3 className="text-lg font-semibold text-gray-600 mb-4">
+        Diary Notifications
+      </h3>
+      <div className="flex flex-col gap-3">
+        {diaries.map((item: any) => {
+          const numberNotifications = item.notificationsSent || 0;
 
-            const numberNotifications = item.notificationsSent || 0
-            console.log(item.notificationsSent)
-            
-            return(
-          <div key={item._id} className="flex flex-row items-center space-x-4">
-            <div className="w-16 h-14 min-w-16 relative rounded-[5px] overflow-hidden">
-              <Image
-                src={item.mainImage}
-                alt="magic diaries"
-                fill
-                className="object-cover object-center"
-              />
-            </div>
-            <p className="text-gray-500 w-full max-w-72 min-w-48">{item.title}</p>
+          return (
+            <div
+              key={item._id}
+              className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 p-4 rounded-[5px] bg-gray-50 border border-gray-100"
+            >
+              {/* Image */}
+              <div className="w-16 h-14 min-w-[4rem] relative rounded-[5px] overflow-hidden flex-shrink-0">
+                <Image
+                  src={item.mainImage}
+                  alt={item.title || "diary image"}
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
 
-            <div className="w-full max-w-32 flex items-center justify-center">
+              {/* Title */}
+              <p className="text-sm font-medium text-gray-700 flex-1 min-w-0 truncate">
+                {item.title}
+              </p>
+
+              {/* Status Badge */}
+              <span
+                className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[5px] text-xs font-medium ${
+                  item.notificationSent
+                    ? "bg-emerald-50 text-emerald-600"
+                    : "bg-gray-100 text-gray-500"
+                }`}
+              >
+                <MdMarkEmailRead className="text-sm" />
+                {item.notificationSent ? "Notified" : "Not Notified"}
+              </span>
+
+              {/* Notification Count Badge */}
+              {numberNotifications > 0 ? (
+                <span className="text-xs font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-[5px]">
+                  {numberNotifications} sent
+                </span>
+              ) : (
+                <span className="text-xs font-medium text-red-500 bg-red-50 px-2 py-0.5 rounded-[5px]">
+                  0 sent
+                </span>
+              )}
+
+              {/* Notify Button */}
               <button
                 onClick={() =>
                   handleNotify(
@@ -49,32 +82,22 @@ const NotifyDiaries = ({ diaries }: any) => {
                     item.title,
                     item.mainImage,
                     item.description,
-                    numberNotifications 
+                    numberNotifications
                   )
                 }
-                className="py-1 px-2 rounded-full bg-cyan-500 text-white hover:bg-cyan-400"
+                disabled={notifyingId === item._id}
+                className="py-1.5 px-4 rounded-[5px] bg-cyan-600 text-white text-sm font-medium hover:bg-cyan-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
               >
-                {item.notificationSent ? "Notify Again" : "Notify"}
+                {notifyingId === item._id
+                  ? "Sending..."
+                  : item.notificationSent
+                    ? "Notify Again"
+                    : "Notify"}
               </button>
             </div>
-
-            <div className="flex flex-row items-center space-x-2 w-full min-w-40 max-w-44">
-              <MdMarkEmailRead
-                className={`text-xl ${item.notificationSent ? "text-emerald-500" : "text-gray-500"}`}
-              />
-              <p className="text-gray-500">
-                {item.notificationSent ? "Notified" : "Not Notified Yet"}
-              </p>
-            </div>
-
-            <div>
-              <p className={`${numberNotifications === 0? "text-red-500" : "text-emerald-500"}`}>{numberNotifications === 0? "":`${numberNotifications} Notifications Sent`}</p>
-            </div>
-          </div>
-)})}
+          );
+        })}
       </div>
-      </div>
-
     </div>
   );
 };

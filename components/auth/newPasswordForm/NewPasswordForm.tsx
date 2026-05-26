@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import * as z from "zod";
 
 import { newPasswordSchema } from "@/schemas";
@@ -62,7 +62,7 @@ const NewPasswordForm = () => {
             </label>
             <input
               id="password"
-              className="flex h-10 w-full rounded-full border border-gray-200 bg-white px-3 py-2 text-sm text-gray-500 placeholder:text-gray-400 focus:border-cyan-500 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+              className="flex h-10 w-full rounded-full border border-gray-200 bg-white px-3 py-2 text-sm text-gray-500 placeholder:text-gray-400 focus:border-cyan-600 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
               {...register("password")}
               placeholder="******"
               type="password"
@@ -78,7 +78,7 @@ const NewPasswordForm = () => {
             </label>
             <input
               id="repeatPassword"
-              className="flex h-10 w-full rounded-full border border-gray-200 bg-white px-3 py-2 text-sm text-gray-500 placeholder:text-gray-400 focus:border-cyan-500 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+              className="flex h-10 w-full rounded-full border border-gray-200 bg-white px-3 py-2 text-sm text-gray-500 placeholder:text-gray-400 focus:border-cyan-600 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
               {...register("repeatPassword")}
               placeholder="******"
               type="password"
@@ -93,7 +93,7 @@ const NewPasswordForm = () => {
         <FormSuccess message={success} />
 
         <button
-          className="bg-cyan-500 hover:bg-opacity-80 text-white w-full py-3 rounded-full"
+          className="bg-cyan-600 hover:bg-opacity-80 text-white w-full py-3 rounded-full"
           type="submit"
           disabled={isPending}
         >
@@ -110,7 +110,7 @@ const NewPasswordForm = () => {
           {!isPending && "Reset password"}
         </button>
       </form>
-      <Link href={"/login"} className="text-cyan-500 underline text-center my-4">
+      <Link href={"/login"} className="text-cyan-600 underline text-center my-4">
         Back to Login
       </Link>
     </div>

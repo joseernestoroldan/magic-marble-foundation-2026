@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { NewVerification } from "@/actions/new-verification";
 import Image from "next/image";
@@ -53,7 +53,7 @@ const VerificationForm = () => {
         <FormSuccess message={success} />
         <FormError message={error} />
         <FormExpired message={expired}/>
-        {success && <p className="text-lg text-gray-500">Please  <Link className="text-cyan-500 underline font-medium text-lg" href={"/login"}>Sign In</Link> </p>}
+        {success && <p className="text-lg text-gray-500">Please  <Link className="text-cyan-600 underline font-medium text-lg" href={"/login"}>Sign In</Link> </p>}
       </div>
     </div>
   );

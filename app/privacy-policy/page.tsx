@@ -1,7 +1,7 @@
-const PrivacyPolicyPage = () => {
+﻿const PrivacyPolicyPage = () => {
   return (
     <div className="flex flex-col items-center w-full max-w-5xl mx-auto pt-4 space-y-4">
-      <h1 className="text-cyan-500 uppercase font-bold text-4xl">
+      <h1 className="text-cyan-600 uppercase font-bold text-4xl">
         Privacy Policy
       </h1>
       <p className="text-gray-500 font-bold italic w-full text-sm">
@@ -34,11 +34,11 @@ const PrivacyPolicyPage = () => {
         otherwise interact with us to stay informed about our information
         practices and the ways you can help protect your privacy.
       </p>
-      <h2 className="text-cyan-500 w-full uppercase font-bold text-2xl">
+      <h2 className="text-cyan-600 w-full uppercase font-bold text-2xl">
         Information We Collect
       </h2>
 
-      <h3 className="text-cyan-500 uppercase font-bold text-lg w-full">
+      <h3 className="text-cyan-600 uppercase font-bold text-lg w-full">
         Information you provide to us
       </h3>
       <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
@@ -62,7 +62,7 @@ const PrivacyPolicyPage = () => {
           Request customer support or otherwise communicate with us
         </li>
       </ul>
-      <h3 className="text-cyan-500 uppercase font-bold text-lg w-full">
+      <h3 className="text-cyan-600 uppercase font-bold text-lg w-full">
         Information We Collect Automatically When You Use the Services
       </h3>
       <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
@@ -99,7 +99,7 @@ const PrivacyPolicyPage = () => {
         </li>
       </ul>
 
-      <h2 className="text-cyan-500 w-full uppercase font-bold text-2xl">
+      <h2 className="text-cyan-600 w-full uppercase font-bold text-2xl">
         Use Of Information
       </h2>
       <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
@@ -154,7 +154,7 @@ const PrivacyPolicyPage = () => {
         the processing and transfer of information in and to the U.S. and other
         countries.
       </p>
-      <h2 className="text-cyan-500 w-full uppercase font-bold text-2xl">
+      <h2 className="text-cyan-600 w-full uppercase font-bold text-2xl">
         SHARING OF INFORMATION
       </h2>
       <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
@@ -192,7 +192,7 @@ const PrivacyPolicyPage = () => {
         We may also share aggregated or de-identified information, which cannot
         reasonably be used to identify you.
       </p>
-      <h2 className="text-cyan-500 w-full uppercase font-bold text-2xl">
+      <h2 className="text-cyan-600 w-full uppercase font-bold text-2xl">
         SOCIAL SHARING FEATURES
       </h2>
       <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
@@ -206,16 +206,16 @@ const PrivacyPolicyPage = () => {
         connection with social sharing features, please visit the privacy
         policies of the entities that provide these features.
       </p>
-      <h2 className="text-cyan-500 w-full uppercase font-bold text-2xl">SECURITY</h2>
+      <h2 className="text-cyan-600 w-full uppercase font-bold text-2xl">SECURITY</h2>
       <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
         Magic Marble Foundation takes reasonable measures to help protect
         information about you from loss, theft, misuse and unauthorized access,
         disclosure, alteration, and destruction.
       </p>
-      <h2 className="text-cyan-500 w-full uppercase font-bold text-2xl">
+      <h2 className="text-cyan-600 w-full uppercase font-bold text-2xl">
         YOUR CHOICES
       </h2>
-      <h3 className="text-cyan-500 uppercase font-bold text-lg w-full">
+      <h3 className="text-cyan-600 uppercase font-bold text-lg w-full">
         Account Information
       </h3>
       <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
@@ -227,7 +227,7 @@ const PrivacyPolicyPage = () => {
         for legitimate business purposes. We may also retain cached or archived
         copies of information about you for a certain period.
       </p>
-      <h3 className="text-cyan-500 uppercase font-bold text-lg w-full">
+      <h3 className="text-cyan-600 uppercase font-bold text-lg w-full">
         Cookies
       </h3>
       <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
@@ -236,7 +236,7 @@ const PrivacyPolicyPage = () => {
         cookies. Please note that if you choose to remove or reject cookies,
         this could affect the availability and functionality of our Services.
       </p>
-      <h3 className="text-cyan-500 uppercase font-bold text-lg w-full">
+      <h3 className="text-cyan-600 uppercase font-bold text-lg w-full">
         Promotional Communications
       </h3>
       <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
@@ -246,7 +246,7 @@ const PrivacyPolicyPage = () => {
         still send you non-promotional communications, such as those about your
         account or our ongoing business relations.
       </p>
-      <h2 className="text-cyan-500 w-full uppercase font-bold text-2xl">
+      <h2 className="text-cyan-600 w-full uppercase font-bold text-2xl">
         MICHIGAN RESIDENTS&apos; PRIVACY RIGHTS
       </h2>
       <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
@@ -270,7 +270,7 @@ const PrivacyPolicyPage = () => {
         To exercise these rights, please contact us at
         info@MagicMarbleFoundation.org
       </p>
-      <h2 className="text-cyan-500 w-full uppercase font-bold text-2xl">
+      <h2 className="text-cyan-600 w-full uppercase font-bold text-2xl">
         CHILDREN&apos;S PRIVACY
       </h2>
       <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
@@ -280,12 +280,12 @@ const PrivacyPolicyPage = () => {
         from your child under age 13, please contact us at
         info@MagicMarbleFoundation.org
       </p>
-      <h2 className="text-cyan-500 w-full uppercase font-bold text-2xl">CONTACT US</h2>
+      <h2 className="text-cyan-600 w-full uppercase font-bold text-2xl">CONTACT US</h2>
       <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
         If you have any questions about this Privacy Policy, please contact us
         at:
       </p>
-      <div className="flex flex-col items-center py-8 bg-gray-50 border border-cyan-200 w-full space-y-4 rounded-2xl">
+      <div className="flex flex-col items-center py-8 bg-gray-50 border border-cyan-200 w-full space-y-4 rounded-[5px]">
         <p className="text-gray-500 font-bold ">Magic Marble Foundation</p>
         <p className="text-gray-500 font-bold text-wrap mx-auto w-[200px] sm:w-[400px] text-center">
           455 E. Eisenhower Parkway #355 Ann Arbor, Michigan, 48108 USA

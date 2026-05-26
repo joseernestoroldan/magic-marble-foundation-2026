@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { FaUser } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import {
@@ -10,16 +10,16 @@ import { RiAdminFill } from "react-icons/ri";
 import { useState } from "react";
 
 type UserDetailsProps = {
-  name?: string;
-  firstName?: string;
-  secondName?: string;
-  email?: string;
-  country?: string;
-  address?: string;
-  codeNumber?: string;
-  number?: string;
+  name?: string | null;
+  firstName?: string | null;
+  secondName?: string | null;
+  email?: string | null;
+  country?: string | null;
+  address?: string | null;
+  codeNumber?: string | null;
+  number?: string | null;
   subscribed?: boolean;
-  emailVerified: Date;
+  emailVerified?: Date | null;
   role: "ADMIN" | "USER";
 };
 
@@ -38,111 +38,129 @@ const UserDetails = ({
 }: UserDetailsProps) => {
   const [open, setOpen] = useState(false);
 
+  const displayName = name
+    ? name
+    : `${firstName ?? ""} ${secondName ?? ""}`.trim();
+
   return (
     <>
+      <style>{`
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        @keyframes slideUp {
+          from { opacity: 0; transform: translateY(16px) scale(0.97); }
+          to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .modal-overlay {
+          animation: fadeIn 0.2s ease-out forwards;
+        }
+        .modal-card {
+          animation: slideUp 0.25s ease-out forwards;
+        }
+      `}</style>
+
       <button
         onClick={() => setOpen(true)}
-        className="bg-cyan-500 text-white py-1 px-2 rounded-full"
+        className="bg-cyan-600 text-white py-1.5 px-4 rounded-[5px] text-sm font-medium hover:bg-cyan-600 transition-colors"
       >
         Details
       </button>
 
-      {open && (
+      {open ? (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm modal-overlay"
           onClick={() => setOpen(false)}
         >
           <div
-            className="bg-white w-full max-w-md h-[600px] rounded-[10px] p-6 overflow-y-auto"
+            className="bg-white w-full max-w-md rounded-[5px] p-6 mx-4 shadow-xl max-h-[85vh] overflow-y-auto modal-card"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-gray-500 text-xl font-semibold">User Details:</h2>
+            {/* Header */}
+            <div className="flex justify-between items-center pb-4 border-b border-gray-100 mb-5">
+              <h2 className="text-lg font-bold text-gray-800">User Details</h2>
               <button
                 onClick={() => setOpen(false)}
-                className="text-gray-400 hover:text-gray-600 text-2xl leading-none"
+                className="w-8 h-8 flex items-center justify-center rounded-[5px] hover:bg-gray-100 text-gray-400 hover:text-gray-600 transition-colors text-xl"
               >
                 &times;
               </button>
             </div>
-            <div className="w-full flex flex-col space-y-6">
-              {!name && (
-                <div className="text-4xl text-gray-500 font-bold flex space-x-2 uppercase">
-                  <p>{firstName}</p>
-                  <p>{secondName}</p>
-                </div>
-              )}
-              {name && (
-                <div className="text-4xl text-gray-500 font-bold flex space-x-2 uppercase">
-                  <p>{name}</p>
-                </div>
-              )}
-              <div className="flex space-x-2 text-gray-500 text-xl items-center">
-                <p className="font-semibold capitalize">Email:</p>
-                <p className="font-medium lowercase">{email}</p>
-                {name && <FcGoogle />}
+
+            {/* Name Section */}
+            <div className="mb-5">
+              <h3 className="text-2xl font-bold text-gray-800 uppercase">
+                {displayName}
+              </h3>
+              <div className="flex items-center gap-2 mt-1">
+                <p className="text-sm text-gray-500 lowercase">{email}</p>
+                {name ? <FcGoogle className="text-base flex-shrink-0" /> : null}
               </div>
+            </div>
 
-              {country && (
-                <div className="flex space-x-2 text-gray-500 text-xl">
-                  <p className="font-semibold capitalize">Country:</p>
-                  <p className="font-medium capitalize">{country}</p>
+            {/* Info Rows */}
+            <div className="space-y-3">
+              {country ? (
+                <div className="flex flex-col sm:flex-row sm:items-center gap-1 text-sm">
+                  <span className="font-semibold text-gray-500 sm:w-28 flex-shrink-0">Country</span>
+                  <span className="text-gray-700 capitalize">{country}</span>
                 </div>
+              ) : null}
+
+              {address ? (
+                <div className="flex flex-col sm:flex-row sm:items-center gap-1 text-sm">
+                  <span className="font-semibold text-gray-500 sm:w-28 flex-shrink-0">Address</span>
+                  <span className="text-gray-700 capitalize">{address}</span>
+                </div>
+              ) : null}
+
+              {number ? (
+                <div className="flex flex-col sm:flex-row sm:items-center gap-1 text-sm">
+                  <span className="font-semibold text-gray-500 sm:w-28 flex-shrink-0">Telephone</span>
+                  <span className="text-gray-700">
+                    {codeNumber ? `(${codeNumber}) ` : ""}{number}
+                  </span>
+                </div>
+              ) : null}
+            </div>
+
+            {/* Status Badges */}
+            <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-100 mt-4">
+              {emailVerified ? (
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[5px] text-xs font-medium bg-emerald-50 text-emerald-600 border border-emerald-200">
+                  <MdVerifiedUser className="text-sm" />
+                  Verified
+                </span>
+              ) : null}
+
+              {role === "ADMIN" ? (
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[5px] text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200">
+                  <RiAdminFill className="text-sm" />
+                  Admin
+                </span>
+              ) : (
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[5px] text-xs font-medium bg-slate-50 text-slate-600 border border-slate-200">
+                  <FaUser className="text-xs" />
+                  User
+                </span>
               )}
 
-              {address && (
-                <div className="flex space-x-2 text-gray-500 text-xl">
-                  <p className="font-semibold capitalize">Address:</p>
-                  <p className="font-medium capitalize">{address}</p>
-                </div>
-              )}
-
-              {number && (
-                <div className="flex space-x-2 text-gray-500 text-xl">
-                  <p className="font-semibold capitalize">Telephone:</p>
-                  <p className="font-medium capitalize">({codeNumber})</p>
-                  <p className="font-medium capitalize">{number}</p>
-                </div>
-              )}
-
-              {emailVerified && (
-                <div className="font-semibold capitalize text-cyan-300 text-xl flex items-center space-x-2">
-                  <MdVerifiedUser className="text-2xl" />
-                  <p>User account verified</p>
-                </div>
-              )}
-
-              {role === "USER" && (
-                <div className="font-semibold capitalize text-cyan-300 text-xl flex items-center space-x-2">
-                  <FaUser className="text-2xl" />
-                  <p>User Credentials</p>
-                </div>
-              )}
-
-              {role === "ADMIN" && (
-                <div className="font-semibold capitalize text-cyan-300 text-xl flex items-center space-x-2">
-                  <RiAdminFill className="text-2xl" />
-                  <p>Admin Credentials</p>
-                </div>
-              )}
-
-              {subscribed && (
-                <div className="font-semibold capitalize text-cyan-300 text-xl flex items-center space-x-2">
-                  <MdUnsubscribe className="text-2xl" />
-                  <p>Subscribed</p>
-                </div>
-              )}
-
-              {!subscribed && (
-                <div className="font-semibold capitalize text-cyan-300 text-xl flex items-center space-x-2">
-                  <MdOutlineUnsubscribe className="text-2xl" />
-                  <p>Subscribed</p>
-                </div>
+              {subscribed ? (
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[5px] text-xs font-medium bg-cyan-50 text-cyan-600 border border-cyan-200">
+                  <MdUnsubscribe className="text-sm" />
+                  Subscribed
+                </span>
+              ) : (
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[5px] text-xs font-medium bg-gray-50 text-gray-500 border border-gray-200">
+                  <MdOutlineUnsubscribe className="text-sm" />
+                  Not Subscribed
+                </span>
               )}
             </div>
           </div>
         </div>
-      )}
+      ) : null}
     </>
   );
 };

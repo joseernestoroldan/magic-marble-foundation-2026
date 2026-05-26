@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import LoginGoogle from "../loginForm/LoginGoogle";
 import Separator from "../separator/Separator";
 import RegisterForm from "./RegisterForm";
@@ -20,7 +20,7 @@ const RegisterCard = () => {
 
       <p className="text-gray-500">
         Already have an Account?{" "}
-        <Link href={"/login"} className="text-cyan-500 underline">
+        <Link href={"/login"} className="text-cyan-600 underline">
           Sign in
         </Link>
       </p>

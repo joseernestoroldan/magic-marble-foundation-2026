@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import DonationButton from "@/components/DonationButton/DonationButton";
 import { FadeInCarouselImages } from "@/utils/carrouselImages";
@@ -76,7 +76,7 @@ const FadeInOutCarausel = () => {
       >
         {/* Decorative accent line */}
         <div
-          className="w-[60px] h-[3px] rounded-sm mb-5"
+          className="w-[60px] h-[3px] rounded-[5px] mb-5"
           style={{
             background: "linear-gradient(90deg, #06b6d4, #0e7490)",
             boxShadow: "0 0 12px rgba(6,182,212,0.6)",

@@ -82,7 +82,7 @@ export default async function DiaryDetailPage({
           position: relative;
           aspect-ratio: 3 / 4;
           overflow: hidden;
-          border-radius: 12px;
+          border-radius: 5px;
           align-self: flex-start;
         }
 
@@ -127,7 +127,7 @@ export default async function DiaryDetailPage({
         @media (max-width: 480px) {
           .diary-detail-image-col {
             max-height: 400px;
-            border-radius: 10px;
+            border-radius: 5px;
           }
         }
 

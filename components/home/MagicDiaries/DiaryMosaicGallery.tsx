@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { diariesType } from "@/clientTypes";
 import Image from "next/image";
@@ -150,7 +150,7 @@ function MosaicCard({ diary, span, priority }: MosaicCardProps) {
   return (
     <Link
       href={`/diaries/${diary._id}`}
-      className="mosaic-card group relative overflow-hidden rounded-[14px] cursor-pointer bg-slate-900 shadow-[0_4px_24px_rgba(0,0,0,0.35)] transition-[box-shadow,transform] [transition-duration:350ms] ease-in-out hover:-translate-y-1 hover:scale-[1.012] hover:shadow-[0_12px_40px_rgba(8,145,178,0.35),0_4px_16px_rgba(0,0,0,0.4)] focus-visible:outline-2 focus-visible:outline-cyan-300 focus-visible:outline-offset-2"
+      className="mosaic-card group relative overflow-hidden rounded-[5px] cursor-pointer bg-slate-900 shadow-[0_4px_24px_rgba(0,0,0,0.35)] transition-[box-shadow,transform] [transition-duration:350ms] ease-in-out hover:-translate-y-1 hover:scale-[1.012] hover:shadow-[0_12px_40px_rgba(8,145,178,0.35),0_4px_16px_rgba(0,0,0,0.4)] focus-visible:outline-2 focus-visible:outline-cyan-300 focus-visible:outline-offset-2"
       style={{
         gridColumn: `span ${span.colSpan}`,
         gridRow: `span ${span.rowSpan}`,

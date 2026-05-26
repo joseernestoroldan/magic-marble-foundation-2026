@@ -1,4 +1,4 @@
-import { getAllProjects } from "@/client";
+﻿import { getAllProjects } from "@/client";
 import Container from "@/components/Layouts/Container/Container";
 import Image from "next/image";
 import Link from "next/link";
@@ -57,7 +57,7 @@ const OurProjects = async () => {
                 <Link
                   key={project._id}
                   href={`/projects/${project._id}`}
-                  className="group relative flex flex-col rounded-2xl overflow-hidden bg-slate-900 shadow-lg hover:shadow-cyan-500/20 hover:shadow-2xl transition-all duration-400 ease-out hover:-translate-y-1"
+                  className="group relative flex flex-col rounded-[5px] overflow-hidden bg-slate-900 shadow-lg hover:shadow-cyan-600/20 hover:shadow-2xl transition-all duration-400 ease-out hover:-translate-y-1"
                   aria-label={`View project: ${project.title}`}>
                   {/* Image area */}
                   <div className="relative w-full h-56 overflow-hidden">
@@ -100,7 +100,7 @@ const OurProjects = async () => {
 
                     {/* CTA row */}
                     <div className="flex items-center gap-1.5 mt-auto pt-2">
-                      <span className="text-cyan-500 text-xs font-semibold uppercase tracking-wider group-hover:gap-2 transition-all duration-200">
+                      <span className="text-cyan-600 text-xs font-semibold uppercase tracking-wider group-hover:gap-2 transition-all duration-200">
                         Learn more
                       </span>
                       <svg
@@ -112,7 +112,7 @@ const OurProjects = async () => {
                         strokeWidth="2.5"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        className="text-cyan-500 translate-x-0 group-hover:translate-x-1 transition-transform duration-200"
+                        className="text-cyan-600 translate-x-0 group-hover:translate-x-1 transition-transform duration-200"
                         aria-hidden="true">
                         <path d="M5 12h14M12 5l7 7-7 7" />
                       </svg>
@@ -120,7 +120,7 @@ const OurProjects = async () => {
                   </div>
 
                   {/* Left accent border — slides in on hover */}
-                  <div className="absolute left-0 top-0 h-full w-0.5 bg-cyan-500 scale-y-0 group-hover:scale-y-100 origin-top transition-transform duration-400 ease-out" />
+                  <div className="absolute left-0 top-0 h-full w-0.5 bg-cyan-600 scale-y-0 group-hover:scale-y-100 origin-top transition-transform duration-400 ease-out" />
                 </Link>
               );
             })}

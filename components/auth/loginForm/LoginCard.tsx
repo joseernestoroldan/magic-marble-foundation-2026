@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import Separator from "../separator/Separator";
 import LoginForm from "./LoginForm";
 import LoginGoogle from "./LoginGoogle";
@@ -22,7 +22,7 @@ const LoginCard = () => {
         <p className="text-gray-500 text-center">
           New in Magic Marble Foundation?
         </p>
-        <Link href={"/register"} className="text-cyan-500 underline">
+        <Link href={"/register"} className="text-cyan-600 underline">
           Create Account
         </Link>
       </div>

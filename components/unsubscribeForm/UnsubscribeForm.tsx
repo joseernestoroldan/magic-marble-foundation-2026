@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { subscribeAgain, unsubscribe } from "@/actions/unsubscribe";
 import Image from "next/image";
@@ -65,8 +65,8 @@ const UnsubscribeForm = () => {
 
         <FormSuccess message={success} />
         <FormError message={error} /> 
-        {success && success === "Email unsubscribed" && <button onClick={handleClick} className="bg-cyan-500 text-white px-4 py-2 rounded-full">Subscribe Again</button>}
-        {success && success !== "Email unsubscribed" && <Link className="text-lg underline text-cyan-500 hover:text-cyan-400" href={"/profile"}>Go to Profile</Link>}
+        {success && success === "Email unsubscribed" && <button onClick={handleClick} className="bg-cyan-600 text-white px-4 py-2 rounded-full">Subscribe Again</button>}
+        {success && success !== "Email unsubscribed" && <Link className="text-lg underline text-cyan-600 hover:text-cyan-400" href={"/profile"}>Go to Profile</Link>}
       </div>
     </div>
   );

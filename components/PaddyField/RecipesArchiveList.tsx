@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { recipesType } from "@/clientTypes";
 import Image from "next/image";
@@ -30,7 +30,7 @@ export default function RecipesArchiveList({
             <Link
               key={recipe._id}
               href={`/paddyfield/recipes/${recipe._id}`}
-              className="flex items-center gap-4 bg-[#f0fdf4] p-3 rounded-xl border border-[#dcfce7] hover:border-[#86efac] hover:shadow-md transition-all [transition-duration:300ms] group"
+              className="flex items-center gap-4 bg-[#f0fdf4] p-3 rounded-[5px] border border-[#dcfce7] hover:border-[#86efac] hover:shadow-md transition-all [transition-duration:300ms] group"
             >
               <div className="relative w-24 h-24 flex-shrink-0 rounded-[5px] overflow-hidden bg-[#134e2a]">
                 {recipe.mainImage ? (

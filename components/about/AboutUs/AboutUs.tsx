@@ -1,4 +1,4 @@
-import Container from "@/components/Layouts/Container/Container";
+﻿import Container from "@/components/Layouts/Container/Container";
 import SmokeText from "@/components/SmokeText/SmokeText";
 import Image from "next/image";
 
@@ -29,7 +29,7 @@ const AboutUs = () => {
 
         {/* Image Section */}
         <div className="w-full md:w-1/2 flex flex-col justify-center items-center">
-          <div className="w-[280px] h-[280px] md:w-[350px] md:h-[350px] relative rounded-full overflow-hidden shadow-[0_0_40px_rgba(6,182,212,0.15)] ring-4 ring-cyan-500/20">
+          <div className="w-[280px] h-[280px] md:w-[350px] md:h-[350px] relative rounded-full overflow-hidden shadow-[0_0_40px_rgba(6,182,212,0.15)] ring-4 ring-cyan-600/20">
             <Image
               className="object-cover object-top hover:scale-105 transition-transform duration-700 ease-in-out"
               src="/logo.jpg"

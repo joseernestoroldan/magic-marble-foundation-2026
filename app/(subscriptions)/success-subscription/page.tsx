@@ -1,4 +1,4 @@
-export const dynamic = "force-dynamic";
+﻿export const dynamic = "force-dynamic";
 import { sponsorCompleted } from "@/actions/sponsor";
 import { getPlan } from "@/app/lib/apiCalls";
 import { PlanType } from "@/types/types";
@@ -60,7 +60,7 @@ export default async function SuccessSubscriptionPage({
   );
 
   return (
-    <div className="h-auto text-cyan-500 w-full max-w-5xl mx-auto flex justify-center items-center flex-col">
+    <div className="h-auto text-cyan-600 w-full max-w-5xl mx-auto flex justify-center items-center flex-col">
       {/* Logo */}
       <div className="mb-8">
         <Image
@@ -96,7 +96,7 @@ export default async function SuccessSubscriptionPage({
         </p>
       </div>
 
-      <div className="rounded-2xl mb-4 border border-gray-200 p-6 shadow-sm">
+      <div className="rounded-[5px] mb-4 border border-gray-200 p-6 shadow-sm">
         <h2 className="text-2xl font-semibold mb-4 text-gray-800">Plan Details</h2>
         <div className="space-y-2">
           <p>
@@ -117,7 +117,7 @@ export default async function SuccessSubscriptionPage({
       {/* Go Home Button */}
       <Link
         href="/"
-        className="bg-cyan-500 rounded-full text-white px-6 py-3 font-bold text-lg hover:bg-cyan-600 transition duration-300">
+        className="bg-cyan-600 rounded-full text-white px-6 py-3 font-bold text-lg hover:bg-cyan-600 transition duration-300">
         Go Home
       </Link>
 
@@ -127,7 +127,7 @@ export default async function SuccessSubscriptionPage({
           If you wish to cancel your subscription now, please visit the{" "}
           <Link
             href="/cancel-sponsor"
-            className="text-cyan-500 font-bold underline hover:text-cyan-600 transition duration-300">
+            className="text-cyan-600 font-bold underline hover:text-cyan-600 transition duration-300">
             Unsubscribe Page
           </Link>
           . Or unsubscribe whenever you want in Sponsor Section.
@@ -135,7 +135,7 @@ export default async function SuccessSubscriptionPage({
         <p className="text-xs">
           If you want to sponsor someone else please go to{" "}
           <Link
-            className="text-cyan-500 font-bold underline hover:text-cyan-600 transition duration-300"
+            className="text-cyan-600 font-bold underline hover:text-cyan-600 transition duration-300"
             href={"/sponsors"}>
             Sponsors
           </Link>{" "}
