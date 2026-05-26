@@ -8,40 +8,10 @@ import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { MdOutlineUnsubscribe, MdPerson, MdUnsubscribe } from "react-icons/md";
 
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command";
-
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-
-import { Checkbox } from "@/components/ui/checkbox";
-
-import { Input } from "@/components/ui/input";
 import { FormError } from "../formError/FormError";
 
 
 import { update } from "@/actions/update";
-import { cn } from "@/app/lib/utils";
-import { Button } from "@/components/ui/button";
-import { CheckIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { FaSearch } from "react-icons/fa";
 import { ImSpinner9 } from "react-icons/im";
@@ -51,12 +21,20 @@ const UpdateForm = ({ data }: any) => {
 
   const [open, setOpen] = useState<boolean>(false);
   const [openCode, setOpenCode] = useState<boolean>(false);
+  const [codeSearch, setCodeSearch] = useState("");
+  const [countrySearch, setCountrySearch] = useState("");
   const [enable, setEnable] = useState<boolean>(false);
   const [error, setError] = useState<string | undefined>("");
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
 
-  const form = useForm<z.infer<typeof updateSchema>>({
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    watch,
+    formState: { errors },
+  } = useForm<z.infer<typeof updateSchema>>({
     resolver: zodResolver(updateSchema),
     defaultValues: {
       country: country,
@@ -67,12 +45,25 @@ const UpdateForm = ({ data }: any) => {
     },
   });
 
+  const watchedCode = watch("codeNumber");
+  const watchedCountry = watch("country");
+
+  const filteredCodes = codes.filter(
+    (c) =>
+      c.name.toLowerCase().includes(codeSearch.toLowerCase()) ||
+      c.phoneCode.includes(codeSearch)
+  );
+
+  const filteredCountries = countries.filter((c) =>
+    c.label.toLowerCase().includes(countrySearch.toLowerCase())
+  );
+
   const onSubmit = (values: z.infer<typeof updateSchema>) => {
     setError("");
     startTransition(async () => {
-      const data = await update(values, id);
-      setError(data.error);
-      if (data.success) {
+      const res = await update(values, id);
+      setError(res.error);
+      if (res.success) {
         router.push("/profile");
       }
     });
@@ -93,7 +84,7 @@ const UpdateForm = ({ data }: any) => {
             <MdPerson />
             <h3 className="text-xl text-gray-500">Your personal info</h3>
           </div>
-          <div className="w-full  flex gap-x-1">
+          <div className="w-full flex gap-x-1">
             <p className="font-medium">Telephone:</p>
             <p>({codeNumber})</p>
             <p>{number}</p>
@@ -124,234 +115,185 @@ const UpdateForm = ({ data }: any) => {
       )}
 
       {enable && (
-        <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-4 w-[420px] max-w-5xl mx-auto text-gray-500 "
-          >
-            <div className="space-y-2 w-full">
-              <div className="w-full flex justify-between items-end">
-                <FormField
-                  control={form.control}
-                  name="codeNumber"
-                  render={({ field }) => (
-                    <FormItem className="flex flex-col">
-                      <FormLabel>Code Number</FormLabel>
-                      <Popover open={openCode} onOpenChange={setOpenCode}>
-                        <PopoverTrigger asChild>
-                          <FormControl className="border-gray-200 focus-within:border-cyan-500">
-                            <Button
-                              variant="outline"
-                              role="combobox"
-                              className={cn(
-                                "w-[200px] justify-between border-gray-200 focus-within:border-cyan-500 rounded-full"
-                              )}
-                            >
-                              {field.value
-                                ? codes.find(
-                                    (code) => code.phoneCode === field.value
-                                  )?.phoneCode
-                                : codeNumber}
-                              <FaSearch className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                            </Button>
-                          </FormControl>
-                        </PopoverTrigger>
-                        <PopoverContent className="w-[200px] p-0 bg-white">
-                          <Command>
-                            <CommandInput
-                              placeholder="Search Code"
-                              className="h-9 "
-                            />
-                            <CommandList className="">
-                              <CommandEmpty>No Code found.</CommandEmpty>
-                              <CommandGroup>
-                                {codes.map((code) => (
-                                  <CommandItem
-                                    className=" hover:cursor-pointer hover:bg-cyan-500 space-x-1 flex justify-start"
-                                    value={code.phoneCode}
-                                    key={code.name}
-                                    onSelect={() => {
-                                      console.log(code.phoneCode);
-                                      form.setValue(
-                                        "codeNumber",
-                                        code.phoneCode.toString()
-                                      );
-                                      setOpenCode(false);
-                                    }}
-                                  >
-                                    <p>{code.name}</p>
-                                    <p> {code.phoneCode}</p>
-
-                                    <CheckIcon
-                                      className={cn(
-                                        "ml-auto h-4 w-4",
-                                        code.phoneCode === field.value
-                                          ? "opacity-100"
-                                          : "opacity-0"
-                                      )}
-                                    />
-                                  </CommandItem>
-                                ))}
-                              </CommandGroup>
-                            </CommandList>
-                          </Command>
-                        </PopoverContent>
-                      </Popover>
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="number"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Telephone Number</FormLabel>
-                      <FormControl>
-                        <Input
-                          className="w-[200px] text-gray-500 rounded-full border-gray-200 focus-within:border-cyan-500"
-                          {...field}
-                          placeholder={number}
-                          type="tel"
-                          disabled={isPending}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
-
-              <div className="w-full flex justify-between">
-                <FormField
-                  control={form.control}
-                  name="country"
-                  render={({ field }) => (
-                    <FormItem className="flex flex-col">
-                      <FormLabel>Country</FormLabel>
-                      <Popover open={open} onOpenChange={setOpen}>
-                        <PopoverTrigger asChild>
-                          <FormControl>
-                            <Button
-                              variant="outline"
-                              role="combobox"
-                              className={cn(
-                                "w-[200px] justify-between border-gray-200 focus-within:border-cyan-500 rounded-full"
-                              )}
-                            >
-                              {field.value
-                                ? countries.find(
-                                    (country) => country.value === field.value
-                                  )?.label
-                                : country}
-                              <FaSearch className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                            </Button>
-                          </FormControl>
-                        </PopoverTrigger>
-                        <PopoverContent className="w-[200px] p-0 bg-white">
-                          <Command>
-                            <CommandInput
-                              placeholder="Search Country"
-                              className="h-9 "
-                            />
-                            <CommandList className="">
-                              <CommandEmpty>No Country found.</CommandEmpty>
-                              <CommandGroup>
-                                {countries.map((country) => (
-                                  <CommandItem
-                                    className=" hover:cursor-pointer hover:bg-cyan-500"
-                                    value={country.value}
-                                    key={country.value}
-                                    onSelect={() => {
-                                      console.log(country.value);
-                                      form.setValue(
-                                        "country",
-                                        country.value.toString()
-                                      );
-                                      setOpen(false);
-                                    }}
-                                  >
-                                    {country.label}
-                                    <CheckIcon
-                                      className={cn(
-                                        "ml-auto h-4 w-4",
-                                        country.value === field.value
-                                          ? "opacity-100"
-                                          : "opacity-0"
-                                      )}
-                                    />
-                                  </CommandItem>
-                                ))}
-                              </CommandGroup>
-                            </CommandList>
-                          </Command>
-                        </PopoverContent>
-                      </Popover>
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="subscribed"
-                  render={({ field }) => (
-                    <FormItem className="flex flex-row items-end space-x-2">
-                      <FormControl className="">
-                        <Checkbox
-                          checked={field.value}
-                          onCheckedChange={field.onChange}
-                        />
-                      </FormControl>
-
-                      <FormLabel className="">
-                        Suscribe to our Newsletter
-                      </FormLabel>
-                    </FormItem>
-                  )}
-                />
-              </div>
-              <FormField
-                control={form.control}
-                name="address"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Shipping Address</FormLabel>
-                    <FormControl>
-                      <Input
-                        className="w-full text-gray-500 rounded-full border-gray-200 focus-within:border-cyan-500"
-                        {...field}
-                        placeholder={address}
-                        type="text"
-                        aria-multiline
-                        disabled={isPending}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-            <FormError message={error} />
-
-            <button
-              className="bg-cyan-500 hover:bg-opacity-80 text-white w-full py-3 rounded-full"
-              type="submit"
-              disabled={isPending}
-            >
-              {isPending && (
-                <div className="w-full flex justify-center items-center">
-                  <svg
-                    className="animate-spin h-5 w-5 mr-3 text-white"
-                    viewBox="0 0 24 24"
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="space-y-4 w-[420px] max-w-5xl mx-auto text-gray-500"
+        >
+          <div className="space-y-2 w-full">
+            <div className="w-full flex justify-between items-end">
+              <div className="flex flex-col">
+                <label className="text-sm font-medium text-gray-700">Code Number</label>
+                <div className="relative">
+                  <button
+                    type="button"
+                    onClick={() => setOpenCode(!openCode)}
+                    className="flex w-[200px] items-center justify-between rounded-full border border-gray-200 bg-white px-3 py-2 text-sm text-gray-500"
                   >
-                    <ImSpinner9 className="text-2xl" />
-                  </svg>
+                    {watchedCode
+                      ? codes.find((c) => c.phoneCode === watchedCode)?.phoneCode
+                      : codeNumber}
+                    <FaSearch className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                  </button>
+                  {openCode && (
+                    <div className="absolute z-10 mt-1 w-[200px] rounded-md border border-gray-200 bg-white shadow-lg">
+                      <input
+                        className="w-full border-b border-gray-200 px-3 py-2 text-sm focus:outline-none"
+                        placeholder="Search Code"
+                        value={codeSearch}
+                        onChange={(e) => setCodeSearch(e.target.value)}
+                      />
+                      <ul className="max-h-48 overflow-auto">
+                        {filteredCodes.length === 0 ? (
+                          <li className="px-3 py-2 text-sm text-gray-500">No Code found.</li>
+                        ) : (
+                          filteredCodes.map((c) => (
+                            <li
+                              key={c.name}
+                              className="flex cursor-pointer items-center justify-between px-3 py-2 text-sm hover:bg-cyan-500"
+                              onClick={() => {
+                                setValue("codeNumber", c.phoneCode);
+                                setOpenCode(false);
+                                setCodeSearch("");
+                              }}
+                            >
+                              <span>{c.name}</span>
+                              <span>{c.phoneCode}</span>
+                              {c.phoneCode === watchedCode && (
+                                <svg className="ml-auto h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                  <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                              )}
+                            </li>
+                          ))
+                        )}
+                      </ul>
+                    </div>
+                  )}
                 </div>
+                {errors.codeNumber && (
+                  <p className="text-sm text-red-500 mt-1">{errors.codeNumber.message}</p>
+                )}
+              </div>
+
+              <div>
+                <label htmlFor="number" className="text-sm font-medium text-gray-700">Telephone Number</label>
+                <input
+                  id="number"
+                  className="flex h-10 w-[200px] rounded-full border border-gray-200 bg-white px-3 py-2 text-sm text-gray-500 placeholder:text-gray-400 focus:border-cyan-500 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+                  {...register("number")}
+                  placeholder={number}
+                  type="tel"
+                  disabled={isPending}
+                />
+                {errors.number && (
+                  <p className="text-sm text-red-500 mt-1">{errors.number.message}</p>
+                )}
+              </div>
+            </div>
+
+            <div className="w-full flex justify-between">
+              <div className="flex flex-col">
+                <label className="text-sm font-medium text-gray-700">Country</label>
+                <div className="relative">
+                  <button
+                    type="button"
+                    onClick={() => setOpen(!open)}
+                    className="flex w-[200px] items-center justify-between rounded-full border border-gray-200 bg-white px-3 py-2 text-sm text-gray-500"
+                  >
+                    {watchedCountry
+                      ? countries.find((c) => c.value === watchedCountry)?.label
+                      : country}
+                    <FaSearch className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                  </button>
+                  {open && (
+                    <div className="absolute z-10 mt-1 w-[200px] rounded-md border border-gray-200 bg-white shadow-lg">
+                      <input
+                        className="w-full border-b border-gray-200 px-3 py-2 text-sm focus:outline-none"
+                        placeholder="Search Country"
+                        value={countrySearch}
+                        onChange={(e) => setCountrySearch(e.target.value)}
+                      />
+                      <ul className="max-h-48 overflow-auto">
+                        {filteredCountries.length === 0 ? (
+                          <li className="px-3 py-2 text-sm text-gray-500">No Country found.</li>
+                        ) : (
+                          filteredCountries.map((c) => (
+                            <li
+                              key={c.value}
+                              className="flex cursor-pointer items-center justify-between px-3 py-2 text-sm hover:bg-cyan-500"
+                              onClick={() => {
+                                setValue("country", c.value);
+                                setOpen(false);
+                                setCountrySearch("");
+                              }}
+                            >
+                              <span>{c.label}</span>
+                              {c.value === watchedCountry && (
+                                <svg className="ml-auto h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                  <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                              )}
+                            </li>
+                          ))
+                        )}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+                {errors.country && (
+                  <p className="text-sm text-red-500 mt-1">{errors.country.message}</p>
+                )}
+              </div>
+
+              <div className="flex flex-row items-end space-x-2 pb-1">
+                <input
+                  id="subscribed"
+                  type="checkbox"
+                  className="h-4 w-4 rounded border-gray-300 text-cyan-500 focus:ring-cyan-500"
+                  {...register("subscribed")}
+                />
+                <label htmlFor="subscribed" className="text-sm font-medium text-gray-700">
+                  Suscribe to our Newsletter
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="address" className="text-sm font-medium text-gray-700">Shipping Address</label>
+              <input
+                id="address"
+                className="flex h-10 w-full rounded-full border border-gray-200 bg-white px-3 py-2 text-sm text-gray-500 placeholder:text-gray-400 focus:border-cyan-500 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+                {...register("address")}
+                placeholder={address}
+                type="text"
+                aria-multiline
+                disabled={isPending}
+              />
+              {errors.address && (
+                <p className="text-sm text-red-500 mt-1">{errors.address.message}</p>
               )}
-              {!isPending && "Update"}
-            </button>
-          </form>
-        </Form>
+            </div>
+          </div>
+          <FormError message={error} />
+
+          <button
+            className="bg-cyan-500 hover:bg-opacity-80 text-white w-full py-3 rounded-full"
+            type="submit"
+            disabled={isPending}
+          >
+            {isPending && (
+              <div className="w-full flex justify-center items-center">
+                <svg
+                  className="animate-spin h-5 w-5 mr-3 text-white"
+                  viewBox="0 0 24 24"
+                >
+                  <ImSpinner9 className="text-2xl" />
+                </svg>
+              </div>
+            )}
+            {!isPending && "Update"}
+          </button>
+        </form>
       )}
     </div>
   );

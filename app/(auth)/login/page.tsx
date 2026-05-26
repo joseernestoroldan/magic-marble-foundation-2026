@@ -1,5 +1,5 @@
 import LoginCard from "@/components/auth/loginForm/LoginCard";
-import Button from "@/components/button/Button";
+import DonationButton from "@/components/DonationButton/DonationButton";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,7 +10,7 @@ const LoginPage = () => {
         <div className="hidden lg:w-1/2 relative rounded-[10px] overflow-hidden lg:block">
           <Image
             className="object-cover object-center"
-            src={"sterilization.webp"}
+            src={"/sterilization.webp"}
             alt="Magic Marble Foundation"
             fill
           />
@@ -20,7 +20,7 @@ const LoginPage = () => {
               Your Choices Can Change The World
             </h2>
             <Link href={"/donations"}>
-              <Button>Donate</Button>
+              <DonationButton/>
             </Link>
           </div>
         </div>

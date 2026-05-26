@@ -4,15 +4,6 @@ import * as z from "zod";
 import { loginSchema } from "@/schemas";
 
 import { login } from "@/actions/login";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -30,7 +21,11 @@ const LoginForm = () => {
 
   const [isPending, startTransition] = useTransition();
 
-  const form = useForm<z.infer<typeof loginSchema>>({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<z.infer<typeof loginSchema>>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
       email: "",
@@ -53,79 +48,77 @@ const LoginForm = () => {
   };
 
   return (
-    <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className=" space-y-4 w-[80%]"
-      >
-        <div className="space-y-4 w-full">
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email</FormLabel>
-                <FormControl>
-                  <Input
-                    className="text-gray-500 rounded-full border-gray-200 focus-within:border-cyan-500"
-                    {...field}
-                    placeholder="magicmarble@example.com"
-                    type="email"
-                    disabled={isPending}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className=" space-y-4 w-[80%]"
+    >
+      <div className="space-y-4 w-full">
+        <div>
+          <label
+            htmlFor="email"
+            className="text-sm font-medium text-gray-700"
+          >
+            Email
+          </label>
+          <input
+            id="email"
+            className="flex h-10 w-full rounded-full border border-gray-200 bg-white px-3 py-2 text-sm text-gray-500 placeholder:text-gray-400 focus:border-cyan-500 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+            {...register("email")}
+            placeholder="magicmarble@example.com"
+            type="email"
+            disabled={isPending}
           />
-
-          <FormField
-            control={form.control}
-            name="password"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Password</FormLabel>
-                <FormControl>
-                  <Input
-                    className="text-gray-500 rounded-full border-gray-200 focus-within:border-cyan-500"
-                    {...field}
-                    placeholder="******"
-                    type="password"
-                    disabled={isPending}
-                  />
-                </FormControl>
-                <FormMessage />
-                <Link
-                  className="text-cyan-500 underline"
-                  href={"/reset"}
-                >
-                  Forgot password?
-                </Link>
-              </FormItem>
-            )}
-          />
-        </div>
-        <FormError message={error} />
-        <FormConfirmation message={confirmation} />
-        <button
-          className="bg-cyan-500 hover:bg-opacity-80 text-white w-full py-3 rounded-full"
-          type="submit"
-          disabled={isPending}
-        >
-          {isPending && (
-            <div className="w-full flex justify-center items-center">
-              <svg
-                className="animate-spin h-5 w-5 mr-3 text-white"
-                viewBox="0 0 24 24"
-              >
-                <ImSpinner9 className="text-2xl" />
-              </svg>
-            </div>
+          {errors.email && (
+            <p className="text-sm text-red-500 mt-1">{errors.email.message}</p>
           )}
-          {!isPending && "Login"}
-        </button>
-      </form>
-    </Form>
+        </div>
+
+        <div>
+          <label
+            htmlFor="password"
+            className="text-sm font-medium text-gray-700"
+          >
+            Password
+          </label>
+          <input
+            id="password"
+            className="flex h-10 w-full rounded-full border border-gray-200 bg-white px-3 py-2 text-sm text-gray-500 placeholder:text-gray-400 focus:border-cyan-500 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+            {...register("password")}
+            placeholder="******"
+            type="password"
+            disabled={isPending}
+          />
+          {errors.password && (
+            <p className="text-sm text-red-500 mt-1">{errors.password.message}</p>
+          )}
+          <Link
+            className="text-cyan-500 underline text-sm inline-block mt-1"
+            href={"/reset"}
+          >
+            Forgot password?
+          </Link>
+        </div>
+      </div>
+      <FormError message={error} />
+      <FormConfirmation message={confirmation} />
+      <button
+        className="bg-cyan-500 hover:bg-opacity-80 text-white w-full py-3 rounded-full"
+        type="submit"
+        disabled={isPending}
+      >
+        {isPending && (
+          <div className="w-full flex justify-center items-center">
+            <svg
+              className="animate-spin h-5 w-5 mr-3 text-white"
+              viewBox="0 0 24 24"
+            >
+              <ImSpinner9 className="text-2xl" />
+            </svg>
+          </div>
+        )}
+        {!isPending && "Login"}
+      </button>
+    </form>
   );
 };
 

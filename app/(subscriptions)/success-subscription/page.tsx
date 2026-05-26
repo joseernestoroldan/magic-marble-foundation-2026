@@ -1,7 +1,6 @@
 export const dynamic = "force-dynamic";
 import { sponsorCompleted } from "@/actions/sponsor";
 import { getPlan } from "@/app/lib/apiCalls";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { PlanType } from "@/types/types";
 import Image from "next/image";
 import Link from "next/link";
@@ -97,9 +96,9 @@ export default async function SuccessSubscriptionPage({
         </p>
       </div>
 
-      <Card className="rounded-2xl mb-4">
-        <CardHeader className="text-2xl">Plan Details</CardHeader>
-        <CardContent>
+      <div className="rounded-2xl mb-4 border border-gray-200 p-6 shadow-sm">
+        <h2 className="text-2xl font-semibold mb-4 text-gray-800">Plan Details</h2>
+        <div className="space-y-2">
           <p>
             Plan Name: <span className="text-gray-400">{name}</span>
           </p>
@@ -112,8 +111,8 @@ export default async function SuccessSubscriptionPage({
           <p>
             Plan Id: <span className="text-gray-400">{id}</span>
           </p>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
 
       {/* Go Home Button */}
       <Link

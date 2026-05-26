@@ -4,8 +4,7 @@ import { emailSchema } from "@/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { toast } from "sonner";
-import { Toaster } from "../ui/sonner";
+import { toast, Toaster } from "sonner";
 
 type SubscriptionsType =
   | {

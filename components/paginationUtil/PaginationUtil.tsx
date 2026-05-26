@@ -1,13 +1,5 @@
 "use client";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
 type PaginationUtilProps = {
@@ -31,35 +23,46 @@ const PaginationUtil = ({ count }: PaginationUtilProps) => {
   const hasNext = ITEMS_PER_PAGE * (pageNumber - 1) + ITEMS_PER_PAGE < count;
 
   return (
-    <div>
-      <Pagination>
-        <PaginationContent className="text-gray-500">
-          <PaginationItem>
-            <PaginationPrevious
-              href={`/profile?page=${pageNumber - 1}`}
-              className={`${!hasPrev && "pointer-events-none opacity-60"}`}
-            />
-          </PaginationItem>
+    <nav className="flex justify-center">
+      <ul className="flex items-center gap-1 text-gray-500">
+        <li>
+          <Link
+            href={`/profile?page=${pageNumber - 1}`}
+            className={`px-3 py-2 rounded-md text-sm hover:bg-gray-100 ${
+              !hasPrev ? "pointer-events-none opacity-60" : ""
+            }`}
+          >
+            Previous
+          </Link>
+        </li>
 
-          {rows.map((row, index) => (
-            <PaginationItem key={index}>
-              <PaginationLink className={`${row === pageNumber && "font-semibold text-gray-700"}`} href={`/profile?page=${row}`}>
-                {row}
-              </PaginationLink>
-            </PaginationItem>
-          ))}
-          <PaginationItem>
-            <PaginationEllipsis />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationNext
-              href={`/profile?page=${pageNumber + 1}`}
-              className={`${!hasNext && "pointer-events-none opacity-60"}`}
-            />
-          </PaginationItem>
-        </PaginationContent>
-      </Pagination>
-    </div>
+        {rows.map((row, index) => (
+          <li key={index}>
+            <Link
+              href={`/profile?page=${row}`}
+              className={`px-3 py-2 rounded-md text-sm hover:bg-gray-100 ${
+                row === pageNumber ? "font-semibold text-gray-700" : ""
+              }`}
+            >
+              {row}
+            </Link>
+          </li>
+        ))}
+        <li>
+          <span className="px-3 py-2 text-sm">...</span>
+        </li>
+        <li>
+          <Link
+            href={`/profile?page=${pageNumber + 1}`}
+            className={`px-3 py-2 rounded-md text-sm hover:bg-gray-100 ${
+              !hasNext ? "pointer-events-none opacity-60" : ""
+            }`}
+          >
+            Next
+          </Link>
+        </li>
+      </ul>
+    </nav>
   );
 };
 
