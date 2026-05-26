@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: false,
   images: {
+    loaderFile: "./app/lib/imageLoader.ts",
     remotePatterns: [
       {
         protocol: "https",
@@ -9,7 +10,6 @@ const nextConfig = {
         port: "",
       },
     ],
-
   },
 };
 

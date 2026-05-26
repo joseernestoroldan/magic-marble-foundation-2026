@@ -9,7 +9,6 @@ import {
 import { useCallback, useState } from "react";
 import {
   Cell,
-  Legend,
   Pie,
   PieChart,
   ResponsiveContainer,
@@ -53,7 +52,7 @@ interface LegendEntry {
 const CustomLegend = ({ payload }: { payload?: LegendEntry[] }) => {
   if (!payload) return null;
   return (
-    <ul className="mt-4 flex flex-wrap justify-center gap-x-6 gap-y-2">
+    <ul className="flex flex-wrap justify-center gap-x-6 gap-y-1">
       {payload.map((entry) => {
         const data = entry.payload?.payload;
         return (
@@ -214,9 +213,15 @@ const Charts = () => {
             </Pie>
 
             <Tooltip content={<CustomTooltip />} />
-            <Legend content={<CustomLegend />} />
           </PieChart>
         </ResponsiveContainer>
+        <div className="flex min-h-[72px] items-center justify-center">
+          <CustomLegend payload={entries.map((e) => ({
+            value: e.category,
+            color: e.fill,
+            payload: { payload: e },
+          }))} />
+        </div>
       </div>
 
       {/* ---- Breakdown cards ---- */}

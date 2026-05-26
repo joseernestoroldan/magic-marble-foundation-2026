@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
-import { BeatLoader } from "react-spinners";
+import Loader from "../Loader/Loader";
 import { FormError } from "../auth/formError/FormError";
 import { FormSuccess } from "../auth/formSuccess/FormSuccess";
 
@@ -61,7 +61,7 @@ const UnsubscribeForm = () => {
           {success && success === "Email unsubscribed" && "Email Unsubscribed" }
           {success && success !== "Email unsubscribed" && "Email Subscribed Again"}
         </h2>
-        {!success && !error && <BeatLoader color="#5cc8cf" />}
+        {!success && !error && <Loader variant="inline" />}
 
         <FormSuccess message={success} />
         <FormError message={error} /> 

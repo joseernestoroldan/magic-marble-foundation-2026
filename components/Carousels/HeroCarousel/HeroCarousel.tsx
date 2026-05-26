@@ -57,6 +57,7 @@ const HeroCarousel = () => {
               fill
               className="object-cover"
               priority={slide.id === 1}
+              loading={slide.id <= 3 ? "eager" : "lazy"}
               sizes="100vw"
             />
 

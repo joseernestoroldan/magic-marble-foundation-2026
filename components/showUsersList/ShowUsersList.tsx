@@ -3,7 +3,7 @@ import { countUsers, searchUser } from "@/actions/searchQuery";
 import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { FaCheck } from "react-icons/fa";
-import { BeatLoader } from "react-spinners";
+import Loader from "../Loader/Loader";
 import FormUserAdmin from "../formUserAdmin/FormUserAdmin";
 import PaginationUtil from "../paginationUtil/PaginationUtil";
 import Search from "../search/Search";
@@ -46,7 +46,7 @@ const ShowUsersList = () => {
 
       {users.length === 0 && count !== 0 && (
         <p className="text-gray-500 text-lg w-full text-center">
-          <BeatLoader color="#a8a4a4" />
+          <Loader variant="inline" />
         </p>
       )}
       {users.length === 0 && count === 0 && (

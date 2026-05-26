@@ -108,6 +108,7 @@ const ToggleSidebar = () => {
                 fill
                 src="/navlogo.png"
                 alt="Magic Marble Foundation"
+                sizes="50px"
                 priority
                 className="object-contain"
               />

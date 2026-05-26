@@ -20,9 +20,9 @@ const ProfilePage = async () => {
   const diaries = await getAllData("dairies");
 
   return (
-    <div className="w-full flex flex-col items-start justify-center space-y-4 max-w-5xl mx-auto p-8  rounded-[10px] border border-gray-300">
+    <div className="w-full flex flex-col items-start justify-center gap-4 max-w-5xl mx-auto p-8  rounded-[10px] border border-gray-300">
       <div className="w-full flex justify-between">
-        <h1 className="text-2xl text-gray-400 font-semibold">Profile</h1>
+        <h1 className="text-xl text-gray-400 font-semibold">Profile</h1>
         <Link
           className="text-cyan-500 underline text-lg flex justify-center gap-2 items-center"
           href={"/settings"}

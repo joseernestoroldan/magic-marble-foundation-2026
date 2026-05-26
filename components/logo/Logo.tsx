@@ -11,6 +11,7 @@ const Logo = () => {
             fill
             src="/navlogo.png"
             alt="magic marble foundation"
+            sizes="70px"
             priority
           />
         </div>

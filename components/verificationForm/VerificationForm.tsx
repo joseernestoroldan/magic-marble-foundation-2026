@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
-import { BeatLoader } from "react-spinners";
+import Loader from "../Loader/Loader";
 import { FormError } from "../auth/formError/FormError";
 import { FormExpired } from "../auth/formExpired/FormExpired";
 import { FormSuccess } from "../auth/formSuccess/FormSuccess";
@@ -48,7 +48,7 @@ const VerificationForm = () => {
           
           
         </h2>
-        {!success && !error && !expired && <BeatLoader color="#5cc8cf" />}
+        {!success && !error && !expired && <Loader variant="inline" />}
 
         <FormSuccess message={success} />
         <FormError message={error} />

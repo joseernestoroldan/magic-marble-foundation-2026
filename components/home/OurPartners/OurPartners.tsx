@@ -13,22 +13,25 @@ const OurPartners = () => {
             src={"/helpAnimalsIndia.webp"}
             alt="help animals india"
             fill
+            sizes="200px"
           />
         </div>
         <div className="relative w-[200px] h-[200px]">
           <Image
             className="object-contain"
             src={"/veganGroup.webp"}
-            alt="help animals india"
+            alt="vegan group"
             fill
+            sizes="200px"
           />
         </div>
         <div className="relative w-[200px] h-[200px]">
           <Image
             className="object-contain"
             src={"/wellFed.webp"}
-            alt="help animals india"
+            alt="well fed"
             fill
+            sizes="200px"
           />
         </div>
         <div className="relative w-[200px] h-[200px]">
@@ -37,6 +40,7 @@ const OurPartners = () => {
             src={"/thrive.webp"}
             alt="thrive"
             fill
+            sizes="200px"
           />
         </div>
       </div>
