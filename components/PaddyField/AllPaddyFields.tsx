@@ -24,7 +24,7 @@ export default function AllPaddyFields({ paddyFields }: AllPaddyFieldsProps) {
             Paddy Field Stories
           </h1>
           <p className="text-[#042f1a]/70 max-w-2xl text-lg md:text-xl font-serif">
-            Explore our entire collection of field stories, updates, and deep dives into the heart of our foundation's work.
+            Explore our entire collection of field stories, updates, and deep dives into the heart of our foundation&apos;s work.
           </p>
           <div className="w-16 h-1 bg-[#10b981] mt-10"></div>
         </div>

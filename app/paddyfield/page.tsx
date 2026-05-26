@@ -40,7 +40,7 @@ const PortalPaddyFieldPage = async () => {
             Paddy Field
           </h1>
           <p className="text-[#10b981] text-lg md:text-xl max-w-2xl mx-auto font-serif leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300">
-            Explore our latest stories, nourishing recipes, and editor's top picks straight from the fields.
+            Explore our latest stories, nourishing recipes, and editor&apos;s top picks straight from the fields.
           </p>
           <div className="w-24 h-[1px] bg-[#10b981]/50 mt-12 animate-in fade-in duration-1000 delay-500"></div>
         </div>

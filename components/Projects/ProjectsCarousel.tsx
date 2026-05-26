@@ -70,7 +70,7 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
     const prev = (currentIndex - 1 + len) % len;
     const next = (currentIndex + 1) % len;
     return [prev, currentIndex, next];
-  }, [currentIndex, projects.length]);
+  }, [currentIndex, projects]);
 
   if (!projects || projects.length === 0) return null;
 

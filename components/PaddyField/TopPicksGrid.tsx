@@ -23,7 +23,7 @@ export default function TopPicksGrid({ topPicks }: TopPicksGridProps) {
         <div className="text-center mb-16">
           <span className="text-[#10b981] text-sm font-bold tracking-[0.2em] uppercase mb-4 block">Curated Selection</span>
           <h2 className={`${playfair.className} text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#f4fdf8] tracking-tight`}>
-            Editor's Top Picks
+            Editor&apos;s Top Picks
           </h2>
           <div className="w-24 h-1 bg-[#10b981] mx-auto mt-8"></div>
         </div>

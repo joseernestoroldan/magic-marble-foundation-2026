@@ -30,7 +30,7 @@ const RegisterPage = async () => {
           {imageOverlay}
           {heroContent}
         </div>
-        <div className="w-[90%] sm:w-[70%] lg:w-1/2 animate-fade-in-pro">
+        <div className="w-[90%] sm:w-[70%] lg:w-1/2 animate-fade-in-pro sm:h-[calc(100vh-200px)] bg-blue-400">
           <RegisterCard />
         </div>
       </div>

@@ -76,7 +76,7 @@ export default async function PaddyFieldDetailPage({
           <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center">
             {paddy.topPick && (
                <span className="inline-block bg-[#10b981] text-[#042f1a] text-xs font-bold px-4 py-1.5 uppercase tracking-[0.2em] mb-8">
-                 Editor's Top Pick
+                 Editor&apos;s Top Pick
                </span>
             )}
             <h1 className={`${playfair.className} text-[#f4fdf8] font-bold text-4xl md:text-5xl lg:text-7xl capitalize mb-8 leading-tight tracking-tight drop-shadow-lg`}>
@@ -103,7 +103,7 @@ export default async function PaddyFieldDetailPage({
           {/* Description (Editorial Intro) */}
           {paddy.description && (
             <p className={`${playfair.className} text-[#042f1a] text-2xl md:text-3xl leading-relaxed italic text-center px-4 md:px-12 mb-16 font-medium`}>
-              "{paddy.description}"
+              &ldquo;{paddy.description}&rdquo;
             </p>
           )}
 

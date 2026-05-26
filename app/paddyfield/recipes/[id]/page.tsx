@@ -101,7 +101,7 @@ export default async function RecipeDetailPage({
           {/* Description (Editorial Intro) */}
           {recipe.description && (
             <p className={`${playfair.className} text-[#042f1a] text-2xl md:text-3xl leading-relaxed italic text-center px-4 md:px-12 mb-16 font-medium`}>
-              "{recipe.description}"
+              &ldquo;{recipe.description}&rdquo;
             </p>
           )}
 
