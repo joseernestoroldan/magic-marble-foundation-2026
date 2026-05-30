@@ -1,0 +1,25 @@
+.wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding-top: 3rem;
+}
+
+.title {
+  color: #0891b2;
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  text-align: center;
+}
+
+.emptyState {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  text-align: center;
+  color: #94a3b8;
+}

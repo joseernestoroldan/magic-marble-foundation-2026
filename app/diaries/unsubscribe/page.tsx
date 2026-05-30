@@ -1,8 +1,11 @@
 import UnsubscribeForm from '@/components/unsubscribeForm/UnsubscribeForm'
+import styles from "./page.module.css";
 
 const UnsubscribePage = () => {
   return (
-    <UnsubscribeForm/>
+    <div className={styles.wrapper}>
+      <UnsubscribeForm/>
+    </div>
   )
 }
 

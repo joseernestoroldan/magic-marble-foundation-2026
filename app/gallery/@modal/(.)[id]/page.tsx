@@ -3,6 +3,8 @@ import GalleryDetail from "@/components/Gallery/GalleryDetail";
 import GalleryModal from "@/components/Gallery/GalleryModal";
 import { notFound } from "next/navigation";
 
+import styles from "./page.module.css";
+
 export default async function GalleryPhotoModal({
   params,
 }: {
@@ -18,8 +20,10 @@ export default async function GalleryPhotoModal({
   const item = data[0];
 
   return (
-    <GalleryModal>
-      <GalleryDetail item={item} variant="modal" />
-    </GalleryModal>
+    <div className={styles.wrapper}>
+      <GalleryModal>
+        <GalleryDetail item={item} variant="modal" />
+      </GalleryModal>
+    </div>
   );
 }

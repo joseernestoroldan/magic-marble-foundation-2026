@@ -1,14 +1,13 @@
 import LoginCard from "@/components/auth/loginForm/LoginCard";
 import DonationButton from "@/components/DonationButton/DonationButton";
 import Image from "next/image";
+import styles from "./page.module.css";
 
-const imageOverlay = (
-  <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/70 via-black/30 to-transparent" />
-);
+const imageOverlay = <div className={styles.imageOverlay} />;
 
 const heroContent = (
-  <div className="absolute inset-0 flex flex-col justify-end items-center gap-10 pb-16">
-    <h2 className="text-white text-3xl font-bold text-center px-4">
+  <div className={styles.heroContent}>
+    <h2 className={styles.heroTitle}>
       Your Choices Can Change The World
     </h2>
     <DonationButton />
@@ -17,20 +16,21 @@ const heroContent = (
 
 const LoginPage = () => {
   return (
-    <div className="w-full min-h-[calc(100vh-142px)] flex flex-col justify-center items-center max-w-5xl mx-auto">
-      <div className="w-full flex justify-center lg:justify-start min-h-[calc(100vh-200px)]">
-        <div className="hidden lg:block lg:w-1/2 relative rounded-[5px] overflow-hidden shadow-xl shadow-cyan-900/20">
+    <div className={styles.wrapper}>
+      <div className={styles.container}>
+        <div className={styles.imageSection}>
           <Image
-            className="object-cover object-center"
+            className={styles.image}
             src={"/sterilization.webp"}
             alt="Magic Marble Foundation"
             fill
             priority
+            sizes="(max-width: 1024px) 0px, 50vw"
           />
           {imageOverlay}
           {heroContent}
         </div>
-        <div className="w-[90%] sm:w-[70%] lg:w-1/2 animate-fade-in-pro">
+        <div className={styles.formSection}>
           <LoginCard />
         </div>
       </div>

@@ -18,7 +18,7 @@ type UserDetailsProps = {
   address?: string | null;
   codeNumber?: string | null;
   number?: string | null;
-  subscribed?: boolean;
+  subscribed?: boolean | null;
   emailVerified?: Date | null;
   role: "ADMIN" | "USER";
 };

@@ -1,8 +1,9 @@
 import NewPasswordForm from '@/components/auth/newPasswordForm/NewPasswordForm'
+import styles from "./page.module.css";
 
 const NewPasswordPage = () => {
   return (
-    <div className='w-full max-w-xl mx-auto'>
+    <div className={styles.wrapper}>
         <NewPasswordForm/>
     </div>
     

@@ -1,3 +1,4 @@
+import styles from "./page.module.css";
 import Projects from "@/components/Projects/Projects";
 import { Metadata } from "next";
 import { Suspense } from "react";
@@ -10,10 +11,10 @@ export const metadata: Metadata = {
 
 const ProjectsPage = () => {
   return (
-    <div className="w-full flex items-center gap-24">
+    <div className={styles.wrapper}>
       <Suspense
         fallback={
-          <div className="w-full h-[600px] md:h-[700px] lg:h-[800px] bg-black animate-pulse" />
+          <div className={styles.skeleton} />
         }
       >
         <Projects />

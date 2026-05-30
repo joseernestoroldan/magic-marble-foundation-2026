@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 
 import AboutUs from "@/components/About/AboutUs/AboutUs";
+import styles from "./page.module.css";
 
 const FocusAreas = dynamic(() => import("@/components/About/FocusAreas/FocusAreas"));
 const OurTeam = dynamic(() => import("@/components/About/OurTeam/OurTeam"));
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
 
 const AboutUsPage = () => {
   return (
-    <article className="w-full flex flex-col items-center gap-24 overflow-hidden">
+    <article className={styles.article}>
       <AboutUs />
       <FocusAreas />
       <OurMIssion />

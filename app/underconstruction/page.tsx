@@ -1,5 +1,6 @@
 ﻿"use client"
 
+import styles from "./page.module.css";
 import { Loader2 } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useState } from "react"
@@ -11,7 +12,7 @@ export default function UnderConstruction() {
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
-          return 0 // Reset to 0 when it reaches 100%
+          return 0
         }
         return prev + 1
       })
@@ -21,43 +22,43 @@ export default function UnderConstruction() {
   }, [])
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-white p-4 text-center">
-      <div className="max-w-md space-y-6">
-        <div className="flex items-center justify-center space-x-2">
-          <Loader2 className="h-10 w-10 animate-spin text-cyan-600" />
-          <h1 className="text-3xl font-bold text-cyan-600">Under Construction</h1>
+    <div className={styles.page}>
+      <div className={styles.card}>
+        <div className={styles.headerRow}>
+          <Loader2 className={styles.spinnerIcon} />
+          <h1 className={styles.mainTitle}>Under Construction</h1>
         </div>
 
-        <p className="text-gray-500">
+        <p className={styles.subtitle}>
           We&apos;re working hard to bring you something amazing. Our team is putting the finishing touches on this
           page.
         </p>
 
-        <div className="h-2 w-full overflow-hidden rounded-full bg-gray-100">
+        <div className={styles.progressBar}>
           <div
-            className="h-full bg-cyan-600 transition-all duration-300 ease-in-out"
+            className={styles.progressFill}
             style={{ width: `${progress}%` }}
           />
         </div>
-        <p className="text-sm text-gray-500">Loading...</p>
+        <p className={styles.loadingText}>Loading...</p>
 
-        <div className="flex justify-center pt-4">
+        <div className={styles.buttonWrapper}>
           <Link
             href="/"
-            className="rounded-[5px] bg-cyan-600 px-6 py-2 font-medium text-white transition-colors hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-600 focus:ring-offset-2"
+            className={styles.homeLink}
           >
             Return Home
           </Link>
         </div>
 
-        <div className="mt-8 flex justify-center">
-          <div className="relative h-24 w-24">
-            <div className="absolute inset-0 animate-ping rounded-full bg-cyan-600 opacity-20"></div>
-            <div className="absolute inset-2 animate-pulse rounded-full bg-cyan-600 opacity-30"></div>
-            <div className="absolute inset-4 animate-spin rounded-full border-4 border-gray-500 border-t-cyan-600"></div>
-            <div className="absolute inset-8 rounded-full bg-white"></div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-xs font-medium text-gray-500">COMING SOON</span>
+        <div className={styles.animationSection}>
+          <div className={styles.animationBox}>
+            <div className={styles.pingCircle}></div>
+            <div className={styles.pulseCircle}></div>
+            <div className={styles.spinningBorder}></div>
+            <div className={styles.innerCircle}></div>
+            <div className={styles.centerLabel}>
+              <span className={styles.centerText}>COMING SOON</span>
             </div>
           </div>
         </div>

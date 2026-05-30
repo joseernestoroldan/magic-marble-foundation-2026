@@ -1,0 +1,153 @@
+.outerWrapper {
+  background-attachment: fixed;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  width: 100%;
+  opacity: 0.8;
+}
+
+.innerWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  background-color: white;
+  border-radius: 5px;
+  max-width: 64rem;
+}
+
+@media (min-width: 640px) {
+  .innerWrapper {
+    width: 90%;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.mainTitle {
+  color: #0891b2;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 900;
+  padding-bottom: 2rem;
+}
+
+@media (min-width: 640px) {
+  .mainTitle {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+.subtitle {
+  color: #0891b2;
+  font-size: 1.25rem;
+  text-align: justify;
+  font-weight: 600;
+}
+
+@media (min-width: 640px) {
+  .subtitle {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+.bodyText {
+  color: #0891b2;
+  font-size: 1.25rem;
+  text-align: justify;
+  text-indent: 1.5rem;
+  font-weight: 400;
+}
+
+.sectionLabel {
+  color: #0891b2;
+  font-size: 1.25rem;
+  text-align: justify;
+  text-indent: 1.5rem;
+  font-weight: 600;
+}
+
+.ctaTitle {
+  color: #0891b2;
+  font-size: 1.25rem;
+  text-align: center;
+  font-weight: 900;
+}
+
+@media (min-width: 640px) {
+  .ctaTitle {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+.buttonRow {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .buttonRow {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.button {
+  background-color: #0891b2;
+  color: white;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  padding: 1rem;
+  width: 250px;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+
+.button:hover {
+  background-color: #22d3ee;
+}
+
+.ctaWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.tooltip {
+  width: 100%;
+  max-width: 300px;
+  color: #6b7280;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  text-indent: 1.5rem;
+  text-align: justify;
+}
+
+@media (min-width: 640px) {
+  .tooltip {
+    max-width: 600px;
+  }
+}

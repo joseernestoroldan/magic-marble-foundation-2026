@@ -13,6 +13,21 @@ import { ImSpinner9 } from "react-icons/im";
 import { FormConfirmation } from "../formConfirmation/FormConfirmation";
 import { FormError } from "../formError/FormError";
 import { FormInput } from "@/components/ui/FormInput";
+import styles from "./LoginForm.module.css";
+
+const forgotPasswordLink = (
+  <Link className={styles.forgotLink} href={"/reset"}>
+    Forgot password?
+  </Link>
+);
+
+const submitLabel = "Login";
+
+const spinnerContent = (
+  <div className={styles.spinnerWrapper}>
+    <ImSpinner9 className={styles.spinner} />
+  </div>
+);
 
 const LoginForm = () => {
   const [error, setError] = useState<string | undefined>("");
@@ -51,9 +66,9 @@ const LoginForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className=" space-y-4 w-[80%]"
+      className={styles.form}
     >
-      <div className="space-y-4 w-full">
+      <div className={styles.fieldsWrapper}>
         <FormInput
           id="email"
           label="Email"
@@ -74,28 +89,17 @@ const LoginForm = () => {
             disabled={isPending}
             registration={register("password")}
           />
-          <Link
-            className="text-cyan-600 underline text-sm inline-block mt-1"
-            href={"/reset"}
-          >
-            Forgot password?
-          </Link>
+          {forgotPasswordLink}
         </div>
       </div>
       <FormError message={error} />
       <FormConfirmation message={confirmation} />
       <button
-        className="bg-cyan-600 hover:bg-cyan-600 text-white w-full py-3 rounded-[5px] font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+        className={styles.submitButton}
         type="submit"
         disabled={isPending}
       >
-        {isPending ? (
-          <div className="w-full flex justify-center items-center">
-            <ImSpinner9 className="animate-spin h-5 w-5 mr-3 text-white" />
-          </div>
-        ) : (
-          "Login"
-        )}
+        {isPending ? spinnerContent : submitLabel}
       </button>
     </form>
   );

@@ -1,3 +1,4 @@
+import styles from "./page.module.css";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
 
 const HomePage = async () => {
   return (
-    <article className="w-full flex flex-col justify-center items-center space-y-24 overflow-hidden">
+    <article className={styles.article}>
       <HeroSection />
       <OurMIssion />
 

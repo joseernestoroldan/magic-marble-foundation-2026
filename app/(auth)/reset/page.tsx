@@ -1,12 +1,10 @@
 import ResetForm from '@/components/auth/resetForm/resetForm'
-
-
-
+import styles from "./page.module.css";
 
 const ResetPage = async () => {
   
   return (
-    <div className='w-full max-w-2xl mx-auto flex justify-center'>
+    <div className={styles.wrapper}>
         <ResetForm/>
     </div>
     

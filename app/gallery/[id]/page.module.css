@@ -1,0 +1,23 @@
+.wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-bottom: 4rem;
+  padding-top: 6rem;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  color: #0891b2;
+  transition: color 0.2s;
+}
+
+.backLink:hover {
+  color: #155e75;
+}

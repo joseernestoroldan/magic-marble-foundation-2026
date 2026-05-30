@@ -1,0 +1,104 @@
+.wrapper {
+  width: 100%;
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50vh;
+  border: 1px solid #e5e7eb;
+  padding: 4rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.userSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.userRow {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.userName {
+  color: #6b7280;
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+.userNameAlt {
+  color: #6b7280;
+  font-size: 2.25rem;
+}
+
+.emailRow {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.email {
+  color: #6b7280;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.detailsSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-transform: capitalize;
+}
+
+.detailRow {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  color: #6b7280;
+  font-size: 1.25rem;
+}
+
+.detailLabel {
+  font-weight: 500;
+}
+
+.phoneRow {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  color: #6b7280;
+  font-size: 1.25rem;
+}
+
+.subscribedRow {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4rem;
+  color: #6b7280;
+  font-size: 1.25rem;
+}
+
+.subscribedBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

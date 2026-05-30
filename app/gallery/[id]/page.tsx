@@ -4,6 +4,7 @@ import Container from "@/components/Layouts/Container/Container";
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import styles from "./page.module.css";
 
 export async function generateStaticParams() {
   const items = await getAllGallery();
@@ -54,11 +55,11 @@ export default async function GalleryItemPage({
 
   return (
     <Container>
-      <div className="flex w-full flex-col gap-10 pb-16 pt-24">
+      <div className={styles.wrapper}>
         <GalleryDetail item={item} variant="page" />
         <Link
           href="/gallery"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 transition-colors hover:text-cyan-800">
+          className={styles.backLink}>
           <svg
             width="16"
             height="16"

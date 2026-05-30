@@ -9,19 +9,21 @@ export const metadata: Metadata = {
     "Browse all the Magic Diaries from the Magic Marble Foundation — stories, experiences, and updates from our community.",
 };
 
+import styles from "./page.module.css";
+
 const DiariesPage = async () => {
   const diaries = await getAllDiaries();
 
   return (
-    <div className="flex flex-col items-center gap-24 w-full pt-24">
-      <h2 className="text-cyan-600 font-bold text-4xl text-center">
+    <div className={styles.wrapper}>
+      <h2 className={styles.title}>
         Magic Diaries
       </h2>
       <Container>
         {diaries && diaries.length > 0 ? (
           <DiariesFullMosaic diaries={diaries} />
         ) : (
-          <p className="text-slate-400 text-center py-12">
+          <p className={styles.emptyState}>
             No diaries available yet.
           </p>
         )}

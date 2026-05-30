@@ -2,28 +2,31 @@
 import { sigInGoogle } from "@/actions/signInGoogle";
 import { useSearchParams } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
+import styles from "./LoginGoogle.module.css";
 
+const oauthErrorBox = (
+  <div className={styles.errorBox}>
+    <p>Your email is already register with other credentials</p>
+    <p>Please try either other email or other method!</p>
+  </div>
+);
 
 const LoginGoogle = () => {
   const searchParams = useSearchParams();
   const oauthError = searchParams.get("error") ?? "1";
+
+  const handleSignIn = () => sigInGoogle();
+
   return (
-    <div className="flex flex-col items-center space-y-4">
+    <div className={styles.wrapper}>
       <button
-        onClick={async () => {
-          await sigInGoogle();
-        }}
-        className="flex flex-row justify-center text-gray-500 items-center w-[250px] py-3 hover:bg-gray-100 gap-x-4 border border-gray-200 border-solid rounded-[5px] transition-colors duration-200"
+        onClick={handleSignIn}
+        className={styles.googleButton}
       >
-        <FcGoogle className="text-lg" />
+        <FcGoogle className={styles.googleIcon} />
         Sign in with Google
       </button>
-      {oauthError === "OAuthAccountNotLinked" && (
-        <div className="bg-red-200 p-3 flex flex-col justify-center items-center gap-x-2 text-base text-red-600 rounded-[5px]">
-          <p>Your email is already register with other credentials</p>
-          <p>Please try either other email or other method!</p>
-        </div>
-      )}
+      {oauthError === "OAuthAccountNotLinked" && oauthErrorBox}
     </div>
   );
 };

@@ -1,0 +1,49 @@
+.card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card > * + * {
+  margin-top: 1.5rem;
+}
+
+.title {
+  font-size: 1.125rem;
+  color: #6b7280;
+  text-align: center;
+  font-weight: 700;
+}
+
+.socialSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.socialSection > * + * {
+  margin-top: 1rem;
+}
+
+.registerRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .registerRow {
+    flex-direction: row;
+    column-gap: 0.5rem;
+  }
+}
+
+.registerText {
+  color: #6b7280;
+  text-align: center;
+}
+
+.registerLink {
+  color: #0891b2;
+  text-decoration: underline;
+}

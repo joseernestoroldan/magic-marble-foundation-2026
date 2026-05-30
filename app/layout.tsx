@@ -1,3 +1,4 @@
+import styles from "./layout.module.css";
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 import { Open_Sans } from "next/font/google";
@@ -16,10 +17,10 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={openSansFont.className}>
-        <main className="relative">
+        <main className={styles.main}>
           {/* <Badge mode="layout"/> */}
           <Navbar />
-          <div className="w-full">{children}</div>
+          <div className={styles.content}>{children}</div>
           <Footer />
         </main>
       </body>

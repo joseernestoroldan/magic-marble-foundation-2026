@@ -10,6 +10,7 @@ import { FcGoogle } from "react-icons/fc";
 import { IoMdSettings } from "react-icons/io";
 import { MdVerifiedUser } from "react-icons/md";
 import { RiAdminFill } from "react-icons/ri";
+import styles from "./page.module.css";
 
 const ProfilePage = async () => {
   const session = await auth();
@@ -24,16 +25,16 @@ const ProfilePage = async () => {
 
   if (!data) {
     return (
-      <div className="w-full max-w-4xl mx-auto p-6 sm:p-8 lg:p-10 flex items-center justify-center min-h-[40vh]">
-        <div className="text-center space-y-4 p-8 rounded-[5px] bg-gray-50 border border-gray-100">
-          <div className="w-16 h-16 mx-auto rounded-full bg-gray-200 flex items-center justify-center">
-            <FaUser className="text-2xl text-gray-400" />
+      <div className={styles.notFoundWrapper}>
+        <div className={styles.notFoundCard}>
+          <div className={styles.notFoundIconWrapper}>
+            <FaUser className={styles.notFoundIcon} />
           </div>
-          <h2 className="text-xl font-bold text-gray-700">User profile not found</h2>
-          <p className="text-sm text-gray-500">We couldn&apos;t locate your profile. Please try signing in again.</p>
+          <h2 className={styles.notFoundTitle}>User profile not found</h2>
+          <p className={styles.notFoundText}>We couldn&apos;t locate your profile. Please try signing in again.</p>
           <Link
             href="/login"
-            className="inline-block mt-2 px-6 py-2.5 rounded-[5px] bg-gray-800 text-white text-sm font-medium hover:bg-gray-700 transition-colors"
+            className={styles.notFoundLink}
           >
             Go to Login
           </Link>
@@ -51,70 +52,70 @@ const ProfilePage = async () => {
     : `${(data.firstName ?? "").charAt(0)}${(data.secondName ?? "").charAt(0)}`.toUpperCase();
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-6 sm:p-8 lg:p-10 space-y-8">
+    <div className={styles.wrapper}>
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-gray-700">Profile</h1>
+      <div className={styles.header}>
+        <h1 className={styles.headerTitle}>Profile</h1>
         <Link
           href="/settings"
-          className="flex items-center gap-2 px-8 py-2 rounded-[5px] bg-gray-100 text-gray-600 hover:bg-gray-200 text-sm font-medium transition-colors"
+          className={styles.settingsLink}
         >
-          <IoMdSettings className="text-base" />
+          <IoMdSettings className={styles.settingsIcon} />
           Settings
         </Link>
       </div>
 
       {/* User Identity Card */}
-      <div className="flex items-center gap-5 p-6 rounded-[5px] bg-gray-50 border border-gray-100">
-        <div className="w-16 h-16 rounded-full bg-cyan-600 flex items-center justify-center flex-shrink-0">
-          <span className="text-xl font-bold text-white">{initials}</span>
+      <div className={styles.userCard}>
+        <div className={styles.avatar}>
+          <span className={styles.initials}>{initials}</span>
         </div>
-        <div className="min-w-0">
-          <h2 className="text-2xl font-bold text-cyan-600 uppercase truncate">
+        <div className={styles.userInfo}>
+          <h2 className={styles.displayName}>
             {displayName}
           </h2>
-          <div className="flex items-center gap-2 mt-1">
-            <p className="text-sm text-gray-500 lowercase truncate">{data.email}</p>
-            {data.name ? <FcGoogle className="text-base flex-shrink-0" /> : null}
+          <div className={styles.emailRow}>
+            <p className={styles.emailText}>{data.email}</p>
+            {data.name ? <FcGoogle className={styles.googleIcon} /> : null}
           </div>
         </div>
       </div>
 
       {/* Info Grid */}
       {(data.country || data.address || data.number) ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className={styles.infoGrid}>
           {data.country ? (
-            <div className="flex items-start gap-3 p-4 rounded-[5px] bg-gray-50 border border-gray-100">
-              <div className="w-9 h-9 rounded-[5px] bg-gray-200 flex items-center justify-center flex-shrink-0">
-                <FaGlobeAmericas className="text-sm text-gray-500" />
+            <div className={styles.infoItem}>
+              <div className={styles.infoIconWrapper}>
+                <FaGlobeAmericas className={styles.infoIcon} />
               </div>
-              <div className="min-w-0">
-                <p className="text-xs font-medium text-gray-400 uppercase tracking-wide">Country</p>
-                <p className="text-sm font-medium text-gray-700 capitalize mt-0.5">{data.country}</p>
+              <div className={styles.infoContent}>
+                <p className={styles.infoLabel}>Country</p>
+                <p className={styles.infoValue}>{data.country}</p>
               </div>
             </div>
           ) : null}
 
           {data.address ? (
-            <div className="flex items-start gap-3 p-4 rounded-[5px] bg-gray-50 border border-gray-100">
-              <div className="w-9 h-9 rounded-[5px] bg-gray-200 flex items-center justify-center flex-shrink-0">
-                <FaMapMarkerAlt className="text-sm text-gray-500" />
+            <div className={styles.infoItem}>
+              <div className={styles.infoIconWrapper}>
+                <FaMapMarkerAlt className={styles.infoIcon} />
               </div>
-              <div className="min-w-0">
-                <p className="text-xs font-medium text-gray-400 uppercase tracking-wide">Address</p>
-                <p className="text-sm font-medium text-gray-700 capitalize mt-0.5">{data.address}</p>
+              <div className={styles.infoContent}>
+                <p className={styles.infoLabel}>Address</p>
+                <p className={styles.infoValue}>{data.address}</p>
               </div>
             </div>
           ) : null}
 
           {data.number ? (
-            <div className="flex items-start gap-3 p-4 rounded-[5px] bg-gray-50 border border-gray-100">
-              <div className="w-9 h-9 rounded-[5px] bg-gray-200 flex items-center justify-center flex-shrink-0">
-                <FaPhoneAlt className="text-sm text-gray-500" />
+            <div className={styles.infoItem}>
+              <div className={styles.infoIconWrapper}>
+                <FaPhoneAlt className={styles.infoIcon} />
               </div>
-              <div className="min-w-0">
-                <p className="text-xs font-medium text-gray-400 uppercase tracking-wide">Telephone</p>
-                <p className="text-sm font-medium text-gray-700 mt-0.5">
+              <div className={styles.infoContent}>
+                <p className={styles.infoLabel}>Telephone</p>
+                <p className={styles.infoValue}>
                   {data.codeNumber ? `(${data.codeNumber}) ` : ""}{data.number}
                 </p>
               </div>
@@ -124,22 +125,22 @@ const ProfilePage = async () => {
       ) : null}
 
       {/* Status Badges */}
-      <div className="flex flex-wrap gap-3">
+      <div className={styles.badgeWrapper}>
         {data.emailVerified ? (
-          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[5px] text-xs font-medium bg-emerald-50 text-emerald-600 border border-emerald-200">
-            <MdVerifiedUser className="text-sm" />
+          <span className={`${styles.badge} ${styles.badgeVerified}`}>
+            <MdVerifiedUser className={styles.badgeIconLg} />
             Verified
           </span>
         ) : null}
 
         {data.role === "ADMIN" ? (
-          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[5px] text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200">
-            <RiAdminFill className="text-sm" />
+          <span className={`${styles.badge} ${styles.badgeAdmin}`}>
+            <RiAdminFill className={styles.badgeIconLg} />
             Admin
           </span>
         ) : (
-          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[5px] text-xs font-medium bg-slate-50 text-slate-600 border border-slate-200">
-            <FaUser className="text-xs" />
+          <span className={`${styles.badge} ${styles.badgeUser}`}>
+            <FaUser className={styles.badgeIconSm} />
             User
           </span>
         )}
@@ -153,7 +154,7 @@ const ProfilePage = async () => {
         }}
       >
         <button
-          className="bg-gray-800 hover:bg-gray-700 text-white rounded-[5px] py-2.5 px-6 text-sm font-medium transition-colors"
+          className={styles.signOutButton}
           type="submit"
         >
           Sign Out
@@ -162,7 +163,7 @@ const ProfilePage = async () => {
 
       {/* Admin Sections */}
       {role ? (
-        <section className="border-t border-gray-200 pt-8 mt-8 space-y-6">
+        <section className={styles.adminSection}>
           <ShowUsersList />
           <NotifyDiaries diaries={diaries} />
           <Donators />

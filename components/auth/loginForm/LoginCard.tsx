@@ -2,30 +2,34 @@
 import Separator from "../separator/Separator";
 import LoginForm from "./LoginForm";
 import LoginGoogle from "./LoginGoogle";
+import styles from "./LoginCard.module.css";
+
+const heading = (
+  <h2 className={styles.title}>Welcome back to Magic Marble Foundation</h2>
+);
+
+const registerSection = (
+  <div className={styles.registerRow}>
+    <p className={styles.registerText}>New in Magic Marble Foundation?</p>
+    <Link href={"/register"} className={styles.registerLink}>
+      Create Account
+    </Link>
+  </div>
+);
 
 const LoginCard = () => {
   return (
-    <div className="w-full flex flex-col items-center space-y-6">
-      <h2 className="text-xl text-gray-500 text-center font-bold">
-        Welcome back to Magic Marble Foundation
-      </h2>
+    <div className={styles.card}>
+      {heading}
 
       <LoginForm />
-
       <Separator title="Or" />
 
-      <div className="flex flex-col space-y-4 disabled">
+      <div className={styles.socialSection}>
         <LoginGoogle />
       </div>
 
-      <div className="flex flex-col sm:flex-row sm:gap-x-2 items-center">
-        <p className="text-gray-500 text-center">
-          New in Magic Marble Foundation?
-        </p>
-        <Link href={"/register"} className="text-cyan-600 underline">
-          Create Account
-        </Link>
-      </div>
+      {registerSection}
     </div>
   );
 };

@@ -11,16 +11,16 @@ import UserDetails from "../userDetails/UserDetails";
 
 interface User {
   id: string;
-  name?: string | null;
-  firstName?: string | null;
-  secondName?: string | null;
+  name: string | null;
+  firstName: string | null;
+  secondName: string | null;
   email: string | null;
   country: string | null;
   codeNumber: string | null;
   number: string | null;
-  subscribed: boolean;
-  address?: string | null;
-  emailVerified?: Date | null;
+  subscribed: boolean | null;
+  address: string | null;
+  emailVerified: Date | null;
   role: "ADMIN" | "USER";
 }
 

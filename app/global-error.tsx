@@ -1,5 +1,6 @@
 ﻿"use client";
 
+import styles from "./global-error.module.css";
 import { AlertCircle } from "lucide-react";
 import Link from "next/link";
 import { useEffect } from "react";
@@ -19,26 +20,26 @@ export default function Error({
   return (
     <html>
       <body>
-        <div className="min-h-[70vh] bg-white flex flex-col justify-center items-center p-4">
-          <div className="text-center">
-            <AlertCircle className="mx-auto h-16 w-16 text-cyan-600" />
-            <h1 className="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+        <div className={styles.page}>
+          <div className={styles.center}>
+            <AlertCircle className={styles.alertIcon} />
+            <h1 className={styles.title}>
               Something went wrong
             </h1>
-            <p className="mt-6 text-base leading-7 text-gray-600">
+            <p className={styles.description}>
               We apologize for the inconvenience. Our team has been notified and
               is working on resolving the issue.
             </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
+            <div className={styles.actions}>
               <button
                 onClick={reset}
-                className="rounded-[5px] bg-cyan-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-cyan-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-600"
+                className={styles.retryButton}
               >
                 Try again
               </button>
               <Link
                 href="/"
-                className="text-sm font-semibold text-cyan-600 hover:text-cyan-600"
+                className={styles.homeLink}
               >
                 Go back home <span aria-hidden="true">&rarr;</span>
               </Link>

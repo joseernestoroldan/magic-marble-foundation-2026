@@ -1,17 +1,18 @@
-﻿
+﻿import styles from "./page.module.css";
+
 const PaddyFieldMaintenancePage = () => {
   return (
-    <div className="w-full bg-gradient-to-b from-white via-cyan-300 to-white flex flex-col items-center justify-center min-h-screen">
-      <div className="bg-transparent p-10 rounded-[5px] text-center">
-        <h1 className="text-4xl font-bold text-cyan-800 mb-4">
+    <div className={styles.wrapper}>
+      <div className={styles.card}>
+        <h1 className={styles.title}>
           This page is under maintenance
         </h1>
-        <p className="text-lg text-gray-700">
+        <p className={styles.description}>
           We are currently working on improvements. Please check back later.
         </p>
-        <div className="mt-6">
+        <div className={styles.iconWrapper}>
           <svg
-            className="w-16 h-16 text-cyan-800 animate-spin"
+            className={styles.icon}
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"

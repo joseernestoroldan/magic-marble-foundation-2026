@@ -1,0 +1,31 @@
+.wrapper {
+  min-height: 100vh;
+  background-color: #f4fdf8;
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+}
+
+.navWrapper {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 2rem;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(4, 47, 26, 0.6);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color 0.2s;
+}
+
+.backLink:hover {
+  color: #10b981;
+}

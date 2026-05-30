@@ -1,8 +1,9 @@
 import VerificationForm from '@/components/verificationForm/VerificationForm'
+import styles from "./page.module.css";
 
 const NewVerificationPage = () => {
   return (
-    <div>
+    <div className={styles.wrapper}>
         <VerificationForm/>
     </div>
   )

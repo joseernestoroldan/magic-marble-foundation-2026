@@ -1,0 +1,98 @@
+.wrapper {
+  width: 100%;
+  min-height: calc(100vh - 142px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 200px);
+}
+
+@media (min-width: 1024px) {
+  .container {
+    justify-content: flex-start;
+  }
+}
+
+.imageSection {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .imageSection {
+    display: block;
+    width: 50%;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(21, 94, 117, 0.2), 0 8px 10px -6px rgba(21, 94, 117, 0.2);
+  }
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(21, 78, 99, 0.7), rgba(0, 0, 0, 0.3), transparent);
+}
+
+.heroContent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2.5rem;
+  padding-bottom: 4rem;
+}
+
+.heroTitle {
+  color: white;
+  font-size: 1.875rem;
+  font-weight: 700;
+  text-align: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.formSection {
+  width: 90%;
+  animation: fadeInPro 0.6s ease;
+}
+
+@media (min-width: 640px) {
+  .formSection {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .formSection {
+    width: 50%;
+  }
+}
+
+@keyframes fadeInPro {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,13 +1,15 @@
-﻿const PrivacyPolicyPage = () => {
+﻿import styles from "./page.module.css";
+
+const PrivacyPolicyPage = () => {
   return (
-    <div className="flex flex-col items-center w-full max-w-5xl mx-auto pt-4 space-y-4">
-      <h1 className="text-cyan-600 uppercase font-bold text-4xl">
+    <div className={styles.wrapper}>
+      <h1 className={styles.h1}>
         Privacy Policy
       </h1>
-      <p className="text-gray-500 font-bold italic w-full text-sm">
+      <p className={styles.lastUpdated}>
         Last Updated: March 17, 2025
       </p>
-      <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
+      <p className={styles.paragraph}>
         Magic Marble Foundation (&quot; Magic Marble Foundation,&quot;
         &quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to
         protecting your privacy. This Privacy Policy explains how information
@@ -25,7 +27,7 @@
         empathy drives decision-making and shapes a more just,
         harmonious future for all.
       </p>
-      <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
+      <p className={styles.paragraph}>
         We may change this Privacy Policy from time to time. If we make changes,
         we will notify you by revising the date at the top of this policy and,
         in some cases, we may provide you with additional notice (such as adding
@@ -34,56 +36,56 @@
         otherwise interact with us to stay informed about our information
         practices and the ways you can help protect your privacy.
       </p>
-      <h2 className="text-cyan-600 w-full uppercase font-bold text-2xl">
+      <h2 className={styles.h2}>
         Information We Collect
       </h2>
 
-      <h3 className="text-cyan-600 uppercase font-bold text-lg w-full">
+      <h3 className={styles.h3}>
         Information you provide to us
       </h3>
-      <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
+      <p className={styles.paragraph}>
         We collect information you provide directly to us. For example, we
         collect information when you:
       </p>
-      <ul className="text-gray-500 w-full text-base font-medium text-justify">
-        <li className="list-disc">
+      <ul className={styles.list}>
+        <li>
           Sign up to receive updates or other communications
         </li>
-        <li className="list-disc">Make a donation</li>
-        <li className="list-disc">Apply for a job or volunteer position</li>
-        <li className="list-disc">Register for an event</li>
-        <li className="list-disc">
+        <li>Make a donation</li>
+        <li>Apply for a job or volunteer position</li>
+        <li>Register for an event</li>
+        <li>
           Participate in a survey, contest, or promotion
         </li>
-        <li className="list-disc">
+        <li>
           Communicate with us via third-party social media sites
         </li>
-        <li className="list-disc">
+        <li>
           Request customer support or otherwise communicate with us
         </li>
       </ul>
-      <h3 className="text-cyan-600 uppercase font-bold text-lg w-full">
+      <h3 className={styles.h3}>
         Information We Collect Automatically When You Use the Services
       </h3>
-      <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
+      <p className={styles.paragraph}>
         When you access or use our Services, we automatically collect
         information about you, including:
       </p>
 
-      <ul className="text-gray-500 w-full text-base font-medium text-justify">
-        <li className="list-disc">
+      <ul className={styles.list}>
+        <li>
           <b>Log Information:</b> We collect log information about your use of
           the Services, including the type of browser you use, access times,
           pages viewed, your IP address, and the page you visited before
           navigating to our Services.
         </li>
-        <li className="list-disc">
+        <li>
           <b>Device Information:</b> We collect information about the computer
           or mobile device you use to access our Services, including the
           hardware model, operating system and version, unique device
           identifiers, and mobile network information.
         </li>
-        <li className="list-disc">
+        <li>
           <b>
             Information Collected by Cookies and Other Tracking Technologies:
           </b>{" "}
@@ -99,103 +101,103 @@
         </li>
       </ul>
 
-      <h2 className="text-cyan-600 w-full uppercase font-bold text-2xl">
+      <h2 className={styles.h2}>
         Use Of Information
       </h2>
-      <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
+      <p className={styles.paragraph}>
         We may use information about you for various purposes, including to:
       </p>
-      <ul className="list-disc text-gray-500 w-full text-base font-medium text-justify">
-        <li className="list-disc">
+      <ul className={styles.list}>
+        <li>
           Provide, maintain, and improve our Services
         </li>
-        <li className="list-disc">
+        <li>
           Process donations and send you related information, including
           confirmations, receipts, and tax documents
         </li>
-        <li className="list-disc">
+        <li>
           Respond to your comments, questions, and requests
         </li>
-        <li className="list-disc">
+        <li>
           Communicate with you about products, services, offers, campaigns, and
           events offered by Magic Marble Foundation and provide news and
           information we think will be of interest to you
         </li>
-        <li className="list-disc">
+        <li>
           Send you technical notices, updates, security alerts, and support and
           administrative messages
         </li>
-        <li className="list-disc">
+        <li>
           Monitor and analyze trends, usage, and activities in connection with
           our Services
         </li>
-        <li className="list-disc">
+        <li>
           Detect, investigate, and prevent fraudulent transactions and other
           illegal activities and protect the rights and property of Magic Marble
           Foundation and others
         </li>
-        <li className="list-disc">
+        <li>
           Personalize and improve the Services and provide content or features
           that match user profiles or interests
         </li>
-        <li className="list-disc">
+        <li>
           Facilitate contests, sweepstakes, and promotions and process and
           deliver entries and rewards
         </li>
-        <li className="list-disc">
+        <li>
           Carry out any other purpose described to you at the time the
           information was collected
         </li>
       </ul>
-      <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
+      <p className={styles.paragraph}>
         Magic Marble Foundation is based in the state of Michigan and the
         information we collect is governed by U.S. law. By accessing or using
         the Services or otherwise providing information to us, you consent to
         the processing and transfer of information in and to the U.S. and other
         countries.
       </p>
-      <h2 className="text-cyan-600 w-full uppercase font-bold text-2xl">
+      <h2 className={styles.h2}>
         SHARING OF INFORMATION
       </h2>
-      <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
+      <p className={styles.paragraph}>
         We may share information about you as follows or as otherwise described
         in this Privacy Policy:
       </p>
-      <ul className="list-disc text-gray-500 w-full text-base font-medium text-justify">
-        <li className="list-disc">
+      <ul className={styles.list}>
+        <li>
           With vendors, consultants, and other service providers who need access
           to such information to carry out work on our behalf
         </li>
-        <li className="list-disc">
+        <li>
           In response to a request for information if we believe disclosure is
           in accordance with, or required by, any applicable law, regulation, or
           legal process
         </li>
-        <li className="list-disc">
+        <li>
           If we believe your actions are inconsistent with our user agreements
           or policies, or to protect the rights, property, and safety of Magic
           Marble Foundation or others
         </li>
-        <li className="list-disc">
+        <li>
           In connection with, or during negotiations of, any merger, sale of
           organization assets, financing, or acquisition of all or a portion of
           our operations by another organization
         </li>
-        <li className="list-disc">
+        <li>
           Between and among Magic Marble Foundation and our current and future
           parents, affiliates, subsidiaries, and other organizations under
           common control and ownership
         </li>
-        <li className="list-disc">With your consent or at your direction</li>
+        <li>With your consent or at your direction</li>
       </ul>
-      <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
+      <p className={styles.paragraph}>
         We may also share aggregated or de-identified information, which cannot
         reasonably be used to identify you.
       </p>
-      <h2 className="text-cyan-600 w-full uppercase font-bold text-2xl">
+      <h2 className={styles.h2}>
         SOCIAL SHARING FEATURES
       </h2>
-      <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
+      <p className={styles.paragraph}>
         The Services may offer social sharing features and other integrated
         tools (such as the Facebook &quot;Like&quot; button), which let you
         share actions you take on our Services with other media, and vice versa.
@@ -206,19 +208,19 @@
         connection with social sharing features, please visit the privacy
         policies of the entities that provide these features.
       </p>
-      <h2 className="text-cyan-600 w-full uppercase font-bold text-2xl">SECURITY</h2>
-      <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
+      <h2 className={styles.h2}>SECURITY</h2>
+      <p className={styles.paragraph}>
         Magic Marble Foundation takes reasonable measures to help protect
         information about you from loss, theft, misuse and unauthorized access,
         disclosure, alteration, and destruction.
       </p>
-      <h2 className="text-cyan-600 w-full uppercase font-bold text-2xl">
+      <h2 className={styles.h2}>
         YOUR CHOICES
       </h2>
-      <h3 className="text-cyan-600 uppercase font-bold text-lg w-full">
+      <h3 className={styles.h3}>
         Account Information
       </h3>
-      <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
+      <p className={styles.paragraph}>
         You may update, correct, or delete information about you at any time by
         emailing us at info@MagicMarbleFoundation.org or by mail to Magic Marble
         Foundation, 455 E. Eisenhower Parkway #355 Ann Arbor, Michigan, 48108
@@ -227,77 +229,77 @@
         for legitimate business purposes. We may also retain cached or archived
         copies of information about you for a certain period.
       </p>
-      <h3 className="text-cyan-600 uppercase font-bold text-lg w-full">
+      <h3 className={styles.h3}>
         Cookies
       </h3>
-      <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
+      <p className={styles.paragraph}>
         Most web browsers are set to accept cookies by default. If you prefer,
         you can usually choose to set your browser to remove or reject browser
         cookies. Please note that if you choose to remove or reject cookies,
         this could affect the availability and functionality of our Services.
       </p>
-      <h3 className="text-cyan-600 uppercase font-bold text-lg w-full">
+      <h3 className={styles.h3}>
         Promotional Communications
       </h3>
-      <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
+      <p className={styles.paragraph}>
         You may opt out of receiving promotional communications from Magic
         Marble Foundation by following the instructions in those communications
         or by emailing us at info@magicmarblefoundation.org. If you opt out, we may
         still send you non-promotional communications, such as those about your
         account or our ongoing business relations.
       </p>
-      <h2 className="text-cyan-600 w-full uppercase font-bold text-2xl">
+      <h2 className={styles.h2}>
         MICHIGAN RESIDENTS&apos; PRIVACY RIGHTS
       </h2>
-      <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
+      <p className={styles.paragraph}>
         As a Michigan-based organization, Magic Marble Foundation complies with
         all applicable Michigan state laws regarding data privacy and
         protection. Michigan residents have the right to:
       </p>
-      <ul className="text-gray-500 w-full text-base font-medium text-justify indent-6">
-        <li className="list-disc">
+      <ul className={`${styles.list} ${styles.listIndent}`}>
+        <li>
           Request information about personal data we have collected about you
         </li>
-        <li className="list-disc">
+        <li>
           Request deletion of personal data we have collected from you (subject
           to exceptions)
         </li>
-        <li className="list-disc">
+        <li>
           Opt-out from the sale of personal information
         </li>
       </ul>
-      <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
+      <p className={styles.paragraph}>
         To exercise these rights, please contact us at
         info@MagicMarbleFoundation.org
       </p>
-      <h2 className="text-cyan-600 w-full uppercase font-bold text-2xl">
+      <h2 className={styles.h2}>
         CHILDREN&apos;S PRIVACY
       </h2>
-      <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
+      <p className={styles.paragraph}>
         Our Services are not intended for children under 13 years of age. We do
         not knowingly collect personal information from children under 13. If
         you are a parent or guardian and believe we have collected information
         from your child under age 13, please contact us at
         info@MagicMarbleFoundation.org
       </p>
-      <h2 className="text-cyan-600 w-full uppercase font-bold text-2xl">CONTACT US</h2>
-      <p className="text-gray-500 w-full text-base font-medium text-justify indent-6">
+      <h2 className={styles.h2}>CONTACT US</h2>
+      <p className={styles.paragraph}>
         If you have any questions about this Privacy Policy, please contact us
         at:
       </p>
-      <div className="flex flex-col items-center py-8 bg-gray-50 border border-cyan-200 w-full space-y-4 rounded-[5px]">
-        <p className="text-gray-500 font-bold ">Magic Marble Foundation</p>
-        <p className="text-gray-500 font-bold text-wrap mx-auto w-[200px] sm:w-[400px] text-center">
+      <div className={styles.contactCard}>
+        <p className={styles.contactName}>Magic Marble Foundation</p>
+        <p className={styles.contactAddress}>
           455 E. Eisenhower Parkway #355 Ann Arbor, Michigan, 48108 USA
         </p>
-        <div className="flex flex-col items-center justify-center">
-          <p className="text-gray-500 text-xs sm:text-base font-bold ">
+        <div className={styles.contactInfoCol}>
+          <p className={styles.contactInfoLine}>
             Email: info@MagicMarbleFoundation.org
           </p>
-          <p className="text-gray-500 text-xs sm:text-base font-bold ">
+          <p className={styles.contactInfoLine}>
             Phone: 617-710-9968
           </p>
-          <p className="text-gray-500 text-xs sm:text-base font-bold ">
+          <p className={styles.contactInfoLine}>
             Website: www.MagicMarbleFoundation.org
           </p>
         </div>

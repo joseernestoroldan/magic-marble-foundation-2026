@@ -1,0 +1,96 @@
+.wrapper {
+  width: 100%;
+}
+
+.tabBar {
+  display: flex;
+  border-bottom: 1px solid #e7e5e4;
+  padding: 0 1.5rem;
+  background: #fafaf9;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.25rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: relative;
+  color: #a8a29e;
+  transition: color 0.2s;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+.tab::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: transparent;
+  transition: background 0.25s ease;
+  border-radius: 1px 1px 0 0;
+}
+
+.tab:hover {
+  color: #57534e;
+}
+
+.tabActive {
+  color: #0891b2;
+}
+
+.tabActive::after {
+  background: #0891b2;
+}
+
+.tabActive:hover {
+  color: #0891b2;
+}
+
+.tabDangerActive {
+  color: #dc2626;
+}
+
+.tabDangerActive::after {
+  background: #dc2626;
+}
+
+.tabDangerActive:hover {
+  color: #dc2626;
+}
+
+.tabIcon {
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+}
+
+.contentPanel {
+  padding: 2rem 1.5rem;
+}
+
+.panelTitle {
+  font-size: 1rem;
+  color: #57534e;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 640px) {
+  .tab {
+    padding: 1rem 1.5rem;
+    font-size: 0.875rem;
+  }
+
+  .contentPanel {
+    padding: 2.5rem 2rem;
+  }
+}

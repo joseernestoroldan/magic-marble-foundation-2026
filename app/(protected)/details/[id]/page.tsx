@@ -1,51 +1,52 @@
 ﻿import { db } from "@/db";
 import { FaCheck } from "react-icons/fa";
+import styles from "./page.module.css";
 
 const DetailsPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params;
   const user = await db.user.findUnique({ where: { id } });
 
   return (
-    <div className="w-full max-w-5xl mx-auto h-[80vh] flex flex-col justify-center items-center">
-      <div className="w-full max-w-5xl mx-auto h-[50vh] border border-gray-200 p-16 rounded-[5px] flex flex-col justify-center space-y-4">
-        <div className="flex flex-col items-start">
-          <div className="flex justify-start items-center">
+    <div className={styles.wrapper}>
+      <div className={styles.card}>
+        <div className={styles.userSection}>
+          <div className={styles.userRow}>
             {user?.name && (
-              <h2 className="text-gray-500 text-4xl font-bold">{user.name}</h2>
+              <h2 className={styles.userName}>{user.name}</h2>
             )}
             {!user?.name && user?.firstName && (
-              <h2 className="text-gray-500 text-4xl">
+              <h2 className={styles.userNameAlt}>
                 {user?.firstName} {user?.secondName}
               </h2>
             )}
           </div>
-          <div className="flex justify-start items-center">
-            <p className="text-gray-500 text-xl font-medium">{user?.email}</p>
+          <div className={styles.emailRow}>
+            <p className={styles.email}>{user?.email}</p>
           </div>
         </div>
 
-        <div className="flex flex-col items-start capitalize">
-          <div className="flex justify-start items-center gap-x-2 text-gray-500 text-xl">
-            <span className="font-medium">Country: </span>
+        <div className={styles.detailsSection}>
+          <div className={styles.detailRow}>
+            <span className={styles.detailLabel}>Country: </span>
             <p>{user?.country}</p>
           </div>
 
-          <div className="flex justify-start items-center gap-x-2 text-gray-500 text-xl">
-            <span className="font-medium">Shipping Address:</span>
+          <div className={styles.detailRow}>
+            <span className={styles.detailLabel}>Shipping Address:</span>
             <p>{user?.address}</p>
           </div>
         </div>
 
-        <div className="flex justify-start gap-x-2 text-gray-500 text-xl">
-          <span className="font-medium">Telephone Number: </span>
+        <div className={styles.phoneRow}>
+          <span className={styles.detailLabel}>Telephone Number: </span>
           <p>
             ({user?.codeNumber}) {user?.number}
           </p>
         </div>
 
-        <div className="flex justify-start items-center gap-x-16 text-gray-500 text-xl capitalize ">
+        <div className={styles.subscribedRow}>
           {user?.subscribed ?
-            <div className="flex items-center gap-x-2">
+            <div className={styles.subscribedBadge}>
               <FaCheck /> <p>User Suscribed to the newsletter</p>
             </div>
           : ""}
