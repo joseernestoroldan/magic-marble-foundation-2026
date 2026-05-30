@@ -5,6 +5,7 @@ import { formatDate } from "@/utils/formatDate";
 import Link from "next/link";
 import { useCallback, useMemo, useState } from "react";
 import { FaMailchimp as ChimpIcon } from "react-icons/fa";
+import styles from "./ChimpPopover.module.css";
 
 const ChimpPopover = ({ chimpData }: { chimpData: chimpType[] }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -22,28 +23,28 @@ const ChimpPopover = ({ chimpData }: { chimpData: chimpType[] }) => {
 
   return (
     <button
-      className="flex flex-col justify-center items-center static md:relative"
+      className={styles.trigger}
       ref={containerRef}
       onClick={() => {
         setIsOpen(!isOpen);
       }}>
-      <ChimpIcon className="text-3xl" />
+      <ChimpIcon className={styles.icon} />
       <div
-        className={`absolute z-50 top-[20px] md:top-0  right-1/2 translate-x-1/2 md:right-0 md:translate-x-0 w-[300px] md:w-[400px] bg-gray-700 rounded-[5px] transition-all duration-500 ${isOpen ? "opacity-100 translate-y-[50px] pointer-events-auto" : "opacity-0 translate-y-[20px] pointer-events-none"}`}>
-        <div className="text-white text-sm lg:text-base underline font-semibold text-center pt-4">
+        className={`${styles.dropdownBase} ${isOpen ? styles.dropdownOpen : styles.dropdownClosed}`}>
+        <div className={styles.dropdownTitle}>
           This Are The Newest Chimps
         </div>
-        <div className="text-white text-sm lg:text-base px-4 py-4">
+        <div className={styles.dropdownContent}>
           {formattedData.map((item) => {
             if (!item.chimpLink) return null;
 
             return (
-              <div className="py-1" key={item._id}>
-                <p className="font-medium text-sm lg:text-base italic">
+              <div className={styles.item} key={item._id}>
+                <p className={styles.itemDate}>
                   {item.date.month} | {item.date.year}:
                 </p>
                 <Link href={item.chimpLink}>
-                  <p className="font-semibold text-sm lg:text-base">
+                  <p className={styles.itemTitle}>
                     {item.title}
                   </p>
                 </Link>

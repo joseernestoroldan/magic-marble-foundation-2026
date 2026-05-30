@@ -1,0 +1,43 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9rem;
+  padding-bottom: 3rem;
+}
+
+.title {
+  color: #0891b2;
+  font-weight: 700;
+  font-size: 2.25rem;
+  text-align: center;
+}
+
+.smokeText {
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 600;
+  color: #6b7280;
+  text-align: center;
+  max-width: 20rem;
+  line-height: 1.625;
+}
+
+@media (min-width: 640px) {
+  .smokeText {
+    font-size: 1.5rem;
+    max-width: 28rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .smokeText {
+    max-width: 42rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .smokeText {
+    max-width: 56rem;
+  }
+}

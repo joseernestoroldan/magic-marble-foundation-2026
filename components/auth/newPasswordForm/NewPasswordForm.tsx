@@ -12,6 +12,7 @@ import { useForm } from "react-hook-form";
 import { ImSpinner9 } from "react-icons/im";
 import { FormError } from "../formError/FormError";
 import { FormSuccess } from "../formSuccess/FormSuccess";
+import styles from "./NewPasswordForm.module.css";
 
 const NewPasswordForm = () => {
   const [error, setError] = useState<string | undefined>("");
@@ -49,43 +50,43 @@ const NewPasswordForm = () => {
   };
 
   return (
-    <div className="w-full mx-auto flex flex-col items-center">
-      <h2 className="text-2xl text-center text-gray-500">Enter a new password</h2>
+    <div className={styles.wrapper}>
+      <h2 className={styles.title}>Enter a new password</h2>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="space-y-4 w-[80%]"
+        className={styles.form}
       >
-        <div className="space-y-4 w-full">
+        <div className={styles.fieldsWrapper}>
           <div>
-            <label htmlFor="password" className="text-sm font-medium text-gray-700">
+            <label htmlFor="password" className={styles.label}>
               New password
             </label>
             <input
               id="password"
-              className="flex h-10 w-full rounded-[5px] border border-gray-200 bg-white px-3 py-2 text-sm text-gray-500 placeholder:text-gray-400 focus:border-cyan-600 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+              className={styles.input}
               {...register("password")}
               placeholder="******"
               type="password"
               disabled={isPending}
             />
             {errors.password && (
-              <p className="text-sm text-red-500 mt-1">{errors.password.message}</p>
+              <p className={styles.fieldError}>{errors.password.message}</p>
             )}
           </div>
           <div>
-            <label htmlFor="repeatPassword" className="text-sm font-medium text-gray-700">
+            <label htmlFor="repeatPassword" className={styles.label}>
               Repeat Password
             </label>
             <input
               id="repeatPassword"
-              className="flex h-10 w-full rounded-[5px] border border-gray-200 bg-white px-3 py-2 text-sm text-gray-500 placeholder:text-gray-400 focus:border-cyan-600 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+              className={styles.input}
               {...register("repeatPassword")}
               placeholder="******"
               type="password"
               disabled={isPending}
             />
             {errors.repeatPassword && (
-              <p className="text-sm text-red-500 mt-1">{errors.repeatPassword.message}</p>
+              <p className={styles.fieldError}>{errors.repeatPassword.message}</p>
             )}
           </div>
         </div>
@@ -93,24 +94,24 @@ const NewPasswordForm = () => {
         <FormSuccess message={success} />
 
         <button
-          className="bg-cyan-600 hover:bg-opacity-80 text-white w-full py-3 rounded-full"
+          className={styles.submitButton}
           type="submit"
           disabled={isPending}
         >
           {isPending && (
-            <div className="w-full flex justify-center items-center">
+            <div className={styles.spinnerWrapper}>
               <svg
-                className="animate-spin h-5 w-5 mr-3 text-white"
+                className={styles.spinner}
                 viewBox="0 0 24 24"
               >
-                <ImSpinner9 className="text-2xl" />
+                <ImSpinner9 />
               </svg>
             </div>
           )}
           {!isPending && "Reset password"}
         </button>
       </form>
-      <Link href={"/login"} className="text-cyan-600 underline text-center my-4">
+      <Link href={"/login"} className={styles.backLink}>
         Back to Login
       </Link>
     </div>

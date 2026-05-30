@@ -1,12 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import styles from "./Heading.module.css";
+
+const sizeMap: Record<string, string> = {
+  default: styles.sizeDefault,
+  hero: styles.sizeHero,
+};
 
 interface HeadingProps {
   text: string;
   initialDelay?: number;
   stagger?: number;
-  size?: string;
+  size?: keyof typeof sizeMap;
   color?: string;
   className?: string;
 }
@@ -15,7 +21,7 @@ const Heading = ({
   text,
   initialDelay = 200,
   stagger = 100,
-  size = "text-5xl",
+  size = "default",
   color = "#ffffff",
   className = "",
 }: HeadingProps) => {
@@ -33,7 +39,7 @@ const Heading = ({
 
   return (
     <h2
-      className={`flex flex-wrap font-bold leading-tight ${size} ${className}`}
+      className={`${styles.heading} ${sizeMap[size] ?? styles.sizeDefault} ${className}`}
       style={{ color, textShadow: "0 2px 8px rgba(0, 0, 0, 0.6)" }}
       aria-label={text}>
       {letters.map((letter, index) => {
@@ -42,7 +48,7 @@ const Heading = ({
         return (
           <span
             key={index}
-            className="inline-block transition-all duration-500 ease-out"
+            className={styles.letter}
             style={{
               transitionDelay: `${index * stagger}ms`,
               transform: isVisible ? "translateY(0)" : "translateY(100%)",

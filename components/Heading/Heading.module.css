@@ -1,0 +1,31 @@
+.heading {
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.letter {
+  display: inline-block;
+  transition: all 0.5s ease-out;
+}
+
+.sizeDefault {
+  font-size: 3rem;
+}
+
+.sizeHero {
+  font-size: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .sizeHero {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sizeHero {
+    font-size: 3rem;
+  }
+}

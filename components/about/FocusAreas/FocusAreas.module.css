@@ -1,0 +1,98 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6rem;
+  width: 100%;
+}
+
+.title {
+  color: #0891b2;
+  font-weight: 700;
+  font-size: 1.875rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #f3f4f6;
+  transition: all 0.5s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  transform: translateY(-0.5rem);
+}
+
+.imageWrapper {
+  position: relative;
+  height: 16rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.card:hover .image {
+  transform: scale(1.1);
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.7s;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3), transparent);
+  opacity: 0.8;
+}
+
+.overlayTitle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.overlayTitleText {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.cardBody {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: #ffffff;
+}
+
+.description {
+  line-height: 1.625;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #6b7280;
+}

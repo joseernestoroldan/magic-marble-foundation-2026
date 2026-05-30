@@ -5,6 +5,7 @@ import { HeroCarouselImages } from "@/utils/carrouselImages";
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
+import styles from "./HeroCarousel.module.css";
 
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -41,38 +42,36 @@ const HeroCarousel = () => {
 
   return (
     <div
-      className="relative w-full h-full min-h-[calc(100vh-142px)] overflow-hidden"
+      className={styles.wrapper}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}>
       <div
-        className="flex h-full min-h-[calc(100vh-142px)] transition-transform duration-700 ease-in-out"
+        className={styles.track}
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
         {HeroCarouselImages.map((slide) => (
-          <div
-            key={slide.id}
-            className="relative w-full min-h-[calc(100vh-142px)] flex-shrink-0">
+          <div key={slide.id} className={styles.slide}>
             <Image
               src={slide.imageUrl}
               alt={slide.title}
               fill
-              className="object-cover"
+              className={styles.image}
               priority={slide.id === 1}
               loading={slide.id <= 3 ? "eager" : "lazy"}
               sizes="100vw"
             />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+            <div className={styles.overlay} />
 
-            <div className="absolute bottom-14 left-4 right-4 p-4 md:left-8 md:right-8 md:bottom-16 md:p-6 lg:left-auto lg:bottom-[100px] lg:right-[100px] lg:p-10 rounded-[5px] text-white group bg-black/20 hover:bg-black/40 transition-all delay-200 duration-500">
-              <h2 className="text-lg md:text-xl lg:text-2xl font-bold mb-2 md:mb-4 drop-shadow-lg">
+            <div className={styles.infoCard}>
+              <h2 className={styles.title}>
                 {slide.title}
               </h2>
-              <p className="text-xs md:text-sm lg:text-lg max-w-3xl leading-relaxed line-clamp-2 md:line-clamp-3 group-hover:line-clamp-none transition-all duration-500 ease-in-out drop-shadow-md">
+              <p className={styles.description}>
                 {slide.description}
               </p>
               <Link
                 href={`/projects/project/${slide.url}`}
-                className="inline-block mt-2 md:mt-4 py-2 md:py-3 text-base md:text-xl lg:text-2xl text-cyan-600 font-semibold transition-all underline duration-500">
+                className={styles.learnLink}>
                 Learn More
               </Link>
             </div>

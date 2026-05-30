@@ -1,0 +1,14 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6rem;
+  min-height: calc(100vh - 142px);
+}
+
+.title {
+  color: #0891b2;
+  font-weight: 700;
+  font-size: 1.875rem;
+}

@@ -1,12 +1,13 @@
 import { getBoard } from "@/client";
 import Container from "@/components/Layouts/Container/Container";
 import Tabs from "./Tabs";
+import styles from "./OurTeam.module.css";
 
 const OurTeam = async () => {
   const board = await getBoard();
   return (
-    <div className="w-full flex flex-col items-center gap-24 min-h-[calc(100vh-142px)]">
-      <h2 className="text-cyan-600 font-bold text-3xl">Our Team</h2>
+    <div className={styles.wrapper}>
+      <h2 className={styles.title}>Our Team</h2>
       <Container>
         <Tabs board={board} />
       </Container>
