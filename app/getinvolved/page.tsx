@@ -138,7 +138,7 @@ const GetInvolvePage = () => {
             target="_blank"
           >
             <div
-              className="bg-cyan-600 text-white rounded-full font-semibold text-lg p-4 hover:bg-cyan-400 w-[250px] text-center"
+              className="bg-cyan-600 text-white rounded-[5px] font-semibold text-lg p-4 hover:bg-cyan-400 w-[250px] text-center"
               onMouseEnter={() => setShowVolunteer(true)}
               onMouseLeave={() => setShowVolunteer(false)}
             >
@@ -153,7 +153,7 @@ const GetInvolvePage = () => {
             target="_blank"
           >
             <div
-              className=" bg-cyan-600 text-white rounded-full font-semibold text-lg p-4 hover:bg-cyan-400 w-[250px] text-center"
+              className=" bg-cyan-600 text-white rounded-[5px] font-semibold text-lg p-4 hover:bg-cyan-400 w-[250px] text-center"
               onMouseEnter={() => setShowWishList(true)}
               onMouseLeave={() => setShowWishList(false)}
             >

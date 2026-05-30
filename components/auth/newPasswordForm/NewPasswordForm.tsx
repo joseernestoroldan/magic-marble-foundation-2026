@@ -62,7 +62,7 @@ const NewPasswordForm = () => {
             </label>
             <input
               id="password"
-              className="flex h-10 w-full rounded-full border border-gray-200 bg-white px-3 py-2 text-sm text-gray-500 placeholder:text-gray-400 focus:border-cyan-600 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+              className="flex h-10 w-full rounded-[5px] border border-gray-200 bg-white px-3 py-2 text-sm text-gray-500 placeholder:text-gray-400 focus:border-cyan-600 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
               {...register("password")}
               placeholder="******"
               type="password"
@@ -78,7 +78,7 @@ const NewPasswordForm = () => {
             </label>
             <input
               id="repeatPassword"
-              className="flex h-10 w-full rounded-full border border-gray-200 bg-white px-3 py-2 text-sm text-gray-500 placeholder:text-gray-400 focus:border-cyan-600 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+              className="flex h-10 w-full rounded-[5px] border border-gray-200 bg-white px-3 py-2 text-sm text-gray-500 placeholder:text-gray-400 focus:border-cyan-600 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
               {...register("repeatPassword")}
               placeholder="******"
               type="password"

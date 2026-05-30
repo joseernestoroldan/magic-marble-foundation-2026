@@ -44,7 +44,7 @@ export default function UnderConstruction() {
         <div className="flex justify-center pt-4">
           <Link
             href="/"
-            className="rounded-full bg-cyan-600 px-6 py-2 font-medium text-white transition-colors hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-600 focus:ring-offset-2"
+            className="rounded-[5px] bg-cyan-600 px-6 py-2 font-medium text-white transition-colors hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-600 focus:ring-offset-2"
           >
             Return Home
           </Link>

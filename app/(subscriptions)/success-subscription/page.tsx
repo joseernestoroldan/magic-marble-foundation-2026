@@ -117,7 +117,7 @@ export default async function SuccessSubscriptionPage({
       {/* Go Home Button */}
       <Link
         href="/"
-        className="bg-cyan-600 rounded-full text-white px-6 py-3 font-bold text-lg hover:bg-cyan-600 transition duration-300">
+        className="bg-cyan-600 rounded-[5px] text-white px-6 py-3 font-bold text-lg hover:bg-cyan-600 transition duration-300">
         Go Home
       </Link>
 

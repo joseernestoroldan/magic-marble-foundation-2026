@@ -71,7 +71,7 @@ export default function FormSponsorCancel({
             type="email"
             id="email"
             {...register("email")}
-            className="rounded-full mt-1 block w-full px-3 py-2 border border-gray-300 shadow-sm focus:outline-none focus:ring-cyan-600 focus:border-cyan-600 sm:text-sm"
+            className="rounded-[5px] mt-1 block w-full px-3 py-2 border border-gray-300 shadow-sm focus:outline-none focus:ring-cyan-600 focus:border-cyan-600 sm:text-sm"
           />
           {errors.username && (
             <p className="text-red-500 text-sm">
@@ -82,7 +82,7 @@ export default function FormSponsorCancel({
 
         <button
           type="submit"
-          className="w-full rounded-full flex justify-center py-2 px-4 border border-transparent shadow-sm text-base font-medium text-white bg-cyan-600 hover:bg-cyan-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-600">
+          className="w-full rounded-[5px] flex justify-center py-2 px-4 border border-transparent shadow-sm text-base font-medium text-white bg-cyan-600 hover:bg-cyan-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-600">
           Find my subscriptions
         </button>
       </form>
@@ -100,7 +100,7 @@ export default function FormSponsorCancel({
 
               {sub.idSub && (
                 <button
-                  className="bg-cyan-600 rounded-full hover:bg-cyan-400 text-white px-4 py-2"
+                  className="bg-cyan-600 rounded-[5px] hover:bg-cyan-400 text-white px-4 py-2"
                   onClick={async () => {
                     if (sub.idSub) {
                       const response = await cancelSubscription(sub.idSub);
