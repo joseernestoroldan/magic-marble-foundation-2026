@@ -8,6 +8,7 @@
   max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
+  background: radial-gradient(ellipse at 20% 50%, rgba(8, 145, 178, 0.03) 0%, transparent 50%);
 }
 
 .container {
@@ -20,6 +21,7 @@
 @media (min-width: 1024px) {
   .container {
     justify-content: flex-start;
+    height: calc(100vh - 200px);
   }
 }
 
@@ -83,6 +85,9 @@
 @media (min-width: 1024px) {
   .formSection {
     width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 }
 

@@ -1,4 +1,5 @@
 ﻿import { UseFormRegisterReturn } from "react-hook-form";
+import styles from "./FormInput.module.css";
 
 type FormInputProps = {
   id: string;
@@ -20,10 +21,10 @@ export const FormInput = ({
   registration,
 }: FormInputProps) => {
   return (
-    <div>
+    <div className={styles.wrapper}>
       <label
         htmlFor={id}
-        className="text-sm font-medium text-gray-700"
+        className={styles.label}
       >
         {label}
       </label>
@@ -32,11 +33,11 @@ export const FormInput = ({
         type={type}
         placeholder={placeholder}
         disabled={disabled}
-        className="flex h-10 w-full rounded-[5px] border border-gray-200 bg-white px-3 py-2 text-sm text-gray-500 placeholder:text-gray-400 focus:border-cyan-600 focus:outline-none focus:ring-1 focus:ring-cyan-600 disabled:cursor-not-allowed disabled:opacity-50 transition-colors duration-200"
+        className={styles.input}
         {...registration}
       />
       {error ? (
-        <p className="text-sm text-red-500 mt-1">{error}</p>
+        <p className={styles.error}>{error}</p>
       ) : null}
     </div>
   );

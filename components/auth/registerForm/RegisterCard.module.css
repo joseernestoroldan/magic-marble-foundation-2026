@@ -1,13 +1,11 @@
 .card {
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2rem;
   border-radius: 5px;
   background-color: white;
-  overflow-y: auto;
 }
 
 .card > * + * {
@@ -45,34 +43,18 @@
   font-weight: 700;
 }
 
-.socialSection {
+.socialRow {
   display: flex;
-  flex-direction: column;
-}
-
-.socialSection > * + * {
-  margin-top: 1rem;
-}
-
-.registerRow {
-  display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
-@media (min-width: 640px) {
-  .registerRow {
-    flex-direction: row;
-    column-gap: 0.5rem;
-  }
-}
-
-.registerText {
+.loginText {
   color: #6b7280;
   text-align: center;
 }
 
-.registerLink {
+.loginLink {
   color: #0891b2;
   text-decoration: underline;
 }

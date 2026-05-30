@@ -2,11 +2,12 @@
 import LoginGoogle from "../loginForm/LoginGoogle";
 import Separator from "../separator/Separator";
 import RegisterForm from "./RegisterForm";
+import styles from "./RegisterCard.module.css";
 
 const RegisterCard = () => {
   return (
-    <div className="w-full flex flex-col items-center gap-8 bg-red-300">
-      <h2 className="text-xl text-cyan-600 text-center font-bold">
+    <div className={styles.card}>
+      <h2 className={styles.title}>
         Welcome to Magic Marble Foundation
       </h2>
 
@@ -14,13 +15,13 @@ const RegisterCard = () => {
 
       <Separator title="Or" />
 
-      <div className="flex justify-between items-center space-x-2">
+      <div className={styles.socialRow}>
         <LoginGoogle/>
       </div>
 
-      <p className="text-gray-500">
+      <p className={styles.loginText}>
         Already have an Account?{" "}
-        <Link href={"/login"} className="text-cyan-600 underline">
+        <Link href={"/login"} className={styles.loginLink}>
           Sign in
         </Link>
       </p>

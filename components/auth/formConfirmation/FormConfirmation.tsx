@@ -1,4 +1,5 @@
 import { FaCheckCircle } from "react-icons/fa";
+import styles from "./FormConfirmation.module.css";
 
 type ConfirmationProps = {
   message?: string;
@@ -10,10 +11,9 @@ export const FormConfirmation = ({ message }: ConfirmationProps) => {
   }
 
   return (
-    <div className="bg-cyan-200 p-3 flex items-center gap-x-2 text-sm text-cyan-600 rounded-[5px]">
-      <FaCheckCircle className="h-4 w-4" />
+    <div className={styles.wrapper}>
+      <FaCheckCircle className={styles.icon} />
       <p>{message}</p>
-      {/* <Link className="text-emerald-900 underline font-medium text-lg" href={"/login"}>Please Login</Link> */}
     </div>
   );
 };

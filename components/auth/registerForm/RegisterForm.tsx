@@ -13,8 +13,8 @@ import { FormSuccess } from "../formSuccess/FormSuccess";
 import { FormInput } from "@/components/ui/FormInput";
 import { FormSearchableSelect } from "@/components/ui/FormSearchableSelect";
 import { FormCheckbox } from "@/components/ui/FormCheckbox";
-
 import { ImSpinner9 } from "react-icons/im";
+import styles from "./RegisterForm.module.css";
 
 const RegisterForm = () => {
   const [error, setError] = useState<string | undefined>("");
@@ -62,9 +62,9 @@ const RegisterForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 w-[90%]">
-      <div className="space-y-2 w-full">
-        <div className="w-full flex flex-col sm:flex-row sm:justify-between gap-2 sm:gap-4">
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+      <div className={styles.fieldsWrapper}>
+        <div className={styles.row}>
           <FormInput
             id="firstName"
             label="First Name"
@@ -93,7 +93,7 @@ const RegisterForm = () => {
           registration={register("email")}
         />
 
-        <div className="w-full flex flex-col sm:flex-row sm:justify-between gap-2 sm:gap-4">
+        <div className={styles.row}>
           <FormInput
             id="password"
             label="Password"
@@ -114,7 +114,7 @@ const RegisterForm = () => {
           />
         </div>
 
-        <div className="w-full flex flex-col sm:flex-row sm:justify-between items-start sm:items-end gap-2 sm:gap-4">
+        <div className={styles.rowEnd}>
           <FormSearchableSelect
             id="codeNumber"
             label="Code Number"
@@ -147,7 +147,7 @@ const RegisterForm = () => {
           />
         </div>
 
-        <div className="w-full flex flex-col sm:flex-row sm:justify-between items-start sm:items-end gap-2 sm:gap-4">
+        <div className={styles.rowEnd}>
           <FormSearchableSelect
             id="country"
             label="Country"
@@ -183,13 +183,13 @@ const RegisterForm = () => {
       <FormError message={error} />
 
       <button
-        className="bg-cyan-600 hover:bg-cyan-600 text-white w-full py-3 rounded-[5px] font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+        className={styles.submitButton}
         type="submit"
         disabled={isPending}
       >
         {isPending ? (
-          <div className="w-full flex justify-center items-center">
-            <ImSpinner9 className="animate-spin h-5 w-5 mr-3 text-white" />
+          <div className={styles.spinnerWrapper}>
+            <ImSpinner9 className={styles.spinner} />
           </div>
         ) : (
           "Sign Up"

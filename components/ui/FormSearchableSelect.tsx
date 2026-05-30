@@ -1,6 +1,7 @@
 ﻿"use client";
 import { useState, useMemo } from "react";
 import { FaSearch } from "react-icons/fa";
+import styles from "./FormSearchableSelect.module.css";
 
 type FormSearchableSelectProps<T> = {
   id: string;
@@ -49,39 +50,39 @@ export const FormSearchableSelect = <T,>({
   );
 
   return (
-    <div className="flex flex-col">
-      <label className="text-sm font-medium text-gray-700">{label}</label>
-      <div className="relative">
+    <div className={styles.wrapper}>
+      <label className={styles.label}>{label}</label>
+      <div className={styles.relativeWrapper}>
         <button
           type="button"
           onClick={() => { if (!disabled) setOpen(!open); }}
           disabled={disabled}
-          className="flex w-[200px] items-center justify-between rounded-[5px] border border-gray-200 bg-white px-3 py-2 text-sm text-gray-500 disabled:cursor-not-allowed disabled:opacity-50 focus:border-cyan-600 focus:outline-none focus:ring-1 focus:ring-cyan-600 transition-colors duration-200"
+          className={styles.trigger}
         >
-          <span className="truncate">
+          <span className={styles.triggerText}>
             {selectedOption ? getOptionLabel(selectedOption) : placeholder}
           </span>
-          <FaSearch className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          <FaSearch className={styles.searchIcon} />
         </button>
         {open && (
-          <div className="absolute z-10 mt-1 w-[200px] rounded-[5px] border border-gray-200 bg-white shadow-lg">
+          <div className={styles.dropdown}>
             <input
-              className="w-full rounded-[5px] border-b border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-cyan-600"
+              className={styles.searchInput}
               placeholder={searchPlaceholder}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               autoFocus
             />
-            <ul className="max-h-48 overflow-auto">
+            <ul className={styles.list}>
               {filteredOptions.length === 0 ? (
-                <li className="px-3 py-2 text-sm text-gray-500">No results found.</li>
+                <li className={styles.noResults}>No results found.</li>
               ) : (
                 filteredOptions.map((opt, index) => {
                   const optValue = getOptionValue(opt);
                   return (
                     <li
                       key={`${optValue}-${index}`}
-                      className="flex cursor-pointer items-center justify-between px-3 py-2 text-sm hover:bg-cyan-600 hover:text-white transition-colors duration-150"
+                      className={styles.option}
                       onClick={() => {
                         onChange(optValue);
                         setOpen(false);
@@ -94,7 +95,7 @@ export const FormSearchableSelect = <T,>({
                         <span>{getOptionLabel(opt)}</span>
                       )}
                       {optValue === value && (
-                        <svg className="ml-auto h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <svg className={styles.checkIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                           <polyline points="20 6 9 17 4 12" />
                         </svg>
                       )}
@@ -107,7 +108,7 @@ export const FormSearchableSelect = <T,>({
         )}
       </div>
       {error ? (
-        <p className="text-sm text-red-500 mt-1">{error}</p>
+        <p className={styles.error}>{error}</p>
       ) : null}
     </div>
   );

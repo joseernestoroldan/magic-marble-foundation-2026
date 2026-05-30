@@ -1,15 +1,19 @@
 .wrapper {
   width: 75%;
-  border-top: 1px solid #d1d5db;
+  height: 1px;
   position: relative;
+  background: linear-gradient(to right, transparent, #d1d5db, transparent);
 }
 
 .label {
   background-color: white;
-  color: #6b7280;
+  color: #9ca3af;
+  font-weight: 500;
   position: absolute;
   left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
   padding-left: 1rem;
   padding-right: 1rem;
+  white-space: nowrap;
 }
