@@ -4,22 +4,23 @@ import Container from "@/components/Layouts/Container/Container";
 import Logo from "@/components/Logo/Logo";
 import MenuNavbar from "@/components/Navbar/MenuNavbar";
 import ToggleSidebar from "../Sidebar/ToggleSidebar";
+import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   return (
-    <div className="w-full sticky top-0 left-0 right-0 z-30 bg-white">
+    <nav className={styles.navbar}>
       <Infobar />
       <Container>
-        <div className="w-full flex justify-between items-center">
+        <div className={styles.inner}>
           <Logo />
-          <div className="flex items-center justify-center gap-2">
+          <div className={styles.actions}>
             <MenuNavbar />
             <DonationButton />
             <ToggleSidebar />
           </div>
         </div>
       </Container>
-    </div>
+    </nav>
   );
 };
 
