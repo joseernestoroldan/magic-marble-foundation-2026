@@ -8,7 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { ImSpinner9 } from "react-icons/im";
-import { FormError } from "../formError/FormError";
+import { FormError } from "../FormError/FormError";
 import { FormSuccess } from "../formSuccess/FormSuccess";
 import styles from "./resetForm.module.css";
 

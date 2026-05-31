@@ -3,11 +3,7 @@
         {
             "name": "root",
             "path": "."
-        },
-        {
-            "name": "Login",
-            "path": "./app/(auth)/login"        
-        },
+        },       
         {
             "name": "AuthComponents",
             "path": "./components/auth"

@@ -8,7 +8,7 @@ import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { MdOutlineUnsubscribe, MdPerson, MdUnsubscribe } from "react-icons/md";
 
-import { FormError } from "../formError/FormError";
+import { FormError } from "../FormError/FormError";
 
 import { update } from "@/actions/update";
 import { useRouter } from "next/navigation";

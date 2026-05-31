@@ -2,7 +2,7 @@ import { resendVerification } from "@/actions/resendVerification";
 import { AlertCircle } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
-import { FormError } from "../formError/FormError";
+import { FormError } from "../FormError/FormError";
 import { FormSuccess } from "../formSuccess/FormSuccess";
 import styles from "./FormExpired.module.css";
 

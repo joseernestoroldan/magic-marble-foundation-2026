@@ -8,8 +8,8 @@ import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 
 import { register as registerAction } from "@/actions/register";
-import { FormError } from "../formError/FormError";
-import { FormSuccess } from "../formSuccess/FormSuccess";
+import { FormError } from "../../FormError/FormError";
+import { FormSuccess } from "../../formSuccess/FormSuccess";
 import { FormInput } from "@/components/ui/FormInput";
 import { FormSearchableSelect } from "@/components/ui/FormSearchableSelect";
 import { FormCheckbox } from "@/components/ui/FormCheckbox";

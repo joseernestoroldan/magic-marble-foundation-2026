@@ -16,11 +16,6 @@ export interface ChartEntry {
   percentage: number;
 }
 
-/** Shape of the full chart dataset keyed by fiscal year. */
-export interface ChartDataset {
-  [year: number]: ChartEntry[];
-}
-
 // ---- colour palette (single source of truth) --------------------------------
 const COLORS = {
   animalRights: "rgb(6, 182, 212)",
@@ -53,8 +48,8 @@ const rawData: Record<number, RawEntry[]> = {
 };
 
 // ---- build enriched dataset -------------------------------------------------
-function buildChartData(raw: Record<number, RawEntry[]>): ChartDataset {
-  const dataset: ChartDataset = {};
+function buildChartData(raw: Record<number, RawEntry[]>) {
+  const dataset: Record<number, ChartEntry[]> = {};
 
   for (const [yearStr, entries] of Object.entries(raw)) {
     const year = Number(yearStr);
@@ -72,7 +67,7 @@ function buildChartData(raw: Record<number, RawEntry[]>): ChartDataset {
 }
 
 /** Fully enriched chart data, keyed by fiscal year (descending when iterated). */
-export const chartData: ChartDataset = buildChartData(rawData);
+export const chartData = buildChartData(rawData);
 
 /**
  * Sorted array of available fiscal years (most recent first).

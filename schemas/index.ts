@@ -57,44 +57,10 @@ export const registerSchema = z
     }
   });
 
-export const adoptionSchema = z.object({
-  email: z.string().email().min(1, { message: "Email is required" }),
-  firstName: z.string().min(1, { message: "Name is required" }),
-  secondName: z.string().min(1, { message: "Second name is required" }),
-  country: z.string(),
-  codeNumber: z.string(),
-  number: z.string(),
-  address: z.string(),
-});
-
-export const donationSchema = z.object({
-  amount: z.string(),
-  email: z.string().email().min(1, { message: "Email is required" }),
-  firstName: z.string().min(1, { message: "Name is required" }),
-  secondName: z.string().min(1, { message: "Second name is required" }),
-  country: z.string(),
-  telephone: z.string(),
-  address: z.string(),
-});
-
-export const sponsorSchema = z.object({
-  amount: z.string(),
-  email: z.string().email().min(1, { message: "Email is required" }),
-  firstName: z.string().min(1, { message: "Name is required" }),
-  lastName: z.string().min(1, { message: "Second name is required" }),
-  country: z.string(),
-  number: z.string(),
-  address: z.string(),
-});
-
 export const updateSchema = z.object({
   country: z.string(),
   codeNumber: z.string(),
   number: z.string(),
   address: z.string(),
   subscribed: z.boolean(),
-});
-
-export const emailSchema = z.object({
-  email: z.string().email("Please enter a valid email address"),
 });

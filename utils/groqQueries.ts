@@ -70,28 +70,6 @@ export const boardQuery =
     "hotSpot": mainImage.hotspot
 }`;
 
-export const adoptionsQuery =
-  () => groq`*[_type == 'adoptions'] | order(_createdAt desc){
-    _id,
-    title,
-    description,
-    characteristics,
-    youtubeLink,
-    _createdAt,
-    "mainImage": mainImage.asset->url,
-    "crop": mainImage.crop,
-    "hotSpot": mainImage.hotspot,
-    "secondImage": secondImage.asset->url,
-    "cropSecond": secondImage.crop,
-    "hotSpotSecond": secondImage.hotspot,
-    "thirdImage": thirdImage.asset->url,
-    "cropThird": thirdImage.crop,
-    "hotSpotThird": thirdImage.hotspot,
-    "contenido": contenido,
-    "sponsors": sponsors,
-    "historyDonations": historyDonations
-}`;
-
 export const galleryQuery =
   () => groq`*[_type == 'gallery'] | order(_createdAt desc){
     _id,
@@ -170,29 +148,6 @@ export const recipesQuery =
     "hotSpotFourth": fourthImage.hotspot,
     "contenido": contenido
 }`;
-
-export const sponsoredQuery =
-  () => groq`*[_type == 'sponsored'] | order(_createdAt desc){
-    _id,
-    title,
-    description,
-    characteristics,
-    youtubeLink,
-    _createdAt,
-    "mainImage": mainImage.asset->url,
-    "crop": mainImage.crop,
-    "hotSpot": mainImage.hotspot,
-    "secondImage": secondImage.asset->url,
-    "cropSecond": secondImage.crop,
-    "hotSpotSecond": secondImage.hotspot,
-    "thirdImage": thirdImage.asset->url,
-    "cropThird": thirdImage.crop,
-    "hotSpotThird": thirdImage.hotspot,
-    "contenido": contenido,
-    "sponsors": sponsors,
-    "historyDonations": historyDonations
-}`;
-
 
 export const projectByIdQuery = (id: string) => groq`*[_type == 'projects' && _id == "${id}"] | order(_createdAt desc){
   _id,

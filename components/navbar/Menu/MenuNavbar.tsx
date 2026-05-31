@@ -1,5 +1,5 @@
-import NavDropdown from "@/components/Navbar/NavDropdown";
-import NavLink from "@/components/Navbar/NavLink";
+import NavDropdown from "@/components/Navbar/Menu/Dropdown/NavDropdown";
+import NavLink from "@/components/Navbar/Menu/NavLinks/NavLink";
 import { menuAbout, menuBeTheChange } from "@/utils/menuItems";
 import styles from "./MenuNavbar.module.css";
 

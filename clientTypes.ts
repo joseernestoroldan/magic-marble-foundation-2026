@@ -63,42 +63,6 @@ export type boardType = {
   crop: Crop | null;
 };
 
-export type Sponsor = {
-  _key: string;
-  userId: string;
-  frecuency: string;
-  payment: number;
-  lastPaymentDate: string;
-};
-
-export type Donation = {
-  _key: string;
-  donatorId: string;
-  payment: number;
-  PaymentDate: string;
-};
-
-export type adoptionsType = {
-  _id: string;
-  _createdAt: string;
-  title: string;
-  description: string;
-  characteristics: string;
-  youtubeLink: string;
-  mainImage: string | null;
-  hotSpot: HotSpot | null;
-  crop: Crop | null;
-  secondImage: string | null;
-  hotSpotSecond: HotSpot | null;
-  cropSecond: Crop | null;
-  thirdImage: string | null;
-  hotSpotThird: HotSpot | null;
-  cropThird: Crop | null;
-  contenido: Block[] | null;
-  sponsors: Sponsor[] | null;
-  historyDonations: Donation[] | null;
-};
-
 export type galleryType = {
   _id: string;
   _createdAt: string;
@@ -160,27 +124,6 @@ export type recipesType = {
   hotSpotFourth: HotSpot | null;
   cropFourth: Crop | null;
   contenido: Block[] | null;
-};
-
-export type sponsoredType = {
-  _id: string;
-  _createdAt: string;
-  title: string;
-  description: string;
-  characteristics: string;
-  youtubeLink: string;
-  mainImage: string | null;
-  hotSpot: HotSpot | null;
-  crop: Crop | null;
-  secondImage: string | null;
-  hotSpotSecond: HotSpot | null;
-  cropSecond: Crop | null;
-  thirdImage: string | null;
-  hotSpotThird: HotSpot | null;
-  cropThird: Crop | null;
-  contenido: Block[] | null;
-  sponsors: Sponsor[] | null;
-  historyDonations: Donation[] | null;
 };
 
 type Block = {

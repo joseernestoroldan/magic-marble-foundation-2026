@@ -1,6 +1,6 @@
 import { createClient } from "next-sanity";
-import { boardType, chimpType, diariesType, focusAreasType, galleryType, granteesType, portalPaddyFieldType, projectType, recipesType } from "./clientTypes";
-import { boardQuery, chimpQuery, diariesQuery, diaryByIdQuery, focusAreasQuery, galleryByIdQuery, galleryQuery, granteesQuery, portalPaddyFieldByIdQuery, portalPaddyFieldQuery, projectByIdQuery, projectsQuery, recipeByIdQuery, recipesQuery } from "./utils/groqQueries";
+import { boardType, chimpType, diariesType, galleryType, granteesType, portalPaddyFieldType, projectType, recipesType } from "./clientTypes";
+import { boardQuery, chimpQuery, diariesQuery, diaryByIdQuery, galleryByIdQuery, galleryQuery, granteesQuery, portalPaddyFieldByIdQuery, portalPaddyFieldQuery, projectByIdQuery, projectsQuery, recipeByIdQuery, recipesQuery } from "./utils/groqQueries";
 
 const projectId = process.env.API_ID;
 const dataset = "production"; // "production"
@@ -43,12 +43,6 @@ export const getAllProjects = async () => {
   const data: projectType[] | null = await getData(query);
   return data;
 };
-
-export const getFocusAreas = async () => {
-  const query = focusAreasQuery();
-  const data: focusAreasType[] | null = await getData(query);
-  return data;
-}
 
 export const getBoard = async () => {
   const query = boardQuery();

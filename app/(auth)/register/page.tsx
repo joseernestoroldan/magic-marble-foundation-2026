@@ -1,4 +1,4 @@
-import RegisterCard from "@/components/auth/registerForm/RegisterCard";
+import RegisterCard from "@/components/auth/Register/RegisterCard";
 import DonationButton from "@/components/DonationButton/DonationButton";
 import Image from "next/image";
 import styles from "./page.module.css";

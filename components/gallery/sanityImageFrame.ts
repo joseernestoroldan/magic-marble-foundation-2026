@@ -1,8 +1,6 @@
 import { Crop, HotSpot } from "@/clientTypes";
 
-export const GALLERY_GRID_ASPECT_RATIO = 4 / 3;
-
-const DEFAULT_ASPECT = GALLERY_GRID_ASPECT_RATIO;
+const DEFAULT_ASPECT = 4 / 3;
 
 /**
  * Maps Sanity hotspot + crop to a CSS object-position on the full source image.
@@ -26,28 +24,18 @@ export function getSanityObjectPosition(
   return `${(x * 100).toFixed(1)}% ${(y * 100).toFixed(1)}%`;
 }
 
-/**
- * Aspect ratio (width / height) of the visible region after Sanity crop.
- */
-export function getSanityCropAspectRatio(
-  crop: Crop | null,
-  fallback = DEFAULT_ASPECT,
-): number {
-  if (!crop) return fallback;
-
-  const cropW = 1 - crop.left - crop.right;
-  const cropH = 1 - crop.top - crop.bottom;
-
-  if (cropW <= 0 || cropH <= 0) return fallback;
-  return cropW / cropH;
-}
-
 export function getSanityImageFrame(
   hotspot: HotSpot | null,
   crop: Crop | null,
   fallbackAspect = DEFAULT_ASPECT,
 ) {
-  const aspectRatio = getSanityCropAspectRatio(crop, fallbackAspect);
+  const aspectRatio = crop
+    ? (() => {
+        const cropW = 1 - crop.left - crop.right;
+        const cropH = 1 - crop.top - crop.bottom;
+        return cropW > 0 && cropH > 0 ? cropW / cropH : fallbackAspect;
+      })()
+    : fallbackAspect;
   return {
     objectPosition: getSanityObjectPosition(hotspot, crop),
     aspectRatio,

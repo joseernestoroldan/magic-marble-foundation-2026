@@ -10,8 +10,8 @@ import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { ImSpinner9 } from "react-icons/im";
-import { FormConfirmation } from "../formConfirmation/FormConfirmation";
-import { FormError } from "../formError/FormError";
+import { FormConfirmation } from "../../FormConfirmation/FormConfirmation";
+import { FormError } from "../../FormError/FormError";
 import { FormInput } from "@/components/ui/FormInput";
 import styles from "./LoginForm.module.css";
 

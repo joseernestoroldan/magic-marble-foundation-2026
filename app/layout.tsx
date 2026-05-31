@@ -2,6 +2,7 @@ import styles from "./layout.module.css";
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 import { Open_Sans } from "next/font/google";
+import type { Metadata } from "next";
 import "./globals.css";
 
 const openSansFont = Open_Sans({
@@ -9,7 +10,22 @@ const openSansFont = Open_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
-export default async function RootLayout({
+export const metadata: Metadata = {
+  title: {
+    template: "%s | Magic Marble Foundation",
+    default: "Magic Marble Foundation",
+  },
+  description:
+    "Empowering communities, promoting animal welfare, and championing environmental activism. Join us in creating a compassionate global community.",
+  openGraph: {
+    title: "Magic Marble Foundation",
+    description: "Mobilize Empathy For All Species And The World We Share.",
+    siteName: "Magic Marble Foundation",
+    type: "website",
+  },
+};
+
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -20,7 +36,7 @@ export default async function RootLayout({
         <main className={styles.main}>
           {/* <Badge mode="layout"/> */}
           <Navbar />
-          <div className={styles.content}>{children}</div>
+          <div>{children}</div>
           <Footer />
         </main>
       </body>

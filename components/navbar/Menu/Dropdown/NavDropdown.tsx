@@ -1,5 +1,5 @@
 ﻿"use client";
-import NavLink from '@/components/Navbar/NavLink';
+import NavLink from '@/components/Navbar/Menu/NavLinks/NavLink';
 import { useClickOutside } from "@/hooks/useClickOutside";
 import { navDropdownProps } from "@/types/types";
 import { PointerEvent, useCallback, useState } from "react";

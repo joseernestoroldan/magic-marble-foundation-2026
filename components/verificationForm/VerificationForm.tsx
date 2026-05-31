@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import Loader from "../Loader/Loader";
-import { FormError } from "../auth/formError/FormError";
+import { FormError } from "../auth/FormError/FormError";
 import { FormExpired } from "../auth/formExpired/FormExpired";
 import { FormSuccess } from "../auth/formSuccess/FormSuccess";
 import styles from "./VerificationForm.module.css";

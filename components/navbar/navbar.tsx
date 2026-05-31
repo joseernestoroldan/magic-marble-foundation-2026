@@ -2,7 +2,7 @@ import DonationButton from "@/components/DonationButton/DonationButton";
 import Infobar from "@/components/Navbar/InfoBar/Infobar";
 import Container from "@/components/Layouts/Container/Container";
 import Logo from "@/components/Logo/Logo";
-import MenuNavbar from "@/components/Navbar/MenuNavbar";
+import MenuNavbar from "@/components/Navbar/Menu/MenuNavbar";
 import ToggleSidebar from "../Sidebar/ToggleSidebar";
 import styles from "./Navbar.module.css";
 

@@ -10,7 +10,7 @@ import { redirect, useSearchParams } from "next/navigation";
 import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { ImSpinner9 } from "react-icons/im";
-import { FormError } from "../formError/FormError";
+import { FormError } from "../FormError/FormError";
 import { FormSuccess } from "../formSuccess/FormSuccess";
 import styles from "./NewPasswordForm.module.css";
 
