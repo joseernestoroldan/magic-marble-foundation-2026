@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import DonationButton from "../DonationButton/DonationButton";
+import styles from "./ProjectsCarousel.module.css";
 
 interface ProjectsCarouselProps {
   projects: projectType[];
@@ -76,7 +77,7 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
 
   return (
     <div
-      className="relative w-full h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden bg-black"
+      className={styles.carousel}
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
@@ -93,9 +94,7 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
         return (
           <div
             key={project._id}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              isActive ? "opacity-100 z-10" : "opacity-0 z-0"
-            }`}
+            className={`${styles.slide} ${isActive ? styles.slideActive : styles.slideHidden}`}
           >
             {project.mainImage && (
               <Image
@@ -103,7 +102,7 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
                 alt={project.title || "Project Image"}
                 fill
                 sizes="100vw"
-                className="object-cover"
+                className={styles.image}
                 style={{ objectPosition: `${x}% ${y}%` }}
                 priority={index === 0}
                 loading={index === 0 ? "eager" : "lazy"}
@@ -111,24 +110,24 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
             )}
 
             {/* Dark overlay for better text readability */}
-            <div className="absolute inset-0 bg-black/50"></div>
+            <div className={styles.overlay}></div>
 
             {/* Content overlay */}
-            <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-6 md:p-12 space-y-6 z-20">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-lg tracking-wide capitalize">
+            <div className={styles.content}>
+              <h2 className={styles.title}>
                 {project.title}
               </h2>
 
               {project.description && (
-                <p className="text-white text-base md:text-xl lg:text-2xl max-w-3xl drop-shadow-md line-clamp-3 md:line-clamp-none">
+                <p className={styles.description}>
                   {project.description}
                 </p>
               )}
 
-              <div className="flex flex-col sm:flex-row gap-4 mt-8 items-center">
+              <div className={styles.actions}>
                 <Link
                   href={`/projects/${project._id}`}
-                  className="rounded-[5px] text-sm sm:text-base bg-gray-700 hover:bg-gray-600 text-white h-[40px] w-36 flex justify-center items-center font-bold transition-all duration-500 ease-in-out capitalize tracking-widest shadow-lg"
+                  className={styles.readMoreBtn}
                   prefetch={true}
                 >
                   Read More
@@ -143,31 +142,27 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 text-white bg-black/40 hover:bg-black/70 rounded-full p-3 transition-all duration-300"
+        className={`${styles.navArrow} ${styles.navArrowLeft}`}
         aria-label="Previous Slide"
       >
-        <FaChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+        <FaChevronLeft className={styles.arrowIcon} />
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 text-white bg-black/40 hover:bg-black/70 rounded-full p-3 transition-all duration-300"
+        className={`${styles.navArrow} ${styles.navArrowRight}`}
         aria-label="Next Slide"
       >
-        <FaChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+        <FaChevronRight className={styles.arrowIcon} />
       </button>
 
       {/* Navigation Dots */}
-      <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-30 flex gap-3">
+      <div className={styles.navDots}>
         {projects.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentIndex
-                ? "bg-white scale-125 shadow-lg"
-                : "bg-white/50 hover:bg-white/80"
-            }`}
+            className={`${styles.dot} ${index === currentIndex ? styles.dotActive : styles.dotInactive}`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}

@@ -1,0 +1,85 @@
+.link {
+  display: block;
+}
+
+.link:focus-visible {
+  outline: 2px solid #22d3ee;
+  outline-offset: 2px;
+}
+
+.card {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: #0f172a;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+}
+
+.link:hover .card {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(8, 145, 178, 0.2);
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.link:hover .image {
+  transform: scale(1.05);
+}
+
+.gradientOverlay {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(2, 6, 23, 0.9), rgba(2, 6, 23, 0.35), transparent);
+}
+
+.textContainer {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 10;
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .textContainer {
+    padding: 1.25rem;
+  }
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.375;
+  color: white;
+}
+
+@media (min-width: 640px) {
+  .title {
+    font-size: 1.125rem;
+  }
+}
+
+.date {
+  margin-top: 0.25rem;
+  display: block;
+  font-size: 0.75rem;
+  color: #22d3ee;
+}
+
+@media (min-width: 640px) {
+  .date {
+    font-size: 0.875rem;
+  }
+}
+
+.placeholder {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, #155e75, #0f172a);
+}

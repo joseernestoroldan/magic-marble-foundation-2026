@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
+import styles from "./PaginationUtil.module.css";
 
 type PaginationUtilProps = {
   count: number;
@@ -27,7 +28,6 @@ const PaginationUtil = ({ count }: PaginationUtilProps) => {
     return `${pathname}?${params}`;
   };
 
-  // Calculate visible page range
   const getVisiblePages = (): (number | "ellipsis-start" | "ellipsis-end")[] => {
     if (numberOfPages <= MAX_VISIBLE_PAGES) {
       return Array.from({ length: numberOfPages }, (_, i) => i + 1);
@@ -64,18 +64,16 @@ const PaginationUtil = ({ count }: PaginationUtilProps) => {
   const visiblePages = getVisiblePages();
 
   return (
-    <nav className="flex justify-center py-4">
-      <ul className="flex items-center gap-1 text-gray-500">
+    <nav className={styles.nav}>
+      <ul className={styles.list}>
         <li>
           <Link
             href={hasPrev ? buildHref(pageNumber - 1) : "#"}
-            className={`flex items-center gap-1 px-3 py-2 rounded-[5px] text-sm hover:bg-gray-100 transition-colors ${
-              !hasPrev ? "opacity-40 pointer-events-none" : ""
-            }`}
+            className={hasPrev ? styles.prevNext : styles.prevNextDisabled}
             aria-disabled={!hasPrev}
             tabIndex={!hasPrev ? -1 : undefined}
           >
-            <IoChevronBack className="w-4 h-4" />
+            <IoChevronBack className={styles.icon} />
             Previous
           </Link>
         </li>
@@ -83,17 +81,13 @@ const PaginationUtil = ({ count }: PaginationUtilProps) => {
         {visiblePages.map((item) =>
           typeof item === "string" ? (
             <li key={item}>
-              <span className="px-3 py-2 text-sm text-gray-400">…</span>
+              <span className={styles.ellipsis}>&hellip;</span>
             </li>
           ) : (
             <li key={item}>
               <Link
                 href={buildHref(item)}
-                className={`px-3 py-2 rounded-[5px] text-sm transition-colors ${
-                  item === pageNumber
-                    ? "bg-cyan-600 text-white font-semibold"
-                    : "text-gray-500 hover:bg-gray-100"
-                }`}
+                className={item === pageNumber ? styles.pageLinkActive : styles.pageLinkInactive}
               >
                 {item}
               </Link>
@@ -104,14 +98,12 @@ const PaginationUtil = ({ count }: PaginationUtilProps) => {
         <li>
           <Link
             href={hasNext ? buildHref(pageNumber + 1) : "#"}
-            className={`flex items-center gap-1 px-3 py-2 rounded-[5px] text-sm hover:bg-gray-100 transition-colors ${
-              !hasNext ? "opacity-40 pointer-events-none" : ""
-            }`}
+            className={hasNext ? styles.prevNext : styles.prevNextDisabled}
             aria-disabled={!hasNext}
             tabIndex={!hasNext ? -1 : undefined}
           >
             Next
-            <IoChevronForward className="w-4 h-4" />
+            <IoChevronForward className={styles.icon} />
           </Link>
         </li>
       </ul>

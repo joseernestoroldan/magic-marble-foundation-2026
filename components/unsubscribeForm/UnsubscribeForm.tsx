@@ -8,6 +8,7 @@ import { useCallback, useEffect, useState } from "react";
 import Loader from "../Loader/Loader";
 import { FormError } from "../auth/formError/FormError";
 import { FormSuccess } from "../auth/formSuccess/FormSuccess";
+import styles from "./UnsubscribeForm.module.css";
 
 const UnsubscribeForm = () => {
     const [error, setError] = useState<string | undefined>();
@@ -51,12 +52,12 @@ const UnsubscribeForm = () => {
       }, [onSubmit]);
 
   return (
-    <div className="w-full max-w-5xl mx-auto flex flex-col justify-center items-center">
-      <div className="w-[300px] md:w-[600px] h-[450px] my-8 flex flex-col items-center space-y-8">
-        <div className="relative h-[150px] w-[150px]">
+    <div className={styles.wrapper}>
+      <div className={styles.card}>
+        <div className={styles.logoWrapper}>
           <Image src={"/logo.jpg"} fill alt="mmf" />
         </div>
-        <h2 className="text-gray-500 text-2xl font-medium">
+        <h2 className={styles.heading}>
           {!success && "Unsubscribing to Diaries..." }
           {success && success === "Email unsubscribed" && "Email Unsubscribed" }
           {success && success !== "Email unsubscribed" && "Email Subscribed Again"}
@@ -65,8 +66,8 @@ const UnsubscribeForm = () => {
 
         <FormSuccess message={success} />
         <FormError message={error} /> 
-        {success && success === "Email unsubscribed" && <button onClick={handleClick} className="bg-cyan-600 text-white px-4 py-2 rounded-[5px]">Subscribe Again</button>}
-        {success && success !== "Email unsubscribed" && <Link className="text-lg underline text-cyan-600 hover:text-cyan-400" href={"/profile"}>Go to Profile</Link>}
+        {success && success === "Email unsubscribed" && <button onClick={handleClick} className={styles.subscribeBtn}>Subscribe Again</button>}
+        {success && success !== "Email unsubscribed" && <Link className={styles.profileLink} href={"/profile"}>Go to Profile</Link>}
       </div>
     </div>
   );

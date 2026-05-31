@@ -1,0 +1,251 @@
+.hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 5px;
+  color: #0891b2;
+  transition: all 200ms;
+  cursor: pointer;
+}
+.hamburger:hover {
+  background-color: #ecfeff;
+}
+.hamburger:active {
+  transform: scale(0.95);
+}
+@media (min-width: 1024px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  transition: opacity 300ms;
+}
+.backdropOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
+.backdropClosed {
+  opacity: 0;
+  pointer-events: none;
+}
+@media (min-width: 1024px) {
+  .backdrop {
+    display: none;
+  }
+}
+
+.panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  height: 100%;
+  width: 300px;
+  max-width: 85vw;
+  background: linear-gradient(to bottom, #fff, #fff, #ecfeff);
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  transition: all 400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.panelOpen {
+  transform: translateX(0);
+  opacity: 1;
+}
+.panelClosed {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+@media (min-width: 1024px) {
+  .panel {
+    display: none;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #cffafe;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logoImage {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  flex-shrink: 0;
+  transition: transform 300ms;
+}
+.logoImage img {
+  object-fit: contain;
+}
+.logoLink:hover .logoImage {
+  transform: scale(1.05);
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logoLine {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #1f2937;
+  letter-spacing: 0.025em;
+}
+
+.logoLineAccent {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #0891b2;
+  letter-spacing: 0.025em;
+}
+
+.closeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px;
+  color: #6b7280;
+  transition: all 200ms;
+  cursor: pointer;
+}
+.closeBtn:hover {
+  color: #fff;
+  background-color: #0891b2;
+}
+.closeBtn:active {
+  transform: scale(0.9);
+}
+
+.nav {
+  flex: 1;
+  overflow-y: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.navItem {
+  transition: all 300ms;
+}
+
+.navItemVisible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.navItemHidden {
+  transform: translateX(-1rem);
+  opacity: 0;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  border-radius: 5px;
+  color: #374151;
+  transition: all 200ms;
+}
+.navLink:hover {
+  color: #0891b2;
+  background-color: #ecfeff;
+}
+
+.navIcon {
+  color: #0891b2;
+  transition: color 200ms;
+}
+.navLink:hover .navIcon {
+  color: #0891b2;
+}
+
+.navTitle {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.contact {
+  border-top: 1px solid #cffafe;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.contact > * + * {
+  margin-top: 0.75rem;
+}
+
+.contactLabel {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #9ca3af;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.contactLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #4b5563;
+  transition: color 200ms;
+}
+
+.contactLinkWhatsapp:hover {
+  color: #16a34a;
+}
+
+.contactLinkEmail:hover {
+  color: #0891b2;
+}
+
+.contactIcon {
+  transition: color 200ms;
+}
+
+.contactText {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}

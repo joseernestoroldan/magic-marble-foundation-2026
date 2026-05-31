@@ -3,6 +3,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import React from "react";
 import { MdSearch } from "react-icons/md";
 import { useDebouncedCallback } from "use-debounce";
+import styles from "./Search.module.css";
 
 const Search = () => {
   const searchParams = useSearchParams();
@@ -24,12 +25,12 @@ const Search = () => {
   );
 
   return (
-    <div className="flex items-center gap-2 w-full sm:w-80 border border-gray-200 rounded-[5px] px-3 py-2 bg-white focus-within:border-cyan-400 focus-within:ring-1 focus-within:ring-cyan-400 transition-all duration-200">
-      <MdSearch className="text-gray-400 w-5 h-5 flex-shrink-0" />
+    <div className={styles.wrapper}>
+      <MdSearch className={styles.searchIcon} />
       <input
         type="text"
         placeholder="Search for user..."
-        className="flex-1 bg-transparent border-none text-gray-700 text-sm outline-none placeholder:text-gray-400"
+        className={styles.input}
         onChange={handleSearch}
       />
     </div>

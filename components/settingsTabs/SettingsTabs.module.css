@@ -84,6 +84,27 @@
   margin-bottom: 2rem;
 }
 
+.resetWrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+.resetLink {
+  border: 1px solid #0891b2;
+  color: #0891b2;
+  padding: 0.75rem 2rem;
+  border-radius: 5px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  display: inline-block;
+  transition: background-color 200ms, color 200ms;
+}
+.resetLink:hover {
+  background-color: #ecfeff;
+}
+
 @media (min-width: 640px) {
   .tab {
     padding: 1rem 1.5rem;

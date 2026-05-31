@@ -2,6 +2,7 @@ import { AiFillTikTok as TikTokIcon } from "react-icons/ai";
 import { LiaFacebook as FbIcon, LiaInstagram as IgIcon } from "react-icons/lia";
 import { TiSocialYoutubeCircular as YouTubeIcon } from "react-icons/ti";
 import IconLink from "./IconLink";
+import styles from "./Icons.module.css";
 
 const links = [
   {
@@ -28,7 +29,7 @@ const links = [
 
 const Icons = () => {
   return (
-    <div className="flex flex-row items-center gap-1">
+    <div className={styles.wrapper}>
       {links.map((link) => (
         <IconLink key={link.href} href={link.href} Icon={link.Icon} name={link.name} />
       ))}

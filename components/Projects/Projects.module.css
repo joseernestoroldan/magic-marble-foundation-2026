@@ -1,0 +1,17 @@
+.section {
+  width: 100%;
+}
+
+.emptyState {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  background-color: #000;
+  color: #fff;
+}
+
+.emptyText {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}

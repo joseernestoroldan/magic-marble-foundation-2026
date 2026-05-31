@@ -1,0 +1,25 @@
+.link {
+  text-wrap: nowrap;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--nav-link-color, var(--menu-primary-color));
+}
+
+.link:hover {
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+  color: var(--nav-link-hover-color, var(--menu-hover-color));
+}
+
+.hidden {
+  display: none;
+}
+
+.inlineBlock {
+  display: inline-block;
+}
+
+.green {
+  color: #16a34a;
+}

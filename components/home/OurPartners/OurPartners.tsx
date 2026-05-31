@@ -1,42 +1,43 @@
 import Image from "next/image";
+import styles from "./OurPartners.module.css";
 
 const OurPartners = () => {
   return (
-    <section className="flex flex-col items-center gap-24 w-full">
-      <h2 className="text-cyan-600 font-bold text-4xl text-center">
+    <section className={styles.section}>
+      <h2 className={styles.title}>
         Our Partners
       </h2>
-      <div className="flex flex-col justify-around items-center md:flex-row w-full">
-        <div className="relative w-[200px] h-[200px]">
+      <div className={styles.logos}>
+        <div className={styles.logoWrapper}>
           <Image
-            className="object-contain"
+            className={styles.logoImage}
             src={"/helpAnimalsIndia.webp"}
             alt="help animals india"
             fill
             sizes="200px"
           />
         </div>
-        <div className="relative w-[200px] h-[200px]">
+        <div className={styles.logoWrapper}>
           <Image
-            className="object-contain"
+            className={styles.logoImage}
             src={"/veganGroup.webp"}
             alt="vegan group"
             fill
             sizes="200px"
           />
         </div>
-        <div className="relative w-[200px] h-[200px]">
+        <div className={styles.logoWrapper}>
           <Image
-            className="object-contain"
+            className={styles.logoImage}
             src={"/wellFed.webp"}
             alt="well fed"
             fill
             sizes="200px"
           />
         </div>
-        <div className="relative w-[200px] h-[200px]">
+        <div className={styles.logoWrapper}>
           <Image
-            className="object-contain"
+            className={styles.logoImage}
             src={"/thrive.webp"}
             alt="thrive"
             fill

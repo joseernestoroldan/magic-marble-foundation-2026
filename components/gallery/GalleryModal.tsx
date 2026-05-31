@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { ReactNode, useCallback, useEffect } from "react";
+import styles from "./GalleryModal.module.css";
 
 type GalleryModalProps = {
   children: ReactNode;
@@ -30,21 +31,21 @@ export default function GalleryModal({ children }: GalleryModalProps) {
   }, [onDismiss]);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-3" role="dialog" aria-modal="true">
+    <div className={styles.overlay} role="dialog" aria-modal="true">
       <button
         type="button"
-        className="absolute inset-0 z-0 cursor-default bg-black/80"
+        className={styles.backdrop}
         onClick={onDismiss}
         aria-label="Close gallery preview"
       />
       <div
-        className="relative z-10 flex h-[min(94vh,100%)] w-[min(96vw,100%)] flex-col"
+        className={styles.content}
         onClick={(e) => e.stopPropagation()}
       >
         <button
           type="button"
           onClick={onDismiss}
-          className="absolute right-3 top-3 z-30 flex h-11 w-11 items-center justify-center rounded-full bg-gray-800/90 text-white shadow-lg backdrop-blur-sm transition-colors hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:right-4 sm:top-4"
+          className={styles.closeButton}
           aria-label="Close"
         >
           <svg
@@ -61,7 +62,7 @@ export default function GalleryModal({ children }: GalleryModalProps) {
             <path d="M18 6L6 18M6 6l12 12" />
           </svg>
         </button>
-        <div className="h-full min-h-0 flex-1">{children}</div>
+        <div className={styles.childrenWrapper}>{children}</div>
       </div>
     </div>
   );

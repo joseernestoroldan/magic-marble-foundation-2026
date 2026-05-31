@@ -5,6 +5,7 @@ import { useCallback, useEffect, useState } from "react";
 import Loader from "../Loader/Loader";
 import PaginationUtil from "../paginationUtil/PaginationUtil";
 import Search from "../search/Search";
+import styles from "./Donators.module.css";
 
 interface Donator {
   id: string;
@@ -46,50 +47,50 @@ const Donators = () => {
   }, [onSearch]);
 
   return (
-    <div className="w-full max-w-5xl mx-auto">
-      <h3 className="text-lg font-semibold text-gray-600 mb-4">Donators</h3>
+    <div className={styles.wrapper}>
+      <h3 className={styles.heading}>Donators</h3>
 
       <Search />
 
       {error ? (
-        <div className="bg-red-50 text-red-600 p-3 rounded-[5px] text-sm mt-4">
+        <div className={styles.error}>
           {error}
         </div>
       ) : null}
 
       {donators.length === 0 && count !== 0 ? (
-        <p className="text-gray-500 text-lg w-full text-center py-8">
+        <p className={styles.loading}>
           <Loader variant="inline" />
         </p>
       ) : donators.length === 0 && count === 0 ? (
-        <p className="text-center text-gray-500 text-lg py-8">
+        <p className={styles.empty}>
           No register matches the query
         </p>
       ) : (
-        <div className="rounded-[5px] border border-gray-200 overflow-hidden mt-4">
-          <div className="w-full overflow-x-auto">
-            <table className="w-full text-sm" style={{ borderCollapse: "collapse" }}>
-              <thead className="bg-gray-50 border-b border-gray-200">
+        <div className={styles.tableContainer}>
+          <div className={styles.tableScroll}>
+            <table className={styles.table} style={{ borderCollapse: "collapse" }}>
+              <thead className={styles.thead}>
                 <tr>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  <th className={styles.th}>
                     First Name
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  <th className={styles.th}>
                     Second Name
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  <th className={styles.th}>
                     Amount
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  <th className={styles.th}>
                     Email
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  <th className={styles.th}>
                     Country
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  <th className={styles.th}>
                     Address
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  <th className={styles.th}>
                     Telephone
                   </th>
                 </tr>
@@ -98,27 +99,27 @@ const Donators = () => {
                 {donators.map((donator) => (
                   <tr
                     key={donator.id}
-                    className="border-b border-gray-100 hover:bg-gray-50 transition-colors"
+                    className={styles.tr}
                   >
-                    <td className="px-4 py-3 text-gray-600 capitalize">
+                    <td className={styles.tdCapitalize}>
                       {donator.firstName}
                     </td>
-                    <td className="px-4 py-3 text-gray-600 capitalize">
+                    <td className={styles.tdCapitalize}>
                       {donator.secondName}
                     </td>
-                    <td className="px-4 py-3 text-gray-600">
+                    <td className={styles.td}>
                       {donator.amount}
                     </td>
-                    <td className="px-4 py-3 text-gray-600 lowercase">
+                    <td className={styles.tdLowercase}>
                       {donator.email}
                     </td>
-                    <td className="px-4 py-3 text-gray-600 capitalize">
+                    <td className={styles.tdCapitalize}>
                       {donator.country}
                     </td>
-                    <td className="px-4 py-3 text-gray-600">
+                    <td className={styles.td}>
                       {donator.address}
                     </td>
-                    <td className="px-4 py-3 text-gray-600">
+                    <td className={styles.td}>
                       {donator.telephone}
                     </td>
                   </tr>

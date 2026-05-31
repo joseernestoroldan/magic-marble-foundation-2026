@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-
+import styles from "./Logo.module.css";
 
 const Logo = () => {
   return (
-    <div className="flex justify-start gap-2 items-center py-2">
+    <div className={styles.wrapper}>
       <Link href={"/"}>
-        <div className="w-[70px] h-[70px] relative">
+        <div className={styles.imageBox}>
           <Image
             fill
             src="/navlogo.png"
@@ -16,14 +16,14 @@ const Logo = () => {
           />
         </div>
       </Link>
-      <div className="flex flex-col">
-        <span className="text-black uppercase min-[426px]:text-sm text-xs font-semibold leading-none">
+      <div className={styles.textGroup}>
+        <span className={styles.brandText}>
           Magic
         </span>
-        <span className="text-cyan-600 uppercase min-[426px]:text-sm text-xs font-semibold leading-none">
+        <span className={styles.brandHighlight}>
           Marble
         </span>
-        <span className="text-black uppercase min-[426px]:text-sm text-xs font-semibold leading-none">
+        <span className={styles.brandText}>
           Foundation
         </span>
       </div>

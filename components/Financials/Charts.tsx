@@ -14,6 +14,7 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from "recharts";
+import styles from "./Charts.module.css";
 
 /* -------------------------------------------------------------------------- */
 /*  Custom tooltip                                                            */
@@ -28,14 +29,14 @@ const CustomTooltip = ({ active, payload }: TooltipProps) => {
   const { category, amount, percentage } = payload[0].payload;
 
   return (
-    <div className="rounded-[5px] border border-cyan-700/30 bg-gray-900/95 px-4 py-3 shadow-xl backdrop-blur-sm">
-      <p className="mb-1 text-sm font-semibold text-cyan-300">{category}</p>
-      <p className="text-sm text-gray-200">
-        <span className="font-medium text-white">
+    <div className={styles.tooltip}>
+      <p className={styles.tooltipCategory}>{category}</p>
+      <p className={styles.tooltipAmount}>
+        <span className={styles.tooltipAmountSpan}>
           ${amount.toLocaleString("en-US")}
         </span>
       </p>
-      <p className="text-xs text-gray-400">{percentage}% of total</p>
+      <p className={styles.tooltipPercent}>{percentage}% of total</p>
     </div>
   );
 };
@@ -52,18 +53,18 @@ interface LegendEntry {
 const CustomLegend = ({ payload }: { payload?: LegendEntry[] }) => {
   if (!payload) return null;
   return (
-    <ul className="flex flex-wrap justify-center gap-x-6 gap-y-1">
+    <ul className={styles.legend}>
       {payload.map((entry) => {
         const data = entry.payload?.payload;
         return (
-          <li key={entry.value} className="flex items-center gap-2 text-sm">
+          <li key={entry.value} className={styles.legendItem}>
             <span
-              className="inline-block h-3 w-3 rounded-full"
+              className={styles.legendColor}
               style={{ backgroundColor: entry.color }}
             />
-            <span className="text-gray-700 font-medium">{entry.value}</span>
+            <span className={styles.legendLabel}>{entry.value}</span>
             {data && (
-              <span className="text-gray-400 text-xs">
+              <span className={styles.legendAmount}>
                 (${data.amount.toLocaleString("en-US")} · {data.percentage}%)
               </span>
             )}
@@ -103,7 +104,6 @@ const renderCustomLabel = ({
   const x = cx + radius * Math.cos(-midAngle * RADIAN);
   const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
-  // Only show label if the slice is big enough (>10%)
   if (percentage < 10) return null;
 
   return (
@@ -112,12 +112,12 @@ const renderCustomLabel = ({
       y={y}
       textAnchor="middle"
       dominantBaseline="central"
-      className="fill-white text-xs font-semibold drop-shadow-md pointer-events-none"
+      className={styles.pieLabel}
     >
       <tspan x={x} dy="-0.5em">
         ${amount.toLocaleString("en-US")}
       </tspan>
-      <tspan x={x} dy="1.3em" className="text-[10px] opacity-80">
+      <tspan x={x} dy="1.3em" className={styles.pieLabelPercent}>
         {percentage}%
       </tspan>
     </text>
@@ -143,34 +143,27 @@ const Charts = () => {
   }, []);
 
   return (
-    <div className="flex w-full flex-col items-center gap-8 pt-24">
+    <div className={styles.wrapper}>
       {/* ---- Title ---- */}
-      <div className="text-center">
-        <h2 className="text-cyan-600 font-bold text-4xl text-center">
+      <div className={styles.titleSection}>
+        <h2 className={styles.title}>
           Expenditure Breakdown
         </h2>
-        <p className="mt-1 text-sm text-gray-500">
+        <p className={styles.subtitle}>
           Total for {selectedYear}:{" "}
-          <span className="font-semibold text-cyan-700">
+          <span className={styles.subtitleTotal}>
             ${total.toLocaleString("en-US")}
           </span>
         </p>
       </div>
 
       {/* ---- Year selector tabs ---- */}
-      <div className="flex gap-2 rounded-full bg-gray-100 p-1 shadow-inner">
+      <div className={styles.tabs}>
         {chartYears.map((year) => (
           <button
             key={year}
             onClick={() => setSelectedYear(year)}
-            className={`
-              rounded-full px-5 py-2 text-sm font-semibold transition-all duration-300
-              ${
-                selectedYear === year
-                  ? "bg-cyan-600 text-white shadow-md shadow-cyan-600/30"
-                  : "text-gray-500 hover:bg-gray-200 hover:text-gray-700"
-              }
-            `}
+            className={selectedYear === year ? styles.tabActive : styles.tab}
           >
             {year}
           </button>
@@ -178,7 +171,7 @@ const Charts = () => {
       </div>
 
       {/* ---- Pie Chart ---- */}
-      <div className="w-full max-w-lg">
+      <div className={styles.chartWrapper}>
         <ResponsiveContainer width="100%" height={380}>
           <PieChart>
             <Pie
@@ -204,7 +197,7 @@ const Charts = () => {
                 <Cell
                   key={entry.category}
                   fill={entry.fill}
-                  className="transition-opacity duration-200"
+                  className={styles.cellTransition}
                   opacity={
                     activeIndex === null || activeIndex === index ? 1 : 0.45
                   }
@@ -215,7 +208,7 @@ const Charts = () => {
             <Tooltip content={<CustomTooltip />} />
           </PieChart>
         </ResponsiveContainer>
-        <div className="flex min-h-[72px] items-center justify-center">
+        <div className={styles.legendContainer}>
           <CustomLegend payload={entries.map((e) => ({
             value: e.category,
             color: e.fill,
@@ -225,26 +218,26 @@ const Charts = () => {
       </div>
 
       {/* ---- Breakdown cards ---- */}
-      <div className="flex w-full max-w-lg flex-col gap-3 px-4">
+      <div className={styles.cardsSection}>
         {entries.map((entry) => (
           <div
             key={entry.category}
-            className="flex items-center justify-between rounded-[5px] border border-gray-200 bg-white px-5 py-3 shadow-sm transition-shadow hover:shadow-md"
+            className={styles.card}
           >
-            <div className="flex items-center gap-3">
+            <div className={styles.cardLeft}>
               <span
-                className="h-4 w-4 rounded-full shadow-sm"
+                className={styles.cardDot}
                 style={{ backgroundColor: entry.fill }}
               />
-              <span className="text-sm font-medium text-gray-700">
+              <span className={styles.cardLabel}>
                 {entry.category}
               </span>
             </div>
-            <div className="text-right">
-              <p className="text-sm font-semibold text-gray-900">
+            <div className={styles.cardRight}>
+              <p className={styles.cardAmount}>
                 ${entry.amount.toLocaleString("en-US")}
               </p>
-              <p className="text-xs text-gray-400">{entry.percentage}%</p>
+              <p className={styles.cardPercent}>{entry.percentage}%</p>
             </div>
           </div>
         ))}

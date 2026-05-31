@@ -1,6 +1,7 @@
 "use client";
 
 import { useIsVisible } from "@/hooks/useIsVisible";
+import styles from "./SmokeText.module.css";
 
 interface SmokeTextProps {
   text: string;
@@ -37,7 +38,7 @@ const SmokeText = ({
     <p
       ref={ref}
       aria-label={text}
-      className={`flex flex-wrap justify-center leading-snug ${className}`}
+      className={`${styles.wrapper} ${className}`}
     >
       {words.map((word, wordIndex) => {
         const wordStartIndex = globalCharIndex;
@@ -47,7 +48,7 @@ const SmokeText = ({
           // whitespace-nowrap prevents the browser from breaking mid-word
           <span
             key={wordIndex}
-            className="inline-block whitespace-nowrap"
+            className={styles.word}
             // Small right margin replaces the space character between words
             style={{ marginRight: wordIndex < words.length - 1 ? "0.3em" : 0 }}
           >
@@ -57,8 +58,8 @@ const SmokeText = ({
                 <span
                   key={charIndex}
                   aria-hidden="true"
+                  className={styles.char}
                   style={{
-                    display: "inline-block",
                     opacity: isVisible ? 1 : 0,
                     filter: isVisible ? "blur(0px)" : "blur(6px)",
                     transform: isVisible ? "translateY(0)" : "translateY(6px)",

@@ -64,7 +64,7 @@ export default async function ProjectDetailsPage({
               alt={project.title}
               fill
               sizes="(max-width: 1280px) 100vw, 1280px"
-              className="object-cover"
+              className={styles.image}
               style={{ objectPosition: `${x}% ${y}%` }}
               priority
             />

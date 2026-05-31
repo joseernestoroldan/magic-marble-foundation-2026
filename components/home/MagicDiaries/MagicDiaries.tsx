@@ -1,18 +1,19 @@
 import { getAllDiaries } from "@/client";
 import Container from "@/components/Layouts/Container/Container";
 import DiaryMosaicGallery from "./DiaryMosaicGallery";
+import styles from "./MagicDiaries.module.css";
 
 const MagicDiaries = async () => {
   const diaries = await getAllDiaries();
   return (
-    <div className="flex flex-col items-center gap-24 w-full">
-      <h2 className="text-cyan-600 font-bold text-4xl text-center">
+    <div className={styles.wrapper}>
+      <h2 className={styles.title}>
         Magic Diaries
       </h2>
       <Container>
         {diaries && diaries.length > 0 ?
           <DiaryMosaicGallery diaries={diaries} />
-        : <p className="text-slate-400 text-center py-12">
+        : <p className={styles.empty}>
             No diaries available yet.
           </p>
         }

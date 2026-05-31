@@ -54,9 +54,9 @@ const SettingsTabs = ({ data }: { data: any }) => {
             <h2 className={styles.panelTitle}>
               Update your password to keep your account secure
             </h2>
-            <div className="flex justify-center pt-4">
+            <div className={styles.resetWrapper}>
               <Link
-                className="border border-cyan-600 text-cyan-600 py-3 px-8 rounded-[5px] hover:bg-cyan-50 transition-colors duration-200 text-sm font-medium inline-block"
+                className={styles.resetLink}
                 href="/reset"
               >
                 Reset your password

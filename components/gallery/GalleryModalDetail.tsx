@@ -7,6 +7,7 @@ import {
   getModalFrameWidth,
   getSanityImageFrame,
 } from "./sanityImageFrame";
+import styles from "./GalleryModalDetail.module.css";
 
 type GalleryModalDetailProps = {
   title: string;
@@ -48,10 +49,10 @@ export default function GalleryModalDetail({
   }, [infoOpen, closeInfo]);
 
   return (
-    <div className="relative flex h-full min-h-0 w-full items-center justify-center overflow-hidden rounded-[5px] bg-gray-900 shadow-2xl">
+    <div className={styles.container}>
       {mainImage ? (
         <div
-          className="relative max-h-[94vh] max-w-[96vw]"
+          className={styles.imageFrame}
           style={{
             aspectRatio,
             width: getModalFrameWidth(aspectRatio),
@@ -62,26 +63,21 @@ export default function GalleryModalDetail({
             alt={title}
             fill
             sizes="96vw"
-            className="object-cover"
+            className={styles.image}
             style={{ objectPosition }}
             priority
           />
         </div>
       ) : (
-        <div
-          className="aspect-[4/3] w-full max-w-[96vw] bg-gradient-to-br from-cyan-900 to-gray-900"
-          aria-hidden
-        />
+        <div className={styles.placeholder} aria-hidden />
       )}
 
       {description && (
-        <div className="absolute left-3 top-3 z-20 sm:left-4 sm:top-4" data-gallery-info>
+        <div className={styles.infoGroup} data-gallery-info>
           <button
             type="button"
             onClick={() => setInfoOpen((open) => !open)}
-            className={`flex h-10 w-10 items-center justify-center rounded-full bg-gray-800/90 text-white shadow-lg backdrop-blur-sm transition-all duration-300 hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white ${
-              infoOpen ? "ring-2 ring-white/40" : ""
-            }`}
+            className={infoOpen ? styles.infoButtonActive : styles.infoButton}
             aria-expanded={infoOpen}
             aria-controls={panelId}
             aria-label={infoOpen ? "Hide description" : "Show description"}
@@ -94,13 +90,9 @@ export default function GalleryModalDetail({
             role="region"
             aria-label="Description"
             aria-hidden={!infoOpen}
-            className={`absolute left-0 top-12 w-[min(20rem,calc(96vw-2rem))] rounded-[5px] border border-white/10 bg-gray-800/95 p-4 text-sm leading-relaxed text-white shadow-xl backdrop-blur-md transition-opacity duration-300 ease-in-out ${
-              infoOpen
-                ? "pointer-events-auto opacity-100"
-                : "pointer-events-none opacity-0"
-            }`}
+            className={infoOpen ? styles.infoPanelVisible : styles.infoPanelHidden}
           >
-            <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">
+            <p className={styles.infoLabel}>
               Description
             </p>
             <p>{description}</p>
@@ -108,12 +100,12 @@ export default function GalleryModalDetail({
         </div>
       )}
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/85 via-black/45 to-transparent px-5 pb-5 pt-16 sm:px-8 sm:pb-8">
-        <h2 className="text-xl font-bold leading-tight text-white sm:text-2xl md:text-3xl">
+      <div className={styles.bottomGradient}>
+        <h2 className={styles.modalTitle}>
           {title}
         </h2>
         {displayDate && (
-          <time className="mt-2 block text-sm text-slate-300 sm:text-base" dateTime={dateTime}>
+          <time className={styles.modalDate} dateTime={dateTime}>
             {displayDate}
           </time>
         )}

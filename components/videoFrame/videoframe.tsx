@@ -2,6 +2,7 @@
 
 import { VideoFrameProps } from "@/types/types";
 import { useEffect, useRef, useState } from "react";
+import styles from "./VideoFrame.module.css";
 
 const VideoFrame = ({ src }: VideoFrameProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -73,38 +74,19 @@ const VideoFrame = ({ src }: VideoFrameProps) => {
 
   return (
     <>
-      <style>{`
-        @keyframes vf-fadein {
-          from { opacity: 0; }
-          to   { opacity: 1; }
-        }
-        @keyframes vf-spin {
-          to { transform: rotate(360deg); }
-        }
-      `}</style>
-
       <div
         ref={containerRef}
-        className="relative w-full aspect-video bg-gray-800 overflow-hidden">
+        className={styles.container}>
         <div
           style={{
             background:
               "linear-gradient(135deg, #020c1b 0%, #0a1a2e 50%, #020c1b 100%)",
             transition: "opacity 0.6s ease",
           }}
-            className=  {`absolute inset-0 flex items-center justify-center z-10 pointer-events-none ${isVisible ? "opacity-0" : "opacity-100"} transition-all duration-500 ease-linear`}
+            className={`${styles.loadingOverlay} ${isVisible ? styles.loadingHidden : styles.loadingVisible}`}
             >
 
-          <div
-            style={{
-              width: 52,
-              height: 52,
-              borderRadius: "50%",
-              border: "2px solid rgba(34, 211, 238, 0.15)",
-              borderTopColor: "#22d3ee",
-              animation: "vf-spin 1s linear infinite",
-            }}
-          />
+          <div className={styles.spinner} />
         </div>
 
         {/* iframe — solo se monta cuando el componente entra al viewport */}
@@ -114,15 +96,7 @@ const VideoFrame = ({ src }: VideoFrameProps) => {
             title="Magic Marble Foundation"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
-            style={{
-              position: "absolute",
-              inset: 0,
-              width: "100%",
-              height: "100%",
-              border: "none",
-              animation: "vf-fadein 0.8s ease forwards",
-              zIndex: 2,
-            }}
+            className={styles.iframe}
           />
         )}
       </div>

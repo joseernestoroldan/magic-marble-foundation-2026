@@ -119,7 +119,7 @@ const UpdateForm = ({ data }: any) => {
             <div className={styles.formRow}>
               <div className={styles.fieldGroup}>
                 <label className={styles.label}>Code Number</label>
-                <div className="relative">
+                <div className={styles.fieldWrapper}>
                   <button
                     type="button"
                     onClick={() => setOpenCode(!openCode)}
@@ -190,7 +190,7 @@ const UpdateForm = ({ data }: any) => {
             <div className={styles.formRow}>
               <div className={styles.fieldGroup}>
                 <label className={styles.label}>Country</label>
-                <div className="relative">
+                <div className={styles.fieldWrapper}>
                   <button
                     type="button"
                     onClick={() => setOpen(!open)}

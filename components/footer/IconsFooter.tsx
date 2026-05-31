@@ -3,6 +3,7 @@ import { AiFillTikTok as TikTokIcon } from "react-icons/ai";
 import { LiaFacebook as FbIcon, LiaInstagram as IgIcon } from "react-icons/lia";
 import { IconType } from "react-icons/lib";
 import { TiSocialYoutubeCircular as YouTubeIcon } from "react-icons/ti";
+import styles from "./IconsFooter.module.css";
 
 const socialLinks = [
   {
@@ -39,22 +40,15 @@ const FooterIconLink = ({ href, Icon, name }: FooterIconLinkProps) => (
     target="_blank"
     rel="noopener noreferrer"
     aria-label={`Visit our ${name}`}
-    className="
-      flex items-center justify-center
-      w-10 h-10 rounded-full
-      bg-slate-700 hover:bg-cyan-600
-      text-slate-300 hover:text-white
-      transition-all duration-300 ease-in-out
-      hover:scale-110 hover:shadow-lg hover:shadow-cyan-600/30
-    "
+    className={styles.iconLink}
   >
-    <Icon className="text-xl" />
+    <Icon className={styles.icon} />
   </Link>
 );
 
 const IconsFooter = () => {
   return (
-    <div className="flex flex-row items-center gap-3">
+    <div className={styles.wrapper}>
       {socialLinks.map((link) => (
         <FooterIconLink
           key={link.href}

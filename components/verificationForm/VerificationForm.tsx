@@ -9,6 +9,7 @@ import Loader from "../Loader/Loader";
 import { FormError } from "../auth/formError/FormError";
 import { FormExpired } from "../auth/formExpired/FormExpired";
 import { FormSuccess } from "../auth/formSuccess/FormSuccess";
+import styles from "./VerificationForm.module.css";
 
 const VerificationForm = () => {
   const [error, setError] = useState<string | undefined>();
@@ -38,12 +39,12 @@ const VerificationForm = () => {
   }, [onSubmit]);
 
   return (
-    <div className="w-full max-w-5xl mx-auto flex flex-col justify-center items-center">
-      <div className="w-[300px] md:w-[600px] h-[450px] my-8 flex flex-col items-center space-y-8">
-        <div className="relative h-[150px] w-[150px]">
+    <div className={styles.wrapper}>
+      <div className={styles.card}>
+        <div className={styles.logoWrapper}>
           <Image src={"/logo.jpg"} fill alt="mmf" />
         </div>
-        <h2 className="text-gray-500 text-2xl font-medium">
+        <h2 className={styles.heading}>
           {!success? "Confirming your verification..." : "Account verified!"}
           
           
@@ -53,7 +54,7 @@ const VerificationForm = () => {
         <FormSuccess message={success} />
         <FormError message={error} />
         <FormExpired message={expired}/>
-        {success && <p className="text-lg text-gray-500">Please  <Link className="text-cyan-600 underline font-medium text-lg" href={"/login"}>Sign In</Link> </p>}
+        {success && <p className={styles.signInText}>Please  <Link className={styles.signInLink} href={"/login"}>Sign In</Link> </p>}
       </div>
     </div>
   );

@@ -1,0 +1,11 @@
+.icon {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  color: var(--infobar-primary-color);
+  transition: all 500ms;
+}
+.icon:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+

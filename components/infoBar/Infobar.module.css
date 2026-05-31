@@ -1,0 +1,54 @@
+.bar {
+  width: 100%;
+  background-color: #1f2937;
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .bar {
+    position: static;
+  }
+}
+
+.inner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    justify-content: space-between;
+  }
+}
+
+.right {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.socialWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.profileWrap {
+  display: flex;
+  justify-content: center;
+  min-width: 50px;
+  align-items: center;
+  overflow: visible;
+}
+
+@media (min-width: 1024px) {
+  .profileWrap {
+    min-width: 140px;
+  }
+}

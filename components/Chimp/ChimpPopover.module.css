@@ -18,6 +18,7 @@
 
 .icon {
   font-size: 1.875rem;
+  color: var(--infobar-primary-color);
 }
 
 .dropdownBase {
@@ -27,9 +28,13 @@
   right: 50%;
   transform: translateX(50%);
   width: 300px;
-  background-color: #374151;
+  background-color: var(--infobar-background-color);
   border-radius: 5px;
   transition: all 0.5s;
+}
+
+.chimpLink {
+  color: var(--infobar-primary-color);
 }
 
 @media (min-width: 768px) {
@@ -66,7 +71,7 @@
 }
 
 .dropdownTitle {
-  color: white;
+  color: var(--infobar-primary-color);
   font-size: 0.875rem;
   text-decoration: underline;
   font-weight: 600;
@@ -81,7 +86,7 @@
 }
 
 .dropdownContent {
-  color: white;
+  color: var(--infobar-primary-color);
   font-size: 0.875rem;
   padding: 1rem;
 }
@@ -95,6 +100,8 @@
 .item {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+  color: var(--infobar-primary-color);
+  text-decoration: none;
 }
 
 .itemDate {
@@ -112,6 +119,7 @@
 .itemTitle {
   font-weight: 600;
   font-size: 0.875rem;
+  color: var(--infobar-primary-color);
 }
 
 @media (min-width: 1024px) {

@@ -5,6 +5,7 @@ import { menuItems } from "@/utils/menuItems";
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
+import styles from "./ToggleSidebar.module.css";
 
 // React Icons
 import { FaBook, FaHandHoldingHeart, FaProjectDiagram } from "react-icons/fa";
@@ -77,50 +78,41 @@ const ToggleSidebar = () => {
       <button
         onClick={toggle}
         aria-label="Open navigation menu"
-        className="lg:hidden flex items-center justify-center w-10 h-10 rounded-[5px]
-                   text-cyan-600 hover:bg-cyan-50 active:scale-95
-                   transition-all duration-200 cursor-pointer"
+        className={styles.hamburger}
       >
         <HiMenuAlt2 size={28} />
       </button>
 
       {/* Backdrop overlay */}
       <div
-        className={`fixed inset-0 z-40 bg-black/50 backdrop-blur-sm
-                    transition-opacity duration-300 lg:hidden
-                    ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+        className={`${styles.backdrop} ${isOpen ? styles.backdropOpen : styles.backdropClosed}`}
       />
 
       {/* Sidebar panel */}
       <div
         ref={sidebarRef}
-        className={`fixed top-0 left-0 z-50 h-full w-[300px] max-w-[85vw]
-                    bg-gradient-to-b from-white via-white to-cyan-50
-                    shadow-2xl flex flex-col
-                    transition-all duration-400 [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] lg:hidden
-                    ${isOpen ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"}`}
+        className={`${styles.panel} ${isOpen ? styles.panelOpen : styles.panelClosed}`}
       >
         {/* Header: logo + close button */}
-        <div className="flex items-center justify-between px-5 pt-5 pb-3 border-b border-cyan-100">
-          <Link href="/" onClick={close} className="flex items-center gap-3 group">
-            <div className="w-[50px] h-[50px] relative shrink-0 transition-transform duration-300 group-hover:scale-105">
+        <div className={styles.header}>
+          <Link href="/" onClick={close} className={styles.logoLink}>
+            <div className={styles.logoImage}>
               <Image
                 fill
                 src="/navlogo.png"
                 alt="Magic Marble Foundation"
                 sizes="50px"
                 priority
-                className="object-contain"
               />
             </div>
-            <div className="flex flex-col leading-none">
-              <span className="text-sm font-semibold uppercase text-gray-800 tracking-wide">
+            <div className={styles.logoText}>
+              <span className={styles.logoLine}>
                 Magic
               </span>
-              <span className="text-sm font-semibold uppercase text-cyan-600 tracking-wide">
+              <span className={styles.logoLineAccent}>
                 Marble
               </span>
-              <span className="text-sm font-semibold uppercase text-gray-800 tracking-wide">
+              <span className={styles.logoLine}>
                 Foundation
               </span>
             </div>
@@ -129,37 +121,32 @@ const ToggleSidebar = () => {
           <button
             onClick={close}
             aria-label="Close navigation menu"
-            className="flex items-center justify-center w-9 h-9 rounded-full
-                       text-gray-500 hover:text-white hover:bg-cyan-600
-                       transition-all duration-200 active:scale-90 cursor-pointer"
+            className={styles.closeBtn}
           >
             <IoClose size={24} />
           </button>
         </div>
 
         {/* Menu items */}
-        <nav className="flex-1 overflow-y-auto px-4 py-4">
-          <ul className="flex flex-col gap-1">
+        <nav className={styles.nav}>
+          <ul className={styles.navList}>
             {menuItems.map((item, index) => (
               <li
                 key={item.title}
                 style={{
                   transitionDelay: isOpen ? `${60 + index * 30}ms` : "0ms",
                 }}
-                className={`transition-all duration-300
-                            ${isOpen ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"}`}
+                className={`${styles.navItem} ${isOpen ? styles.navItemVisible : styles.navItemHidden}`}
               >
                 <Link
                   href={item.link}
                   onClick={close}
-                  className="flex items-center gap-3 px-3 py-2.5 rounded-[5px]
-                             text-gray-700 hover:text-cyan-600 hover:bg-cyan-50
-                             transition-all duration-200 group"
+                  className={styles.navLink}
                 >
-                  <span className="text-cyan-600 group-hover:text-cyan-600 transition-colors duration-200">
+                  <span className={styles.navIcon}>
                     {iconMap[item.title] ?? <IoMdHome size={18} />}
                   </span>
-                  <span className="text-[15px] font-medium">{item.title}</span>
+                  <span className={styles.navTitle}>{item.title}</span>
                 </Link>
               </li>
             ))}
@@ -167,8 +154,8 @@ const ToggleSidebar = () => {
         </nav>
 
         {/* Contact info */}
-        <div className="border-t border-cyan-100 px-5 py-4 space-y-3">
-          <p className="text-xs font-semibold uppercase text-gray-400 tracking-wider mb-2">
+        <div className={styles.contact}>
+          <p className={styles.contactLabel}>
             Contact
           </p>
 
@@ -176,26 +163,24 @@ const ToggleSidebar = () => {
             href="https://wa.me/13126008182"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 text-gray-600 hover:text-green-600
-                       transition-colors duration-200 group"
+            className={`${styles.contactLink} ${styles.contactLinkWhatsapp}`}
           >
             <IoLogoWhatsapp
               size={20}
-              className="text-green-500 group-hover:text-green-600 transition-colors duration-200"
+              className={styles.contactIcon}
             />
-            <span className="text-sm">+1 312 - 600 - 8182</span>
+            <span className={styles.contactText}>+1 312 - 600 - 8182</span>
           </a>
 
           <a
             href="mailto:info@magicmarblefoundation.org"
-            className="flex items-center gap-3 text-gray-600 hover:text-cyan-600
-                       transition-colors duration-200 group"
+            className={`${styles.contactLink} ${styles.contactLinkEmail}`}
           >
             <IoMdMail
               size={20}
-              className="text-cyan-600 group-hover:text-cyan-600 transition-colors duration-200"
+              className={styles.contactIcon}
             />
-            <span className="text-sm">info@magicmarblefoundation.org</span>
+            <span className={styles.contactText}>info@magicmarblefoundation.org</span>
           </a>
         </div>
       </div>

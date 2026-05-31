@@ -1,5 +1,10 @@
 # Magic Marble Foundation — Style Guide
 
+
+## Infobar Component
+
+The background color must be
+
 ## Principios de diseño
 - Minimalista y elegante
 - Consistencia visual en toda la aplicación

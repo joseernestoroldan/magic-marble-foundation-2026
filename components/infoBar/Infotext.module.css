@@ -1,0 +1,18 @@
+.wrapper {
+  width: fit-content;
+  text-align: center;
+  display: none;
+  align-items: center;
+}
+
+.link {
+  color: var(--infobar-primary-color);
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    display: flex;
+  }
+}

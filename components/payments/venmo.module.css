@@ -1,0 +1,32 @@
+.wrapper {
+  position: relative;
+}
+
+.card {
+  opacity: 0.5;
+  width: 15rem;
+  height: 10rem;
+  border: 1px solid #d1d5db;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+.card > * + * {
+  margin-top: 1rem;
+}
+.card:hover {
+  background-color: #f9fafb;
+}
+
+.venmoButton {
+  display: flex;
+  border-radius: 5px;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  width: 13rem;
+  border: 1px solid #60a5fa;
+}

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { getGalleryDisplayDate } from "./formatGalleryDate";
 import GalleryModalDetail from "./GalleryModalDetail";
 import { getSanityImageFrame } from "./sanityImageFrame";
+import styles from "./GalleryDetail.module.css";
 
 type GalleryDetailProps = {
   item: galleryType;
@@ -29,10 +30,10 @@ export default function GalleryDetail({ item, variant = "modal" }: GalleryDetail
   }
 
   return (
-    <div className="flex w-full flex-col gap-8 md:flex-row md:gap-12">
+    <div className={styles.layout}>
       {item.mainImage && (
         <div
-          className="relative w-full overflow-hidden rounded-[5px] md:w-1/2 md:max-w-xl"
+          className={styles.imageWrapper}
           style={{ aspectRatio }}
         >
           <Image
@@ -40,7 +41,7 @@ export default function GalleryDetail({ item, variant = "modal" }: GalleryDetail
             alt={title}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover"
+            className={styles.image}
             style={{ objectPosition }}
             priority
           />
@@ -66,17 +67,17 @@ type ContentProps = {
 
 function GalleryDetailContent({ title, displayDate, dateTime, description }: ContentProps) {
   return (
-    <div className="flex flex-1 flex-col justify-center gap-5">
-      <h2 className="text-3xl font-bold text-cyan-600 md:text-4xl">{title}</h2>
+    <div className={styles.content}>
+      <h2 className={styles.title}>{title}</h2>
 
       {displayDate && (
-        <time className="text-sm font-medium text-slate-500" dateTime={dateTime}>
+        <time className={styles.date} dateTime={dateTime}>
           {displayDate}
         </time>
       )}
 
       {description && (
-        <p className="text-base leading-relaxed text-slate-600 md:text-lg">{description}</p>
+        <p className={styles.description}>{description}</p>
       )}
     </div>
   );

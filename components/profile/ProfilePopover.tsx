@@ -7,6 +7,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
 import { IoMdContact as ContactIcon } from "react-icons/io";
+import styles from "./ProfilePopover.module.css";
 
 const ProfilePopover = ({ name }: profilePopoverProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -37,7 +38,7 @@ const ProfilePopover = ({ name }: profilePopoverProps) => {
   if (!name) {
     return (
       <Link
-        className="w-full font-semibold text-sm rounded-[5px] flex flex-col justify-center items-center cursor-pointer h-[40px] bg-gray-700 text-gray-200 hover:bg-opacity-60"
+        className={styles.loginLink}
         href={"/login"}>
         Login
       </Link>
@@ -47,27 +48,27 @@ const ProfilePopover = ({ name }: profilePopoverProps) => {
   return (
     <div
       ref={containerRef}
-      className={`lg:w-full w-[40px] flex flex-col justify-center items-center cursor-pointer h-[40px] relative bg-gray-700 hover:bg-opacity-60 text-gray-200 ${isOpen ? "rounded-t-[5px]" : "rounded-[5px]"}`}
+      className={`${styles.trigger} ${isOpen ? styles.triggerRoundedTop : styles.triggerRounded}`}
       onClick={toggleOpen}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}>
-      <div className="w-full flex justify-center items-center gap-2 px-2">
-        <ContactIcon className="text-3xl" />
-        <p className="text-xs font-semibold lg:block hidden">Welcome {name}</p>
+      <div className={styles.triggerContent}>
+        <ContactIcon className={styles.contactIcon} />
+        <p className={styles.welcomeText}>Welcome {name}</p>
       </div>
 
       <div
-        className={`absolute top-0 right-0 lg:left-0  bg-gray-700 bg-opacity-85 lg:w-full w-[140px] text-gray-200 rounded-b-[5px] px-2 py-2 flex flex-col justify-start items-center gap-2 transition-all duration-500 ease-in-out ${isOpen ? "opacity-100 translate-y-[40px] pointer-events-auto" : "opacity-0 translate-y-[20px] pointer-events-none"}`}>
-        <hr className="border border-gray-400 w-full" />
+        className={`${styles.popover} ${isOpen ? styles.popoverOpen : styles.popoverClosed}`}>
+        <hr className={styles.divider} />
         {pathname !== "/profile" && (
           <Link
-            className="text-xs font-semibold hover:bg-gray-700 w-full p-1 text-center"
+            className={styles.popoverLink}
             href={"/profile"}>
             Profile
           </Link>
         )}
         <button
-          className="text-xs font-semibold hover:bg-gray-700 w-full p-1 text-center disabled:opacity-50 disabled:cursor-not-allowed"
+          className={styles.popoverButton}
           onClick={handleSignOut}
           disabled={isLoggingOut}>
           {isLoggingOut ? "Signing out..." : "Sign out"}

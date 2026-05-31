@@ -1,0 +1,149 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background: linear-gradient(135deg, #f8fafc 0%, #f0fdfa 100%);
+  border: 1px solid rgba(8, 145, 178, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 36px rgba(8, 145, 178, 0.15), 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: rgba(8, 145, 178, 0.3);
+}
+
+.card:focus-visible {
+  outline: 2px solid #0891b2;
+  outline-offset: 2px;
+}
+
+.imageWrap {
+  position: relative;
+  flex: 0 0 200px;
+  min-height: 160px;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.06);
+}
+
+.imagePlaceholder {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #0e7490 0%, #155e75 60%, #083344 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagePlaceholder svg {
+  width: 48px;
+  height: 48px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px 28px;
+  min-width: 0;
+}
+
+.date {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.cardTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.card:hover .cardTitle {
+  color: #0891b2;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #0891b2;
+  letter-spacing: 0.02em;
+  margin-top: 4px;
+  transition: gap 0.3s ease;
+}
+
+.card:hover .cta {
+  gap: 10px;
+}
+
+.cta svg {
+  transition: transform 0.3s ease;
+}
+
+.card:hover .cta svg {
+  transform: translateX(3px);
+}
+
+@media (max-width: 640px) {
+  .card {
+    flex-direction: column;
+  }
+
+  .imageWrap {
+    flex: none;
+    width: 100%;
+    height: 200px;
+    min-height: unset;
+  }
+
+  .body {
+    padding: 20px 22px;
+  }
+
+  .cardTitle {
+    font-size: 1.1rem;
+  }
+}

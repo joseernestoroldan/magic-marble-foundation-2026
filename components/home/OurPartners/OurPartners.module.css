@@ -1,0 +1,38 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6rem;
+  width: 100%;
+}
+
+.title {
+  color: #0891b2;
+  font-weight: 700;
+  font-size: 2.25rem;
+  text-align: center;
+}
+
+.logos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .logos {
+    flex-direction: row;
+  }
+}
+
+.logoWrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.logoImage {
+  object-fit: contain;
+}

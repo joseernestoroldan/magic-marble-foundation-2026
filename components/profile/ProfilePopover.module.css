@@ -1,0 +1,142 @@
+.loginLink {
+  width: 100%;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 40px;
+  background-color: #374151;
+  color: #e5e7eb;
+}
+.loginLink:hover {
+  opacity: 0.6;
+}
+
+.trigger {
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 40px;
+  position: relative;
+  background-color: #374151;
+  color: #e5e7eb;
+}
+.trigger:hover {
+  opacity: 0.6;
+}
+.triggerRoundedTop {
+  border-radius: 5px 5px 0 0;
+}
+.triggerRounded {
+  border-radius: 5px;
+}
+@media (min-width: 1024px) {
+  .trigger {
+    width: 100%;
+  }
+}
+
+.triggerContent {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.contactIcon {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.welcomeText {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  display: none;
+}
+@media (min-width: 1024px) {
+  .welcomeText {
+    display: block;
+  }
+}
+
+.popover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #374151;
+  opacity: 0.85;
+  width: 140px;
+  color: #e5e7eb;
+  border-radius: 0 0 5px 5px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 500ms ease-in-out;
+}
+.popoverOpen {
+  opacity: 1;
+  transform: translateY(40px);
+  pointer-events: auto;
+}
+.popoverClosed {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+@media (min-width: 1024px) {
+  .popover {
+    left: 0;
+    width: 100%;
+  }
+}
+
+.divider {
+  border: 1px solid #9ca3af;
+  width: 100%;
+}
+
+.popoverLink {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  width: 100%;
+  padding: 0.25rem;
+  text-align: center;
+}
+.popoverLink:hover {
+  background-color: #374151;
+}
+
+.popoverButton {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  width: 100%;
+  padding: 0.25rem;
+  text-align: center;
+}
+.popoverButton:hover {
+  background-color: #374151;
+}
+.popoverButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

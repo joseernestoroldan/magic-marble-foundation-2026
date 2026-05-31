@@ -1,0 +1,225 @@
+.wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 6rem;
+}
+
+.titleSection {
+  text-align: center;
+}
+
+.title {
+  color: #0891b2;
+  font-weight: 700;
+  font-size: 2.25rem;
+  text-align: center;
+}
+
+.subtitle {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.subtitleTotal {
+  font-weight: 600;
+  color: #0e7490;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  background-color: #f3f4f6;
+  padding: 0.25rem;
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.tab {
+  border-radius: 9999px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+  background: transparent;
+}
+
+.tab:hover {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.tabActive {
+  border-radius: 9999px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  background-color: #0891b2;
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(8, 145, 178, 0.3);
+}
+
+.chartWrapper {
+  width: 100%;
+  max-width: 32rem;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 1.5rem;
+  row-gap: 0.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.legendColor {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 9999px;
+}
+
+.legendLabel {
+  color: #374151;
+  font-weight: 500;
+}
+
+.legendAmount {
+  color: #9ca3af;
+  font-size: 0.75rem;
+}
+
+.legendContainer {
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardsSection {
+  display: flex;
+  width: 100%;
+  max-width: 32rem;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0 1rem;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  border: 1px solid #e5e7eb;
+  background-color: white;
+  padding: 0.75rem 1.25rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.cardLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cardDot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 9999px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.cardLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.cardRight {
+  text-align: right;
+}
+
+.cardAmount {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.cardPercent {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+/* Tooltip */
+.tooltip {
+  border-radius: 5px;
+  border: 1px solid rgba(8, 145, 178, 0.3);
+  background-color: rgba(17, 24, 39, 0.95);
+  padding: 0.75rem 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(4px);
+}
+
+.tooltipCategory {
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #67e8f9;
+}
+
+.tooltipAmount {
+  font-size: 0.875rem;
+  color: #e5e7eb;
+}
+
+.tooltipAmountSpan {
+  font-weight: 500;
+  color: white;
+}
+
+.tooltipPercent {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+/* Pie chart label */
+.pieLabel {
+  fill: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.pieLabelPercent {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+/* Cell opacity transition */
+.cellTransition {
+  transition: opacity 0.2s;
+}

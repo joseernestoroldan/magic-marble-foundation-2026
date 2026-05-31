@@ -1,0 +1,43 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 5px;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: #fff;
+  transition: all 200ms;
+}
+.wrapper:focus-within {
+  border-color: #22d3ee;
+  ring: 1px solid #22d3ee;
+}
+@media (min-width: 640px) {
+  .wrapper {
+    width: 20rem;
+  }
+}
+
+.searchIcon {
+  color: #9ca3af;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+.input {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  color: #374151;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  outline: none;
+}
+.input::placeholder {
+  color: #9ca3af;
+}

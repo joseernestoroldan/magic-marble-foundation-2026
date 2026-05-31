@@ -8,6 +8,7 @@ import FormUserAdmin from "../formUserAdmin/FormUserAdmin";
 import PaginationUtil from "../paginationUtil/PaginationUtil";
 import Search from "../search/Search";
 import UserDetails from "../userDetails/UserDetails";
+import styles from "./ShowUsersList.module.css";
 
 interface User {
   id: string;
@@ -52,52 +53,52 @@ const ShowUsersList = () => {
   }, [onSearch]);
 
   return (
-    <div className="w-full max-w-5xl mx-auto">
-      <h3 className="text-lg font-semibold text-gray-600 mb-4">
+    <div className={styles.wrapper}>
+      <h3 className={styles.title}>
         Users Management
       </h3>
 
       <Search />
 
       {error ? (
-        <div className="bg-red-50 text-red-600 p-3 rounded-[5px] text-sm mt-4">
+        <div className={styles.error}>
           {error}
         </div>
       ) : null}
 
       {users.length === 0 && count !== 0 ? (
-        <p className="text-gray-500 text-lg w-full text-center py-8">
+        <p className={styles.loader}>
           <Loader variant="inline" />
         </p>
       ) : users.length === 0 && count === 0 ? (
-        <p className="text-center text-gray-500 text-lg py-8">
+        <p className={styles.empty}>
           No register matches the query
         </p>
       ) : (
-        <div className="rounded-[5px] border border-gray-200 overflow-hidden mt-4">
-          <div className="w-full overflow-x-auto">
-            <table className="w-full text-sm" style={{ borderCollapse: "collapse" }}>
-              <thead className="bg-gray-50 border-b border-gray-200">
+        <div className={styles.tableOuter}>
+          <div className={styles.tableScroll}>
+            <table className={styles.table}>
+              <thead className={styles.thead}>
                 <tr>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  <th className={styles.th}>
                     Name
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  <th className={styles.th}>
                     Email
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  <th className={styles.th}>
                     Country
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  <th className={styles.th}>
                     Number
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  <th className={styles.th}>
                     Subscribed
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  <th className={styles.th}>
                     Role
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  <th className={styles.th}>
                     Details
                   </th>
                 </tr>
@@ -106,29 +107,29 @@ const ShowUsersList = () => {
                 {users.map((user) => (
                   <tr
                     key={user.id}
-                    className="border-b border-gray-100 hover:bg-gray-50 transition-colors"
+                    className={styles.tr}
                   >
-                    <td className="px-4 py-3 text-gray-600 capitalize">
+                    <td className={styles.tdCapitalize}>
                       {user.name
                         ? user.name
                         : user.firstName + " " + user.secondName}
                     </td>
-                    <td className="px-4 py-3 text-gray-600 lowercase">
+                    <td className={styles.tdLowercase}>
                       {user.email}
                     </td>
-                    <td className="px-4 py-3 text-gray-600 capitalize">
+                    <td className={styles.tdCapitalize}>
                       {user.country}
                     </td>
-                    <td className="px-4 py-3 text-gray-600">
+                    <td className={styles.td}>
                       ({user.codeNumber}) {user.number}
                     </td>
-                    <td className="px-4 py-3 text-gray-600">
-                      {user.subscribed ? <FaCheck className="text-cyan-600" /> : ""}
+                    <td className={styles.td}>
+                      {user.subscribed ? <FaCheck className={styles.checkIcon} /> : ""}
                     </td>
-                    <td className="px-4 py-3 text-gray-600">
+                    <td className={styles.td}>
                       <FormUserAdmin role={user.role} id={user.id} />
                     </td>
-                    <td className="px-4 py-3 text-gray-600">
+                    <td className={styles.td}>
                       <UserDetails
                         name={user.name}
                         firstName={user.firstName}

@@ -3,24 +3,25 @@ import Infotext from "@/components/InfoBar/Infotext";
 import Container from "@/components/Layouts/Container/Container";
 import Profile from "@/components/Profile/Profile";
 import Icons from "@/components/SocialMedia/Icons";
+import styles from "./Infobar.module.css";
 
 const Infobar = () => {
   return (
-    <div className="w-full bg-gray-800 text-gray-200 py-2 flex items-center relative md:static">
+    <div className={styles.bar}>
       <Container>
-        <div className="w-full flex justify-center items-center md:justify-between">
+        <div className={styles.inner}>
           <Infotext href="https://wa.me/13126008182">
             +1 312 - 600 - 8182
           </Infotext>
-          <div className="flex gap-2 justify-end">
+          <div className={styles.right}>
             <Infotext href="mailto:info@magicmarblefoundation.org">
               info@magicmarblefoundation.org
             </Infotext>
-            <div className="flex justify-center items-center gap-1">
+            <div className={styles.socialWrap}>
               <Icons />
               <Chimp />
             </div>
-            <div className="flex justify-center min-w-[50px] lg:min-w-[140px] items-center overflow-visible">
+            <div className={styles.profileWrap}>
               <Profile />
             </div>
           </div>

@@ -3,6 +3,7 @@ import { notifyDiary } from "@/actions/sentDiaries";
 import Image from "next/image";
 import { useState } from "react";
 import { MdMarkEmailRead } from "react-icons/md";
+import styles from "./NotifyDiaries.module.css";
 
 const NotifyDiaries = ({ diaries }: any) => {
   const [notifyingId, setNotifyingId] = useState<string | null>(null);
@@ -23,58 +24,46 @@ const NotifyDiaries = ({ diaries }: any) => {
   };
 
   return (
-    <div className="w-full border border-gray-200 rounded-[5px] p-5 space-y-4">
-      <h3 className="text-lg font-semibold text-gray-600 mb-4">
+    <div className={styles.wrapper}>
+      <h3 className={styles.heading}>
         Diary Notifications
       </h3>
-      <div className="flex flex-col gap-3">
+      <div className={styles.list}>
         {diaries.map((item: any) => {
           const numberNotifications = item.notificationsSent || 0;
 
           return (
-            <div
-              key={item._id}
-              className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 p-4 rounded-[5px] bg-gray-50 border border-gray-100"
-            >
-              {/* Image */}
-              <div className="w-16 h-14 min-w-[4rem] relative rounded-[5px] overflow-hidden flex-shrink-0">
+            <div key={item._id} className={styles.item}>
+              <div className={styles.imageWrap}>
                 <Image
                   src={item.mainImage}
                   alt={item.title || "diary image"}
                   fill
-                  className="object-cover object-center"
+                  className={styles.itemImage}
                 />
               </div>
 
-              {/* Title */}
-              <p className="text-sm font-medium text-gray-700 flex-1 min-w-0 truncate">
+              <p className={styles.title}>
                 {item.title}
               </p>
 
-              {/* Status Badge */}
               <span
-                className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[5px] text-xs font-medium ${
-                  item.notificationSent
-                    ? "bg-emerald-50 text-emerald-600"
-                    : "bg-gray-100 text-gray-500"
-                }`}
+                className={item.notificationSent ? styles.badgeNotified : styles.badgeNotNotified}
               >
-                <MdMarkEmailRead className="text-sm" />
+                <MdMarkEmailRead className={styles.badgeIcon} />
                 {item.notificationSent ? "Notified" : "Not Notified"}
               </span>
 
-              {/* Notification Count Badge */}
               {numberNotifications > 0 ? (
-                <span className="text-xs font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-[5px]">
+                <span className={styles.countPositive}>
                   {numberNotifications} sent
                 </span>
               ) : (
-                <span className="text-xs font-medium text-red-500 bg-red-50 px-2 py-0.5 rounded-[5px]">
+                <span className={styles.countZero}>
                   0 sent
                 </span>
               )}
 
-              {/* Notify Button */}
               <button
                 onClick={() =>
                   handleNotify(
@@ -86,7 +75,7 @@ const NotifyDiaries = ({ diaries }: any) => {
                   )
                 }
                 disabled={notifyingId === item._id}
-                className="py-1.5 px-4 rounded-[5px] bg-cyan-600 text-white text-sm font-medium hover:bg-cyan-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
+                className={styles.notifyButton}
               >
                 {notifyingId === item._id
                   ? "Sending..."

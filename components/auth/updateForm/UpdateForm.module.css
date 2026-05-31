@@ -151,6 +151,10 @@
   margin-bottom: 0.25rem;
 }
 
+.fieldWrapper {
+  position: relative;
+}
+
 .selectButton {
   display: flex;
   width: 100%;

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import styles from "./Infotext.module.css";
 
 type InfoTextProps = {
   href: string;
@@ -7,8 +8,8 @@ type InfoTextProps = {
 
 const InfoText = ({ href, children }: InfoTextProps) => {
   return (
-    <div className="text-lg w-fit text-center hidden md:flex font-semibold items-center">
-      <Link href={href} target="_blank" rel="noopener noreferrer">
+    <div className={styles.wrapper}>
+      <Link className={styles.link} href={href} target="_blank" rel="noopener noreferrer">
         {children}
       </Link>
     </div>

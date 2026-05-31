@@ -1,0 +1,89 @@
+.section {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.slideLayer {
+  position: absolute;
+  inset: 0;
+}
+
+.slideImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.gradientOverlay {
+  position: absolute;
+  inset: 0;
+}
+
+.content {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.accentLine {
+  width: 60px;
+  height: 3px;
+  border-radius: 5px;
+  margin-bottom: 1.25rem;
+}
+
+.slideTitle {
+  font-weight: 800;
+  color: white;
+  line-height: 1.125;
+  max-width: 800px;
+  margin-bottom: 1rem;
+  letter-spacing: -0.025em;
+}
+
+.slideDescription {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 600px;
+  margin-bottom: 2rem;
+  line-height: 1.625;
+}
+
+.dots {
+  position: absolute;
+  bottom: 1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dot {
+  height: 10px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.progressBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  z-index: 20;
+}
+
+@keyframes progressBar {
+  from { width: 0%; }
+  to { width: 100%; }
+}
