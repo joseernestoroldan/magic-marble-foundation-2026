@@ -1,6 +1,6 @@
 .wrapper {
   width: 100%;
-  min-height: calc(100vh - 142px);
+  min-height: calc(100vh - 132px);
   display: flex;
   flex-direction: column;
   justify-content: center;

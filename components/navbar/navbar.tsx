@@ -1,5 +1,5 @@
 import DonationButton from "@/components/DonationButton/DonationButton";
-import Infobar from "@/components/InfoBar/Infobar";
+import Infobar from "@/components/Navbar/InfoBar/Infobar";
 import Container from "@/components/Layouts/Container/Container";
 import Logo from "@/components/Logo/Logo";
 import MenuNavbar from "@/components/Navbar/MenuNavbar";
