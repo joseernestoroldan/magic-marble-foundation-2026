@@ -9,7 +9,7 @@ import { useForm } from "react-hook-form";
 
 import { register as registerAction } from "@/actions/register";
 import { FormError } from "../../FormError/FormError";
-import { FormSuccess } from "../../formSuccess/FormSuccess";
+import { ResetPasswordSuccess } from "../../formSuccess/ResetPasswordSuccess";
 import { FormInput } from "@/components/ui/FormInput";
 import { FormSearchableSelect } from "@/components/ui/FormSearchableSelect";
 import { FormCheckbox } from "@/components/ui/FormCheckbox";
@@ -58,7 +58,7 @@ const RegisterForm = () => {
   };
 
   if (success) {
-    return <FormSuccess message={success} />;
+    return <ResetPasswordSuccess message={success} />;
   }
 
   return (

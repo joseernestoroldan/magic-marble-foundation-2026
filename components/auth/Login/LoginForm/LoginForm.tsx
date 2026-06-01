@@ -16,7 +16,7 @@ import { FormInput } from "@/components/ui/FormInput";
 import styles from "./LoginForm.module.css";
 
 const forgotPasswordLink = (
-  <Link className={styles.forgotLink} href={"/reset"}>
+  <Link className={styles.forgotLink} href={"/reset-password"}>
     Forgot password?
   </Link>
 );

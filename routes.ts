@@ -22,7 +22,7 @@ export const publicRoutes = [
  * @type {string[]}
  */
 
-export const authRoutes = ["/register", "/login", "/new-verification", "/reset", "/new-password"];
+export const authRoutes = ["/register", "/login", "/new-verification", "/reset-password", "/new-password"];
 
 /**
  * Prefix for API Athentication routes

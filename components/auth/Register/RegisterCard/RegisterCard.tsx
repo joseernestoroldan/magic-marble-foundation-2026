@@ -1,7 +1,7 @@
 ﻿import Link from "next/link";
-import LoginGoogle from "../Login/LoginGoogle/LoginGoogle";
-import Separator from "../separator/Separator";
-import RegisterForm from "./RegisterForm/RegisterForm";
+import LoginGoogle from "@/components/auth/Login/LoginGoogle/LoginGoogle";
+import Separator from "@/components/auth/Separator/Separator";
+import RegisterForm from "@/components/auth/Register/RegisterForm/RegisterForm";
 import styles from "./RegisterCard.module.css";
 
 const RegisterCard = () => {

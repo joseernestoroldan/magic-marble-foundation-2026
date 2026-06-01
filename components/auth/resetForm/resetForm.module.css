@@ -13,14 +13,15 @@
 }
 
 .title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  color: #0891b2;
   text-align: center;
-  font-weight: 500;
-  color: #6b7280;
+  font-weight: 700;
 }
 
 .form {
-  width: 80%;
+  width: 100%;
+  max-width: 400px;
 }
 
 .form > * + * {
@@ -35,67 +36,34 @@
   margin-top: 1rem;
 }
 
-.label {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #374151;
-  display: block;
-  margin-bottom: 0.25rem;
-}
-
-.input {
-  display: flex;
-  height: 2.5rem;
-  width: 100%;
-  border-radius: 5px;
-  border: 1px solid #e5e7eb;
-  background-color: white;
-  padding: 0.5rem 0.75rem;
-  font-size: 0.875rem;
-  color: #6b7280;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.input::placeholder {
-  color: #9ca3af;
-}
-
-.input:focus {
-  border-color: #0891b2;
-  outline: none;
-}
-
-.input:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.fieldError {
-  font-size: 0.875rem;
-  color: #ef4444;
-  margin-top: 0.25rem;
-}
-
 .submitButton {
   background: linear-gradient(135deg, #0891b2, #0e7490);
   color: white;
   width: 100%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
   border-radius: 5px;
+  font-weight: 500;
   font-size: 1.125rem;
   border: none;
   cursor: pointer;
-  transition: opacity 0.2s;
+  box-shadow: 0 2px 4px rgba(8, 145, 178, 0.3);
+  transition: transform 0.25s, box-shadow 0.25s;
 }
 
 .submitButton:hover:not(:disabled) {
-  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(8, 145, 178, 0.35);
+}
+
+.submitButton:active:not(:disabled) {
+  transform: translateY(0);
 }
 
 .submitButton:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  box-shadow: none;
 }
 
 .spinnerWrapper {

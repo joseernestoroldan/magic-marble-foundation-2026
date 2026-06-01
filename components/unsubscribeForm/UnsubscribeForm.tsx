@@ -7,7 +7,7 @@ import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import Loader from "../Loader/Loader";
 import { FormError } from "../auth/FormError/FormError";
-import { FormSuccess } from "../auth/formSuccess/FormSuccess";
+import { ResetPasswordSuccess } from "../auth/formSuccess/ResetPasswordSuccess";
 import styles from "./UnsubscribeForm.module.css";
 
 const UnsubscribeForm = () => {
@@ -64,7 +64,7 @@ const UnsubscribeForm = () => {
         </h2>
         {!success && !error && <Loader variant="inline" />}
 
-        <FormSuccess message={success} />
+        <ResetPasswordSuccess message={success} />
         <FormError message={error} /> 
         {success && success === "Email unsubscribed" && <button onClick={handleClick} className={styles.subscribeBtn}>Subscribe Again</button>}
         {success && success !== "Email unsubscribed" && <Link className={styles.profileLink} href={"/profile"}>Go to Profile</Link>}

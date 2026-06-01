@@ -8,8 +8,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { ImSpinner9 } from "react-icons/im";
+import { FormInput } from "@/components/ui/FormInput";
 import { FormError } from "../FormError/FormError";
-import { FormSuccess } from "../formSuccess/FormSuccess";
+import { ResetPasswordSuccess } from "../formSuccess/ResetPasswordSuccess";
 import styles from "./resetForm.module.css";
 
 const ResetForm = () => {
@@ -36,7 +37,7 @@ const ResetForm = () => {
 
     startTransition(async () => {
       const data = await reset(value);
-      data.error && setError(data.error);
+      data.error && setError(data.error); 
       data.success && setSuccess(data.success);
       if (data.success) {
         // redirect("/settings");
@@ -55,22 +56,15 @@ const ResetForm = () => {
         className={styles.form}
       >
         <div className={styles.fieldsWrapper}>
-          <div>
-            <label htmlFor="email" className={styles.label}>
-              Email
-            </label>
-            <input
-              id="email"
-              className={styles.input}
-              {...register("email")}
-              placeholder="magicmarble@example.com"
-              type="email"
-              disabled={isPending}
-            />
-            {errors.email && (
-              <p className={styles.fieldError}>{errors.email.message}</p>
-            )}
-          </div>
+          <FormInput
+            id="email"
+            label="Email"
+            type="email"
+            placeholder="magicmarble@example.com"
+            error={errors.email?.message}
+            disabled={isPending}
+            registration={register("email")}
+          />
         </div>
         <FormError message={error} />
 
@@ -81,18 +75,13 @@ const ResetForm = () => {
         >
           {isPending && (
             <div className={styles.spinnerWrapper}>
-              <svg
-                className={styles.spinner}
-                viewBox="0 0 24 24"
-              >
-                <ImSpinner9 />
-              </svg>
+              <ImSpinner9 className={styles.spinner} />
             </div>
           )}
           {!isPending && !success && "Send reset email"}
           {!isPending && success && "Resend reset email"}
         </button>
-        <FormSuccess message={success} />
+        <ResetPasswordSuccess message={success} />
       </form>
     </div>
   );

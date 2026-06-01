@@ -8,7 +8,7 @@ import { useCallback, useEffect, useState } from "react";
 import Loader from "../Loader/Loader";
 import { FormError } from "../auth/FormError/FormError";
 import { FormExpired } from "../auth/formExpired/FormExpired";
-import { FormSuccess } from "../auth/formSuccess/FormSuccess";
+import { ResetPasswordSuccess } from "../auth/formSuccess/ResetPasswordSuccess";
 import styles from "./VerificationForm.module.css";
 
 const VerificationForm = () => {
@@ -51,7 +51,7 @@ const VerificationForm = () => {
         </h2>
         {!success && !error && !expired && <Loader variant="inline" />}
 
-        <FormSuccess message={success} />
+        <ResetPasswordSuccess message={success} />
         <FormError message={error} />
         <FormExpired message={expired}/>
         {success && <p className={styles.signInText}>Please  <Link className={styles.signInLink} href={"/login"}>Sign In</Link> </p>}

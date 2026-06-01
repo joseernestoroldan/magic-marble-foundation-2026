@@ -10,8 +10,9 @@ import { redirect, useSearchParams } from "next/navigation";
 import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { ImSpinner9 } from "react-icons/im";
+import { FormInput } from "@/components/ui/FormInput";
 import { FormError } from "../FormError/FormError";
-import { FormSuccess } from "../formSuccess/FormSuccess";
+import { ResetPasswordSuccess } from "../formSuccess/ResetPasswordSuccess";
 import styles from "./NewPasswordForm.module.css";
 
 const NewPasswordForm = () => {
@@ -57,41 +58,27 @@ const NewPasswordForm = () => {
         className={styles.form}
       >
         <div className={styles.fieldsWrapper}>
-          <div>
-            <label htmlFor="password" className={styles.label}>
-              New password
-            </label>
-            <input
-              id="password"
-              className={styles.input}
-              {...register("password")}
-              placeholder="******"
-              type="password"
-              disabled={isPending}
-            />
-            {errors.password && (
-              <p className={styles.fieldError}>{errors.password.message}</p>
-            )}
-          </div>
-          <div>
-            <label htmlFor="repeatPassword" className={styles.label}>
-              Repeat Password
-            </label>
-            <input
-              id="repeatPassword"
-              className={styles.input}
-              {...register("repeatPassword")}
-              placeholder="******"
-              type="password"
-              disabled={isPending}
-            />
-            {errors.repeatPassword && (
-              <p className={styles.fieldError}>{errors.repeatPassword.message}</p>
-            )}
-          </div>
+          <FormInput
+            id="password"
+            label="New password"
+            type="password"
+            placeholder="******"
+            error={errors.password?.message}
+            disabled={isPending}
+            registration={register("password")}
+          />
+          <FormInput
+            id="repeatPassword"
+            label="Repeat Password"
+            type="password"
+            placeholder="******"
+            error={errors.repeatPassword?.message}
+            disabled={isPending}
+            registration={register("repeatPassword")}
+          />
         </div>
         <FormError message={error} />
-        <FormSuccess message={success} />
+        <ResetPasswordSuccess message={success} />
 
         <button
           className={styles.submitButton}
@@ -100,12 +87,7 @@ const NewPasswordForm = () => {
         >
           {isPending && (
             <div className={styles.spinnerWrapper}>
-              <svg
-                className={styles.spinner}
-                viewBox="0 0 24 24"
-              >
-                <ImSpinner9 />
-              </svg>
+              <ImSpinner9 className={styles.spinner} />
             </div>
           )}
           {!isPending && "Reset password"}

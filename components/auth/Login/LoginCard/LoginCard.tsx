@@ -1,7 +1,7 @@
 ﻿import Link from "next/link";
-import Separator from "../separator/Separator";
-import LoginForm from "./LoginForm";
-import LoginGoogle from "./LoginGoogle";
+import Separator from "@/components/auth/Separator/Separator";
+import LoginForm from "@/components/auth/Login/LoginForm/LoginForm";
+import LoginGoogle from "@/components/auth/Login/LoginGoogle/LoginGoogle";
 import styles from "./LoginCard.module.css";
 
 const heading = (

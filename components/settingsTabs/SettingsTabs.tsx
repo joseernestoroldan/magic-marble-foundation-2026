@@ -57,7 +57,7 @@ const SettingsTabs = ({ data }: { data: any }) => {
             <div className={styles.resetWrapper}>
               <Link
                 className={styles.resetLink}
-                href="/reset"
+                href="/reset-password"
               >
                 Reset your password
               </Link>

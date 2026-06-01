@@ -3,7 +3,7 @@ import { AlertCircle } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { FormError } from "../FormError/FormError";
-import { FormSuccess } from "../formSuccess/FormSuccess";
+import { ResetPasswordSuccess } from "../formSuccess/ResetPasswordSuccess";
 import styles from "./FormExpired.module.css";
 
 type ExpiredProps = {
@@ -41,7 +41,7 @@ export const FormExpired = ({ message }: ExpiredProps) => {
         Get a confirmation Email
       </button>
       <FormError message={error}/>
-      <FormSuccess message={success}/>
+      <ResetPasswordSuccess message={success}/>
     </div>
   );
 };
