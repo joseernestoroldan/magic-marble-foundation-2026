@@ -1,4 +1,3 @@
-import axios from "axios";
 import { NextRequest, NextResponse } from "next/server";
 import { getPayPalAccessToken } from "../AccessToken";
 
@@ -15,17 +14,10 @@ export async function POST(request: NextRequest) {
     const accessToken = await getPayPalAccessToken();
    
 
-    const product = await axios.post(
+    const productRes = await fetch(
       `${process.env.PAYPAL_API_BASE}/v1/catalogs/products`,
       {
-        name: "MMF Sponsorship",
-        description: "Sponsorship At MMF",
-        type: "SERVICE",
-        category: "SOFTWARE",
-        image_url: "https://example.com/streaming.jpg",
-        home_url: "https://example.com/home",
-      },
-      {
+        method: "POST",
         headers: {
           Authorization: `Bearer ${accessToken}`,
           "Content-Type": "application/json",
@@ -33,57 +25,66 @@ export async function POST(request: NextRequest) {
           "PayPal-Request-Id": "PRODUCT-22334455",
           Prefer: "return=representation",
         },
+        body: JSON.stringify({
+          name: "MMF Sponsorship",
+          description: "Sponsorship At MMF",
+          type: "SERVICE",
+          category: "SOFTWARE",
+          image_url: "https://example.com/streaming.jpg",
+          home_url: "https://example.com/home",
+        }),
       }
     );
+    const product = await productRes.json();
 
-    console.log("product:", product);
-
-    const planResponse = await axios.post(
+    const planRes = await fetch(
       `${process.env.PAYPAL_API_BASE}/v1/billing/plans`,
       {
-        product_id: "PROD-0CS017538K0865625",
-        name: `Monthly Sponsorship for $${amount}`,
-        description: "A subscription plan with monthly billing.",
-        billing_cycles: [
-          {
-            frequency: {
-              interval_unit: "MONTH",
-              interval_count: 1,
-            },
-            tenure_type: "REGULAR",
-            sequence: 1,
-            total_cycles: 0,
-            pricing_scheme: {
-              fixed_price: {
-                value: amount,
-                currency_code: "USD",
-              },
-            },
-          },
-        ],
-        payment_preferences: {
-          auto_bill_outstanding: true,
-          setup_fee: {
-            value: "0",
-            currency_code: "USD",
-          },
-          setup_fee_failure_action: "CONTINUE",
-          payment_failure_threshold: 3,
-        },
-      },
-      {
+        method: "POST",
         headers: {
           Authorization: `Bearer ${accessToken}`,
           "Content-Type": "application/json",
         },
+        body: JSON.stringify({
+          product_id: "PROD-0CS017538K0865625",
+          name: `Monthly Sponsorship for $${amount}`,
+          description: "A subscription plan with monthly billing.",
+          billing_cycles: [
+            {
+              frequency: {
+                interval_unit: "MONTH",
+                interval_count: 1,
+              },
+              tenure_type: "REGULAR",
+              sequence: 1,
+              total_cycles: 0,
+              pricing_scheme: {
+                fixed_price: {
+                  value: amount,
+                  currency_code: "USD",
+                },
+              },
+            },
+          ],
+          payment_preferences: {
+            auto_bill_outstanding: true,
+            setup_fee: {
+              value: "0",
+              currency_code: "USD",
+            },
+            setup_fee_failure_action: "CONTINUE",
+            payment_failure_threshold: 3,
+          },
+        }),
       }
     );
+    const planData = await planRes.json();
 
     return NextResponse.json(
       {
         success: true,
-        product: product.data,
-        plan: planResponse.data,
+        product,
+        plan: planData,
         message: "Paypal plan created successfully",
       },
       { status: 201 }

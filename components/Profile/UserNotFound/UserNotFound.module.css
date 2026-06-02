@@ -1,0 +1,82 @@
+.wrapper {
+  width: 100%;
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+}
+
+@media (min-width: 640px) {
+  .wrapper {
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrapper {
+    padding: 2.5rem;
+  }
+}
+
+.card {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 5px;
+  background-color: #f9fafb;
+  border: 1px solid #f3f4f6;
+}
+
+.iconWrapper {
+  width: 4rem;
+  height: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 9999px;
+  background-color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #9ca3af;
+}
+
+.title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  color: #374151;
+}
+
+.text {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #6b7280;
+}
+
+.link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  border-radius: 5px;
+  background-color: #1f2937;
+  color: white;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.link:hover {
+  background-color: #374151;
+}

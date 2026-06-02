@@ -7,6 +7,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import styles from "./page.module.css";
 
+export const revalidate = 3600;
+
 // Pre-generate all diary detail pages at build time
 export async function generateStaticParams() {
   const diaries = await getAllDiaries();

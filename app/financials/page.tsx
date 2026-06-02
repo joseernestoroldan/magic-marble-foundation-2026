@@ -1,7 +1,9 @@
-import Charts from "@/components/Financials/Charts";
+import dynamic from "next/dynamic";
 import Documents from "@/components/Financials/Documents";
 
 import styles from "./page.module.css";
+
+const Charts = dynamic(() => import("@/components/Financials/Charts"));
 
 const FinancialsPage = async () => {
   return (

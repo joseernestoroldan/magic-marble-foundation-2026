@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false,
-  optimizePackageImports: ["react-icons"],
+  reactStrictMode: true,
+  experimental: {
+    optimizePackageImports: ["react-icons", "lucide-react"],
+  },
   images: {
     loaderFile: "./app/lib/imageLoader.ts",
     remotePatterns: [

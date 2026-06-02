@@ -4,10 +4,6 @@
             "name": "root",
             "path": "."
         },       
-        {
-            "name": "AuthComponents",
-            "path": "./components/auth"
-        }
     ],
     "settings": {
         "files.exclude": {

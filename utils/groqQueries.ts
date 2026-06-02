@@ -82,8 +82,8 @@ export const galleryQuery =
     "hotSpot": mainImage.hotspot
 }`;
 
-export const galleryByIdQuery = (id: string) =>
-  groq`*[_type == 'gallery' && _id == "${id}"]{
+export const galleryByIdQuery = () =>
+  groq`*[_type == 'gallery' && _id == $id]{
     _id,
     publishedAt,
     title,
@@ -149,7 +149,7 @@ export const recipesQuery =
     "contenido": contenido
 }`;
 
-export const projectByIdQuery = (id: string) => groq`*[_type == 'projects' && _id == "${id}"] | order(_createdAt desc){
+export const projectByIdQuery = () => groq`*[_type == 'projects' && _id == $id] | order(_createdAt desc){
   _id,
   title,
   description,
@@ -160,7 +160,7 @@ export const projectByIdQuery = (id: string) => groq`*[_type == 'projects' && _i
   "contenido": contenido,
 }`;
 
-export const diaryByIdQuery = (id: string) => groq`*[_type == 'dairies' && _id == "${id}"] | order(_createdAt desc){
+export const diaryByIdQuery = () => groq`*[_type == 'dairies' && _id == $id] | order(_createdAt desc){
   _id,
   title,
   description,
@@ -177,7 +177,7 @@ export const diaryByIdQuery = (id: string) => groq`*[_type == 'dairies' && _id =
   "notificationsSent": notificationsSent
 }`;
 
-export const portalPaddyFieldByIdQuery = (id: string) => groq`*[_type == 'portalPaddyField' && _id == "${id}"] | order(_createdAt desc){
+export const portalPaddyFieldByIdQuery = () => groq`*[_type == 'portalPaddyField' && _id == $id] | order(_createdAt desc){
   _id,
   title,
   description,
@@ -199,7 +199,7 @@ export const portalPaddyFieldByIdQuery = (id: string) => groq`*[_type == 'portal
   topPick
 }`;
 
-export const recipeByIdQuery = (id: string) => groq`*[_type == 'recipes' && _id == "${id}"] | order(_createdAt desc){
+export const recipeByIdQuery = () => groq`*[_type == 'recipes' && _id == $id] | order(_createdAt desc){
   _id,
   title,
   description,

@@ -10,14 +10,14 @@ import styles from "./SettingsTabs.module.css";
 
 type Tab = "account" | "password" | "danger";
 
+const tabs: { value: Tab; label: string; icon: React.ReactNode; danger?: boolean }[] = [
+  { value: "account", label: "Account", icon: <FaUser /> },
+  { value: "password", label: "Password", icon: <RiLockPasswordLine /> },
+  { value: "danger", label: "Danger Zone", icon: <IoWarning />, danger: true },
+];
+
 const SettingsTabs = ({ data }: { data: any }) => {
   const [activeTab, setActiveTab] = useState<Tab>("account");
-
-  const tabs: { value: Tab; label: string; icon: React.ReactNode; danger?: boolean }[] = [
-    { value: "account", label: "Account", icon: <FaUser /> },
-    { value: "password", label: "Password", icon: <RiLockPasswordLine /> },
-    { value: "danger", label: "Danger Zone", icon: <IoWarning />, danger: true },
-  ];
 
   const tabClasses = (tab: typeof tabs[number]) => {
     const base = styles.tab;

@@ -6,6 +6,8 @@ import { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
+export const revalidate = 3600;
+
 // Pre-generate all project detail pages at build time
 export async function generateStaticParams() {
   const projects = await getAllProjects();

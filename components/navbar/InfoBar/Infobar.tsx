@@ -1,7 +1,7 @@
 import Chimp from "@/components/Chimp/Chimp";
 import Infotext from "@/components/Navbar/InfoBar/Infotext";
 import Container from "@/components/Layouts/Container/Container";
-import Profile from "@/components/Profile/Profile";
+import Profile from "@/components/Profile/ProfilePopover/ProfileTrigger";
 import Icons from "@/components/SocialMedia/Icons";
 import styles from "./Infobar.module.css";
 

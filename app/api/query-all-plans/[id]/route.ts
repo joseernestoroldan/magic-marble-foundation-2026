@@ -1,4 +1,3 @@
-import axios from "axios";
 import { NextRequest, NextResponse } from "next/server";
 import { getPayPalAccessToken } from "../../AccessToken";
 
@@ -13,7 +12,7 @@ export async function GET(
   console.log("id:", id);
 
   try {
-    const response = await axios.get(
+    const response = await fetch(
       `${process.env.PAYPAL_API_BASE}/v1/billing/plans/${id}`,
       {
         headers: {
@@ -22,7 +21,8 @@ export async function GET(
       },
     );
 
-    return NextResponse.json(response.data);
+    const data = await response.json();
+    return NextResponse.json(data);
   } catch (error) {
     return NextResponse.error();
   }

@@ -6,6 +6,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import styles from "./page.module.css";
 
+export const revalidate = 3600;
+
 export async function generateStaticParams() {
   const items = await getAllGallery();
   if (!items) return [];

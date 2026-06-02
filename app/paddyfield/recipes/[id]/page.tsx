@@ -10,6 +10,8 @@ import styles from "./page.module.css";
 
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "600", "700"] });
 
+export const revalidate = 3600;
+
 export async function generateStaticParams() {
   const recipes = await getAllRecipes();
   if (!recipes) return [];

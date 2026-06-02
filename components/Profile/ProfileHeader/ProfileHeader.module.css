@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  color: #0891b2;
+}
+
+.settingsLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 5px;
+  background-color: #f3f4f6;
+  color: #4b5563;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.settingsLink:hover {
+  background-color: #e5e7eb;
+}
+
+.settingsIcon {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}

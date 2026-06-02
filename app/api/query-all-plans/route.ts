@@ -1,13 +1,10 @@
-import axios from "axios";
 import { NextResponse } from "next/server";
 import { getPayPalAccessToken } from "../AccessToken";
 
 export async function GET() {
-  
-
   try {
     const accessToken = await getPayPalAccessToken();
-    const plans = await axios.get(
+    const plansRes = await fetch(
       `${process.env.PAYPAL_API_BASE}/v1/billing/plans`,
       {
         headers: {
@@ -19,10 +16,9 @@ export async function GET() {
       }
     );
 
-    
+    const plans = await plansRes.json();
 
-
-   return NextResponse.json(plans.data)
+   return NextResponse.json(plans)
   } catch (error) {
     return NextResponse.json("Something went wrong!!")
 

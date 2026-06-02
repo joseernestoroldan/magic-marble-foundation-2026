@@ -3,11 +3,11 @@ import { countUsers, searchUser } from "@/actions/searchQuery";
 import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { FaCheck } from "react-icons/fa";
-import Loader from "../Loader/Loader";
-import FormUserAdmin from "../formUserAdmin/FormUserAdmin";
-import PaginationUtil from "../paginationUtil/PaginationUtil";
-import Search from "../search/Search";
-import UserDetails from "../userDetails/UserDetails";
+import Loader from "@/components/Loader/Loader";
+import FormUserAdmin from "@/components/Profile/FormUserAdmin/FormUserAdmin";
+import PaginationUtil from "@/components/Profile/PaginationUtil/PaginationUtil";
+import Search from "@/components/Profile/Search/Search";
+import UserDetails from "@/components/Profile/UserDetails/UserDetails";
 import styles from "./ShowUsersList.module.css";
 
 interface User {

@@ -2,9 +2,9 @@
 import { countDonators, searchDonators } from "@/actions/searchQueryDonators";
 import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
-import Loader from "../Loader/Loader";
-import PaginationUtil from "../paginationUtil/PaginationUtil";
-import Search from "../search/Search";
+import Loader from "@/components/Loader/Loader";
+import PaginationUtil from "@/components/Profile/PaginationUtil/PaginationUtil";
+import Search from "@/components/Profile/Search/Search";
 import styles from "./Donators.module.css";
 
 interface Donator {

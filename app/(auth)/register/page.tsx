@@ -1,7 +1,9 @@
-import RegisterCard from "@/components/auth/Register/RegisterCard/RegisterCard";
+import dynamic from "next/dynamic";
 import DonationButton from "@/components/DonationButton/DonationButton";
 import Image from "next/image";
 import styles from "./page.module.css";
+
+const RegisterCard = dynamic(() => import("@/components/auth/Register/RegisterCard/RegisterCard"));
 
 const imageOverlay = (
   <div className={styles.imageOverlay} />

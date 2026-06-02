@@ -1,7 +1,7 @@
 import { getNameSession, getSessionId } from "@/app/lib/sessions";
 import ProfilePopover from "./ProfilePopover";
 
-const Profile = async () => {
+const ProfileTrigger = async () => {
   let name: string | null = null;
 
   const userId = await getSessionId();
@@ -13,4 +13,4 @@ const Profile = async () => {
   return <ProfilePopover name={name} />;
 };
 
-export default Profile;
+export default ProfileTrigger;

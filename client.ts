@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { createClient } from "next-sanity";
 import { boardType, chimpType, diariesType, galleryType, granteesType, portalPaddyFieldType, projectType, recipesType } from "./clientTypes";
 import { boardQuery, chimpQuery, diariesQuery, diaryByIdQuery, galleryByIdQuery, galleryQuery, granteesQuery, portalPaddyFieldByIdQuery, portalPaddyFieldQuery, projectByIdQuery, projectsQuery, recipeByIdQuery, recipesQuery } from "./utils/groqQueries";
@@ -15,9 +16,9 @@ export const client = createClient({
   token,
 });
 
-const getData: <T>(query: string) => Promise<T[]> = async (query: string) => {
+const getData: <T>(query: string, params?: Record<string, unknown>) => Promise<T[]> = async (query: string, params?: Record<string, unknown>) => {
   try {
-    const data = await client.fetch(query);
+    const data = await client.fetch(query, params);
     if (data.length === 0) return null;
     return data;
   } catch (error: unknown) {
@@ -26,84 +27,97 @@ const getData: <T>(query: string) => Promise<T[]> = async (query: string) => {
   }
 };
 
-export const getAllChimp = async () => {
+const _getAllChimp = async () => {
   const query = chimpQuery();
   const data: chimpType[] | null = await getData(query);
   return data;
 };
 
-export const getAllDiaries = async () => {
+const _getAllDiaries = async () => {
   const query = diariesQuery();
   const data: diariesType[] | null = await getData(query);
   return data;
 };
 
-export const getAllProjects = async () => {
+const _getAllProjects = async () => {
   const query = projectsQuery();
   const data: projectType[] | null = await getData(query);
   return data;
 };
 
-export const getBoard = async () => {
+const _getBoard = async () => {
   const query = boardQuery();
   const data: boardType[] | null = await getData(query);
   return data;
 } 
 
-export const getAllGallery = async () => {
+const _getAllGallery = async () => {
   const query = galleryQuery();
   const data: galleryType[] | null = await getData(query);
   return data;
 }
 
-export const getAllGrantees = async () => {
+const _getAllGrantees = async () => {
   const query = granteesQuery();
   const data: granteesType[] | null = await getData(query);
   return data;
 }
 
-export const getAllPaddyField = async () => {
+const _getAllPaddyField = async () => {
   const query = portalPaddyFieldQuery();
   const data: portalPaddyFieldType[] | null = await getData(query);
   return data;
 }
 
-export const getAllRecipes = async () => {
+const _getAllRecipes = async () => {
   const query = recipesQuery();
   const data: recipesType[] | null = await getData(query);
   return data;
 }
 
-
-export const getGalleryById = async (id: string) => {
-  const query = galleryByIdQuery(id);
-  const data: galleryType[] | null = await getData(query);
+const _getGalleryById = async (id: string) => {
+  const query = galleryByIdQuery();
+  const data: galleryType[] | null = await getData(query, { id });
   return data;
 }
 
-export const getProjectById = async (id: string) => {
-  const query = projectByIdQuery(id);
-  const data: projectType[] | null = await getData(query);
+const _getProjectById = async (id: string) => {
+  const query = projectByIdQuery();
+  const data: projectType[] | null = await getData(query, { id });
   return data;
 }
 
-export const getDiaryById = async (id: string) => {
-  const query = diaryByIdQuery(id);
-  const data: diariesType[] | null = await getData(query);
+const _getDiaryById = async (id: string) => {
+  const query = diaryByIdQuery();
+  const data: diariesType[] | null = await getData(query, { id });
   return data;
 }
 
-export const getPortalPaddyFieldById = async (id: string) => {
-  const query = portalPaddyFieldByIdQuery(id);
-  const data: portalPaddyFieldType[] | null = await getData(query);
+const _getPortalPaddyFieldById = async (id: string) => {
+  const query = portalPaddyFieldByIdQuery();
+  const data: portalPaddyFieldType[] | null = await getData(query, { id });
   return data;
 }
 
-export const getRecipeById = async (id: string) => {
-  const query = recipeByIdQuery(id);
-  const data: recipesType[] | null = await getData(query);
+const _getRecipeById = async (id: string) => {
+  const query = recipeByIdQuery();
+  const data: recipesType[] | null = await getData(query, { id });
   return data;
 }
+
+export const getAllChimp = cache(_getAllChimp);
+export const getAllDiaries = cache(_getAllDiaries);
+export const getAllProjects = cache(_getAllProjects);
+export const getBoard = cache(_getBoard);
+export const getAllGallery = cache(_getAllGallery);
+export const getAllGrantees = cache(_getAllGrantees);
+export const getAllPaddyField = cache(_getAllPaddyField);
+export const getAllRecipes = cache(_getAllRecipes);
+export const getGalleryById = cache(_getGalleryById);
+export const getProjectById = cache(_getProjectById);
+export const getDiaryById = cache(_getDiaryById);
+export const getPortalPaddyFieldById = cache(_getPortalPaddyFieldById);
+export const getRecipeById = cache(_getRecipeById);
 
 export const getAllData = async (type: string) => {
   switch (type) {

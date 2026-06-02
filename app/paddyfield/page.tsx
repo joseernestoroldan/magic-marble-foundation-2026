@@ -16,12 +16,16 @@ export const metadata = {
 };
 
 const PortalPaddyFieldPage = async () => {
-  const paddyfields: portalPaddyFieldType[] = await getAllPaddyField() || [];
-  const recipes: recipesType[] = await getAllRecipes() || [];
+  const [paddyfieldsResult, recipesResult] = await Promise.all([
+    getAllPaddyField(),
+    getAllRecipes(),
+  ]);
+  const paddyfields: portalPaddyFieldType[] = paddyfieldsResult ?? [];
+  const recipes: recipesType[] = recipesResult ?? [];
 
   // Sort them if not already sorted by query
-  const sortedPaddy = paddyfields.sort((a, b) => new Date(b._createdAt).getTime() - new Date(a._createdAt).getTime());
-  const sortedRecipes = recipes.sort((a, b) => new Date(b._createdAt).getTime() - new Date(a._createdAt).getTime());
+  const sortedPaddy = [...paddyfields].sort((a, b) => new Date(b._createdAt).getTime() - new Date(a._createdAt).getTime());
+  const sortedRecipes = [...recipes].sort((a, b) => new Date(b._createdAt).getTime() - new Date(a._createdAt).getTime());
 
   // Top picks
   const topPicks = sortedPaddy.filter(p => p.topPick);
