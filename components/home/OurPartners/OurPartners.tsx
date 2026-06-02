@@ -11,7 +11,7 @@ const OurPartners = () => {
         <div className={styles.logoWrapper}>
           <Image
             className={styles.logoImage}
-            src={"/helpAnimalsIndia.webp"}
+            src={"/help-animals-india.webp"}
             alt="help animals india"
             fill
             sizes="200px"
@@ -20,7 +20,7 @@ const OurPartners = () => {
         <div className={styles.logoWrapper}>
           <Image
             className={styles.logoImage}
-            src={"/veganGroup.webp"}
+            src={"/vegan-group.webp"}
             alt="vegan group"
             fill
             sizes="200px"
@@ -29,7 +29,7 @@ const OurPartners = () => {
         <div className={styles.logoWrapper}>
           <Image
             className={styles.logoImage}
-            src={"/wellFed.webp"}
+            src={"/well-fed.webp"}
             alt="well fed"
             fill
             sizes="200px"
