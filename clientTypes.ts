@@ -38,18 +38,6 @@ export type projectType = {
   crop: Crop | null;
 };
 
-export type focusAreasType = {
-  _id: string;
-  _createdAt: string;
-  title: string;
-  alt: string | null;
-  body: string | null;
-  mainImage: string | null;
-  hotSpot: HotSpot | null;
-  crop: Crop | null;
-  contenido: Block[] | null;
-};
-
 export type boardType = {
   _id: string;
   _createdAt: string;

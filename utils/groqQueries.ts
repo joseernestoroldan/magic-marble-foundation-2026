@@ -43,19 +43,6 @@ export const projectsQuery =
     "contenido": contenido,
 }`;
 
-export const focusAreasQuery =
-  () => groq`*[_type == 'focusAreas'] | order(_createdAt desc){
-    _id,
-    title,
-    alt,
-    body,
-    _createdAt,
-    "mainImage": mainImage.asset->url,
-    "crop": mainImage.crop,
-    "hotSpot": mainImage.hotspot,
-    "contenido": contenido,
-}`;
-
 export const boardQuery =
   () => groq`*[_type == 'board'] | order(_createdAt asc){
     _id,

@@ -123,18 +123,6 @@ export const getAllData = async (type: string) => {
   switch (type) {
     case "dairies":
       return getAllDiaries();
-    case "projects":
-      return getAllProjects();
-    case "gallery":
-      return getAllGallery();
-    case "grantees":
-      return getAllGrantees();
-    case "paddyfield":
-      return getAllPaddyField();
-    case "recipes":
-      return getAllRecipes();
-    case "chimp":
-      return getAllChimp();
     default:
       return null;
   }

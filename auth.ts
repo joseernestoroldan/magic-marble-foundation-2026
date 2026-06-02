@@ -43,7 +43,6 @@ const { auth: uncachedAuth, handlers, signIn, signOut } = NextAuth({
       const existingUser = await getUserById(user.id)
 
       if(!existingUser?.emailVerified) return false
-      //TODO FA CHECK
       return true
     },
 

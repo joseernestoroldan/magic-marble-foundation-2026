@@ -12,7 +12,6 @@ import { db } from "@/db";
         return null;
   
     } catch (error) {
-      // throw new Error("Something went wrong");
       return null
     }
   };

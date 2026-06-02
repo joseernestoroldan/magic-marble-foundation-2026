@@ -13,7 +13,6 @@ export const publicRoutes = [
   "/grantees",
   "/projects",
   "/projects/project/:id",
-  "/projectscarousel",
 ];
 
 /**

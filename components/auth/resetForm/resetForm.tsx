@@ -39,10 +39,7 @@ const ResetForm = () => {
       const data = await reset(value);
       data.error && setError(data.error); 
       data.success && setSuccess(data.success);
-      if (data.success) {
-        // redirect("/settings");
-        //todo what should be done
-      }
+      if (data.success) {}
     });
   };
 

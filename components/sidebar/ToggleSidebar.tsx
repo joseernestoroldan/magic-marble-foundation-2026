@@ -22,7 +22,6 @@ import {
   MdPhotoLibrary,
   MdPrivacyTip,
 } from "react-icons/md";
-// import { GiRiceSack } from "react-icons/gi";
 import { FaHandshakeSimple } from "react-icons/fa6";
 import { IoLogoWhatsapp, IoMdMail } from "react-icons/io";
 
