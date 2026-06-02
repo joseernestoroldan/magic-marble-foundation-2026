@@ -8,7 +8,7 @@ export const focusAreas = [
   },
   {
     id: 1,
-    imageUrl: "/sanctuary.webp",
+    imageUrl: "/fade-carousel/sanctuary.webp",
     title: "Animal Rights & Welfare",
     description:
       "Reducing the suffering of non-human animals by providing communities with free veterinary care. In addition to rescue and rehabilitation of countless homeless animals, we focus on sterilization, vaccination and public education to create a sustainable impact.",

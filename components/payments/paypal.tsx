@@ -7,7 +7,7 @@ const Paypal = () => {
     <Link href={"https://www.paypal.com/donate?hosted_button_id=8LVLMN3NBRABS"}>
       <div className={styles.card}>
         <button className={styles.paypalButton}>
-          <Image src="/paypal.webp" width={20} height={20} alt="paypal" />
+          <Image src="/payment-icons/paypal.webp" width={20} height={20} alt="paypal" />
           <p className={styles.paypalText}>
             <span className={styles.pay}>Pay</span>
             <span className={styles.pal}>Pal</span>

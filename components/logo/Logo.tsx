@@ -9,7 +9,7 @@ const Logo = () => {
         <div className={styles.imageBox}>
           <Image
             fill
-            src="/navlogo.png"
+            src="/logos/navlogo.png"
             alt="magic marble foundation"
             sizes="70px"
             priority

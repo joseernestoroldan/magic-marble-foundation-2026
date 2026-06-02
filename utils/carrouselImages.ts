@@ -44,25 +44,25 @@ export const HeroCarouselImages = [
 export const FadeInCarouselImages = [
   {
     id: 0,
-    imageUrl: "/uno.webp",
+    imageUrl: "/fade-carousel/uno.webp",
     title: "Help end the suffering of homeless animals",
     message: "Please support our spay, neuter and vaccination efforts",
   },
   {
     id: 1,
-    imageUrl: "/trainning.webp",
+    imageUrl: "/fade-carousel/trainning.webp",
     title: "Advanced Veterinary Skills Training",
     message: "Help Homeless Animals Receive Better Care",
   },
   {
     id: 2,
-    imageUrl: "/sterilization.webp",
+    imageUrl: "/fade-carousel/sterilization.webp",
     title: "Support Our Sterilization Programs",
     message: "Every spay and neuter prevents generations of suffering",
   },
   {
     id: 3,
-    imageUrl: "/sanctuary.webp",
+    imageUrl: "/fade-carousel/sanctuary.webp",
     title: "Support The Farm Sanctuary",
     message: "Planet Costa Rica! Creating a safe haven for rescued animals",
   },

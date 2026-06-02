@@ -42,7 +42,7 @@ const VerificationForm = () => {
     <div className={styles.wrapper}>
       <div className={styles.card}>
         <div className={styles.logoWrapper}>
-          <Image src={"/logo.jpg"} fill alt="mmf" />
+          <Image src={"/logos/logo.jpg"} fill alt="mmf" />
         </div>
         <h2 className={styles.heading}>
           {!success? "Confirming your verification..." : "Account verified!"}

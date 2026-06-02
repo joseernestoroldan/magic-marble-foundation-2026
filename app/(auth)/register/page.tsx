@@ -25,7 +25,7 @@ const RegisterPage = async () => {
         <div className={styles.imageSection}>
           <Image
             className={styles.image}
-            src={"/sanctuary.webp"}
+            src={"/fade-carousel/sanctuary.webp"}
             alt="Magic Marble Foundation"
             fill
             priority

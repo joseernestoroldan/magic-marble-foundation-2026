@@ -12,7 +12,7 @@ const Venmo = () => {
       className={styles.wrapper}>
       <div className={styles.card}>
         <button className={styles.venmoButton}>
-          <Image height={50} width={150} src="/venmo.webp" alt="paypal" />
+          <Image height={50} width={150} src="/payment-icons/venmo.webp" alt="paypal" />
         </button>
       </div>
     </Link>

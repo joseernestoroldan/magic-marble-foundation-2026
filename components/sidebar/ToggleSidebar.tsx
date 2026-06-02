@@ -98,7 +98,7 @@ const ToggleSidebar = () => {
             <div className={styles.logoImage}>
               <Image
                 fill
-                src="/navlogo.png"
+                src="/logos/navlogo.png"
                 alt="Magic Marble Foundation"
                 sizes="50px"
                 priority

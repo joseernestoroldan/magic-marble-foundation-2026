@@ -21,7 +21,7 @@ const LoginPage = () => {
         <div className={styles.imageSection}>
           <Image
             className={styles.image}
-            src={"/sterilization.webp"}
+            src={"/fade-carousel/sterilization.webp"}
             alt="Magic Marble Foundation"
             fill
             priority

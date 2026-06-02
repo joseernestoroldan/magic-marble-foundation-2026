@@ -33,7 +33,7 @@ const AboutUs = () => {
           <div className={styles.imageWrapper}>
             <Image
               className={styles.image}
-              src="/logo.jpg"
+              src="/logos/logo.jpg"
               fill
               alt="Magic Marble Foundation"
               priority={true}
