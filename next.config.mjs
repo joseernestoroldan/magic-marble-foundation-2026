@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   experimental: {
-    optimizePackageImports: ["react-icons", "lucide-react"],
+    optimizePackageImports: ["react-icons"],
   },
   images: {
     loaderFile: "./app/lib/imageLoader.ts",

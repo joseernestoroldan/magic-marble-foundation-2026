@@ -1,7 +1,7 @@
 ﻿"use client"
 
 import styles from "./error.module.css";
-import { AlertCircle } from "lucide-react"
+import { IoAlertCircle } from "react-icons/io5"
 import Link from "next/link"
 import { useEffect } from "react"
 
@@ -20,7 +20,7 @@ export default function Error({
   return (
     <div className={styles.page}>
       <div className={styles.center}>
-        <AlertCircle className={styles.alertIcon} />
+        <IoAlertCircle className={styles.alertIcon} />
         <h1 className={styles.title}>Something went wrong</h1>
         <p className={styles.description}>
           We apologize for the inconvenience. Our team has been notified and is working on resolving the issue.

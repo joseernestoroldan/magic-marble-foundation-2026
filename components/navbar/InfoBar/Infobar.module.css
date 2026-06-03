@@ -42,13 +42,6 @@
 .profileWrap {
   display: flex;
   justify-content: center;
-  min-width: 50px;
   align-items: center;
   overflow: visible;
-}
-
-@media (min-width: 1024px) {
-  .profileWrap {
-    min-width: 140px;
-  }
 }

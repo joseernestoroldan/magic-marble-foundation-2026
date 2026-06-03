@@ -1,5 +1,5 @@
 .link {
-  text-wrap: nowrap;
+  text-wrap: pretty;
   cursor: pointer;
   border-radius: 5px;
   font-size: 1.125rem;

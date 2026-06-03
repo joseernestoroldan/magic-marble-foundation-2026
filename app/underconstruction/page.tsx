@@ -1,7 +1,7 @@
 ﻿"use client"
 
 import styles from "./page.module.css";
-import { Loader2 } from "lucide-react"
+import { AiOutlineLoading } from "react-icons/ai"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 
@@ -25,7 +25,7 @@ export default function UnderConstruction() {
     <div className={styles.page}>
       <div className={styles.card}>
         <div className={styles.headerRow}>
-          <Loader2 className={styles.spinnerIcon} />
+          <AiOutlineLoading className={styles.spinnerIcon} />
           <h1 className={styles.mainTitle}>Under Construction</h1>
         </div>
 

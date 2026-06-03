@@ -11,7 +11,7 @@ import styles from "./ToggleSidebar.module.css";
 import { FaBook, FaHandHoldingHeart, FaProjectDiagram } from "react-icons/fa";
 import { GiThreeLeaves } from "react-icons/gi";
 import { GrMoney } from "react-icons/gr";
-import { HiMenuAlt2 } from "react-icons/hi";
+import { HiMenu } from "react-icons/hi";
 import { IoMdHome } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
 import {
@@ -79,7 +79,7 @@ const ToggleSidebar = () => {
         aria-label="Open navigation menu"
         className={styles.hamburger}
       >
-        <HiMenuAlt2 size={28} />
+        <HiMenu size={24} />
       </button>
 
       {/* Backdrop overlay */}

@@ -3,8 +3,8 @@
 import CarouselDots from "@/components/Carousels/CarouselDots/CarouselDots";
 import { HeroCarouselImages } from "@/utils/carrouselImages";
 import Image from "next/image";
-import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
+import HeroInfoCard from "./HeroInfoCard";
 import styles from "./HeroCarousel.module.css";
 
 const HeroCarousel = () => {
@@ -62,19 +62,11 @@ const HeroCarousel = () => {
 
             <div className={styles.overlay} />
 
-            <div className={styles.infoCard}>
-              <h2 className={styles.title}>
-                {slide.title}
-              </h2>
-              <p className={styles.description}>
-                {slide.description}
-              </p>
-              <Link
-                href={`/projects/project/${slide.url}`}
-                className={styles.learnLink}>
-                Learn More
-              </Link>
-            </div>
+            <HeroInfoCard
+              title={slide.title}
+              description={slide.description}
+              url={slide.url}
+            />
           </div>
         ))}
       </div>

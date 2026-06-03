@@ -1,6 +1,6 @@
 import { fetchFiles } from "@/app/lib/apiCalls";
 import { GoogleDriveFile, GroupedFiles } from "@/types/types";
-import { ExternalLink, FileText } from "lucide-react";
+import { FaExternalLinkAlt, FaFileAlt } from "react-icons/fa";
 import Link from "next/link";
 import styles from "./Documents.module.css";
 
@@ -33,13 +33,13 @@ const FolderCard = ({
             className={styles.fileLink}
           >
             <span className={styles.fileLeft}>
-              <FileText className={styles.fileIcon} />
+              <FaFileAlt className={styles.fileIcon} />
               <span className={styles.fileName}>
                 {file.name}
               </span>
             </span>
 
-            <ExternalLink className={styles.fileExternalIcon} />
+            <FaExternalLinkAlt className={styles.fileExternalIcon} />
           </Link>
         </li>
       ))}

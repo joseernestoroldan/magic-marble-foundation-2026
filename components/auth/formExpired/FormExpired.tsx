@@ -1,5 +1,5 @@
 import { resendVerification } from "@/actions/resendVerification";
-import { AlertCircle } from "lucide-react";
+import { IoAlertCircle } from "react-icons/io5";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { FormError } from "../FormError/FormError";
@@ -30,7 +30,7 @@ export const FormExpired = ({ message }: ExpiredProps) => {
 
   return (
     <div className={styles.wrapper}>
-      <AlertCircle className={styles.icon} />
+      <IoAlertCircle className={styles.icon} />
       <p className={styles.message}>{message}</p>
       <p>Click on the link bellow and we will send you another one.</p>
 
