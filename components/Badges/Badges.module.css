@@ -1,0 +1,251 @@
+.container {
+  position: fixed;
+  z-index: 100;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) translateX(-100px);
+  display: flex;
+  align-items: stretch;
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.expanded {
+  transform: translateY(-50%) translateX(0);
+}
+
+.drawer {
+  width: 100px;
+  max-height: 300px;
+  background-color: var(--infobar-background-color);
+  box-shadow: 4px 0 28px rgba(0, 0, 0, 0.45);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: linear-gradient(to bottom, var(--infobar-background-color), transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.drawer::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: linear-gradient(to top, var(--infobar-background-color), transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.drawerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 10px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  flex-shrink: 0;
+}
+
+.drawerTitle {
+  color: var(--infobar-primary-color);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.drawerCount {
+  background: rgba(8, 145, 178, 0.15);
+  color: #06b6d4;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+  line-height: 1.2;
+}
+
+.badgesList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 20px 10px 24px;
+  overflow-y: auto;
+  direction: rtl;
+}
+
+.badgeItem {
+  direction: ltr;
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  opacity: 0;
+  animation: badgeEntrance 450ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.badgeImageWrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition:
+    transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 350ms ease,
+    border-color 350ms ease;
+}
+
+.badgeItem:hover .badgeImageWrap {
+  transform: scale(1.08);
+  box-shadow:
+    0 6px 24px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(6, 182, 212, 0.25);
+  border-color: rgba(6, 182, 212, 0.2);
+}
+
+.badgeImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.badgeName {
+  color: var(--infobar-secondary-color);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  text-align: center;
+  line-height: 1.2;
+  text-transform: capitalize;
+  max-width: 76px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.toggle {
+  background-color: var(--infobar-background-color);
+  color: var(--infobar-primary-color);
+  border: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 10px;
+  border-radius: 0 8px 8px 0;
+  transition: background-color 300ms ease;
+  user-select: none;
+  opacity: 0.8;
+  position: relative;
+  min-height: 300px;
+}
+
+.toggle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -1px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent 10%, #0891b2 50%, transparent 90%);
+  opacity: 0;
+  transition: opacity 350ms ease;
+}
+
+.toggle:hover::before {
+  opacity: 0.6;
+}
+
+.toggleActive::before {
+  opacity: 0.8;
+}
+
+.toggle:hover {
+  background-color: #1e293b;
+  opacity: 1;
+}
+
+.toggle:active {
+  background-color: #334155;
+}
+
+.toggleActive {
+  opacity: 1;
+  background-color: #1e293b;
+}
+
+.toggleIcon {
+  font-size: 12px;
+  line-height: 1;
+  transition: transform 300ms ease;
+  opacity: 0.6;
+}
+
+.toggleActive .toggleIcon {
+  opacity: 1;
+}
+
+.toggleLabel {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 600;
+  opacity: 0.7;
+  transition: opacity 300ms ease;
+}
+
+.toggle:hover .toggleLabel,
+.toggleActive .toggleLabel {
+  opacity: 1;
+}
+
+@keyframes badgeEntrance {
+  from {
+    opacity: 0;
+    transform: scale(0.85) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.badgesList::-webkit-scrollbar {
+  width: 3px;
+}
+
+.badgesList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.badgesList::-webkit-scrollbar-thumb {
+  background: rgba(6, 182, 212, 0.2);
+  border-radius: 2px;
+  transition: background 300ms ease;
+}
+
+.badgesList::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 182, 212, 0.4);
+}

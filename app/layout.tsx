@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import { Open_Sans } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
+import Badges from "@/components/Badges/Badges";
 
 const openSansFont = Open_Sans({
   subsets: ["latin"],
@@ -34,7 +35,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={openSansFont.className}>
         <main className={styles.main}>
-          {/* <Badge mode="layout"/> */}
+          <Badges/>
           <Navbar />
           <div>{children}</div>
           <Footer />
