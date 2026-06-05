@@ -5,7 +5,13 @@ import Paypal from "@/components/payments/paypal";
 import Venmo from "@/components/payments/venmo";
 import SmokeText from "@/components/SmokeText/SmokeText";
 import VideoFrame from "@/components/VideoFrame/VideoFrame";
+import { Playfair_Display } from "next/font/google";
 import styles from "./page.module.css";
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+});
 
 const DonationsPage = () => {
   return (
@@ -14,7 +20,7 @@ const DonationsPage = () => {
         <div className={styles.titleWrapper}>
           <SmokeText
             text="Help Us Help Them"
-            className={styles.smokeText}
+            className={`${styles.smokeText} ${playfair.className}`}
             staggerMs={80}
           />
         </div>
@@ -27,7 +33,7 @@ const DonationsPage = () => {
 
           {/* Content & Donation Section */}
           <div className={styles.contentSection}>
-            <h2 className={styles.sectionTitle}>
+            <h2 className={`${styles.sectionTitle} ${playfair.className}`}>
               Every Penny Counts
             </h2>
             <p className={styles.description}>

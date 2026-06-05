@@ -1,37 +1,48 @@
 .card {
-  width: 15rem;
-  height: 10rem;
-  border: 1px solid #d1d5db;
+  width: 100%;
+  min-width: 14rem;
+  max-width: 16rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  border-radius: 5px;
+  gap: 1rem;
+  padding: 1.5rem 1.25rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
-.card > * + * {
-  margin-top: 1rem;
-}
+
 .card:hover {
-  background-color: #f9fafb;
+  border-color: #0891b2;
+  box-shadow: 0 8px 24px rgba(8, 145, 178, 0.1);
+  transform: translateY(-2px);
 }
 
 .paypalButton {
   display: flex;
-  border-radius: 5px;
-  background-color: #facc15;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
   height: 3rem;
-  width: 13rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #facc15 0%, #fbbf24 100%);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-.paypalButton > * + * {
-  margin-left: 1rem;
+
+.paypalButton:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(250, 204, 21, 0.35);
 }
 
 .paypalText {
   font-style: italic;
   font-size: 1.25rem;
   line-height: 1.75rem;
+  display: flex;
 }
 
 .pay {
@@ -46,34 +57,35 @@
 
 .divider {
   width: 100%;
-  height: 1rem;
   display: flex;
-  justify-content: center;
   align-items: center;
+  gap: 0.5rem;
 }
 
 .dividerLine {
-  background-color: #d1d5db;
-  width: 33.333333%;
+  flex: 1;
   height: 1px;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+  background: linear-gradient(90deg, transparent, #d1d5db 20%, #d1d5db 80%, transparent);
 }
 
 .dividerText {
   color: #9ca3af;
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
   font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .creditCard {
   color: #0891b2;
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   font-weight: 500;
   text-align: center;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-  text-transform: capitalize;
+  transition: color 0.2s ease;
+}
+
+.card:hover .creditCard {
+  color: #0e7490;
 }

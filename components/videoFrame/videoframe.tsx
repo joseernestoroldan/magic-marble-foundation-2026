@@ -78,11 +78,6 @@ const VideoFrame = ({ src }: VideoFrameProps) => {
         ref={containerRef}
         className={styles.container}>
         <div
-          style={{
-            background:
-              "linear-gradient(135deg, #020c1b 0%, #0a1a2e 50%, #020c1b 100%)",
-            transition: "opacity 0.6s ease",
-          }}
             className={`${styles.loadingOverlay} ${isVisible ? styles.loadingHidden : styles.loadingVisible}`}
             >
 
