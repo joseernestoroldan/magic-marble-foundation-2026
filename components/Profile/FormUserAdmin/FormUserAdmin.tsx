@@ -1,5 +1,6 @@
 "use client";
 import { updateRole } from "@/actions/updateRole";
+import { UserRole } from "@prisma/client";
 import { useState } from "react";
 import styles from "./FormUserAdmin.module.css";
 
@@ -24,7 +25,7 @@ const FormUserAdmin = ({ role, id }: FormUserAdminProps) => {
     setError(null);
     setIsUpdating(true);
     try {
-      await updateRole(id, event.target.value);
+      await updateRole(id, event.target.value as UserRole);
     } catch {
       setError("Failed to update role");
     } finally {

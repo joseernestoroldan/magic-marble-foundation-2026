@@ -32,9 +32,10 @@ export const register = async (values: z.infer<typeof registerSchema>) => {
     return { error: "Passwords must match" };
   }
 
-  const hashedPassword = await bcrypt.hash(password, 10);
-
-  const existingUser = await getUserByEmail(email);
+  const [hashedPassword, existingUser] = await Promise.all([
+    bcrypt.hash(password, 10),
+    getUserByEmail(email),
+  ]);
 
   if (existingUser) {
     return { error: "This email address is already registered" };

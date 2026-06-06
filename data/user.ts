@@ -1,6 +1,7 @@
 import { db } from "@/db";
+import { cache } from "react";
 
-export const getUserByEmail = async (email: string) => {
+export const getUserByEmail = cache(async (email: string) => {
   try {
     const user = await db.user.findUnique({
       where: { email },
@@ -9,9 +10,9 @@ export const getUserByEmail = async (email: string) => {
   } catch {
     return null;
   }
-};
+});
 
-export const getUserById = async (id: string ) => {
+export const getUserById = cache(async (id: string ) => {
     try {
       const user = await db.user.findUnique({
         where: { id },
@@ -20,4 +21,4 @@ export const getUserById = async (id: string ) => {
     } catch {
       return null;
     }
-  };
+});

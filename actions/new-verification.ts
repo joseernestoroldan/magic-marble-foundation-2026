@@ -18,17 +18,18 @@ export const NewVerification = async (token: string) => {
     return { error: "User does not exist" };
   }
 
-  await db.user.update({
-    where: { id: existingUser.id },
-    data: {
-      emailVerified: new Date(),
-      email: existingToken.email,
-    },
-  });
-
-  await db.verificationToken.delete({
-    where: { id: existingToken.id },
-  });
+  await Promise.all([
+    db.user.update({
+      where: { id: existingUser.id },
+      data: {
+        emailVerified: new Date(),
+        email: existingToken.email,
+      },
+    }),
+    db.verificationToken.delete({
+      where: { id: existingToken.id },
+    }),
+  ]);
 
   return { success: "Congrats your account has been verified"}
 };

@@ -1,11 +1,13 @@
-﻿"use client";
+"use client";
 import Link from "next/link";
 import { useState } from "react";
 import { FaUser } from "react-icons/fa";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { IoWarning } from "react-icons/io5";
-import UpdateForm from "../auth/updateForm/UpdateForm";
-import DangerZone from "../dangerzone/DangerZone";
+import dynamic from "next/dynamic";
+
+const UpdateForm = dynamic(() => import("../auth/updateForm/UpdateForm"));
+const DangerZone = dynamic(() => import("../dangerzone/DangerZone"));
 import styles from "./SettingsTabs.module.css";
 
 type Tab = "account" | "password" | "danger";

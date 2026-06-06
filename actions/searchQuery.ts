@@ -1,7 +1,10 @@
 "use server";
 import { db } from "@/db";
+import { currentUser } from "@/app/lib/auth";
 
 export const searchUser = async (query: string, page: number) => {
+  const user = await currentUser();
+  if (!user || user.role !== "ADMIN") throw new Error("Unauthorized");
   const ITEMS_PER_PAGE = 10;
   const users = await db.user.findMany({
     where: {
@@ -36,6 +39,9 @@ export const searchUser = async (query: string, page: number) => {
 };
 
 export const countUsers = async (query: string,) => {
+  const user = await currentUser();
+  if (!user || user.role !== "ADMIN") throw new Error("Unauthorized");
+
   const count = await db.user.count({where: {
     OR: [
       { firstName: { startsWith: query, mode: "insensitive" } },
