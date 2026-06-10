@@ -8,7 +8,7 @@ import Badges from "@/components/Badges/Badges";
 
 const openSansFont = Open_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
