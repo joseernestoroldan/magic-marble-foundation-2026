@@ -6,13 +6,13 @@ import { Suspense } from "react";
 import HeroSection from "@/components/Home/HeroSection/HeroSection";
 import MagicDiaries from "@/components/Home/MagicDiaries/MagicDiaries";
 import MagicFrame from "@/components/Home/MagicFrame/MagicFrame";
-import OurMIssion from "@/components/Home/OurMission/OurMIssion";
+import OurMission from "@/components/Home/OurMission/OurMission";
 import OurProjects from "@/components/Home/OurProjects/OurProjects";
 import SectionSkeleton from "@/components/Layouts/SectionSkeleton/SectionSkeleton";
 
 const Banner = dynamic(() => import("@/components/Home/Banner/Banner"));
-const FadeInOutCarausel = dynamic(
-  () => import("@/components/Home/FadeInOutCarousel/FadeInOutCarausel"),
+const FadeInOutCarousel = dynamic(
+  () => import("@/components/Home/FadeInOutCarousel/FadeInOutCarousel"),
 );
 const OurPartners = dynamic(
   () => import("@/components/Home/OurPartners/OurPartners"),
@@ -33,7 +33,7 @@ const HomePage = async () => {
   return (
     <article className={styles.article}>
       <HeroSection />
-      <OurMIssion />
+      <OurMission />
 
       <Suspense fallback={<SectionSkeleton />}>
         <MagicDiaries />
@@ -47,7 +47,7 @@ const HomePage = async () => {
         <OurProjects />
       </Suspense>
 
-      <FadeInOutCarausel />
+      <FadeInOutCarousel />
       <OurPartners />
     </article>
   );

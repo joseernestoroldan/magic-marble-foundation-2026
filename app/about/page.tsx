@@ -7,8 +7,8 @@ import styles from "./page.module.css";
 const FocusAreas = dynamic(() => import("@/components/About/FocusAreas/FocusAreas"));
 const OurTeam = dynamic(() => import("@/components/About/OurTeam/OurTeam"));
 const OurValues = dynamic(() => import("@/components/About/OurValues/OurValues"));
-const FadeInOutCarausel = dynamic(() => import("@/components/Home/FadeInOutCarousel/FadeInOutCarausel"));
-const OurMIssion = dynamic(() => import("@/components/Home/OurMission/OurMIssion"));
+const FadeInOutCarousel = dynamic(() => import("@/components/Home/FadeInOutCarousel/FadeInOutCarousel"));
+const OurMission = dynamic(() => import("@/components/Home/OurMission/OurMission"));
 const VideoFrame = dynamic(() => import("@/components/VideoFrame/VideoFrame"));
 
 export const metadata: Metadata = {
@@ -27,10 +27,10 @@ const AboutUsPage = () => {
     <article className={styles.article}>
       <AboutUs />
       <FocusAreas />
-      <OurMIssion />
+      <OurMission />
       <VideoFrame src="https://www.youtube.com/embed/ipNTJWiKR5Q?autoplay=1&mute=1" />
       <OurValues />
-      <FadeInOutCarausel />
+      <FadeInOutCarousel />
       <OurTeam />
     </article>
   );

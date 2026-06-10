@@ -4,12 +4,12 @@ import DonationButton from "@/components/DonationButton/DonationButton";
 import { FadeInCarouselImages } from "@/utils/carrouselImages";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import styles from "./FadeInOutCarausel.module.css";
+import styles from "./FadeInOutCarousel.module.css";
 
 const SLIDE_DURATION = 8000;
 const FADE_DURATION = 300;
 
-const FadeInOutCarausel = () => {
+const FadeInOutCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFading, setIsFading] = useState(false);
 
@@ -139,4 +139,4 @@ const FadeInOutCarausel = () => {
   );
 };
 
-export default FadeInOutCarausel;
+export default FadeInOutCarousel;

@@ -2,7 +2,7 @@ import Container from "@/components/Layouts/Container/Container";
 import SmokeText from "@/components/SmokeText/SmokeText";
 import styles from "./OurMission.module.css";
 
-const OurMIssion = () => {
+const OurMission = () => {
   return (
     <Container>
       <div className={styles.wrapper}>
@@ -21,4 +21,4 @@ const OurMIssion = () => {
   );
 };
 
-export default OurMIssion;
+export default OurMission;
