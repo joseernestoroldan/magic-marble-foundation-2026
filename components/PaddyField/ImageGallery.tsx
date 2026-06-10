@@ -57,7 +57,7 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
                   src={img.src}
                   alt={img.alt}
                   fill
-                  sizes="128px"
+                  sizes="96px"
                   className={styles.thumbImg}
                   style={{ objectPosition: `${thumbX}% ${thumbY}%` }}
                 />

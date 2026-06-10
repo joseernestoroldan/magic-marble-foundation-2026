@@ -62,9 +62,10 @@ interface MosaicCardProps {
   paddy: portalPaddyFieldType;
   span: CellSpan;
   priority: boolean;
+  animDelay: number;
 }
 
-function MosaicCard({ paddy, span, priority }: MosaicCardProps) {
+function MosaicCard({ paddy, span, priority, animDelay }: MosaicCardProps) {
   const x = (paddy.hotSpot?.x ?? 0.5) * 100;
   const y = (paddy.hotSpot?.y ?? 0.5) * 100;
 
@@ -75,6 +76,7 @@ function MosaicCard({ paddy, span, priority }: MosaicCardProps) {
       style={{
         gridColumn: `span ${span.colSpan}`,
         gridRow: `span ${span.rowSpan}`,
+        animationDelay: `${animDelay}ms`,
       }}
       aria-label={`Read paddy field: ${paddy.title}`}
     >
@@ -146,6 +148,7 @@ export default function PaddyFieldMosaicGallery({
             paddy={paddy}
             span={layout[index]}
             priority={index === 0}
+            animDelay={index * 120}
           />
         ))}
       </div>

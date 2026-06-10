@@ -45,9 +45,10 @@ interface MosaicCardProps {
   recipe: recipesType;
   span: CellSpan;
   priority: boolean;
+  animDelay: number;
 }
 
-function MosaicCard({ recipe, span, priority }: MosaicCardProps) {
+function MosaicCard({ recipe, span, priority, animDelay }: MosaicCardProps) {
   const x = (recipe.hotSpot?.x ?? 0.5) * 100;
   const y = (recipe.hotSpot?.y ?? 0.5) * 100;
 
@@ -58,6 +59,7 @@ function MosaicCard({ recipe, span, priority }: MosaicCardProps) {
       style={{
         gridColumn: `span ${span.colSpan}`,
         gridRow: `span ${span.rowSpan}`,
+        animationDelay: `${animDelay}ms`,
       }}
       aria-label={`View recipe: ${recipe.title}`}
     >
@@ -129,6 +131,7 @@ export default function RecipesMosaicGallery({
             recipe={recipe}
             span={layout[index]}
             priority={index === 0}
+            animDelay={index * 150}
           />
         ))}
       </div>
