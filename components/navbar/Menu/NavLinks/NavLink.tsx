@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { navLinkProps } from "@/types/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";

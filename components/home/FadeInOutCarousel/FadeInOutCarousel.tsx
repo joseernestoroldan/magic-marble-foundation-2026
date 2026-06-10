@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import DonationButton from "@/components/DonationButton/DonationButton";
 import { FadeInCarouselImages } from "@/utils/carrouselImages";

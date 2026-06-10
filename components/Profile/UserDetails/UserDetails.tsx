@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { FaUser } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import {

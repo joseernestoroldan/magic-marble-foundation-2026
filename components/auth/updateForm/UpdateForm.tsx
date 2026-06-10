@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import * as z from "zod";
 
 import { updateSchema } from "@/schemas";

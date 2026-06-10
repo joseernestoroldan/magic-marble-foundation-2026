@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { subscribeAgain, unsubscribe } from "@/actions/unsubscribe";
 import Image from "next/image";

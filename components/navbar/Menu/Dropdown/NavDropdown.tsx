@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import NavLink from '@/components/Navbar/Menu/NavLinks/NavLink';
 import { useClickOutside } from "@/hooks/useClickOutside";
 import { navDropdownProps } from "@/types/types";

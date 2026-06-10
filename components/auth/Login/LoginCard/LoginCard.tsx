@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import Separator from "@/components/auth/Separator/Separator";
 import LoginForm from "@/components/auth/Login/LoginForm/LoginForm";
 import LoginGoogle from "@/components/auth/Login/LoginGoogle/LoginGoogle";

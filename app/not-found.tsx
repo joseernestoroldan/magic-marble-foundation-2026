@@ -1,4 +1,4 @@
-﻿import { IoDocumentTextOutline } from "react-icons/io5"
+import { IoDocumentTextOutline } from "react-icons/io5"
 import Link from "next/link"
 import styles from "./not-found.module.css"
 

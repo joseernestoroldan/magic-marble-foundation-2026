@@ -1,4 +1,4 @@
-﻿import { galleryType } from "@/clientTypes";
+import { galleryType } from "@/clientTypes";
 import Image from "next/image";
 import { getGalleryDisplayDate } from "./formatGalleryDate";
 import GalleryModalDetail from "./GalleryModalDetail";

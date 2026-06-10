@@ -1,4 +1,4 @@
-﻿import Container from "../Layouts/Container/Container";
+import Container from "../Layouts/Container/Container";
 import Logo from "../Logo/Logo";
 import IconsFooter from "./IconsFooter";
 import MenuFooter from "./MenuFooter";

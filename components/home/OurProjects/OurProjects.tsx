@@ -1,4 +1,4 @@
-﻿import { getAllProjects } from "@/client";
+import { getAllProjects } from "@/client";
 import Container from "@/components/Layouts/Container/Container";
 import Image from "next/image";
 import Link from "next/link";

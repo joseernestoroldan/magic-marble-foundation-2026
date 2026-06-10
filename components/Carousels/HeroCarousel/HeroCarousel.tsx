@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import CarouselDots from "@/components/Carousels/CarouselDots/CarouselDots";
 import { HeroCarouselImages } from "@/utils/carrouselImages";

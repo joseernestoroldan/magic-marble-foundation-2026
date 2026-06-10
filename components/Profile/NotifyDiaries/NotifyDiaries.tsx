@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { notifyDiary } from "@/actions/sentDiaries";
 import Image from "next/image";
 import { useState } from "react";

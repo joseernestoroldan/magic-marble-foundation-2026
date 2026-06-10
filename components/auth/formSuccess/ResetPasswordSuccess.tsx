@@ -1,4 +1,4 @@
-﻿import { FaCheckCircle } from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa";
 import styles from "./ResetPasswordSuccess.module.css";
 
 type SuccessProps = {

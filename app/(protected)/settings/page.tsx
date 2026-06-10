@@ -1,4 +1,4 @@
-﻿import { auth } from "@/auth";
+import { auth } from "@/auth";
 import SettingsTabs from "@/components/settingsTabs/SettingsTabs";
 import { db } from "@/db";
 import { Playfair_Display } from "next/font/google";

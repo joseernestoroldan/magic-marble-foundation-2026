@@ -1,4 +1,4 @@
-﻿import { getAllPaddyField, getPortalPaddyFieldById } from "@/client";
+import { getAllPaddyField, getPortalPaddyFieldById } from "@/client";
 import Container from "@/components/Layouts/Container/Container";
 import ImageGallery from "@/components/PaddyField/ImageGallery";
 import { PortableText } from "@portabletext/react";

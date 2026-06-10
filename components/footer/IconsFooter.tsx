@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { AiFillTikTok as TikTokIcon } from "react-icons/ai";
 import { LiaFacebook as FbIcon, LiaInstagram as IgIcon } from "react-icons/lia";
 import { IconType } from "react-icons/lib";

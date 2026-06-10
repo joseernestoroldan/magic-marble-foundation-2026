@@ -1,4 +1,4 @@
-﻿import { UseFormRegisterReturn } from "react-hook-form";
+import { UseFormRegisterReturn } from "react-hook-form";
 import styles from "./FormCheckbox.module.css";
 
 type FormCheckboxProps = {

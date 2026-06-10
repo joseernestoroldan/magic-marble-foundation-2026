@@ -1,4 +1,4 @@
-﻿import { db } from "@/db";
+import { db } from "@/db";
 import { FaCheck } from "react-icons/fa";
 import styles from "./page.module.css";
 

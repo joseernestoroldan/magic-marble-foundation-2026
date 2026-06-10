@@ -1,4 +1,4 @@
-﻿import { granteesType } from "@/clientTypes";
+import { granteesType } from "@/clientTypes";
 import { getSanityObjectPosition } from "@/components/Gallery/sanityImageFrame";
 import Image from "next/image";
 import styles from "./GranteeCard.module.css";

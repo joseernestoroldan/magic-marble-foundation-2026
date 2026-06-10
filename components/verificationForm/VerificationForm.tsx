@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { NewVerification } from "@/actions/new-verification";
 import Image from "next/image";

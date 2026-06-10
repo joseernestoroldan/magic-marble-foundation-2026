@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 
 import styles from "./error.module.css";
 import { IoAlertCircle } from "react-icons/io5"

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { countUsers, searchUser } from "@/actions/searchQuery";
 import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";

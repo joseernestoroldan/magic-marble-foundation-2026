@@ -1,4 +1,4 @@
-﻿import Container from "@/components/Layouts/Container/Container";
+import Container from "@/components/Layouts/Container/Container";
 import SmokeText from "@/components/SmokeText/SmokeText";
 import Image from "next/image";
 import styles from "./AboutUs.module.css";

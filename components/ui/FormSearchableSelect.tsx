@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { useState, useMemo } from "react";
 import { FaSearch } from "react-icons/fa";
 import styles from "./FormSearchableSelect.module.css";

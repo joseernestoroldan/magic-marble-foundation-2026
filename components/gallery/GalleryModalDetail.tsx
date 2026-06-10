@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { Crop, HotSpot } from "@/clientTypes";
 import Image from "next/image";
